@@ -1,18 +1,32 @@
-# 首页引导-指南
+---
+layout: home
 
-<!-- <img :src="$withBase('/images/v3_ts.JPG')" alt="vue3"> -->
+title: 牧涯前端学习笔记
+titleTemplate: 记录一些前端学习的知识
 
-课程介绍:Vue 是一套用于构建用户界面的**渐进式框架**。Vue.js 3.0 "One Piece" 正式版在 2020 年 9 月份发布,经过了 2 年多开发, 100+位贡献者, 2600+次提交, 600+次 PR，同时 Vue3 也支持 Vue2 的大多数特性,且,更好的支持了 TypeScript,也增加了很多的新特性,如:Composition API,新组件(Fragment/Teleport/Suspense)等等.
-课程内容如下:
+hero:
+  name: Kitty
+  text: 一个Vue3组件库
+  tagline: 没啥特点仅供学习
+  image:
+    src: /logo.png
+    alt: Kitty
+  actions:
+    - theme: brand
+      text: 开始
+      link: /study_guide/
+    - theme: alt
+      text: 在 GitHub 上查看
+      link: https://github.com/muyaCode/FrontEndLearningNotes
 
-- 1.TypeScript 快速上手
-
-- 2.Vue3 快速上手
-
-- 3.Vue3 新特性
-
-- 4.Vue3 综合案例
-
-- 5.Vue3 企业级项目(待发布)
-
-注:由于 Vue3 中可以更好的支持 TypeScript 内容,且,课程内容中涉及到 TS 的内容,鉴于部分学员对于 TS 并不是很了解,所以,课程内容先从 TS 开始讲解
+features:
+  - icon: 💡
+    title: Vue3组件库
+    details: 基于Vite打包和TypeScript开发的vitePress
+  - icon: 📦
+    title: 仅供学习使用
+    details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
+  - icon: 🛠️
+    title: 按需引入
+    details: 直接支持按需引入无需配置任何插件。
+---
