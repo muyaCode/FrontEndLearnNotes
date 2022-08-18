@@ -1,0 +1,18 @@
+{
+  "name": "front-end-learning-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:bulid": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.8",
+    "vue": "^3.2.37"
+  }
+}
