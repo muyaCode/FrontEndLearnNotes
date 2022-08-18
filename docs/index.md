@@ -20,10 +20,10 @@ hero:
       link: https://github.com/muyaCode/FrontEndLearningNotes
 
 features:
-  - icon: 💡⚡️
+  - icon: 💡
     title: HTML
     details: 基于vitePress构建
-  - icon: 📦🖖
+  - icon: 📦
     title: CSS
     details: 由浅入深
   - icon: 🛠️
