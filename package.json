@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:bulid": "vitepress build docs",
-    "docs:serve": "vitepress serve docs --port 8080"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs --port 8080",
+    "deploy": "bash deploy.sh"
+  },
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.8",
     "vue": "^3.2.37"
