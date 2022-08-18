@@ -20,7 +20,7 @@ export default {
 
   // ***** 主题设置 *****
   themeConfig: {
-    logo: "./icon/logo.svg",
+    logo: "/img/buding.svg",
     siteTitle: "牧涯前端学习笔记", // 网站左上角标题
     outlineTitle: '内容大纲',
     // 右上角导航中显示带有图标的社交帐户链接
