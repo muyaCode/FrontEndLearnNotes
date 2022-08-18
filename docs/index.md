@@ -3,6 +3,7 @@ layout: home
 
 title: 牧涯前端学习笔记
 titleTemplate: 记录一些前端学习的知识
+description: 描述
 
 hero:
   name: 前端路线基础到进阶
