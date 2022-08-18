@@ -3,7 +3,6 @@ layout: home
 
 title: 牧涯前端学习笔记
 titleTemplate: 记录一些前端学习的知识
-description: 描述
 
 hero:
   name: 前端路线基础到进阶
@@ -15,16 +14,16 @@ hero:
   actions:
     - theme: brand
       text: 查看笔记
-      link: /order/study_guide/
+      link: /order/study_guide
     - theme: alt
       text: 在 GitHub 上查看
       link: https://github.com/muyaCode/FrontEndLearningNotes
 
 features:
-  - icon: 💡
+  - icon: 💡⚡️
     title: HTML
     details: 基于vitePress构建
-  - icon: 📦
+  - icon: 📦🖖
     title: CSS
     details: 由浅入深
   - icon: 🛠️
@@ -32,3 +31,4 @@ features:
     details: JavaScript基础到进阶。
 ---
 <!-- 文档：https://vitepress.vuejs.org/config/frontmatter-configs#layout -->
+<!-- 表情：https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json -->

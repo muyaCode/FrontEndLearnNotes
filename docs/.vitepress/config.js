@@ -65,71 +65,70 @@ export default {
       },
     ],
     // 左边侧栏导航
-    sidebar: {
-      "/study_guide": [
-        {
-          text: "学习指南",
-          items: [{ text: "学习指南", link: "/study_guide" }],
-        },
-        {
-          text: "TypeScript笔记",
-          collapsible: true, // 可折叠
-          collapsed: false, // 初始不折叠
-          items: [
-            {
-              text: "初识 TypeScript",
-              items: [
-                {
-                  text: "1.初识TypeScript",
-                  link: "/TypeScript/TypeScript开发前置/1.初识TypeScript",
-                },
-                {
-                  text: "2.安装TypeScript",
-                  link: "/TypeScript/TypeScript开发前置/2.安装TypeScript",
-                },
-                {
-                  text: "3.第一个TypeScript程序",
-                  link: "/TypeScript/TypeScript开发前置/3.第一个TypeScript程序",
-                },
-                {
-                  text: "4.使用Webpack打包TypeScript",
-                  link: "/TypeScript/TypeScript开发前置/4.使用Webpack打包TypeScript",
-                },
-              ],
-            },
-            {
-              text: "TypeScript语法",
-              items: [
-                {
-                  text: "1.基础类型",
-                  link: "/TypeScript/TypeScript语法/1.基础类型",
-                },
-                {
-                  text: "2.interface接口",
-                  link: "/TypeScript/TypeScript语法/2.interface接口",
-                },
-                {
-                  text: "3.class类",
-                  link: "/TypeScript/TypeScript语法/3.class类",
-                },
-                {
-                  text: "4.function函数",
-                  link: "/TypeScript/TypeScript语法/4.function函数",
-                },
-                {
-                  text: "5.泛型",
-                  link: "/TypeScript/TypeScript语法/5.泛型",
-                },
-                {
-                  text: "6.其他",
-                  link: "/TypeScript/TypeScript语法/6.其他",
-                },
-              ],
-            },
-          ],
-        },
-      ]
-    },
+    sidebar: [
+      {
+        text: "学习指南",
+        items: [{ text: "学习指南", link: "/order/study_guide" }],
+      },
+      {
+        text: "TypeScript笔记",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "初识 TypeScript",
+            items: [
+              {
+                text: "1.初识TypeScript",
+                link: "/TypeScript/TypeScript开发前置/1.初识TypeScript",
+              },
+              {
+                text: "2.安装TypeScript",
+                link: "/TypeScript/TypeScript开发前置/2.安装TypeScript",
+              },
+              {
+                text: "3.第一个TypeScript程序",
+                link: "/TypeScript/TypeScript开发前置/3.第一个TypeScript程序",
+              },
+              {
+                text: "4.使用Webpack打包TypeScript",
+                link: "/TypeScript/TypeScript开发前置/4.使用Webpack打包TypeScript",
+              },
+            ],
+          },
+          {
+            text: "TypeScript语法",
+            items: [
+              {
+                text: "1.基础类型",
+                link: "/TypeScript/TypeScript语法/1.基础类型",
+              },
+              {
+                text: "2.interface接口",
+                link: "/TypeScript/TypeScript语法/2.interface接口",
+              },
+              {
+                text: "3.class类",
+                link: "/TypeScript/TypeScript语法/3.class类",
+              },
+              {
+                text: "4.function函数",
+                link: "/TypeScript/TypeScript语法/4.function函数",
+              },
+              {
+                text: "5.泛型",
+                link: "/TypeScript/TypeScript语法/5.泛型",
+              },
+              {
+                text: "6.其他",
+                link: "/TypeScript/TypeScript语法/6.其他",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    
     // 页脚配置。您可以添加消息和版权。仅当页面由于设计原因不包含边栏时，才会显示页脚。
     // footer: {
     //   message: 'Released under the MIT License.',
