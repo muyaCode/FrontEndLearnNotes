@@ -129,11 +129,11 @@ export default {
       },
     ],
     
-    // 页脚配置。您可以添加消息和版权。仅当页面由于设计原因不包含边栏时，才会显示页脚。
+    // 首页页脚配置。您可以添加消息和版权。仅当页面由于设计原因不包含边栏时，才会显示页脚。
     // footer: {
     //   message: 'Released under the MIT License.',
     //   copyright: 'Copyright © 2022-present Evan You'
-    // }
+    // },
 
     editLink: {
       pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
