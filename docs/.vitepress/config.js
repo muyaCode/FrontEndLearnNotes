@@ -192,15 +192,15 @@ export default {
               },
             ],
           },
-          {
-            text: "搭建在线文档网站",
-            items: [
-              {
-                text: "01_VuePress搭建在线文档",
-                link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
-              },
-            ],
-          },
+          // {
+          //   text: "搭建在线文档网站",
+          //   items: [
+          //     {
+          //       text: "01_VuePress搭建在线文档",
+          //       link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
+          //     },
+          //   ],
+          // },
         ]
       },
       {
