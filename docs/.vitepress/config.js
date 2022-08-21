@@ -127,6 +127,423 @@ export default {
           },
         ],
       },
+      {
+        text: "前端开发框架学习",
+        items: [],
+      },
+      {
+        text: "Vue3学习",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "Vue3快速上手",
+            items: [
+              {
+                text: "01_认识Vue3",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3快速上手/01_认识Vue3",
+              },
+              {
+                text: "02_创建vue3项目",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3快速上手/02_创建vue3项目",
+              },
+            ],
+          },
+          {
+            text: "Composition API",
+            items: [
+              {
+                text: "01_Composition API_常用部分",
+                link: "/Document/Front-end-devFramework/Vue3/Composition API/01_Composition API_常用部分",
+              },
+              {
+                text: "02_Composition API_其它部分",
+                link: "/Document/Front-end-devFramework/Vue3/Composition API/02_Composition API_其它部分",
+              },
+              {
+                text: "03_手写组合API",
+                link: "/Document/Front-end-devFramework/Vue3/Composition API/03_手写组合API",
+              },
+              {
+                text: "04_Composition VS Option",
+                link: "/Document/Front-end-devFramework/Vue3/Composition API/04_Composition VS Option",
+              },
+            ],
+          },
+          {
+            text: "其它新组合和API",
+            items: [
+              {
+                text: "01_新组件",
+                link: "/Document/Front-end-devFramework/Vue3/其它新组合和API/01_新组件",
+              },
+              {
+                text: "02_其他新API",
+                link: "/Document/Front-end-devFramework/Vue3/其它新组合和API/02_其他新API",
+              },
+            ],
+          },
+          {
+            text: "Vue3综合案例",
+            items: [
+              {
+                text: "TodoList",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3综合案例/TodoList",
+              },
+            ],
+          },
+          {
+            text: "搭建在线文档网站",
+            items: [
+              {
+                text: "01_VuePress搭建在线文档",
+                link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "React学习",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "React学习",
+            items: [
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3快速上手",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定1",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定2",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定3",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定4",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定5",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定6",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定7",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定8",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定9",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定10",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定11",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定12",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "待定13",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
     ],
     
     // 首页页脚配置。您可以添加消息和版权。仅当页面由于设计原因不包含边栏时，才会显示页脚。
