@@ -53,14 +53,14 @@ export default {
       { text: "我的个人网站", link: "" },
       { text: "掘金", link: "" },
       { text: "Github", link: "" },
-      { text: "设置", link: "/setting" },
+      { text: "设置", link: "/Order/setting" },
       {
         text: "下拉选择",
         items: [
-          { text: "选择1", link: "/order/items/item1" },
-          { text: "选择2", link: "/order/items/item2" },
-          { text: "选择3", link: "/order/items/item3" },
-          { text: "选择4", link: "/order/items/item4" },
+          { text: "选择1", link: "/Order/items/item1" },
+          { text: "选择2", link: "/Order/items/item2" },
+          { text: "选择3", link: "/Order/items/item3" },
+          { text: "选择4", link: "/Order/items/item4" },
         ],
       },
     ],
@@ -68,7 +68,7 @@ export default {
     sidebar: [
       {
         text: "学习指南",
-        items: [{ text: "学习指南", link: "/order/study_guide" }],
+        items: [{ text: "学习指南", link: "/Order/study_guide" }],
       },
       {
         text: "TypeScript笔记",
@@ -80,19 +80,19 @@ export default {
             items: [
               {
                 text: "1.初识TypeScript",
-                link: "/TypeScript/TypeScript开发前置/1.初识TypeScript",
+                link: "/Document/TypeScript/TypeScript开发前置/1.初识TypeScript",
               },
               {
                 text: "2.安装TypeScript",
-                link: "/TypeScript/TypeScript开发前置/2.安装TypeScript",
+                link: "/Document/TypeScript/TypeScript开发前置/2.安装TypeScript",
               },
               {
                 text: "3.第一个TypeScript程序",
-                link: "/TypeScript/TypeScript开发前置/3.第一个TypeScript程序",
+                link: "/Document/TypeScript/TypeScript开发前置/3.第一个TypeScript程序",
               },
               {
                 text: "4.使用Webpack打包TypeScript",
-                link: "/TypeScript/TypeScript开发前置/4.使用Webpack打包TypeScript",
+                link: "/Document/TypeScript/TypeScript开发前置/4.使用Webpack打包TypeScript",
               },
             ],
           },
@@ -101,27 +101,27 @@ export default {
             items: [
               {
                 text: "1.基础类型",
-                link: "/TypeScript/TypeScript语法/1.基础类型",
+                link: "/Document/TypeScript/TypeScript语法/1.基础类型",
               },
               {
                 text: "2.interface接口",
-                link: "/TypeScript/TypeScript语法/2.interface接口",
+                link: "/Document/TypeScript/TypeScript语法/2.interface接口",
               },
               {
                 text: "3.class类",
-                link: "/TypeScript/TypeScript语法/3.class类",
+                link: "/Document/TypeScript/TypeScript语法/3.class类",
               },
               {
                 text: "4.function函数",
-                link: "/TypeScript/TypeScript语法/4.function函数",
+                link: "/Document/TypeScript/TypeScript语法/4.function函数",
               },
               {
                 text: "5.泛型",
-                link: "/TypeScript/TypeScript语法/5.泛型",
+                link: "/Document/TypeScript/TypeScript语法/5.泛型",
               },
               {
                 text: "6.其他",
-                link: "/TypeScript/TypeScript语法/6.其他",
+                link: "/Document/TypeScript/TypeScript语法/6.其他",
               },
             ],
           },
