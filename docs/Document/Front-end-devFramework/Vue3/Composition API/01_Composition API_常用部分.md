@@ -526,10 +526,11 @@ export default {
     })
 
     /*
-    watch多个数据:
+    watch监听多个数据:
       使用数组来指定
       如果是ref对象, 直接指定
       如果是reactive对象中的属性,  必须通过函数来指定
+      user里面的属性非响应式数据，需要使用回调方式 () = > 属性 ，改成响应式属性
     */
     watch([() => user.firstName, () => user.lastName, fullName3], values => {
       console.log('监视多个数据', values)
