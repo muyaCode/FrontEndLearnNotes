@@ -57,10 +57,10 @@ export default {
       {
         text: "下拉选择",
         items: [
-          { text: "选择1", link: "/items/item1" },
-          { text: "选择2", link: "/items/item2" },
-          { text: "选择3", link: "/items/item3" },
-          { text: "选择4", link: "/items/item4" },
+          { text: "选择1", link: "/order/items/item1" },
+          { text: "选择2", link: "/order/items/item2" },
+          { text: "选择3", link: "/order/items/item3" },
+          { text: "选择4", link: "/order/items/item4" },
         ],
       },
     ],
