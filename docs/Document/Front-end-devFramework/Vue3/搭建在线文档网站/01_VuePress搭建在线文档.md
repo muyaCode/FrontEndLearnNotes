@@ -9,16 +9,12 @@
 ```bash
 # 将 VuePress 作为一个本地依赖安装
 npm install -D vuepress
-
 # 新建一个 docs 文件夹
 mkdir docs
-
 # 新建一个文件: docs/README.md
 echo '# Hello VuePress!' > docs/README.md
-
 # 启动文档项目
 npx vuepress dev docs
-
 # 构建静态文件
 npx vuepress build docs
   |-- docs
@@ -31,7 +27,7 @@ npx vuepress build docs
 
 1. 整体结构
 
-```tree
+```
 |-- dist
 |-- dics
   |-- .vuepress
@@ -60,7 +56,7 @@ npx vuepress build docs
 
 1. 增加 `docs/.vuepress/config.js`
 
-```javascript
+``` javascript
 // 注意: base的值为github仓库的名称
 module.exports = {
   base: '/ts-study/' /* 基础虚拟路径: */,
@@ -93,7 +89,7 @@ module.exports = {
 
 2.  增加 `docs/README.md`
 
-```bash
+``` bash
 ---
 #首页
 home: true
@@ -108,7 +104,7 @@ actionLink: /chapter1/01_初识TS
 
 3. 修改 `package.json`
 
-```json
+``` json
 "scripts": {
   "doc:dev": "vuepress dev docs",
   "doc:build": "vuepress build docs",
@@ -122,7 +118,7 @@ actionLink: /chapter1/01_初识TS
 
 2. 将打包的项目推送到 gitpage
 
-```bash
+``` bash
 # 下载工具包
 yarn add -D gh-pages
 # 执行打包命令
