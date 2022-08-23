@@ -210,6 +210,15 @@ export default {
               },
             ],
           },
+          {
+            text: "Vue3项目开发规范",
+            items: [
+              {
+                text: "Vue3项目开发规范",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3项目开发规范/Vue3项目开发规范",
+              },
+            ],
+          },
           // {
           //   text: "搭建在线文档网站",
           //   items: [
