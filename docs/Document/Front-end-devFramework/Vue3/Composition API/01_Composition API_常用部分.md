@@ -551,11 +551,11 @@ export default {
 
 **vue2.x 的生命周期**
 
-![lifecycle_2](https://vuejs.org/images/lifecycle.png)
+![lifecycle_2](../../../../public/img/lifecycle2.png)
 
 **vue3 的生命周期**
 
-![lifecycle_3](https://v3.cn.vuejs.org/images/lifecycle.png)
+![lifecycle_3](../../../../public/img/lifecycle3.png)
 
 **与 2.x 版本生命周期相对应的组合式 API**
 
