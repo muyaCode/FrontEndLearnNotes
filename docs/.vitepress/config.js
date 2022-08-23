@@ -76,6 +76,15 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
+            text: "TypeScript学习指南",
+            items: [
+              {
+                text: "TypeScript学习指南",
+                link: "/Document/TypeScript/TypeScript学习指南/TypeScript学习指南",
+              },
+            ],
+          },
+          {
             text: "初识 TypeScript",
             items: [
               {
@@ -122,6 +131,15 @@ export default {
               {
                 text: "6.其他",
                 link: "/Document/TypeScript/TypeScript语法/6.其他",
+              },
+            ],
+          },
+          {
+            text: "TypeScript配置文件",
+            items: [
+              {
+                text: "TypeScript配置文件",
+                link: "/Document/TypeScript/TypeScript配置文件/TypeScript配置文件",
               },
             ],
           },
