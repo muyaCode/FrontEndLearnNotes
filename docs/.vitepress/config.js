@@ -219,15 +219,15 @@ export default {
               },
             ],
           },
-          // {
-          //   text: "搭建在线文档网站",
-          //   items: [
-          //     {
-          //       text: "01_VuePress搭建在线文档",
-          //       link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
-          //     },
-          //   ],
-          // },
+          {
+            text: "搭建在线文档网站",
+            items: [
+              {
+                text: "01_VuePress搭建在线文档",
+                link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
+              },
+            ],
+          },
         ]
       },
       {
@@ -284,6 +284,50 @@ export default {
           {
             text: "03_Git工具",
             link: "/Document/Git/03_Git工具",
+          },
+        ]
+      },
+      {
+        text: "前端开发调试",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "JavaScript开发调试",
+            items: [
+              {
+                text: "项目中使用编辑器debugger",
+                link: "/Document/DevDebug/JavaScript开发调试/项目中使用编辑器debugger",
+              },
+              {
+                text: "JavaScript开发调试",
+                link: "/Document/DevDebug/JavaScript开发调试/JavaScript开发调试",
+              },
+              {
+                text: "UI的CSS样式调试技巧",
+                link: "/Document/DevDebug/JavaScript开发调试/UI的CSS样式调试技巧",
+              },
+              {
+                text: "ChromeDevTools工具的使用",
+                link: "/Document/DevDebug/JavaScript开发调试/ChromeDevTools工具的使用",
+              },
+            ]
+          },
+          {
+            text: "Vue开发调试",
+            link: "/Document/DevDebug/Vue开发调试",
+          },
+          {
+            text: "React开发调试",
+            link: "/Document/DevDebug/React开发调试",
+          },
+          {
+            text: "抓包工具调试",
+            link: "/Document/DevDebug/抓包工具调试",
+          },
+          {
+            text: "其他调试工具",
+            link: "/Document/DevDebug/其他调试工具",
           },
         ]
       },
