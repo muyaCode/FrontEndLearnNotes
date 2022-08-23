@@ -265,27 +265,40 @@ export default {
         ]
       },
       {
-        text: "待定1",
+        text: "Git笔记",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "Git学习指南",
+            link: "/Document/Git/Guide",
           },
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "01_Git前置",
+            link: "/Document/Git/01_Git前置",
+          },
+          {
+            text: "02_Git命令详解",
+            link: "/Document/Git/02_Git命令详解",
+          },
+          {
+            text: "03_Git工具",
+            link: "/Document/Git/03_Git工具",
+          },
+        ]
+      },
+      {
+        text: "技术提升和职业规划",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "技术提升",
+            link: "/Document/技术提升和职业规划/skillUpgrading",
+          },
+          {
+            text: "职业规划",
+            link: "/Document/技术提升和职业规划/careerPlanning",
           },
         ]
       },
