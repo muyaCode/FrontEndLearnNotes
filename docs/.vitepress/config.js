@@ -236,11 +236,29 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "React学习",
+            text: "React快速上手",
             items: [
               {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3快速上手",
+                text: "React快速上手",
+                link: "/Document/Front-end-devFramework/React/React快速上手/React快速上手",
+              },
+            ],
+          },
+          {
+            text: "React实战",
+            items: [
+              {
+                text: "React实战",
+                link: "/Document/Front-end-devFramework/React/React实战/React实战",
+              },
+            ],
+          },
+          {
+            text: "React实战",
+            items: [
+              {
+                text: "React实战",
+                link: "/Document/Front-end-devFramework/React/React实战/React实战",
               },
             ],
           },
