@@ -332,6 +332,80 @@ export default {
         ]
       },
       {
+        text: "前端工程化/自动化",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "前端工程化",
+            items: [
+              {
+                text: "前端工程化",
+                link: "/Document/Project-Engineering/前端工程化-自动化/前端工程化",
+              },
+            ],
+          },
+          {
+            text: "前端自动化",
+            items: [
+              {
+                text: "前端自动化",
+                link: "/Document/Project-Engineering/前端工程化-自动化/前端自动化",
+              },
+            ],
+          },
+          {
+            text: "项目打包构建工具",
+            items: [
+              {
+                text: "学习指南",
+                link: "/Document/Project-Engineering/PackToBuild/Guide",
+              },
+              {
+                text: "webpack",
+                link: "/Document/Project-Engineering/PackToBuild/webpack",
+              },
+              {
+                text: "vite",
+                link: "/Document/Project-Engineering/PackToBuild/vite",
+              },
+              {
+                text: "gulp",
+                link: "/Document/Project-Engineering/PackToBuild/gulp",
+              }, 
+              {
+                text: "grunt",
+                link: "/Document/Project-Engineering/PackToBuild/grunt",
+              },
+              {
+                text: "browserify",
+                link: "/Document/Project-Engineering/PackToBuild/browserify",
+              },
+              {
+                text: "yeoman",
+                link: "/Document/Project-Engineering/PackToBuild/yeoman",
+              },
+              {
+                text: "babel",
+                link: "/Document/Project-Engineering/PackToBuild/yeoman",
+              },
+              {
+                text: "Rollup",
+                link: "/Document/Project-Engineering/PackToBuild/rollup",
+              },
+              {
+                text: "Parcel",
+                link: "/Document/Project-Engineering/PackToBuild/parcel",
+              },
+              {
+                text: "esbuild",
+                link: "/Document/Project-Engineering/PackToBuild/esbuild",
+              },
+            ],
+          },
+        ]
+      },
+      {
         text: "技术提升和职业规划",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
@@ -343,31 +417,6 @@ export default {
           {
             text: "职业规划",
             link: "/Document/技术提升和职业规划/careerPlanning",
-          },
-        ]
-      },
-      {
-        text: "待定2",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
           },
         ]
       },
