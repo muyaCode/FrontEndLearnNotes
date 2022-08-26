@@ -3,6 +3,7 @@ export default {
   lang: "zh",
   title: "牡涯前端学习笔记", // 浏览器标签标题
   description: "记录前端学习过的笔记",
+  base: '/FrontEndLearningNotes/',
   appearance: true, // 暗黑模式
   ignoreDeadLinks: true, // 不会因死链接而使构建失败
   lastUpdated: true, // 使用 git 提交获取时间戳，使默认主题能够显示页面的上次更新时间
