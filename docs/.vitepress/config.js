@@ -14,7 +14,7 @@ export default {
     theme: "one-dark-pro",
     linNumbers: true, // 显示行数
   },
-  outDir: "../dist",
+  // outDir: "../dist",
   // titleTemplate: '牧涯前端学习笔记', // 标题后缀
   cleanUrls: "without-subfolders", // url设置
 
