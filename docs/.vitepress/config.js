@@ -33,7 +33,7 @@ export default {
       // { icon: 'slack', link: 'https://github.com/' },
       // { icon: 'twitter', link: 'https://github.com/' },
       // { icon: 'youtube', link: 'https://github.com/' },
-      { icon: 'github', link: 'https://github.com/' },
+      { icon: 'github', link: 'https://github.com/muyaCode/FrontEndLearningNotes' },
       {
         icon: {
           svg: `<svg t="1660806015529" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1999" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
@@ -52,8 +52,7 @@ export default {
     // 右上角导航
     nav: [
       { text: "我的个人网站", link: "" },
-      { text: "掘金", link: "" },
-      { text: "Github", link: "https://github.com/muyaCode/FrontEndLearningNotes" },
+      { text: "掘金文章", link: "" },
       { text: "设置", link: "/Order/setting" },
       {
         text: "下拉选择",
