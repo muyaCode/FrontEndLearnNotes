@@ -196,6 +196,32 @@ var a = 1;
 console.log(1);
 ```
 
+#### VSCode编辑器的 ESLint 的插件：ESLint
+
+ESLint插件的配置文档（包括了版本说明和配置选项 - Settings Options）：[ESLint - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+**这里以vscode编辑器设置为例进行说明：**
+
+VSCode编辑器有两种配置，一是编辑器配置，二是项目工作区配置：
+
+**编辑器全局配置：**
+
+1. 三种打开设置方式：
+   
+   - ``文件->首选项 -> 设置 -> 搜索 ESLint`
+   
+   - `左下角设置图标 -> 设置 -> 搜索 ESLint`
+   
+   - `快捷键` ctrl+shift+p` ，然后搜索：Settings -> 选择 -> 首选项：打开设置 -> 搜索ESLint
+
+**项目工作区配置：**
+
+- 1.工作区 或 项目里新建文件夹和文件：.vscode -> settings.json
+
+- 2.然后在settings.json填写配置
+
+插件配置和.eslintrc配置文件一样
+
 #### 团队ESLint规范示例：
 
 [AlloyTeam](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAlloyTeam) 给出的 React/Vue/TypeScript 项目的渐进式 ESLint 配置（[eslint-config-alloy](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAlloyTeam%2Feslint-config-alloy)），以下贴出 React 的一小部分配置：
