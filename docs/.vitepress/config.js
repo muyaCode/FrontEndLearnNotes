@@ -53,7 +53,7 @@ export default {
     nav: [
       { text: "我的个人网站", link: "" },
       { text: "掘金", link: "" },
-      { text: "Github", link: "" },
+      { text: "Github", link: "https://github.com/muyaCode/FrontEndLearningNotes" },
       { text: "设置", link: "/Order/setting" },
       {
         text: "下拉选择",
@@ -283,6 +283,59 @@ export default {
               {
                 text: "组件发布",
                 link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/组件发布",
+              },
+            ],
+          },
+          {
+            text: "Vue3前端综合解决方案",
+            items: [
+              {
+                text: "00_setup(){}函数和script-setup语法糖",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/00_setup(){}函数和script-setup语法糖",
+              },
+              {
+                text: "01_编程规范解决方案",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_编程规范解决方案",
+              },
+              {
+                text: "02_项目架构解决方案",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/02_项目架构解决方案",
+              },
+              {
+                text: "02_项目架构之搭建登录架构方案与实现",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/02_项目架构之搭建登录架构方案与实现",
+              },
+              {
+                text: "03_项目架构之搭建Layout架构方案与实现",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/03_项目架构之搭建Layout架构方案与实现",
+              },
+              {
+                text: "04_后台项目通用功能开发",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/04_后台项目通用功能开发",
+              },
+              {
+                text: "05_UI框架解决方案Vue3+ElementPlus",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/05_UI框架解决方案Vue3+ElementPlus",
+              },
+              {
+                text: "06_角色、权限控制功能实现的解决方案",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/06_角色、权限控制功能实现的解决方案",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
               },
             ],
           },
