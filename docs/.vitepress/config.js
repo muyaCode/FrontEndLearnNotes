@@ -305,8 +305,8 @@ export default {
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_2_Prettier-前端代码格式化工具",
               },
               {
-                text: "01_3_Git规范",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_3_Git规范",
+                text: "01_3_Git代码提交规范",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_3_Git代码提交规范",
               },
               {
                 text: "01_4_Commitizen",
