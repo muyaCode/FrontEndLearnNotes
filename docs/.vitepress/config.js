@@ -293,8 +293,52 @@ export default {
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/00_setup(){}函数和script-setup语法糖",
               },
               {
-                text: "01_编程规范解决方案",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_编程规范解决方案",
+                text: "01_0_编程规范解决方案指南",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_0_编程规范解决方案指南",
+              },
+              {
+                text: "01_1_ESLint编程规范",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_1_ESLint编程规范",
+              },
+              {
+                text: "01_2_Prettier",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_2_Prettier",
+              },
+              {
+                text: "01_3_Git规范",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_3_Git规范",
+              },
+              {
+                text: "01_4_Commitizen",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_4_Commitizen",
+              },
+              {
+                text: "01_5_husky",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_5_husky",
+              },
+              {
+                text: "01_6_commitlint",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_6_commitlint",
+              },
+              {
+                text: "01_7_Pre-commit",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_7_Pre-commit",
+              },
+              {
+                text: "01_8_Lint-staged",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_8_Lint-staged",
+              },
+              {
+                text: "01_9_Svg Sprite Icon",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_9_Svg Sprite Icon",
+              },
+              {
+                text: "01_10_GitHooks",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_10_GitHooks",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
               },
               {
                 text: "02_项目架构解决方案",
@@ -319,14 +363,6 @@ export default {
               {
                 text: "06_角色、权限控制功能实现的解决方案",
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/06_角色、权限控制功能实现的解决方案",
-              },
-              {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
-              },
-              {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
               },
               {
                 text: "",

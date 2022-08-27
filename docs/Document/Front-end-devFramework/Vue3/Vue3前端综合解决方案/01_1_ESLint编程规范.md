@@ -1,8 +1,4 @@
-# 01_编程规范解决方案
-
-ESLint + Prettier + Commitizen + husky + commitlint + Pre-commit + Lint-staged + Svg Sprite Icon + GitHooks
-
-## ESLint：编程规范(代码检测工具)
+# 01_1_ESLint编程规范
 
 GitHub：[https://github.com/eslint/eslint](https://github.com/eslint/eslint)
 
@@ -122,14 +118,19 @@ const configFilenames = [
 **主要字段：**
 
 - `root` — 为 `true` 时，停止向上查找父级目录中的配置文件：表示当前目录为根目录，ESLint 规则被限制到该目录下
+
 - `env` — 指定脚本的运行环境：启用 ESLint 规则将被限制到该目录下：[语言选项 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-environments) | [语言选项 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/language-options#using-configuration-files)
+
 - extends — 配置文件扩展，就可以继承另一个配置文件的所有特征（包括规则、插件和语言选项）并修改所有选项(基础配置需要继承的配置)：[扩展配置文件](https://eslint.org/docs/latest/user-guide/configuring/configuration-files#extending-configuration-files)
+
 - `rules` — 自定义规则：需要修改的启用规则及其各自的错误级别
   
   https://cn.eslint.org/docs/rules/ | [规则 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/rules) | [规则 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/rules/)
+  
   - **rules基本配置规则：**
     
     在决定要包含哪些规则之后，您必须设置这些错误级别：
+    
     - `0` 或 `"off"` — 关闭规则
     
     - `1` 或 `"warn"`— 开启规则作为警告（不会导致程序停止运行或退出）
@@ -139,24 +140,28 @@ const configFilenames = [
     错误和警告之间的区别在于 eslint 完成时将具有的退出代码。如果发现任何错误，eslint 将以 `1` 退出代码退出，否则将以 `0` 退出。
     
     如果在生成步骤中进行 lint，这允许控制哪些规则应**破坏生成**，哪些规则应视为警告。
+
 - `plugins` — 插件配置：[语言选项 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/language-options#using-a-plugin) | [插件相关配置：包括解析器parse、处理器processor]([Plugins - ESLint - Pluggable JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/plugins))
-  -  **将 ESLint 与您喜欢的编码风格结合使用**
+  
+  - **将 ESLint 与您喜欢的编码风格结合使用**
     
     ESLint 个人并不提倡任何编码风格。您可以设置 `.eslintrc` 文件以使用您喜欢的[样式规则](https://links.jianshu.com/go?to=http%3A%2F%2Feslint.org%2Fdocs%2Frules%2F%23stylistic-issues)强制编码样式。
     
     您还可以将 ESLint 与样式指南（如 [Airbnb](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fairbnb%2Fjavascript)、[JavaScript 标准风格](https://links.jianshu.com/go?to=http%3A%2F%2Fstandardjs.com%2F)）一起使用。
     
     你还必须使用额外的插件，例如：
+    
     - Airbnb 的插件 [`eslint-config-airbnb-base`](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Feslint-config-airbnb-base)。
     - JavaScript 标准风格 [eslint-config-standard](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffeross%2Feslint-config-standard)
     - 一些流行库的插件：[Vue](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Feslint-plugin-vue) | [React](https://links.jianshu.com/go?to=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Feslint-plugin-react)
 
 - `parse` — 指定解析器：[Plugins - ESLint - Pluggable JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/plugins#specifying-parser)
+
 - `parserOptions` — 指定解析器选项：[语言选项 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-parser-options)
+
 - `globals` — 脚本在执行期间访问的额外的全局变量：[语言选项 - ESLint - 可插拔的JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-globals)
+
 - `ignorePatterns` — 忽略代码选项：[忽略代码 - ESLint - 可插拔 JavaScript Linter](https://eslint.org/docs/latest/user-guide/configuring/ignoring-code)
-
-
 
 #### ESLint CLI：
 
@@ -218,23 +223,3 @@ module.exports = {
   }
 }
 ```
-
-
-
-## Git规范：
-
-## Prettier：
-
-## Commitizen：
-
-## husky：
-
-## commitlint：
-
-## Pre-commit：
-
-## Lint-staged：
-
-## Svg Sprite Icon：
-
-## GitHooks：
