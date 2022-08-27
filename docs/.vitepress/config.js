@@ -229,6 +229,63 @@ export default {
               },
             ],
           },
+          {
+            text: "Vue常用组件开发实战",
+            items: [
+              {
+                text: "01_前置指导",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/00_前置指导",
+              },
+              {
+                text: "02_表单组件",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/01_表单组件",
+              },
+              {
+                text: "03_全局加载组件",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/02_全局加载组件",
+              },
+              {
+                text: "04_全局消息组件",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/03_全局消息组件",
+              },
+              {
+                text: "05_上传组件",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/04_上传组件",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/",
+              },
+              {
+                text: "组件发布",
+                link: "/Document/Front-end-devFramework/Vue3/Vue常用组件开发实战/组件发布",
+              },
+            ],
+          },
         ]
       },
       {
