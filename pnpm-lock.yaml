@@ -1,11 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  vitepress: ^1.0.0-alpha.11
+  vitepress: ^1.0.0-alpha.12
   vue: ^3.2.37
 
 devDependencies:
-  vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.11
+  vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.12
   vue: registry.npmmirror.com/vue/3.2.37
 
 packages:
@@ -876,10 +876,10 @@ packages:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
 
-  registry.npmmirror.com/vitepress/1.0.0-alpha.11:
-    resolution: {integrity: sha512-z1j26ELV+1EKwYyCXP1MoFLvRzDxH2rD128+detAwO/XyX3HiuVMKdpEfUDF+0HtDTXKKse58D+xvqEr20y3vA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-alpha.11.tgz}
+  registry.npmmirror.com/vitepress/1.0.0-alpha.12:
+    resolution: {integrity: sha512-++e7p9oxqk7RKz2fMNtrOAWmZSWVPozDuOG1owwntPRincC8/pIhPkJ9ojNHcHCHBylszJBsjkRqbseurZ7vCg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-alpha.12.tgz}
     name: vitepress
-    version: 1.0.0-alpha.11
+    version: 1.0.0-alpha.12
     hasBin: true
     dependencies:
       '@docsearch/css': registry.npmmirror.com/@docsearch/css/3.2.1
