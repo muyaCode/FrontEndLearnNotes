@@ -1,4 +1,4 @@
-# 00_setup(){}函数和script-setup语法糖
+# 00_setup()和scriptsetup语法糖
 
 1.setup(){} 方法写出来的数据使用过于复杂 ，最后return出来的数据导致代码太长，结构难看且难以维护
 

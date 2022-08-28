@@ -289,8 +289,8 @@ export default {
             text: "Vue3前端综合解决方案",
             items: [
               {
-                text: "00_setup(){}函数和script-setup语法糖",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/00_setup(){}函数和script-setup语法糖",
+                text: "00_setup()和scriptsetup语法糖",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/00_setup()和scriptsetup语法糖",
               },
               {
                 text: "01_0_编程规范解决方案指南",
@@ -357,8 +357,8 @@ export default {
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/04_后台项目通用功能开发",
               },
               {
-                text: "05_UI框架解决方案Vue3+ElementPlus",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/05_UI框架解决方案Vue3+ElementPlus",
+                text: "05_UI框架解决方案Vue3和ElementPlus",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/05_UI框架解决方案Vue3和ElementPlus",
               },
               {
                 text: "06_角色、权限控制功能实现的解决方案",
