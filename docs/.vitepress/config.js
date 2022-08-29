@@ -189,15 +189,19 @@ export default {
             ],
           },
           {
-            text: "其它新组合和API",
+            text: "其它新组件和API",
             items: [
               {
                 text: "01_新组件",
-                link: "/Document/Front-end-devFramework/Vue3/其它新组合和API/01_新组件",
+                link: "/Document/Front-end-devFramework/Vue3/其它新组件和API/01_新组件",
               },
               {
-                text: "02_其他新API",
-                link: "/Document/Front-end-devFramework/Vue3/其它新组合和API/02_其他新API",
+                text: "02_scriptsetup语法糖",
+                link: "/Document/Front-end-devFramework/Vue3/其它新组件和API/02_scriptsetup语法糖",
+              },
+              {
+                text: "03_其他新API",
+                link: "/Document/Front-end-devFramework/Vue3/其它新组件和API/03_其他新API",
               },
             ],
           },
@@ -208,6 +212,35 @@ export default {
                 text: "TodoList",
                 link: "/Document/Front-end-devFramework/Vue3/Vue3综合案例/TodoList",
               },
+            ],
+          },
+          {
+            text: "Vue3开发库",
+            items: [
+              {
+                text: "vueRouter",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/vueRouter",
+              },
+              {
+                text: "vuex",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/vuex",
+              },
+              {
+                text: "pinia",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/pinia",
+              },
+              {
+                text: "axios",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/axios",
+              },
+              {
+                text: "tailwindcss",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/tailwindcss",
+              },
+              // {
+              //   text: "",
+              //   link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/",
+              // },
             ],
           },
           {
