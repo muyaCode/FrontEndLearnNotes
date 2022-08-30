@@ -73,7 +73,7 @@ export default {
       {
         text: "TypeScript笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "TypeScript学习指南",
@@ -152,7 +152,7 @@ export default {
       {
         text: "Vue3学习",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Vue3快速上手",
@@ -326,54 +326,6 @@ export default {
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/00_setup()和scriptsetup语法糖",
               },
               {
-                text: "01_0_编程规范解决方案指南",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_0_编程规范解决方案指南",
-              },
-              {
-                text: "01_1_ESLint编程规范",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_1_ESLint编程规范",
-              },
-              {
-                text: "01_2_Prettier-前端代码格式化工具",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_2_Prettier-前端代码格式化工具",
-              },
-              {
-                text: "01_3_Git代码提交规范",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_3_Git代码提交规范",
-              },
-              {
-                text: "01_4_Commitizen",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_4_Commitizen",
-              },
-              {
-                text: "01_5_husky",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_5_husky",
-              },
-              {
-                text: "01_6_commitlint",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_6_commitlint",
-              },
-              {
-                text: "01_7_Pre-commit",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_7_Pre-commit",
-              },
-              {
-                text: "01_8_Lint-staged",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_8_Lint-staged",
-              },
-              {
-                text: "01_9_Svg Sprite Icon",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_9_Svg Sprite Icon",
-              },
-              {
-                text: "01_10_GitHooks",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_10_GitHooks",
-              },
-              {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
-              },
-              {
                 text: "02_项目架构解决方案",
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/02_项目架构解决方案",
               },
@@ -412,7 +364,7 @@ export default {
       {
         text: "React学习",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "React快速上手",
@@ -444,9 +396,36 @@ export default {
         ]
       },
       {
+        text: "前端综合解决方案",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始折叠
+        items: [
+          {
+            text: "00_编程规范解决方案指南",
+            link: "/Document/前端综合解决方案/00_编程规范解决方案指南",
+          },
+          {
+            text: "01_ESLint编程规范",
+            link: "/Document/前端综合解决方案/01_ESLint编程规范",
+          },
+          {
+            text: "02_Prettier-前端代码格式化工具",
+            link: "/Document/前端综合解决方案/02_Prettier-前端代码格式化工具",
+          },
+          {
+            text: "03_Git代码提交规范",
+            link: "/Document/前端综合解决方案/03_Git代码提交规范",
+          },
+          {
+            text: "05_Svg Sprite Icon",
+            link: "/Document/前端综合解决方案/05_Svg Sprite Icon",
+          },
+        ],
+      },
+      {
         text: "Git笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "Git学习指南",
@@ -469,7 +448,7 @@ export default {
       {
         text: "前端开发调试",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "JavaScript开发调试",
@@ -513,7 +492,7 @@ export default {
       {
         text: "前端工程化/自动化",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "前端工程化",
@@ -585,6 +564,31 @@ export default {
         ]
       },
       {
+        text: "性能优化专题",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+          {
+            text: "哈哈哈",
+            items: [
+              {
+                text: "",
+                link: "/",
+              },
+            ],
+          },
+        ]
+      },
+      {
         text: "技术提升和职业规划",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
@@ -596,31 +600,6 @@ export default {
           {
             text: "职业规划",
             link: "/Document/技术提升和职业规划/careerPlanning",
-          },
-        ]
-      },
-      {
-        text: "待定3",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
           },
         ]
       },
