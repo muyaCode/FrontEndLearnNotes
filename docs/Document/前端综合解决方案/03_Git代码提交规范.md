@@ -560,7 +560,7 @@ npm run prepare
 
 执行成功，则会提示
 
-![](../../../../public/img/run-prepare-success.png)
+![](../../public/img/run-prepare-success.png)
 
 **4.提交规范设置**：[Vue 3 + Vite + Eslint + prettier + husky + lint-staged 搭建基础项目](https://blog.csdn.net/Android062005/article/details/125332273)
 
