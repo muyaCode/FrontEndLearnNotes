@@ -564,27 +564,41 @@ export default {
         ]
       },
       {
-        text: "性能优化专题",
+        text: "前端性能优化专题",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "00_性能优化前置知识",
+            link: "/Document/前端性能优化专题/00_性能优化前置知识",
           },
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "01_1性能分析工具",
+            link: "/Document/前端性能优化专题/01_1性能分析工具",
+          },
+          {
+            text: "01_2前端性能优化策略",
+            link: "/Document/前端性能优化专题/01_2前端性能优化策略",
+          },
+          {
+            text: "02_项目开发阶段性能优化",
+            link: "/Document/前端性能优化专题/02_项目开发阶段性能优化",
+          },
+          {
+            text: "03_项目打包阶段性能优化",
+            link: "/Document/前端性能优化专题/03_项目打包阶段性能优化",
+          },
+          {
+            text: "04_项目上线阶段性能优化",
+            link: "/Document/前端性能优化专题/04_项目上线阶段性能优化",
+          },
+          {
+            text: "05_vue.js性能优化",
+            link: "/Document/前端性能优化专题/05_vue.js性能优化",
+          },
+          {
+            text: "",
+            link: "/Document/前端性能优化专题/",
           },
         ]
       },
