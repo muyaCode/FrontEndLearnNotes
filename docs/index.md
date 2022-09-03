@@ -8,9 +8,10 @@ hero:
   name: 前端路线基础到进阶
   text: 后浪卷前浪
   tagline: 仅供学习
-  image:
-    src: /logo.png
-    alt: logo
+  # 首页右边Logo设置
+  # image:
+  #   src: /logo.png
+  #   alt: logo
   actions:
     - theme: brand
       text: 查看笔记
