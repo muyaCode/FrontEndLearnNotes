@@ -3,7 +3,7 @@ export default {
   lang: "zh",
   title: "牡涯前端学习笔记", // 浏览器标签标题
   description: "记录前端学习过的笔记",
-  base: '/FrontEndLearningNotes/',
+  base: '/FrontEndLearnNotes/',
   appearance: true, // 暗黑模式
   ignoreDeadLinks: true, // 不会因死链接而使构建失败
   lastUpdated: true, // 使用 git 提交获取时间戳，使默认主题能够显示页面的上次更新时间
@@ -18,6 +18,17 @@ export default {
   // outDir: "../dist",
   // titleTemplate: '牧涯前端学习笔记', // 标题后缀
   cleanUrls: "without-subfolders", // url设置
+  // 浏览器标签图标设置
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: 'https://avatars.githubusercontent.com/u/48587992?v=4'
+      }
+    ]
+    // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+  ],
 
   // ***** 主题设置 *****
   themeConfig: {
