@@ -22,7 +22,7 @@ git commit -m "GitHub Action 自动部署：$time"
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # # 如果发布到 https://<USERNAME>.github.io   -f 强制推送
-git push -f git@github.com:muyaCode/FrontEndLearningNotes.git master:gh-pages
+git push -f git@github.com:muyaCode/FrontEndLearnNotes.git master:gh-pages
 
 # 退出到本项目根目录
 cd -
