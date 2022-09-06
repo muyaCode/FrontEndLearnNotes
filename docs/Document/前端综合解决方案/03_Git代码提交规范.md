@@ -528,6 +528,36 @@ Git 支持的所有钩子见下表（**加粗的为常用钩子**）：
 
 github：[typicode/husky: Git hooks made easy 🐶 woof! (github.com)](https://github.com/typicode/husky)
 
+
+
+##### [husky](https://typicode.github.io/husky/#/)有什么用？
+
+当我们**commit message**时，可以进行测试和lint操作，保证仓库里的代码是优雅的。
+当我们进行commit操作时，会触发**pre-commit**，在此阶段，可进行test和lint。其后，会触发**commit-msg**，对commit的message内容进行验证。
+
+###### pre-commit
+
+一般的lint会全局扫描，但是在此阶段，我们仅需要对暂存区的代码进行lint即可。所以使用[lint-staged](https://www.npmjs.com/package/lint-staged)插件。
+
+###### commit-msg
+
+在此阶段，可用 [**@commitlint/cli**](https://commitlint.js.org/#/) **@commitlint/config-conventional** 对提交信息进行验证。但是记信息格式规范真的太太太太麻烦了，所以可用 [**commitizen**](https://www.npmjs.com/package/commitizen) [**cz-git**](https://link.juejin.cn?target=https%3A%2F%2Fcz-git.qbb.sh%2Fzh%2Fguide%2F "https://cz-git.qbb.sh/zh/guide/") 生成提交信息。
+
+
+
+从上述说明中，可以得出husky配置的基本流程：
+
+1. 安装husky；安装lint-staged @commitlint/cli @commitlint/config-conventional commitizen cz-git
+2. 写commitlint和lint-staged的配置文件
+3. 修改package.json中的scripts和config
+4. 添加pre-commit和commit-msg钩子
+
+
+
+**命令行美化版配置：**[如何在自己的项目中一键添加husky - 掘金 (juejin.cn)](https://juejin.cn/post/7138346562677129229)
+
+
+
 **1.安裝husky钩子**
 
 ```bash
