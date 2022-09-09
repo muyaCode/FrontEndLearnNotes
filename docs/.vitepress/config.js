@@ -330,6 +330,15 @@ export default {
             ],
           },
           {
+            text: 'Vue主要的社区开发库',
+            items: [
+              {
+                text: 'Pinia状态管理库的使用',
+                link: '/Document/Front-end-devFramework/Vue3/Vue主要的社区开发库/Pinia状态管理库的使用',
+              },
+            ]
+          },
+          {
             text: "Vue3前端综合解决方案",
             items: [
               {
@@ -359,10 +368,6 @@ export default {
               {
                 text: "06_角色、权限控制功能实现的解决方案",
                 link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/06_角色、权限控制功能实现的解决方案",
-              },
-              {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/",
               },
               {
                 text: "",
@@ -430,6 +435,10 @@ export default {
           {
             text: "05_Svg Sprite Icon",
             link: "/Document/前端综合解决方案/05_Svg Sprite Icon",
+          },
+          {
+            text: "06_前端模块化",
+            link: "/Document/前端综合解决方案/06_前端模块化",
           },
         ],
       },
@@ -610,6 +619,25 @@ export default {
           {
             text: "",
             link: "/Document/前端性能优化专题/",
+          },
+        ]
+      },
+      {
+        text: "NodeJS笔记",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "Node指南",
+            link: "/Document/Node/Guide",
+          },
+          {
+            text: "Node学习",
+            link: "/Document/Node/Node学习",
+          },
+          {
+            text: "Node版本管理工具",
+            link: "/Document/Node/Node版本管理工具",
           },
         ]
       },

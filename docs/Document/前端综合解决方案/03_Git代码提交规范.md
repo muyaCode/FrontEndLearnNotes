@@ -283,9 +283,46 @@ npm init --yes
 }
 ```
 
-2.接着在项目根目录创建 `.cz-config.js` 自定义提示文件
+2.接着在项目根目录创建 `.cz-config.js` 自定义提示文件：两种格式
 
 官方提供的配置信息:[github.com](https://github.com/leoforfree/cz-customizable/blob/master/cz-config-EXAMPLE.js)
+
+```js
+'use strict'
+module.exports = {
+  types: [
+    { value: 'feat', name: '新增：新增功能、页面' },
+    { value: 'fix', name: 'bug：修复某个bug' },
+    { value: 'docs', name: '文档：修改增加文档、注释' },
+    { value: 'style', name: '格式：不影响代码运行的变动、空格、格式化等等' },
+    { value: 'ui', name: 'ui修改：布局、css样式等等' },
+    { value: 'hotfix', name: 'bug：修复线上紧急bug' },
+    { value: 'build', name: '测试：添加一个测试' },
+    { value: 'refactor', name: '重构：代码重构，未新增任何功能和修复任何bug' },
+    { value: 'revert', name: '回滚：代码回退到某个版本节点' },
+    { value: 'perf', name: '优化：提升性能、用户体验等' },
+    { value: 'ci', name: '自动化构建：对CI/CD配置文件和脚本的更改' },
+    { value: 'chore', name: '其他修改：不修改src目录或测试文件的修改' },
+    { value: 'test', name: '测试：包括单元测试、集成测试' },
+    { value: 'update', name: '更新：普通更新' }
+  ],
+  // 交互提示信息
+  messages: {
+    type: '选择一种你的提交类型：',
+    scope: '选择一个影响范围（可选）:',
+    customScope: '表示此更改的范围：',
+    subject: '短说明：\n',
+    body: '长说明，使用"|"符号换行（可选）：\n',
+    breaking: '非兼容性说明（可选）：\n',
+    footer: '关闭的issue，例如：#31, #34（可选）：\n',
+    confirmCommit: '确定提交说明?（yes/no）'
+  },
+  allowCustomScopes: true,
+  // 设置选择了那些type，才询问 breaking message
+  allowBreakingChanges: ['feat', 'fix', 'ui', 'hotfix', 'update', 'perf'],
+  subjectLimit: 100
+}
+```
 
 ```js
 // 配置选项：https://github.com/leoforfree/cz-customizable/blob/master/cz-config-EXAMPLE.js
@@ -381,7 +418,9 @@ git cz
 
 #### 3.2 git commit 规范化工具 -- commitlint
 
-##### **3.2-1 @commitlint/cli + @commitlint/config-conventional**
+##### **3.2-1 @commitlint/cli + @commitlint/config-conventional(规范)**
+
+> 如果要自定义提交规范，就不用安装`@commitlint/config-conventional`
 
 - `@commitlint`：是一个提交验证工具。原理是可以在实际的 git commit 提交到远程仓库之前使用 git 钩子来验证信息。提交不符合规则的信息将会被阻止提交到远程仓库。
   
@@ -471,7 +510,7 @@ module.exports = {
 
 上面我们就完成了commitlint的安装与提交规范的制定。
 
-##### 3.2-2. Git Hooks
+##### 3.2-2. Git Hooks + Husky钩子
 
 如果提交的描述信息不符合[Conventional Commit （约定式提交规范）](https://www.conventionalcommits.org/zh-hans/v1.0.0/)，可以使用Git Hooks阻止当前提交，并抛出对应的错误提示
 
@@ -528,8 +567,6 @@ Git 支持的所有钩子见下表（**加粗的为常用钩子**）：
 
 github：[typicode/husky: Git hooks made easy 🐶 woof! (github.com)](https://github.com/typicode/husky)
 
-
-
 ##### [husky](https://typicode.github.io/husky/#/)有什么用？
 
 当我们**commit message**时，可以进行测试和lint操作，保证仓库里的代码是优雅的。
@@ -543,8 +580,6 @@ github：[typicode/husky: Git hooks made easy 🐶 woof! (github.com)](https://g
 
 在此阶段，可用 [**@commitlint/cli**](https://commitlint.js.org/#/) **@commitlint/config-conventional** 对提交信息进行验证。但是记信息格式规范真的太太太太麻烦了，所以可用 [**commitizen**](https://www.npmjs.com/package/commitizen) [**cz-git**](https://link.juejin.cn?target=https%3A%2F%2Fcz-git.qbb.sh%2Fzh%2Fguide%2F "https://cz-git.qbb.sh/zh/guide/") 生成提交信息。
 
-
-
 从上述说明中，可以得出husky配置的基本流程：
 
 1. 安装husky；安装lint-staged @commitlint/cli @commitlint/config-conventional commitizen cz-git
@@ -552,11 +587,7 @@ github：[typicode/husky: Git hooks made easy 🐶 woof! (github.com)](https://g
 3. 修改package.json中的scripts和config
 4. 添加pre-commit和commit-msg钩子
 
-
-
 **命令行美化版配置：**[如何在自己的项目中一键添加husky - 掘金 (juejin.cn)](https://juejin.cn/post/7138346562677129229)
-
-
 
 **1.安裝husky钩子**
 

@@ -35,6 +35,8 @@ prettier是一个代码格式化工具，支持下列编程语言的代码格式
 
 prettier的配置项比较少（容易配置），且只专注于代码样式，而eslint还提供语法检查，现在的eslint也集成了formatter功能。
 
+eslint能做的显然更多更杂，prettier的出现是为了降低eslint的工作量，减少eslint的配置。
+
 prettier相比eslint支持更多文件的格式化。
 
 也支持目前市面上所有主流的编辑器：
@@ -59,14 +61,22 @@ prettier相比eslint支持更多文件的格式化。
  "prettier",
  "prettier/vue"
  ],
- "semi": false, // 结尾不用分号
+ "semi": false, // 结尾不用分号, 默认true
  "singleQuote": true, // 使用单引号代替双引号，默认false(在jsx中配置无效, 默认都是双引号)
  "trailingComma": "all" | "es5" | "none", // 多行语法中的最后一行是否添加逗号
  "printWidth": 200, // 超过最大值换行
  "htmlWhitespaceSensitivity": "ignore",
  "disableLanguages": ["vue"] // 不格式化vue文件，vue文件的格式化单独设置
  "bracketSpacing": true // 对象中的空格 默认true
- "tabWidth": 2,  // tab键的宽度
+ "tabWidth": 2,  // tab缩进大小,默认为2
+  "useTabs": false, // 使用tab缩进，默认false
+  "jsxBracketSameLine": false, // 在jsx中把'>' 是否单独放一行
+  "jsxSingleQuote": false, // 在jsx中使用单引号代替双引号
+  "proseWrap": 'preserve', // "always" - 当超出print width（上面有这个参数）时就折行 "never" - 不折行 "perserve" - 按照文件原样折行
+  "trailingComma": 'none', // 对象最后一项默认格式化会加逗号
+  "arrowParens": 'avoid', // 箭头函数参数括号 默认avoid 可选 avoid(能省略括号的时候就省略)| always(总是有括号)
+  "bracketSpacing": true, // 对象中的空格 默认true{ foo: bar } false:{foo: bar}
+  "printWidth": 100 // 一行多长，超过的会换行
 };
 ```
 
@@ -208,14 +218,16 @@ npm install --save-dev --save-exact prettier
 
 ##### 忽略不想格式化的文件
 
-创建 [.prettierignore](https://links.jianshu.com/go?to=https%3A%2F%2Fprettier.io%2Fdocs%2Fen%2Fignore.html)忽略你不希望格式化的文件，node_modules是默认会被忽略的目录。
+项目根目录创建 [.prettierignore](https://links.jianshu.com/go?to=https%3A%2F%2Fprettier.io%2Fdocs%2Fen%2Fignore.html) 文件，忽略你不希望格式化的文件，node_modules是默认会被忽略的目录。
 
 他的用法就类似于`.gitignore`，下面是官方给的例子
 
 ```bash
 # Ignore artifacts:
-build
-coverage
+node_modules
+dist
+public
+.vscode
 ```
 
 ##### 命令行执行格式化
@@ -237,10 +249,44 @@ npx prettier --check .
 ### 解决 prettier插件 和 eslint 的冲突
 
 - 安装 [eslint-config-prettier](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fprettier%2Feslint-config-prettier%23installation)，这个插件会把eslint中可能导致冲突的规则关掉
+  
+  - ```shell
+    yarn add --dev eslint-config-prettier eslint-plugin-prettier
+    ```
+  
+  - `eslint-config-prettier`：是一个eslint配置，把eslint里所有和prettier冲突的配置都关闭，需要在`.eslintrc.*`文件里加下extends的选项（**要放最底下**，这样才能进行全面覆盖）：
+  
+  - ```json
+    // .eslintrc.*
+    
+    {
+      // ...其他配置
+      extends: [
+          'eslint:recommended',
+          'pluin:vue/essential',
+          'plugin:prettier/recommended'
+      ],
+      // ...
+    }
+    
+    
+    // 上面plugin:prettier/recommended的原子配置
+    {
+      "extends": ["prettier"],        // 生效 eslint-config-prettier 屏蔽配置
+      "plugins": ["prettier"],        // 生效 eslint-plugin-prettier 提示配置
+      "rules": {
+        "prettier/prettier": "error",   // prettier报错的级别，红色波浪线
+        "arrow-body-style": "off",      // 冲突无法解决，直接关闭
+        "prefer-arrow-callback": "off"  // 冲突无法解决，直接关闭
+      }
+    }
+    ```
+  
+  - `eslint-plugin-prettier`：eslint的插件，可以让eslint用prettier的配置来进行**错误提示**，如下图所示，只要提示框中有`eslint(prettier/prettier)` 就说明这个插件生效了。
+  
+  - ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7143f3a262e41a78e59ad7070a4ec9d~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
 - 或者在.eslintrc.js里面的rules选项配置：`"space-before-function-paren": "off"`，然后重启项目
-
-
 
 ### git hooks
 
