@@ -414,7 +414,7 @@ export default {
       {
         text: "前端综合解决方案",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "00_编程规范解决方案指南",
@@ -569,7 +569,7 @@ export default {
               },
               {
                 text: "babel",
-                link: "/Document/Project-Engineering/PackToBuild/yeoman",
+                link: "/Document/Project-Engineering/PackToBuild/babel",
               },
               {
                 text: "Rollup",
@@ -590,7 +590,7 @@ export default {
       {
         text: "前端性能优化专题",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "00_性能优化前置知识",
