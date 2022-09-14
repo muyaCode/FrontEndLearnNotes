@@ -1,5 +1,42 @@
 # Pinia状态管理库的使用
 
+### 网站相关：
+
+GitHub：[vuejs/pinia: 🍍 ](https://github.com/vuejs/pinia)
+
+官网：[Home | Pinia (vuejs.org)](https://pinia.vuejs.org/)
+
+中文网：[Home | Pinia 中文文档 (web3doc.top)](https://pinia.web3doc.top/)
+
+
+
+其他文章：
+
+[2k字轻松入门Pinia - 掘金](https://juejin.cn/post/7139724486625984543)
+[大菠萝？Pinia已经来了，再不学你就out了 - 掘金 (juejin.cn)](https://juejin.cn/post/7078281612013764616)
+
+[新一代状态管理工具，Pinia.js 上手指南 - 掘金 (juejin.cn)](https://juejin.cn/post/7049196967770980389)
+
+[Pinia进阶：优雅的setup（函数式）写法+封装到你的企业项目 - 掘金 (juejin.cn)](https://juejin.cn/post/7057439040911441957)
+
+[2022年了，懂vue3的也该学一波pinia了 - 掘金 (juejin.cn)](https://juejin.cn/post/7123488184930926623)
+
+[Vue新一代状态管理工具——Pinia - 掘金 (juejin.cn)](https://juejin.cn/post/7119832691339444255)
+
+[比vuex香的🍍pinia最快速入门指南 - 掘金 (juejin.cn)](https://juejin.cn/post/7134968684342165512)
+
+[一文解析Pinia和Vuex，带你全面理解这两个Vue状态管理模式 - 掘金 (juejin.cn)](https://juejin.cn/post/7121209657678364685)
+
+[我把vue3项目中的vuex去除了，改用 pinia - 掘金 (juejin.cn)](https://juejin.cn/post/7068113574043844622)
+
+[上手 Vue 新的状态管理 Pinia，一篇文章就够了 - 掘金 (juejin.cn)](https://juejin.cn/post/7075491793642455077)
+
+[Vue3.2 setup语法糖、Composition API、状态库Pinia归纳总结 - 掘金 (juejin.cn)](https://juejin.cn/post/7006108454028836895)
+
+[可爱又简洁轻量的Pinia，你确定不使用吗？ - 掘金 (juejin.cn)](https://juejin.cn/post/7054481067297734693)
+
+---
+
 ### 基本特点
 
 `Pinia`同样是一个Vue的状态管理工具，在`Vuex`的基础上提出了一些改进。与vuex相比，`Pinia` 最大的特点是：简便。
@@ -327,5 +364,3 @@ export default defineComponent({
 ### 三. 总结
 
 与 [Vuex](https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%22%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%22%EF%BC%9F) 相比，[Pinia](https://pinia.web3doc.top/core-concepts/) 提供了一个更简单的 API，具有更少的操作，提供`Composition API`，最重要的是，在与`TypeScript`一起使用时具有可靠的类型推断支持，如果你正在开发一个新项目并且使用了`TypeScript`，可以尝试一下`pinia`，相信不会让你失望。
-
-
