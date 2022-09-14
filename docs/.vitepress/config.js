@@ -444,6 +444,23 @@ export default {
             text: "07_其他前端解决方案",
             link: "/Document/前端综合解决方案/07_其他前端解决方案",
           },
+          {
+            text: "08_npm script",
+            link: "/Document/前端综合解决方案/08_npm scrip",
+          },
+          {
+            text: "09_Web Components组件",
+            link: "/Document/前端综合解决方案/09_Web Components组件",
+          },
+          {
+            text: "",
+            link: "/Document/前端综合解决方案/",
+          },
+          {
+            text: "",
+            link: "/Document/前端综合解决方案/",
+          },
+          
         ],
       },
       {
