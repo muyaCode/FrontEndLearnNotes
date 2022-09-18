@@ -72,14 +72,14 @@ export default {
     nav: [
       { text: "我的个人网站", link: "" },
       { text: "掘金文章", link: "" },
-      { text: "设置", link: "/Order/setting" },
+      { text: "设置", link: "/order/setting" },
       {
         text: "下拉选择",
         items: [
-          { text: "选择1", link: "/Order/items/item1" },
-          { text: "选择2", link: "/Order/items/item2" },
-          { text: "选择3", link: "/Order/items/item3" },
-          { text: "选择4", link: "/Order/items/item4" },
+          { text: "选择1", link: "/order/items/item1" },
+          { text: "选择2", link: "/order/items/item2" },
+          { text: "选择3", link: "/order/items/item3" },
+          { text: "选择4", link: "/order/items/item4" },
         ],
       },
     ],
@@ -87,7 +87,7 @@ export default {
     sidebar: [
       {
         text: "学习指南",
-        items: [{ text: "学习指南", link: "/Order/study_guide" }],
+        items: [{ text: "学习指南", link: "/order/study_guide" }],
       },
       {
         text: "TypeScript笔记",
