@@ -671,6 +671,25 @@ export default {
         ]
       },
       {
+        text: "Electron笔记",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "Electron学习指南",
+            link: "/Document/Electron/Guide",
+          },
+          {
+            text: "Electron入门",
+            link: "/Document/Electron/Electron入门",
+          },
+          {
+            text: "Electron相关技巧",
+            link: "/Document/Electron/Electron相关技巧",
+          },
+        ]
+      },
+      {
         text: "技术提升和职业规划",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
