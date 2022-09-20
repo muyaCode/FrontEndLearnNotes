@@ -461,8 +461,8 @@ export default {
             link: "/Document/前端综合解决方案/09_Web Components组件",
           },
           {
-            text: "",
-            link: "/Document/前端综合解决方案/",
+            text: "10_前端基建",
+            link: "/Document/前端综合解决方案/10_前端基建",
           },
           {
             text: "",
