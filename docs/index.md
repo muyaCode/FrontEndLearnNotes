@@ -15,7 +15,7 @@ hero:
   actions:
     - theme: brand
       text: 查看笔记
-      link: /Order/study_guide
+      link: /order/study_guide
     - theme: alt
       text: 在 GitHub 上查看
       link: https://github.com/muyaCode/FrontEndLearningNotes
