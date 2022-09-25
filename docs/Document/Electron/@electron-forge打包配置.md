@@ -14,13 +14,17 @@
 
 ---
 
-##### electron-builder命令行参数（CLI）
+##### electron-forge命令行参数（CLI）
 
-对对对
+Commands(命令):
+
+```bash
+
+```
 
 ---
 
-##### package.json 的 “”： {} 打包配置
+##### 在package.json 中添加electron-forge打包配置： "config": { "forge": {} } ：
 
 ```json
 
