@@ -28,3 +28,11 @@ git push -f git@github.com:muyaCode/FrontEndLearnNotes.git master:gh-pages
 cd -
 # 删除 打包成的dist文件目录
 rm -rf docs/.vitepress/dist
+
+# echo "仓库地址：https://github.com/muyaCode/FrontEndLearnNotes"
+# echo "文档地址：https://muyacode.github.io/FrontEndLearnNotes/"
+
+# 格式化输出带颜色配置：https://www.shuzhiduo.com/A/D854N3mVzE/
+echo -e "仓库地址：\033[44;37m https://github.com/muyaCode/FrontEndLearnNotes \033[0m"
+echo -e "文档地址：\033[47;30m https://muyacode.github.io/FrontEndLearnNotes/ \033[0m"
+
