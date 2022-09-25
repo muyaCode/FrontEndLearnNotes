@@ -11,3 +11,7 @@ Electron官方Github：<https://github.com/electron/electron>
 Electron官方文档：<https://www.electronjs.org/>
 
 Electron 社区：<https://www.electronjs.org/zh/community/>
+
+---
+
+使用electron开发的桌面端工具，不用担心HTML、CSS、JavaScript的浏览器兼容性的问题，根据内核版本，尽管使用最新语法

@@ -687,6 +687,18 @@ export default {
             text: "Electron相关技巧",
             link: "/Document/Electron/Electron相关技巧",
           },
+          {
+            text: "electron-builder打包配置",
+            link: "/Document/Electron/electron-builder打包配置",
+          },
+          {
+            text: "@electron-forge打包配置",
+            link: "/Document/Electron/@electron-forge打包配置",
+          },
+          {
+            text: "Electron打包遇见问题及解决",
+            link: "/Document/Electron/Electron打包遇见问题及解决",
+          },
         ]
       },
       {
