@@ -699,6 +699,10 @@ export default {
             text: "Electron打包遇见问题及解决",
             link: "/Document/Electron/Electron打包遇见问题及解决",
           },
+          {
+            text: "Electron项目打包优化配置",
+            link: "/Document/Electron/Electron项目打包优化配置",
+          },
         ]
       },
       {
