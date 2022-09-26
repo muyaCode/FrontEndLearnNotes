@@ -688,8 +688,16 @@ export default {
             link: "/Document/Electron/Electron相关技巧",
           },
           {
+            text: "Electron库",
+            link: "/Document/Electron/Electron库",
+          },
+          {
             text: "electron-builder打包配置",
             link: "/Document/Electron/electron-builder打包配置",
+          },
+          {
+            text: "electron-packager打包配置",
+            link: "/Document/Electron/electron-packager打包配置",
           },
           {
             text: "@electron-forge打包配置",

@@ -1,8 +1,10 @@
 # Electron相关技巧
 
+###### electron小技巧整理：
 
+[笔记｜electron小技巧整理，总有一款适合你 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/503375804)
 
-###### electron小技巧整理：[笔记｜electron小技巧整理，总有一款适合你 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/503375804)
+[electron 应用开发优秀实践 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/549734690)
 
 ## 开发环境：热更新
 
