@@ -620,8 +620,8 @@ export default {
             link: "/Document/Bash Shell脚本笔记/Bash 脚本教程",
           },
           {
-            text: "",
-            link: "/Document/Bash Shell脚本笔记/",
+            text: "命令行工具",
+            link: "/Document/Bash Shell脚本笔记/命令行工具",
           },
           {
             text: "",
