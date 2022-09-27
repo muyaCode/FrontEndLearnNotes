@@ -90,6 +90,65 @@ export default {
         items: [{ text: "学习指南", link: "/order/study_guide" }],
       },
       {
+        text: "HTML标签记录",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始不折叠
+        items: [
+          {
+
+          }
+        ],
+      },
+      {
+        text: "CSS基础和进阶总结",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始不折叠
+        items: [
+          {
+            text: "CSS基础总结",
+            link: "/Document/CSS/CSS基础总结",
+          },
+          {
+            text: "CSS高级",
+            link: "/Document/CSS/CSS高级",
+          },
+          {
+            text: "CSS动画",
+            link: "/Document/CSS/CSS动画",
+          },
+          {
+            text: "CSS变量",
+            link: "/Document/CSS/CSS变量",
+          },
+          {
+            text: "CSS模块化方案",
+            link: "/Document/CSS/CSS模块化方案",
+          },
+          {
+            text: "CSS预处理器",
+            link: "/Document/CSS/CSS预处理器",
+          },
+          {
+            text: "CSS工具",
+            link: "/Document/CSS/CSS工具",
+          },
+          {
+            text: "",
+            link: "/Document/CSS/CSS",
+          },
+        ],
+      },
+      {
+        text: "JavaScript笔记",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始不折叠
+        items: [
+          {
+            
+          }
+        ],
+      },
+      {
         text: "TypeScript笔记",
         collapsible: true, // 可折叠
         collapsed: true, // 初始不折叠
@@ -712,6 +771,17 @@ export default {
             link: "/Document/Electron/Electron项目打包优化配置",
           },
         ]
+      },
+      {
+        text: "Elasticsearch",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "全文搜索引擎 Elasticsearch 入门教程",
+            link: "/Document/Elasticsearch/全文搜索引擎Elasticsearch入门教程.md",
+          },
+        ],
       },
       {
         text: "技术提升和职业规划",
