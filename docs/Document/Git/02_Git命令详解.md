@@ -1,4 +1,5 @@
 # 02_Git命令详解
+git bisect 命令教程：https://www.ruanyifeng.com/blog/2018/12/git-bisect.html
 
 branch管理
 

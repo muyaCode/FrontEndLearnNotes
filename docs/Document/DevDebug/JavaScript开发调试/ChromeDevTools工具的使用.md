@@ -1,5 +1,7 @@
 # Chrome DevTools 工具的使用：笔记待整理：看语雀《学习笔记》
 
+如何看懂性能调试的火焰图：https://www.ruanyifeng.com/blog/2017/09/flame-graph.html
+Node 调试工具入门教程：https://www.ruanyifeng.com/blog/2019/12/git-undo.html
 
 ### 1. Chrome Devtools 的用处
 

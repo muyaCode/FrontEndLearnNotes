@@ -100,6 +100,21 @@ export default {
         ],
       },
       {
+        text: "前端环境配置",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始不折叠
+        items: [
+          {
+            text: "学习指南",
+            link: "/Document/ToolEnvConfig/Guide",
+          },
+          {
+            text: "前端工具环境配置",
+            link: "/Document/ToolEnvConfig/前端工具环境配置",
+          },
+        ],
+      },
+      {
         text: "CSS基础和进阶总结",
         collapsible: true, // 可折叠
         collapsed: true, // 初始不折叠
@@ -554,6 +569,67 @@ export default {
         ]
       },
       {
+        text: "GitBook",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始折叠
+        items: [
+          {
+            text: "GitBook制作电子书",
+            link: "/Document/GitBook/GitBook制作电子书",
+          }
+        ]
+      },
+      {
+        text: "GitHub的使用",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始折叠
+        items: [
+          {
+            text: "GitHub快速入门",
+            link: "/Document/GitHub的使用/GitHub快速入门",
+          },
+          {
+            text: "在GitHub精准搜索和寻找项目",
+            link: "/Document/GitHub的使用/在GitHub精准搜索和寻找项目",
+          },
+          {
+            text: "GitHub加速",
+            link: "/Document/GitHub的使用/GitHub加速",
+          },
+          {
+            text: "GitHub仓库实用技巧",
+            link: "/Document/GitHub的使用/GitHub仓库实用技巧",
+          },
+          {
+            text: "",
+            link: "/Document/GitHub的使用/",
+          },
+          {
+            text: "GitHub仓库辅助工具",
+            link: "/Document/GitHub的使用/GitHub仓库辅助工具",
+          },
+        ]
+      },
+      {
+        text: "Bash Shell脚本笔记",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始折叠
+        items: [
+          {
+            text: "Bash 脚本教程",
+            link: "/Document/Bash Shell脚本笔记/Bash 脚本教程",
+          },
+          {
+            text: "",
+            link: "/Document/Bash Shell脚本笔记/",
+          },
+          {
+            text: "",
+            link: "/Document/Bash Shell脚本笔记/",
+          },
+        ]
+      },
+      {
         text: "前端开发调试",
         collapsible: true, // 可折叠
         collapsed: true, // 初始折叠
@@ -595,6 +671,10 @@ export default {
             text: "其他调试工具",
             link: "/Document/DevDebug/其他调试工具",
           },
+          {
+            text: "移动端开发调试",
+            link: "/Document/DevDebug/移动端开发调试",
+          },
         ]
       },
       {
@@ -606,8 +686,28 @@ export default {
             text: "前端工程化",
             items: [
               {
+                text: "学习指导",
+                link: "/Document/Project-Engineering/前端工程化/学习指导",
+              },
+              {
                 text: "前端工程化",
-                link: "/Document/Project-Engineering/前端工程化-自动化/前端工程化",
+                link: "/Document/Project-Engineering/前端工程化/前端工程化",
+              },
+              {
+                text: "单元测试",
+                link: "/Document/Project-Engineering/前端工程化/单元测试",
+              },
+              {
+                text: "功能测试",
+                link: "/Document/Project-Engineering/前端工程化/功能测试",
+              },
+              {
+                text: "静态代码检查",
+                link: "/Document/Project-Engineering/前端工程化/静态代码检查",
+              },
+              {
+                text: "",
+                link: "/Document/Project-Engineering/前端工程化/",
               },
             ],
           },
@@ -615,8 +715,24 @@ export default {
             text: "前端自动化",
             items: [
               {
+                text: "学习指导",
+                link: "/Document/Project-Engineering/前端自动化/学习指导",
+              },
+              {
                 text: "前端自动化",
-                link: "/Document/Project-Engineering/前端工程化-自动化/前端自动化",
+                link: "/Document/Project-Engineering/前端自动化/前端自动化",
+              },
+              {
+                text: "持续集成",
+                link: "/Document/Project-Engineering/前端自动化/持续集成",
+              },
+              {
+                text: "GitHub Actions",
+                link: "/Document/Project-Engineering/前端自动化/GitHub Actions",
+              },
+              {
+                text: "持续集成服务Travis CI",
+                link: "/Document/Project-Engineering/前端自动化/持续集成服务Travis CI",
               },
             ],
           },
@@ -713,7 +829,7 @@ export default {
       {
         text: "NodeJS笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Node指南",
@@ -727,12 +843,16 @@ export default {
             text: "Node版本管理工具",
             link: "/Document/Node/Node版本管理工具",
           },
+          {
+            text: "npm scripts 使用指南",
+            link: "/Document/Node/npm scripts 使用指南",
+          },
         ]
       },
       {
         text: "Electron笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Electron学习指南",
@@ -775,7 +895,7 @@ export default {
       {
         text: "Elasticsearch",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "全文搜索引擎 Elasticsearch 入门教程",
@@ -799,27 +919,17 @@ export default {
         ]
       },
       {
-        text: "待定4",
+        text: "开源相关",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "使用Issue管理软件项目",
+            link: "/Document/开源相关/使用Issue管理软件项目",
           },
           {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
+            text: "代码开源协议",
+            link: "/Document/开源相关/代码开源协议",
           },
         ]
       },
@@ -847,207 +957,7 @@ export default {
             ],
           },
         ]
-      },
-      {
-        text: "待定6",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定7",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定8",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定9",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定10",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定11",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定12",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
-      {
-        text: "待定13",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-          {
-            text: "哈哈哈",
-            items: [
-              {
-                text: "",
-                link: "/",
-              },
-            ],
-          },
-        ]
-      },
+      }
     ],
     
     // 首页页脚配置。您可以添加消息和版权。仅当页面由于设计原因不包含边栏时，才会显示页脚。
