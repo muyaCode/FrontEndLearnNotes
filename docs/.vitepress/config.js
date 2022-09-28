@@ -159,9 +159,32 @@ export default {
         collapsed: true, // 初始不折叠
         items: [
           {
-            
-          }
-        ],
+            text: "Canvas学习",
+            items: [
+              {
+                text: "Canvas学习指南",
+                link: "/Document/JavaScript笔记/Canvas/Guide",
+              },
+              {
+                text: "Canvas入门",
+                link: "/Document/JavaScript笔记/Canvas/Canvas入门",
+              },
+            ]
+          },
+          {
+            text: "JavaScript高级学习指南",
+            items: [
+              {
+                text: "JavaScript高级学习指南",
+                link: "/Document/JavaScript笔记/JavaScript高级/Guide",
+              },
+              {
+                text: "JavaScript高级",
+                link: "/Document/JavaScript笔记/JavaScript高级/JavaScript高级",
+              },
+            ]
+          },
+        ]
       },
       {
         text: "TypeScript笔记",
