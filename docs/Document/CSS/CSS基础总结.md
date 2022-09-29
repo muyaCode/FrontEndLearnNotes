@@ -1,6 +1,6 @@
 # CSS基础总结
 
-# 学习文档：https://juejin.cn/collection/6845244366366179341
+学习文档：https://juejin.cn/collection/6845244366366179341
 
 codepen固定的代码：https://codepen.io/following
 
