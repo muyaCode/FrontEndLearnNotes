@@ -24,7 +24,7 @@ npm i wait-on -D
 
 所以我们只需要在主进程中加载dev服务中的页面作为渲染进程就可以了。 修改一下主进程 main.js
 
-```js
+```js {1,4,6-8}
     ...
     const createWindow = () => {
       // Create the browser window.

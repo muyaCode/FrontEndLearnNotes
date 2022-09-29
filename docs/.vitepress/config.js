@@ -13,7 +13,7 @@ export default {
     // 主题预览：https://vscodethemes.com/
     // 添加自定义的主题(加载主题)：https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
     theme: "one-dark-pro",
-    linNumbers: true, // 显示行数
+    lineNumbers: true, // 显示代码行数
   },
   // outDir: "../dist",
   // titleTemplate: '牧涯前端学习笔记', // 标题后缀
@@ -92,7 +92,7 @@ export default {
       {
         text: "HTML标签记录",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
 
@@ -102,7 +102,7 @@ export default {
       {
         text: "前端环境配置",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "学习指南",
@@ -117,7 +117,7 @@ export default {
       {
         text: "CSS基础和进阶总结",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "CSS基础总结",
@@ -156,7 +156,7 @@ export default {
       {
         text: "JavaScript笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "Canvas学习",
@@ -189,7 +189,7 @@ export default {
       {
         text: "TypeScript笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "TypeScript学习指南",
@@ -268,7 +268,7 @@ export default {
       {
         text: "Vue3学习",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "Vue3快速上手",
@@ -485,7 +485,7 @@ export default {
       {
         text: "React学习",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "React快速上手",
@@ -519,7 +519,7 @@ export default {
       {
         text: "前端综合解决方案",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "00_编程规范解决方案指南",
@@ -571,7 +571,7 @@ export default {
       {
         text: "Git笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "Git学习指南",
@@ -594,7 +594,7 @@ export default {
       {
         text: "GitBook",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "GitBook制作电子书",
@@ -605,7 +605,7 @@ export default {
       {
         text: "GitHub的使用",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "GitHub快速入门",
@@ -636,7 +636,7 @@ export default {
       {
         text: "Bash Shell脚本笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "Bash 脚本教程",
@@ -655,7 +655,7 @@ export default {
       {
         text: "前端开发调试",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "JavaScript开发调试",
@@ -703,7 +703,7 @@ export default {
       {
         text: "前端工程化/自动化",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始折叠
+        collapsed: false, // 初始折叠
         items: [
           {
             text: "前端工程化",
@@ -813,7 +813,7 @@ export default {
       {
         text: "前端性能优化专题",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "00_性能优化前置知识",
@@ -852,7 +852,7 @@ export default {
       {
         text: "NodeJS笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "Node指南",
@@ -875,7 +875,7 @@ export default {
       {
         text: "Electron笔记",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "Electron学习指南",
@@ -918,7 +918,7 @@ export default {
       {
         text: "Elasticsearch",
         collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
+        collapsed: false, // 初始不折叠
         items: [
           {
             text: "全文搜索引擎 Elasticsearch 入门教程",
