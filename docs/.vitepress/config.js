@@ -480,6 +480,15 @@ export default {
               },
             ],
           },
+          {
+            text: 'Vue3源码学习指导',
+            items: [
+              {
+                text: 'Vue3源码学习指导',
+                link: '/Document/Front-end-devFramework/Vue3/Vue3源码解析/Vue3源码学习指导',
+              },
+            ]
+          },
         ]
       },
       {
