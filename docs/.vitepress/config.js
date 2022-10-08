@@ -136,6 +136,10 @@ export default {
             link: "/Document/CSS/CSS变量",
           },
           {
+            text: "CSS开发技巧",
+            link: "/Document/CSS/CSS开发技巧",
+          },
+          {
             text: "CSS模块化方案",
             link: "/Document/CSS/CSS模块化方案",
           },
