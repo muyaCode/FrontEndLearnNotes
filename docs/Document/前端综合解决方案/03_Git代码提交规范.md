@@ -406,7 +406,7 @@ git cz
 
 提交流程展示：
 
-![git-cz](https://img2018.cnblogs.com/blog/1756063/201911/1756063-20191112091952059-1515554069.gif)
+![git-cz](./img/git-cz-demo.gif)
 
 执行`git cz`c进入interactive模式，根据提示依次填写blog
 
@@ -783,11 +783,11 @@ F:\accesscontrol\access_control>
 
 至此，git commit的大概的执行过程
 
-![](https://pic4.zhimg.com/80/v2-426743509423ab2819753deba9fbfa7b_720w.jpg)
+![](./img/7b_720w.jpg)
 
 或者简化版
 
-![](https://pic4.zhimg.com/80/v2-a960da7b7bf20f2d51e8b623de59879f_720w.jpg)
+![](./img/9f_720w.jpg)
 
 **5、最后总结过程中遇到一些问题** git commit后可能报错相关‘regenerator-runtime’模块找不到；解决方式：npm install regenerator-runtime –save。
 git commit -m “messge”,用双引号
