@@ -339,7 +339,7 @@ export default {
             items: [
               {
                 text: "vueRouter",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/vueRouter",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3开发库/vue-router",
               },
               {
                 text: "vuex",
