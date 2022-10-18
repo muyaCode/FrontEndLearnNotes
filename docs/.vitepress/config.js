@@ -90,16 +90,6 @@ export default {
         items: [{ text: "学习指南", link: "/order/study_guide" }],
       },
       {
-        text: "HTML标签记录",
-        collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
-        items: [
-          {
-
-          }
-        ],
-      },
-      {
         text: "前端环境配置",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
@@ -112,6 +102,16 @@ export default {
             text: "前端工具环境配置",
             link: "/Document/ToolEnvConfig/前端工具环境配置",
           },
+        ],
+      },
+      {
+        text: "HTML标签记录",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+
+          }
         ],
       },
       {
@@ -882,6 +882,33 @@ export default {
           {
             text: "npm scripts 使用指南",
             link: "/Document/Node/npm scripts 使用指南",
+          },
+        ]
+      },
+      {
+        text: "Node后端框架开发",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "Express框架",
+            link: "/Document/Node后端框架开发/Express框架",
+          },
+          {
+            text: "Koa框架",
+            link: "/Document/Node后端框架开发/Koa框架",
+          },
+          {
+            text: "Nest框架",
+            link: "/Document/Node后端框架开发/Nest框架",
+          },
+          {
+            text: "EggJs框架",
+            link: "/Document/Node后端框架开发/EggJs框架",
+          },
+          {
+            text: "Fastify框架",
+            link: "/Document/Node后端框架开发/Fastify框架",
           },
         ]
       },
