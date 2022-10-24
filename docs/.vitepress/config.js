@@ -275,6 +275,10 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
+            text: "Vue3学习指导",
+            link: "/Document/Front-end-devFramework/Vue3/Guide",
+          },
+          {
             text: "Vue3快速上手",
             items: [
               {
@@ -373,6 +377,27 @@ export default {
             ],
           },
           {
+            text: "Vue测试",
+            items: [
+              {
+                text: "Vue项目测试学习指南",
+                link: "/Document/Front-end-devFramework/Vue3/Vue测试/Vue项目测试学习指南",
+              },
+              {
+                text: "单元测试",
+                link: "/Document/Front-end-devFramework/Vue3/Vue测试/单元测试",
+              },
+              {
+                text: "组件测试",
+                link: "/Document/Front-end-devFramework/Vue3/Vue测试/组件测试",
+              },
+              {
+                text: "端到端测试",
+                link: "/Document/Front-end-devFramework/Vue3/Vue测试/端到端测试",
+              },
+            ],
+          },
+          {
             text: "搭建在线文档网站",
             items: [
               {
@@ -456,7 +481,7 @@ export default {
               },
               {
                 text: "02_项目架构解决方案",
-                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/02_项目架构解决方案",
+                link: "/Document/Front-end-devFramework/Vue3/Vue3前端综合解决方案/01_项目架构解决方案",
               },
               {
                 text: "02_项目架构之搭建登录架构方案与实现",
