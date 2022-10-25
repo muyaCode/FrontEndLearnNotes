@@ -110,8 +110,13 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
-
-          }
+            text: "HTML学习指导",
+            link: "/Document/HTML/Guide",
+          },
+          {
+            text: "HTML标签",
+            link: "/Document/HTML/HTML标签",
+          },
         ],
       },
       {
