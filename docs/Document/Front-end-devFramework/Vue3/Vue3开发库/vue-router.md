@@ -246,7 +246,7 @@ export default new Router({
 ```
 
 **hash模式下，url可能为以下形式：**  
-http://localhost:8080/index.html#/book?bookid=1
+```http://localhost:8080/index.html#/book?bookid=1```
 
 **hash模式原理实现**
 
@@ -285,7 +285,7 @@ export default new Router({
 ```
 
 **history模式，url会如下面所示：**  
-http://localhost:8080/book/1
+```http://localhost:8080/book/1```
 
 **history模式原理实现：**
 
