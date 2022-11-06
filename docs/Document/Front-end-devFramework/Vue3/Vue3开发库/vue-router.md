@@ -36,69 +36,69 @@ router.beforeEach((to, from, next) => {})
 
 ```js
 router.beforeEach(async (to, from, next) => {
-	NProgress.start();
-	const token = store.state.token || sessionStorage.getItem("token");
-	if (token) {
-		if (to.path === "/login") {
-			next("/information");
-			NProgress.done();
-		} else {
-			const hasRoles = store.state.permissionRoutes && store.state.permissionRoutes.length;
-			if (hasRoles) {
-				next();
-			} else {
-				// 获取用户的角色
-				let admins = await absApi.getAdmin();
-				if (admins.code === 0) {
-					const { authorities } = admins.data;
-					store.mutations.setUser(admins.data);
-					const roles = authorities.map((auth) => auth.authorityCode);
-					store.mutations.setRoles(roles);
-					// 获取角色的路由权限
-					const permissionRoutes = permissionUtils.generateRoutes(roles);
-					// 目前只有SYSTEM_ADMIN账号才有数据查看的权限
-					if (roles.includes("SYSTEM_ADMIN") || roles.includes("COUNTY_ADMIN")) {
-						permissionRoutes[0].redirect = "/dashboard";
-					} else if (roles.includes("INSURANCE_COMPANY")) {
-						permissionRoutes[0].redirect = "/insurance";
-					} else {
-						permissionRoutes[0].redirect = "/information";
-					}
-					// 添加路由
-					router.addRoutes([
-						{
-							path: "*",
-							component: Layout,
-							redirect: "/404",
-							meta: { name: "首页" },
-							children: [
-								{
-									path: "/404",
-									meta: { name: "404" },
-									component: () => import("@/views/error/404"),
-								},
-							],
-						},
-						...permissionRoutes,
-					]);
-					store.mutations.setPermissionRoutes(permissionRoutes);
-					next({ ...to });
-				} else {
-					store.mutations.clearStoreData();
-					next("/login");
-					NProgress.done();
-				}
-			}
-		}
-	} else {
-		if (whiteRoutes.includes(to.path)) {
-			next();
-		} else {
-			store.mutations.clearStoreData();
-			next("/login");
-			NProgress.done();
-		}
-	}
+    NProgress.start();
+    const token = store.state.token || sessionStorage.getItem("token");
+    if (token) {
+        if (to.path === "/login") {
+            next("/information");
+            NProgress.done();
+        } else {
+            const hasRoles = store.state.permissionRoutes && store.state.permissionRoutes.length;
+            if (hasRoles) {
+                next();
+            } else {
+                // 获取用户的角色
+                let admins = await absApi.getAdmin();
+                if (admins.code === 0) {
+                    const { authorities } = admins.data;
+                    store.mutations.setUser(admins.data);
+                    const roles = authorities.map((auth) => auth.authorityCode);
+                    store.mutations.setRoles(roles);
+                    // 获取角色的路由权限
+                    const permissionRoutes = permissionUtils.generateRoutes(roles);
+                    // 目前只有SYSTEM_ADMIN账号才有数据查看的权限
+                    if (roles.includes("SYSTEM_ADMIN") || roles.includes("COUNTY_ADMIN")) {
+                        permissionRoutes[0].redirect = "/dashboard";
+                    } else if (roles.includes("INSURANCE_COMPANY")) {
+                        permissionRoutes[0].redirect = "/insurance";
+                    } else {
+                        permissionRoutes[0].redirect = "/information";
+                    }
+                    // 添加路由
+                    router.addRoutes([
+                        {
+                            path: "*",
+                            component: Layout,
+                            redirect: "/404",
+                            meta: { name: "首页" },
+                            children: [
+                                {
+                                    path: "/404",
+                                    meta: { name: "404" },
+                                    component: () => import("@/views/error/404"),
+                                },
+                            ],
+                        },
+                        ...permissionRoutes,
+                    ]);
+                    store.mutations.setPermissionRoutes(permissionRoutes);
+                    next({ ...to });
+                } else {
+                    store.mutations.clearStoreData();
+                    next("/login");
+                    NProgress.done();
+                }
+            }
+        }
+    } else {
+        if (whiteRoutes.includes(to.path)) {
+            next();
+        } else {
+            store.mutations.clearStoreData();
+            next("/login");
+            NProgress.done();
+        }
+    }
 });
 ```
 
@@ -156,7 +156,7 @@ router.afterEach((to, from, failure) => {
 
 ```js
 router.afterEach(() => {
-	NProgress.done();
+    NProgress.done();
 });
 ```
 
@@ -174,38 +174,7 @@ router.afterEach(() => {
 
 ---
 
-##### vue2的源码调试解析：
-
-在vue.config.js里面设置
-
-```js
-// 基于vue-cli创建的vue3项目
-const { defineConfig } = require('@vue/cli-service');
-module.exports = defineConfig({
-  tra/nspileDependencies: true,
-  configureWebpack(config) {
-    console.log(config)
-    config.devtool = 'cheap-module-source-map' // 这种写法方式
-  }
-})
-// 基于vue-cli创建的vue2项目
-module.exports = {
-  configureWebpack: config => {
-    config.when(
-        process.env.NODE_ENV === 'development',
-        config => config.devtool('source-map'),
-        // source-map模式：是源码未编译的模式，方便debugger调试源码来查看运行情况
-        // eval模式：是编译后的模式
-    ),
-  }
-}
-
-// 增加调试的配置后，可以在要调试的代码里 增加断点 或者 debugger
-// 然后VSCode运行调试，再去浏览器Sources选项卡进行源码调试
-// launch.json设置调试的目录src/*
-```
-
-#### vue-router原理解析
+##### vue-router原理解析
 
 vue-router是vue项目的重要组成部分，用于构建单页应用。单页应用是基于路由和组件的，路由用于设定访问路径，并将路径和组件映射起来。路由的本质就是建立url和页面之间的映射关系，解析URL实现不同页面之间的跳转
 
@@ -241,8 +210,6 @@ export default new Router({
   // mode: 'history', // 默认是hash模式，不写就是默认模式
   routes
 })
-
-
 ```
 
 **hash模式下，url可能为以下形式：**  

@@ -280,6 +280,19 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
+            text: "Vue2相关",
+            items: [
+              {
+                text: "Vue2进阶",
+                link: "/Document/Front-end-devFramework/Vue3/Vue2相关/Vue2难点进阶",
+              },
+              {
+                text: "Vue2源码解析",
+                link: "/Document/Front-end-devFramework/Vue3/Vue2相关/Vue2源码解析",
+              },
+            ]
+          },
+          {
             text: "Vue3学习指导",
             link: "/Document/Front-end-devFramework/Vue3/Guide",
           },
@@ -399,6 +412,27 @@ export default {
               {
                 text: "端到端测试",
                 link: "/Document/Front-end-devFramework/Vue3/Vue测试/端到端测试",
+              },
+            ],
+          },
+          {
+            text: "Vue服务端渲染",
+            items: [
+              {
+                text: "Vue服务端渲染导学",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/Vue服务端渲染导学",
+              },
+              {
+                text: "Vue+Nuxt服务端渲染",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/Vue+Nuxt服务端渲染",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/",
+              },
+              {
+                text: "",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/",
               },
             ],
           },
