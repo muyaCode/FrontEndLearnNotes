@@ -8,13 +8,18 @@
 
 ### Nuxt网址：
 
-- GitHub
+- GitHub：
   
-  - https://github.com/nuxt/nuxt.js  
+  - Nuxt V2版本：[https://github.com/nuxt/nuxt.js](https://github.com/nuxt/nuxt.js)
+  - Nuxt V3版本：[https://github.com/nuxt/framework](https://github.com/nuxt/framework)
 
-- Nuxt官网  
+- Nuxt V2版本官网  
   
   - [https://nuxtjs.org/](https://nuxtjs.org/)  
+
+- Nuxt V3版本官网
+  
+  - [The Hybrid Vue Framework · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/)
 
 - Nuxt2中文网  
   
