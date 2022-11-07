@@ -427,8 +427,8 @@ export default {
                 link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/Vue+Nuxt服务端渲染",
               },
               {
-                text: "",
-                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/",
+                text: "Nuxt笔记",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/Nuxt笔记",
               },
               {
                 text: "",
