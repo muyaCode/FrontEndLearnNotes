@@ -76,6 +76,32 @@
 </template>
 ```
 
+### 编程式导航：
+
+`navigateTo()``navigate()`
+
+**注意：**确保始终通过从函数返回来链接其结果。`await``navigateTo`
+
+```js
+<script setup>
+const router = useRouter();
+const name = ref('');
+const type = ref(1);
+
+function navigate(){
+  return navigateTo({
+    path: '/search',
+    query: {
+      name: name.value,
+      type: type.value
+    }
+  })
+}
+</script>
+```
+
+---
+
 ## 3.SEO标签优化相关：
 
 ```js
@@ -115,9 +141,58 @@
 </template>
 
 <style scoped lang="scss">
-  
-</style>
 
+</style>
 ```
 
-## 4.
+## 4.项目服务端相关
+
+server服务端目录、middleware中间件目录、
+
+### middleware中间件的使用
+
+1.定义中间件：middleware\auth.ts
+
+```js
+// auth.ts
+export default defineNuxtRouteMiddleware((to, from) => {
+  console.log('auth')
+})
+```
+
+2.页面内使用中间件：
+
+```js
+<script setup>
+definePageMeta({
+  middleware: ["auth"] // 中间件文件名字
+  // or middleware: 'auth'
+})
+</script>
+```
+
+3.动态添加或重写中间件：
+
+可以使用辅助函数手动添加全局或命名路由中间件，下例是在插件目录中定义中间件：
+
+```js
+// plugins/mideleware.ts
+export default defineNuxtPlugin(() => {
+  addRouteMiddleware('global-test', 
+    () => {
+      console.log('this global middleware was added in a plugin and will be run on every route change')
+    }, 
+    { global: true }
+  )
+
+  addRouteMiddleware('named-test', 
+    () => {
+      console.log('this named middleware was added in a plugin and would override any existing middleware of the same name')
+    }
+  )
+})
+```
+
+调用也和上面的一样
+
+---
