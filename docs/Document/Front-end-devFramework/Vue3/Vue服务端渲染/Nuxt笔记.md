@@ -145,11 +145,7 @@ function navigate(){
 </style>
 ```
 
-## 4.项目服务端相关
-
-server服务端目录、middleware中间件目录、
-
-### middleware中间件的使用
+## 4.middleware文件夹中间件的使用
 
 1.定义中间件：middleware\auth.ts
 
@@ -196,3 +192,367 @@ export default defineNuxtPlugin(() => {
 调用也和上面的一样
 
 ---
+
+## 5.自定义hook函数：
+
+###### composables 目录下定义文件，默认情况下不可再有文件夹，因为Nuxt默认只扫描该目录下的顶层的文件
+
+[Composables · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/composables#how-files-are-scanned)
+
+
+
+##### 定义
+
+```js
+// composables/useFoo.ts
+
+// 使用命名导出
+export const useFoo = () => {
+  return useState('foo', () => 'bar')
+}
+// 使用默认导出
+// export default function () {
+//   return useState('foo', () => 'bar')
+// }
+```
+
+##### 页面内使用：方法会自动导入，可在`.js``.ts``.vue`文件中使用：
+
+```html
+<template>
+  <div>
+    {{ foo }}
+  </div>
+</template>
+
+<script setup>
+const foo = useFoo()
+</script>
+工具
+```
+
+##### 工具函数嵌套组合使用：
+
+```js
+// composables/test.ts
+export const useFoo = () => {
+  const nuxtApp = useNuxtApp()
+  const bar = useBar()
+}
+```
+
+##### 访问插件：
+
+```js
+// composables/test.ts
+export const useHello = () => {
+  const nuxtApp = useNuxtApp()
+  return nuxtApp.$hello
+}
+```
+
+
+
+
+
+---
+
+## 6.server服务器目录
+
+文档：[Server · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/server#server-directory)
+
+---
+
+Nuxt 会自动扫描 、 和目录中的文件，以使用 HMR 支持注册 API 和服务器处理程序。
+
+### `~/server/api`：服务器API接口目录
+
+#### 1.在根目录下位置创建文件夹下的新文件：`server/api/hello.ts`
+
+```js
+export default defineEventHandler((event) => {
+  console.log('hello event',event.context)
+  return {
+    data: 'hello word'
+  }
+})
+```
+
+1.2.页面中调用此API：
+
+```js
+await $fetch('/api/hello')
+```
+
+#### 2.匹配路由参数的API接口：
+
+新建目录下的文件：`~/server/api/user/[name].ts`
+
+```js
+export default defineEventHandler((event) => 
+  `Hello, ${event.context.params.name}!`
+)
+```
+
+2.1页面内调用：
+
+```js
+// user后面的/nuxt就是返回来的：event.context.params.name
+const nuxt = await $fetch('/api/user/nuxt')
+```
+
+#### 3.匹配HTTP方法：四种方法：.get、.post、.put、.delete
+
+api名.方法名.ts，例子：test.post.ts、test.get.ts
+
+```js
+// server/api/test.get.ts
+export default defineEventHandler(() => 'Test get handler')
+```
+
+```js
+// server/api/test.post.ts
+export default defineEventHandler(() => 'Test post handler')
+```
+
+#### 4.包罗万象：捕获所有路由有助于回退路由处理
+
+###### 4.1 与任何路由处理程序不匹配的所有请求注册一个 catch-all 错误捕捉路由
+
+`~/server/api/foo/[...].ts`：catch-all 错误捕捉路由
+
+```js
+export default defineEventHandler(() => `Default foo handler`)
+```
+
+#### 5.处理请求：使用实例
+
+###### 5.1 使用readBody正文处理请求
+
+```js
+// server/api/submit.post.ts
+export default defineEventHandler(async (event) => {
+    const body = await readBody(event)
+    return { body }
+})
+```
+
+页面内 调用此 API：
+`$fetch('/api/submit', { method: 'post', body: { test: 123 } })`
+
+###### 5.2 使用getQuery查询参数处理请求：
+
+```js
+// server/api/query.get.ts
+export default defineEventHandler((event) => {
+  const query = getQuery(event)
+  return { a: query.param1, b: query.param2 }
+})
+```
+
+浏览器页面参数示例查询：`/api/query?param1=a&param2=b`
+
+###### 5.3 访问运行时配置：useRuntimeConfig()
+
+```js
+// server/api/foo.ts
+export default defineEventHandler((event) => {
+  const config = useRuntimeConfig()
+  return { key: config.KEY }
+})
+```
+
+###### 5.4 访问请求cookies：
+
+```js
+export default defineEventHandler((event) => {
+  const cookies = parseCookies(event)
+  return { cookies }
+})
+```
+
+#### 6.高级用法示例：
+
+###### 6.1 `nitro`的`nuxt.config`配置
+
+[Server · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/server#nitro-configuration)
+
+###### 6.2 使用嵌套路由：server/api/hello.ts
+
+```js
+import { createRouter } from 'h3'
+
+const router = createRouter()
+
+router.get('/', () => 'Hello World')
+
+export default router
+```
+
+###### 6.3 发送流：
+
+**注意：**这是一项实验性功能，仅在 Node.js 环境中可用。
+
+```js
+// server/api/foo.get.ts
+import fs from 'node:fs'
+import { sendStream } from 'h3'
+
+export default defineEventHandler((event) => {
+  return sendStream(event, fs.createReadStream('/path/to/file'))
+})
+```
+
+###### 6.4 返回旧版处理程序或中间件
+
+[Server · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/server#return-a-legacy-handler-or-middleware)
+
+###### 6.5 服务存储
+
+###### 6.5.1 使用Redis存储：nuxt.config.ts文件设置
+
+```js
+export default defineNuxtConfig({
+  nitro: {
+    storage: {
+      'redis': {
+        driver: 'redis', // 使用Redis存储
+        /* redis connector options */
+        port: 6379, // Redis port
+        host: "127.0.0.1", // Redis host
+        username: "", // needs Redis >= 6
+        password: "",
+        db: 0 // Defaults to 0
+      }
+    }
+  }
+})
+```
+
+###### 6.5.2 服务器接口使用Redis存储：
+
+接口使用:
+
+```js
+// server/api/test.post.ts：post接口使用
+export default defineEventHandler(async (event) => {
+  const body = await readBody(event)
+  await useStorage().setItem('redis:test', body)
+  return 'Data is set'
+})
+```
+
+```js
+// server/api/test.get.ts：get接口使用
+export default defineEventHandler(async (event) => {
+  const data = await useStorage().getItem('redis:test')
+  return data
+})
+```
+
+页面调用接口：
+
+```html
+<template>
+  <div>
+    <div>Post state: {{ resDataSuccess }}</div>
+    <div>Get Data: {{ resData.text }}</div>
+  </div>
+</template>
+
+<script setup lang="ts">
+  const { data: resDataSuccess } = await useFetch('/api/test', {
+      method: 'post',
+      body: { text: 'Nuxt is Awesome!' }
+  })
+  const { data: resData } = await useFetch('/api/test')
+</script>
+```
+
+---
+
+### `~/server/routes`：服务器路由目录
+
+在根目录下新建文件夹下的文件：server\routes\hello.ts
+
+```js
+export default defineEventHandler(() => 'Hello World!')
+```
+
+浏览器中访问：`http://localhost:3000/hello`路径
+
+---
+
+### `~/server/middleware`：服务中间件目录
+
+中间件处理程序将在任何其他服务器路由之前在每个请求上运行，用于添加或检查标头、记录请求或扩展事件的请求对象。
+
+中间件处理程序不应返回任何内容（也不关闭或响应请求），而应仅检查或扩展请求上下文或引发错误。
+
+服务器/中间件/日志
+
+```js
+export default defineEventHandler((event) => {
+  console.log('New request: ' + event.req.url)
+})
+```
+
+服务器/中间件/身份验证
+
+```js
+export default defineEventHandler((event) => {
+  event.context.auth = { user: 123 }
+})
+```
+
+---
+
+### `~/server/plugins`：服务器插件目录
+
+Nuxt将自动读取目录中的任何文件，并将它们注册为Nitro插件。这允许扩展 Nitro 的运行时行为并挂钩到生命周期事件中。
+
+在根目录下位置创建文件夹下的新文件：`server/plugins/nitroPlugin.ts`
+
+```js
+export default defineNitroPlugin((nitroApp) => {
+  console.log('Nitro plugin', nitroApp)
+})
+```
+
+---
+
+### `~/server/utils`：服务器公共工具程序目录
+
+```js
+
+```
+
+---
+
+## 7.自定义错误页面：404错误...
+
+1.在根目录新建文件：error.vue文件
+
+```html
+<template>
+  <div>
+    <div>404</div>
+    <button @click="handleError">返回首页</button>  
+  </div>
+</template>
+<script setup lang="ts">
+  const handleError = () => clearError({ redirect: "/" })
+</script>
+```
+
+完成后重新启动项目
+
+---
+
+## 8.读取运行时配置文件
+
+
+
+---
+
+## 9.Nuxt缺点
