@@ -13,8 +13,8 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.26",
-    "vue": "^3.2.41"
+    "vitepress": "^1.0.0-alpha.28",
+    "vue": "^3.2.44"
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.2"
