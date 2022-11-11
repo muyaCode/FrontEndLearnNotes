@@ -199,8 +199,6 @@ export default defineNuxtPlugin(() => {
 
 [Composables · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/composables#how-files-are-scanned)
 
-
-
 ##### 定义
 
 ```js
@@ -216,7 +214,7 @@ export const useFoo = () => {
 // }
 ```
 
-##### 页面内使用：方法会自动导入，可在`.js``.ts``.vue`文件中使用：
+##### 页面内使用：定义的方法会自动导入，可在`.js``.ts``.vue`文件中使用：
 
 ```html
 <template>
@@ -226,7 +224,7 @@ export const useFoo = () => {
 </template>
 
 <script setup>
-const foo = useFoo()
+const foo = useFoo() // 使用
 </script>
 工具
 ```
@@ -250,10 +248,6 @@ export const useHello = () => {
   return nuxtApp.$hello
 }
 ```
-
-
-
-
 
 ---
 
@@ -284,6 +278,12 @@ export default defineEventHandler((event) => {
 await $fetch('/api/hello')
 ```
 
+1.3浏览器中访问：
+
+```bash
+http://localhost:3000/api/hello
+```
+
 #### 2.匹配路由参数的API接口：
 
 新建目录下的文件：`~/server/api/user/[name].ts`
@@ -305,6 +305,8 @@ const nuxt = await $fetch('/api/user/nuxt')
 
 api名.方法名.ts，例子：test.post.ts、test.get.ts
 
+如果不写方法名，默认是get方法
+
 ```js
 // server/api/test.get.ts
 export default defineEventHandler(() => 'Test get handler')
@@ -317,12 +319,18 @@ export default defineEventHandler(() => 'Test post handler')
 
 #### 4.包罗万象：捕获所有路由有助于回退路由处理
 
-###### 4.1 与任何路由处理程序不匹配的所有请求注册一个 catch-all 错误捕捉路由
+###### 4.1 与任何路由处理程序不匹配的  所有请求注册一个 catch-all 错误捕捉
 
-`~/server/api/foo/[...].ts`：catch-all 错误捕捉路由
+`~/server/api/foo/[...].ts`：catch-all 错误捕捉
 
 ```js
 export default defineEventHandler(() => `Default foo handler`)
+```
+
+请求一个foo下不存在的接口：便会默认请求到上面的接口
+
+```js
+http://localhost:3000/api/foo/dd
 ```
 
 #### 5.处理请求：使用实例
@@ -352,22 +360,22 @@ export default defineEventHandler((event) => {
 
 浏览器页面参数示例查询：`/api/query?param1=a&param2=b`
 
-###### 5.3 访问运行时配置：useRuntimeConfig()
+###### 5.3 访问请求cookies：
+
+```js
+export default defineEventHandler((event) => {
+  const cookies = parseCookies(event)
+  return { cookies }
+})
+```
+
+###### 5.4访问运行时配置：useRuntimeConfig()
 
 ```js
 // server/api/foo.ts
 export default defineEventHandler((event) => {
   const config = useRuntimeConfig()
   return { key: config.KEY }
-})
-```
-
-###### 5.4 访问请求cookies：
-
-```js
-export default defineEventHandler((event) => {
-  const cookies = parseCookies(event)
-  return { cookies }
 })
 ```
 
@@ -479,7 +487,11 @@ export default defineEventHandler(async (event) => {
 export default defineEventHandler(() => 'Hello World!')
 ```
 
-浏览器中访问：`http://localhost:3000/hello`路径
+浏览器中访问：
+
+```js
+http://localhost:3000/hello
+```
 
 ---
 
@@ -529,7 +541,15 @@ export default defineNitroPlugin((nitroApp) => {
 
 ---
 
-## 7.自定义错误页面：404错误...
+## 7.状态管理
+
+文档：[State Management · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/state-management)
+
+
+
+---
+
+## 8.自定义错误页面：404错误...
 
 1.在根目录新建文件：error.vue文件
 
@@ -549,10 +569,173 @@ export default defineNitroPlugin((nitroApp) => {
 
 ---
 
-## 8.读取运行时配置文件
+## 9.全局的错误处理
+
+文档：[Error handling · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/error-handling)
 
 
 
 ---
 
-## 9.Nuxt缺点
+## 10.运行时配置
+
+文档：[Runtime Config · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/guide/going-further/runtime-config)
+
+##### 10.1 公开的运行时配置
+
+第二种方法看中文网文档：[运行时配置 Runtime Config | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/usage/runtime-config.html#%E5%85%AC%E5%BC%80%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE-exposing-runtime-config)
+
+nuxt.config.ts文件下配置runtimeConfig：
+
+```js
+export default defineNuxtConfig({
+  runtimeConfig: {
+    // The private keys which are only available within server-side
+    apiSecret: '123',
+    // Keys within public, will be also exposed to the client-side
+    public: {
+      apiBase: '/api'
+    }
+  }
+})
+```
+
+**页面或服务器中使用（访问时运行）**
+
+```js
+const runtimeConfig = useRuntimeConfig()
+
+console.log(runtimeConfig.apiSecret)
+console.log(runtimeConfig.public.apiBase)
+```
+
+**Vue实例页面中直接访问配置**：使用上面选项 API 配置时，可通过 下面命令获得公共运行时配置
+
+```js
+this.$config.public
+```
+
+###### 环境变量
+
+除了一些进程(process)环境变量之外，如果在项目的根目录中有一个 `.env` 文件，它将自动加载到 `process.env` 中，并且可以在 `nuxt.config` 文件和模块中访问。
+
+.env文件：
+
+```js
+// .env
+BASE_URL = https://nuxtjs.org
+API_SECRET = api_secret_token
+```
+
+nuxt.config.ts文件下访问：
+
+```js
+export default defineNuxtConfig({
+  publicRuntimeConfig: {
+    BASE_URL: process.env.BASE_URL,
+  },
+  privateRuntimeConfig: {
+    API_SECRET: process.env.API_SECRET,
+  },
+})
+```
+
+##### 10.2 访问运行时配置
+
+[运行时配置 Runtime Config | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/usage/runtime-config.html#%E8%AE%BF%E9%97%AE%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE-accessing-runtime-config)
+
+在 Nuxt 应用程序的 Vue 实例中，需要调用 `useRuntimeConfig()` 来访问运行时配置。
+
+Vue实例中访问：
+
+```js
+<script setup>
+const config = useRuntimeConfig()
+</script>
+```
+
+插件中访问：
+
+```js
+export default defineNuxtPlugin((nuxtApp) => {
+  const config = useRuntimeConfig()
+  console.log('API base URL:', config.public.apiBase)
+});
+```
+
+服务器路由中访问：
+
+```js
+export default async () => {
+  const result = await $fetch('https://my.api.com/test', {
+    headers: {
+      Authorization: `Bearer ${useRuntimeConfig().apiSecret}`
+    }
+  })
+  return result
+}
+```
+
+手动输入运行是配置：
+
+```js
+declare module '@nuxt/schema' {
+  interface RuntimeConfig {
+    apiSecret: string
+    public: {
+      apiBase: string
+    }
+  }
+}
+// 确保在扩充类型时 import/export 某
+export {}
+```
+
+```js
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    testConfig: string
+  }
+  interface PrivateRuntimeConfig {
+    token: string
+  }
+}
+// 确保在扩充类型时 import/export 某些比较重要的内容
+export {}
+```
+
+---
+
+## 11.测试
+
+文档：[Testing · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/testing)
+
+
+
+---
+
+## 12.编译
+
+1.pnpm run build后：会在项目目录生成 .output 这个打包后的目录
+
+2.运行pnpm run preview命令，预览打包后的项目。
+
+---
+
+## 12.项目部署
+
+文档：[Deployment · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/deployment)
+
+中文文档：[Azure | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/deployment/azure.html#azure-functions)
+
+---
+
+## 13.Nuxt缺点
+
+1.Nuxt的server的服务器端存在缺点：
+
+- 没有数据校验：如何去校验前端传来的数据
+
+- 缺少必要的orm：对象与关系数据库之间的桥梁
+
+###### 建议使用其他后端语言来写接口
