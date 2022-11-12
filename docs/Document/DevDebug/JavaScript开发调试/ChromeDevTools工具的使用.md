@@ -13,7 +13,6 @@ Node 调试工具入门教程：https://www.ruanyifeng.com/blog/2019/12/git-undo
 
 其他：安装扩展插件，如AdBlock、Gliffy、Axure等
 
-
 ### 2. 菜单面板拆解
 
 Elements - 页面dom元素
@@ -32,7 +31,6 @@ Security - 安全分析
 
 Audits - 审计，自动化测试工具
 
-
 ### 查看元素
 
 ### 网络请求
@@ -41,3 +39,20 @@ Audits - 审计，自动化测试工具
 
 ### Performance-设备加载性能分析
 
+
+
+# CSS Overview工具：CSS调试工具
+
+视频参考：[调试CSS好帮手 - CSS Overview工具_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1kv4y1D7Y5/?spm_id_from=333.999.0.0&vd_source=5f0c99b3deddffe219938763769b15ac)
+
+开发者工具--右上角三个点(自定义和控制开发工具)--更多工具(More tools)--CSS概述(# CSS Overview)：点击蓝色按钮--捕获概述(Capture overview)：就可以开始根据分析来进行调试
+
+
+
+分析调试颜色对比度和其他信息
+
+字体信息：是否有继承
+
+未使用的声明
+
+媒体查询

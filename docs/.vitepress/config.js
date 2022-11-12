@@ -419,8 +419,8 @@ export default {
             text: "Vue服务端渲染",
             items: [
               {
-                text: "Vue服务端渲染导学",
-                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/Vue服务端渲染导学",
+                text: "服务端渲染导学",
+                link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/服务端渲染导学",
               },
               {
                 text: "Vue+Nuxt服务端渲染",
@@ -639,8 +639,8 @@ export default {
             link: "/Document/前端综合解决方案/10_前端基建",
           },
           {
-            text: "",
-            link: "/Document/前端综合解决方案/",
+            text: "11_移动端适配",
+            link: "/Document/前端综合解决方案/11_移动端适配",
           },
           
         ],

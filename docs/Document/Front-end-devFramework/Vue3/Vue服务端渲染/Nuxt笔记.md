@@ -4,14 +4,14 @@
 
 根目录app.vue文件标签：
 
-- [NuxtPage](https://v3.nuxtjs.org/api/components/nuxt-page)：默认显示的pages目录的页面，首页为index.vue
+- [NuxtPage](https://v3.nuxtjs.org/api/components/nuxt-page)：默认显示的**pages目录**的页面，首页为index.vue
   - ```js
     <!-- app.vue -->
     <template>
       <NuxtPage />
     </template>
     ```
-- [NuxtLayout](https://v3.nuxtjs.org/api/components/nuxt-layout)：默认显示layouts目录的布局，默认页是default.vue；可以包裹住
+- [NuxtLayout](https://v3.nuxtjs.org/api/components/nuxt-layout)：默认显示**layouts目录**的布局页面，默认页是：default.vue
   - ```js
     <!-- app.vue -->
     <template>
@@ -78,7 +78,7 @@
 
 ### 编程式导航：
 
-`navigateTo()``navigate()`
+`navigateTo()`和`navigate()`
 
 **注意：**确保始终通过从函数返回来链接其结果。`await``navigateTo`
 
@@ -100,52 +100,55 @@ function navigate(){
 </script>
 ```
 
----
+### 页面或者组件切换过渡动画配置
 
-## 3.SEO标签优化相关：
+文档：[过渡 ·努克斯特 (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/transitions#page-transitions)
+
+1.为所有页面设置过渡：
+
+2.为页面设置不同的过渡：
+
+3.为布局设置过渡：[Transitions · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/transitions#layout-transitions)
+
+4.禁用特定页面的过：[Transitions · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/transitions#disable-transitions)
+
+5.高度动态和自定义的过渡：[Transitions · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/transitions#javascript-hooks)
+
+6.使用 NuxtPage 进行过渡：[Transitions · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/transitions#transition-with-nuxtpage)
 
 ```js
-<script setup lang='ts'>
-  // useHead的标签组件：https://v3.nuxtjs.org/getting-started/seo-meta#components
-  // useHead的属性类型和作用：https://v3.nuxtjs.org/api/composables/use-head
-  // SEO标签总结：https://www.cnblogs.com/colorful-paopao1/p/10189962.html、https://www.cnblogs.com/hellowzd/p/6177836.html
-  useHead({
-    /*  网站标题（title）：
-    * 一般设置3~5个关键词+一个品牌词，关键词要与网站定位相关，同时包含核心业务。当然，最好还要结合用户的搜索习惯。
-    */
-    title: '导航首页', // 当前页面标题
-    // 标题模板
-    titleTemplate: (title) => {
-      return title ? `${title} - 前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航` : '前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航'
-    },
-    meta: [
-      /* 网站描述（description）：
-      * 主要是网站介绍的内容，可以适当包含title中的关键词，字数一般控制在70左右。正确填写网站描述，除了可提升网站业务相关性外，还能够增强网站关键词的匹配度，有利于网站关键词排名。
-      */
-      { name:'description', content: '好用的前端后端开发者的导航网站，包含前端的学习资料，练习项目，面试题库，后端各种库的导航和学习资料' },
-      /* 网站关键词（keyword）：
-      * 设置关键词标签更多是辅助的作用，而且不会展示在搜索结果中，提炼时候可以重复title的内容。相对来说也没有标题和描述那么重要，但按照规范填写肯定更好。
-      */
-      { name:'keyword', content: '前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航' },
-    ],
-    script: [
-      { children: 'console.log(\'Hello word\')' }
-    ]
-  })
-</script>
+// nuxt.config.ts
+export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
+})
+```
 
+app.vue文件设置动画
+
+```html
 <template>
-  <div>
-    <img src="/img/qr.jpg" alt="二维码图片2" />
-  </div>
+  <NuxtPage />
 </template>
-
-<style scoped lang="scss">
-
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
 </style>
 ```
 
-## 4.middleware文件夹中间件的使用
+---
+
+## 3.middleware文件夹：中间件的使用(路由前置守卫)
+
+nuxt.config.ts：是路由的全局守卫
 
 1.定义中间件：middleware\auth.ts
 
@@ -190,6 +193,57 @@ export default defineNuxtPlugin(() => {
 ```
 
 调用也和上面的一样
+
+---
+
+## 4.Meta等标签的SEO优化相关：
+
+文档：[SEO and Meta · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/seo-meta#components)
+
+```js
+<script setup lang='ts'>
+  // useHead的标签组件：https://v3.nuxtjs.org/getting-started/seo-meta#components
+  // useHead的属性类型和作用：https://v3.nuxtjs.org/api/composables/use-head
+  // SEO标签总结：https://www.cnblogs.com/colorful-paopao1/p/10189962.html、https://www.cnblogs.com/hellowzd/p/6177836.html
+  useHead({
+    /*  网站标题（title）：
+    * 一般设置3~5个关键词+一个品牌词，关键词要与网站定位相关，同时包含核心业务。当然，最好还要结合用户的搜索习惯。
+    */
+    title: '导航首页', // 当前页面标题
+    // 标题模板
+    titleTemplate: (title) => {
+      return title ? `${title} - 前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航` : '前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航'
+    },
+    meta: [
+      /* 网站描述（description）：
+      * 主要是网站介绍的内容，可以适当包含title中的关键词，字数一般控制在70左右。正确填写网站描述，除了可提升网站业务相关性外，还能够增强网站关键词的匹配度，有利于网站关键词排名。
+      */
+      { name:'description', content: '好用的前端后端开发者的导航网站，包含前端的学习资料，练习项目，面试题库，后端各种库的导航和学习资料' },
+      /* 网站关键词（keyword）：
+      * 设置关键词标签更多是辅助的作用，而且不会展示在搜索结果中，提炼时候可以重复title的内容。相对来说也没有标题和描述那么重要，但按照规范填写肯定更好。
+      */
+      { name:'keyword', content: '前端|后端|学习|导航|前端导航|后端导航|前端库导航|前端学习导航' },
+    ],
+    script: [
+      { children: 'console.log(\'Hello word\')' }
+    ]
+  })
+</script>
+
+<template>
+  <div>
+    <img src="/img/qr.jpg" alt="二维码图片2" />
+  </div>
+</template>
+
+<style scoped lang="scss">
+
+</style>
+```
+
+与上列标签对应的组件
+
+**<Title>、<Base>、<Script>、<NoScript>、<Style>、<Meta>、<Link>、<Body>、<Html>、<Head>**
 
 ---
 
@@ -541,15 +595,50 @@ export default defineNitroPlugin((nitroApp) => {
 
 ---
 
-## 7.状态管理
+## 7.Nuxt3生命周期钩子
 
-文档：[State Management · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/state-management)
+文档：[Lifecycle Hooks · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/guide/going-further/hooks#lifecycle-hooks)
+
+---
+
+## 8.数据交互
+
+官网文档：[Data Fetching · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/data-fetching)
+
+中文文档：[获取数据 | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/usage/data-fetching.html)
+
+
+
+`Nuxt3`提供了 4 种方式使得你可以在服务器端异步获取数据
+
+- useAsyncData
+- useLazyAsyncData （useAsyncData+lazy:true）
+- useFetch
+- useLazyFetch （useFetch+lazy:true）
+
+> 注意：他们只能在**`setup`**或者是`生命周期钩子`中使用
 
 
 
 ---
 
-## 8.自定义错误页面：404错误...
+## 9.状态管理
+
+文档：[State Management · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/state-management)
+
+---
+
+## 10.plugins：Nuxt插件目录
+
+文档：[Plugins · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/plugins)
+
+中文文档：[插件 plugins | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/directory-structure/plugins.html#%E6%8F%92%E4%BB%B6%E7%9B%AE%E5%BD%95)
+
+
+
+---
+
+## 11.自定义错误页面：404错误...
 
 1.在根目录新建文件：error.vue文件
 
@@ -569,19 +658,17 @@ export default defineNitroPlugin((nitroApp) => {
 
 ---
 
-## 9.全局的错误处理
+## 12.全局的错误处理
 
 文档：[Error handling · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/error-handling)
 
-
-
 ---
 
-## 10.运行时配置
+## 13.运行时配置
 
 文档：[Runtime Config · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/guide/going-further/runtime-config)
 
-##### 10.1 公开的运行时配置
+##### 13.1 公开的运行时配置
 
 第二种方法看中文网文档：[运行时配置 Runtime Config | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/usage/runtime-config.html#%E5%85%AC%E5%BC%80%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE-exposing-runtime-config)
 
@@ -640,7 +727,7 @@ export default defineNuxtConfig({
 })
 ```
 
-##### 10.2 访问运行时配置
+##### 13.2 访问运行时配置
 
 [运行时配置 Runtime Config | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/usage/runtime-config.html#%E8%AE%BF%E9%97%AE%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE-accessing-runtime-config)
 
@@ -706,15 +793,66 @@ export {}
 
 ---
 
-## 11.测试
+## 14.使用UI组件库
 
-文档：[Testing · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/testing)
+##### 官方教程：node_modules组件安装路径里添加nuxt.js文件，里面写入配置
+
+官方文档：[Components · Nuxt Directory Structure (nuxtjs.org)](https://v3.nuxtjs.org/guide/directory-structure/components#library-authors)
+
+中文文档：[components | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/directory-structure/components.html#%E5%BA%93%E4%BD%9C%E8%80%85)
 
 
+
+##### 2.在plugins目录下：用插件形式 使用UI组件库：
+
+1. 安装所需的插件：
+   
+   ```bash
+   yarn add --dev vue-gtag-next
+   
+   ```
+
+2. 创建一个插件文件`plugins/vue-gtag.client.js`
+   
+   ```js
+   import VueGtag from 'vue-gtag-next'
+   
+   export default defineNuxtPlugin((nuxtApp) => {
+     nuxtApp.vueApp.use(VueGtag, {
+       property: {
+         id: 'GA_MEASUREMENT_ID'
+       }
+     })
+   })
+   ```
+
+##### 3. ElementPlus 引入
+
+官方文档：[快速开始 | Element Plus (gitee.io)](https://element-plus.gitee.io/zh-CN/guide/quickstart.html#%E4%BD%BF%E7%94%A8-nuxt-js)
 
 ---
 
-## 12.编译
+## 15.Nuxt3第三方模块
+
+模块预览地址：[Explore Nuxt Modules (nuxtjs.org)](https://modules.nuxtjs.org/?version=3.x)
+
+模块都是带有nuxt名字的库：可以点击进去，然后看文档在项目中安装使用.
+
+在nuxt.config.js文件配置好模块后，模块都是和正常vue3项目的模块使用一样
+
+
+
+@pinia/nuxt状态管理库的配合useState()使用：[【Nuxt3从入门到实战】第八啪：巧用社区“模块”，让开发超级高效，让Nuxt更加强大！_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV15Q4y1v7ug/?spm_id_from=pageDriver&vd_source=5f0c99b3deddffe219938763769b15ac)
+
+---
+
+## 16.测试
+
+文档：[Testing · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/testing)
+
+---
+
+## 17.编译
 
 1.pnpm run build后：会在项目目录生成 .output 这个打包后的目录
 
@@ -722,15 +860,19 @@ export {}
 
 ---
 
-## 12.项目部署
+## 18.项目部署
 
 文档：[Deployment · Nuxt (nuxtjs.org)](https://v3.nuxtjs.org/getting-started/deployment)
 
 中文文档：[Azure | Nuxt 3 - 中文文档 (nuxtjs.org.cn)](https://www.nuxtjs.org.cn/deployment/azure.html#azure-functions)
 
+
+
+在nuxt项目中的server目录中：index.ts 做反向代理，
+
 ---
 
-## 13.Nuxt缺点
+## 19.Nuxt缺点
 
 1.Nuxt的server的服务器端存在缺点：
 
@@ -738,4 +880,4 @@ export {}
 
 - 缺少必要的orm：对象与关系数据库之间的桥梁
 
-###### 建议使用其他后端语言来写接口
+###### 建议使用 服务端渲染 + 其他后端语言作服务器接口 来结合 开发：CSR + SSR 相结合
