@@ -6,20 +6,18 @@ nvm是一个[node](https://so.csdn.net/so/search?q=node&spm=1001.2101.3001.7020)
 
 ## 二、nvm的安装
 
-1.windows包下载地址：
+### 1.windows包下载地址：
 
 百度网盘：<https://pan.baidu.com/s/1EUc-e2Ai-lXXQkjlB8jmlA>   提取码：vg9l
 
-```bash
-github下载地址：**https://github.com/coreybutler/nvm-windows/releases
+github下载地址：https://github.com/coreybutler/nvm-windows/releases
 
 - nvm-noinstall.zip： 绿色免安装版本，但是使用之前需要配置
 - nvm-setup.zip：安装版，下载之后点击安装，无需配置就可以使用
-```
 
-2.点击如下文件进行安装：
+### 2.点击如下文件进行安装：
 
-（1）安装
+#### （1）安装
 
 ![](https://img-blog.csdnimg.cn/4f264237810d48e283e54f7f37af142e.png)
 
@@ -43,7 +41,7 @@ github下载地址：**https://github.com/coreybutler/nvm-windows/releases
 
                  ![](https://img-blog.csdnimg.cn/5083a0ac725d45c695d1af3403ab2950.png)
 
- （2）配置
+#### （2）配置
 
         找到nvm文件位置，点开setting
 
