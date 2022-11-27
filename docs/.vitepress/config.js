@@ -944,6 +944,10 @@ export default {
             link: "/Document/Node/Node版本管理工具",
           },
           {
+            text: "nvm的简介、安装、使用",
+            link: "/Document/Node/nvm的简介、安装、使用",
+          },
+          {
             text: "npm scripts 使用指南",
             link: "/Document/Node/npm scripts 使用指南",
           },
@@ -955,8 +959,8 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "Express框架",
-            link: "/Document/Node后端框架开发/Express框架",
+            text: "Koa.js学习",
+            link: "/Document/Node/Koa.js学习",
           },
           {
             text: "Koa框架",
