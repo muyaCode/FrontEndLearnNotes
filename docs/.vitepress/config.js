@@ -666,6 +666,10 @@ export default {
             text: "03_Git工具",
             link: "/Document/Git/03_Git工具",
           },
+          {
+            text: "04_Git提交流程",
+            link: "/Document/Git/04_Git提交流程",
+          },
         ]
       },
       {
@@ -931,10 +935,6 @@ export default {
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
         items: [
-          {
-            text: "Node指南",
-            link: "/Document/Node/Guide",
-          },
           {
             text: "Node学习",
             link: "/Document/Node/Node学习",
