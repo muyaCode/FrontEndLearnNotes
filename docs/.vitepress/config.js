@@ -981,6 +981,25 @@ export default {
         ]
       },
       {
+        text: "数据库的使用",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "mongoDB数据库",
+            link: "/Document/数据库的使用/mongoDB数据库",
+          },
+          {
+            text: "MySQL数据库",
+            link: "/Document/数据库的使用/MySQL数据库",
+          },
+          {
+            text: "",
+            link: "/Document/数据库的使用/",
+          },
+        ]
+      },
+      {
         text: "Electron笔记",
         collapsible: true, // 可折叠
         collapsed: false, // 初始不折叠
@@ -1030,7 +1049,18 @@ export default {
         items: [
           {
             text: "全文搜索引擎 Elasticsearch 入门教程",
-            link: "/Document/Elasticsearch/全文搜索引擎Elasticsearch入门教程.md",
+            link: "/Document/Elasticsearch/全文搜索引擎Elasticsearch入门教程",
+          },
+        ],
+      },
+      {
+        text: "CoffeeScript",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "CoffeeScript",
+            link: "/Document/CoffeeScript/CoffeeScript",
           },
         ],
       },
