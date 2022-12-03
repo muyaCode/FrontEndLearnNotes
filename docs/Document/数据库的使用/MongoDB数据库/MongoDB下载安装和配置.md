@@ -46,7 +46,7 @@
 移除服务：目录路径\MongoDB\bin\mongod.exe –remove
 ```
 
-5.测试启动地址：http://localhost:27017/
+5.本地测试启动地址：<http://localhost:27017/>
 
 成功启动：看到 `It looks like you are trying to access MongoDB over HTTP on the native driver port.` 就能证明 MongoDB 启动成功
 
