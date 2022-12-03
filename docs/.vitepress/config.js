@@ -594,6 +594,35 @@ export default {
         ]
       },
       {
+        text: "微信开发",
+        collapsible: true, // 可折叠
+        collapsed: false, // 初始不折叠
+        items: [
+          {
+            text: "微信公众号开发",
+            items: [
+              {
+                text: "微信公众号开发简介和相关资源",
+                link: "/Document/微信开发/微信公众号开发/微信公众号开发简介和相关资源",
+              },
+              {
+                text: "Koa开发微信公众号后端回复服务",
+                link: "/Document/微信开发/微信公众号开发/Koa开发微信公众号后端回复服务",
+              },
+            ],
+          },
+          {
+            text: "微信小程序开发",
+            items: [
+              {
+                text: "微信小程序简介和相关资源",
+                link: "/Document/微信开发/微信小程序开发/微信小程序简介和相关资源.md",
+              },
+            ],
+          },
+        ]
+      },
+      {
         text: "前端综合解决方案",
         collapsible: true, // 可折叠
         collapsed: false, // 初始折叠
@@ -986,12 +1015,38 @@ export default {
         collapsed: false, // 初始不折叠
         items: [
           {
-            text: "mongoDB数据库",
-            link: "/Document/数据库的使用/mongoDB数据库",
+            text: "MongoDB数据库",
+            items: [
+              {
+                text: "MongoDB数据库",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB相关资源",
+              },
+              {
+                text: "MongoDB下载安装和配置",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB下载安装和配置",
+              },
+              {
+                text: "MongoDB数据库的使用",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB数据库的使用",
+              },
+            ]
           },
           {
             text: "MySQL数据库",
-            link: "/Document/数据库的使用/MySQL数据库",
+            items: [
+              {
+                text: "MySQL数据库相关资源",
+                link: "/Document/数据库的使用/MySQL数据库/MySQL数据库相关资源",
+              },
+              {
+                text: "MySQL下载安装和配置",
+                link: "/Document/数据库的使用/MySQL数据库/MySQL下载安装和配置",
+              },
+              {
+                text: "MySQL数据库的使用",
+                link: "/Document/数据库的使用/MySQL数据库/MySQL数据库的使用",
+              },
+            ]
           },
           {
             text: "",

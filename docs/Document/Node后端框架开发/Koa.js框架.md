@@ -44,8 +44,6 @@ HTTP：Application
 
 执行上下文：Session、Cookie
 
-
-
 ###### 常用技术栈：
 
 Pug：模板引擎
@@ -65,8 +63,6 @@ Parcel：开箱即用开发体验与可扩展的架构相结合，是 Web 应用
 ---
 
 ## Koa前置JS知识
-
-
 
 ## Koa项目结构目录
 
@@ -148,8 +144,6 @@ router - 路由
 routes - 路由装饰器
 app.js - 启动文件
 ```
-
-
 
 ## Koa依赖
 
