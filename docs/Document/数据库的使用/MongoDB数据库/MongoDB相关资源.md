@@ -27,3 +27,15 @@ MongoDB中文官网：[MongoDB中文网 mongodb官网 (p2hp.com)](http://mongodb
 **教程：**
 
 [MongoDB 教程 | 菜鸟教程 (runoob.com)](https://www.runoob.com/mongodb/mongodb-tutorial.html)
+
+## MongoDB与其他数据库或库的字段对比
+
+| MongoDB     | MySQL       | Mongoose |
+|:-----------:|:-----------:|:--------:|
+| database    | database    | database |
+| collection  | table       | schema   |
+| document    | row         | model    |
+| field       | column      | entity   |
+| index       | index       | methods  |
+| primary key | primary key | statics  |
+| 无           | table join  | virtual  |

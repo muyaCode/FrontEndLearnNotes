@@ -92,7 +92,7 @@ export default {
       {
         text: "前端环境配置",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "学习指南",
@@ -107,7 +107,7 @@ export default {
       {
         text: "HTML标签记录",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "HTML学习指导",
@@ -122,7 +122,7 @@ export default {
       {
         text: "CSS基础和进阶总结",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "CSS基础总结",
@@ -165,7 +165,7 @@ export default {
       {
         text: "JavaScript笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Canvas学习",
@@ -198,7 +198,7 @@ export default {
       {
         text: "TypeScript笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "TypeScript学习指南",
@@ -277,7 +277,7 @@ export default {
       {
         text: "Vue3学习",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Vue2相关",
@@ -562,7 +562,7 @@ export default {
       {
         text: "React学习",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "React快速上手",
@@ -596,18 +596,18 @@ export default {
       {
         text: "微信开发",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "微信公众号开发",
             items: [
               {
-                text: "微信公众号开发简介和相关资源",
-                link: "/Document/微信开发/微信公众号开发/微信公众号开发简介和相关资源",
+                text: "微信公众号简介和相关资源",
+                link: "/Document/微信开发/微信公众号开发/微信公众号简介和相关资源",
               },
               {
-                text: "Koa开发微信公众号后端回复服务",
-                link: "/Document/微信开发/微信公众号开发/Koa开发微信公众号后端回复服务",
+                text: "Koa开发微信公众号后端服务",
+                link: "/Document/微信开发/微信公众号开发/Koa开发微信公众号后端服务",
               },
             ],
           },
@@ -625,7 +625,7 @@ export default {
       {
         text: "前端综合解决方案",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "00_编程规范解决方案指南",
@@ -677,7 +677,7 @@ export default {
       {
         text: "Git笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "Git学习指南",
@@ -704,7 +704,7 @@ export default {
       {
         text: "GitBook",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "GitBook制作电子书",
@@ -715,7 +715,7 @@ export default {
       {
         text: "GitHub的使用",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "GitHub快速入门",
@@ -746,7 +746,7 @@ export default {
       {
         text: "Bash Shell脚本笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "Bash 脚本教程",
@@ -765,7 +765,7 @@ export default {
       {
         text: "前端开发调试",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "JavaScript开发调试",
@@ -813,7 +813,7 @@ export default {
       {
         text: "前端工程化/自动化",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始折叠
+        collapsed: true, // 初始折叠
         items: [
           {
             text: "前端工程化",
@@ -923,7 +923,7 @@ export default {
       {
         text: "前端性能优化专题",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "00_性能优化前置知识",
@@ -962,7 +962,7 @@ export default {
       {
         text: "NodeJS笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Node学习",
@@ -985,34 +985,66 @@ export default {
       {
         text: "Node后端框架开发",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Express框架",
-            link: "/Document/Node后端框架开发/Express框架",
+            items: [
+              {
+                text: "Express框架相关资源",
+                link: "/Document/Node后端框架开发/Express框架/Express框架相关资源",
+              }
+            ],
           },
           {
             text: "Koa.js框架",
-            link: "/Document/Node后端框架开发/Koa.js框架",
-          },
-          {
-            text: "Nest框架",
-            link: "/Document/Node后端框架开发/Nest框架",
+            items: [
+              {
+                text: "Koa相关资源",
+                link: "/Document/Node后端框架开发/Koa框架/Koa相关资源",
+              },
+              {
+                text: "Koa框架前置JS知识",
+                link: "/Document/Node后端框架开发/Koa框架/Koa框架前置JS知识",
+              },
+              {
+                text: "Koa项目结构和相关依赖",
+                link: "/Document/Node后端框架开发/Koa框架/Koa项目结构和相关依赖",
+              },
+              {
+                text: "Koa框架开发",
+                link: "/Document/Node后端框架开发/Koa框架/Koa框架开发",
+              },
+            ],
           },
           {
             text: "EggJs框架",
             link: "/Document/Node后端框架开发/EggJs框架",
           },
           {
+            text: "Nest框架",
+            items: [
+              {
+                text: "Nest框架",
+                link: "/Document/Node后端框架开发/Nest框架/Nest框架",
+              }
+            ],
+          },
+          {
             text: "Fastify框架",
-            link: "/Document/Node后端框架开发/Fastify框架",
+            items: [
+              {
+                text: "Fastify框架",
+                link: "/Document/Node后端框架开发/Fastify框架",
+              }
+            ],
           },
         ]
       },
       {
         text: "数据库的使用",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "MongoDB数据库",
@@ -1057,7 +1089,7 @@ export default {
       {
         text: "Electron笔记",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "Electron学习指南",
@@ -1100,7 +1132,7 @@ export default {
       {
         text: "Elasticsearch",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "全文搜索引擎 Elasticsearch 入门教程",
@@ -1111,7 +1143,7 @@ export default {
       {
         text: "CoffeeScript",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "CoffeeScript",
@@ -1122,7 +1154,7 @@ export default {
       {
         text: "技术提升和职业规划",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "技术提升",
@@ -1137,7 +1169,7 @@ export default {
       {
         text: "开源相关",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "使用Issue管理软件项目",
@@ -1152,7 +1184,7 @@ export default {
       {
         text: "待定5",
         collapsible: true, // 可折叠
-        collapsed: false, // 初始不折叠
+        collapsed: true, // 初始不折叠
         items: [
           {
             text: "哈哈哈",

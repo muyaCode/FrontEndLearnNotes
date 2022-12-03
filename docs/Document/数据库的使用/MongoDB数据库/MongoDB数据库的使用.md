@@ -28,7 +28,9 @@ mongodb官网文档：[https://mongoosejs.com/](https://mongoosejs.com/)
 
 **操作示例：**
 
-- **先使用node连接上数据库**
+- 安装mongodb库：`npm i mongodb`
+
+- **node使用mongodb库连接上mongodb数据库**
 
 ```jsx
 const MongoClient = require('mongodb').MongoClient;
@@ -258,11 +260,15 @@ client.connect(function(err) {
 
 **抽象模型对应：一层层包含：schema包含model，model包含entitv**
 
-| MongoDB    | Mongoose |
-|:----------:|:--------:|
-| document   | schema   |
-| collection | model    |
-| database   | entitv   |
+| MongoDB     | MySQL       | Mongoose |
+|:-----------:|:-----------:|:--------:|
+| database    | database    | database |
+| collection  | table       | schema   |
+| document    | row         | model    |
+| field       | column      | entity   |
+| index       | index       | methods  |
+| primary key | primary key | statics  |
+| 无           | table join  | virtual  |
 
 #### 1、安装 mongoose
 

@@ -1,208 +1,39 @@
-# Koa.js学习
+# Koa框架开发
 
-## 介绍
+## koa项目配置
 
-Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。
-
- 通过利用 async 函数，Koa 帮你丢弃回调函数，并有力地增强错误处理。 
-
-Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。
-
-## 网址
-
-- Koa开源地址GitHub：
-  
-  - <https://github.com/koajs/koa>  
-
-- 官网 ：
-  
-  - [https://koajs.com](https://koajs.com)  
-
-- 中文网：
-  
-  - [https://koa.bootcss.com](https://koa.bootcss.com)  
-  - [https://www.koajs.com.cn](https://www.koajs.com.cn)
-
-- 教程文档：
-  
-  - 基础到入门文档教程：[第一章 入门 · koa · 看云 (kancloud.cn)](https://www.kancloud.cn/chengbenchao/koa_tutorial/993443)
-  - 文档2：[导读 · fckoa · 看云 (kancloud.cn)](https://www.kancloud.cn/fckoa/fckoa/885031)
-
-## 入门
-
-服务端要素：
-
-HTTP：Application
-
-接收： Context
-
-解析：Request
-
-响应：Response
-
-中间件：Middlewares
-
-执行上下文：Session、Cookie
-
-###### 常用技术栈：
-
-Pug：模板引擎
-
-- [Started &ndash; Pug](https://pugjs.org/api/getting-started.html)
-
-- [入门指南 – Pug (pugjs.org)](https://pugjs.org/zh-cn/api/getting-started.html)
-
-Parcel：开箱即用开发体验与可扩展的架构相结合，是 Web 应用打包工具库，与模板引擎结合打包成网页：
-
-- [parcel](https://parceljs.org/)
-
-- [Parcel - Web 应用打包工具 | Parcel 中文网 (parceljs.cn)](https://www.parceljs.cn/)
-
-- 
-
----
-
-## Koa前置JS知识
-
-## Koa项目结构目录
-
-第一种
+1.新建项目目录，初始化项目的package.json
 
 ```bash
-bin
-config
-node_modules
-server
-    |__database    // 数据库目录
-        |__schema    // 构建schema目录
-    |__decorator   // 装饰器目录，如router.js路由的装饰
-    |__middleware  // 中间件目录
-    |__routes    // 路由方法目录
-    |__service   // 服务方法目录
-    |__task  // 异步等或任务运行脚本方法目录
-    |__tpl  // 模板目录
-    |__views  // 模板渲染的页面目录
-src   // 正常的前端项目目录
-    |__assets  // 静态资源目录
-    ...
-app.js    // 入口运行目录
+npm init
 ```
 
-第二种
+2.安装koa
 
 ```bash
-|____controllers                  // 控制器目录
-|____database                     // 数据库目录
-|____models                       // 模型目录
-|____public                       // 公共静态资源文件目录
-| |____1.jpg
-|____routes                       // 路由目录
-|____src                          // source 文件
-| |____index.js
-| |____api                        // api 接口文件目录
-| | |____a.js
-| | |____b.js
-| |____routes                     // routes 路由目录
-| | |____aRouter.js
-| | |____routes.js
-| | |____bRouter.js
-|____views                        // 视图目录
-|____app.js                       // 入口文件
-|____package-lock.json
-|____package.json
+npm i koa
 ```
 
-第三种
+3.简单的服务器
 
-```bash
-├─src           // 应用目录（可设置）
-│  ├─controller                 // 控制器
-│  ├─config                      // 配置文件
-│  ├─db                           // 数据库相关配置
-    ├─ model                     // 各个数据模型
-    ├─ index.js                   // 数据库配置页面
-│  ├─middleWares           // 中间件
-│  ├─routes                      // 路由
-    ├─ index.js                   // 路由入口文件
-    ├─ users.js                  // 用户路由
-│  ├─service                    // 服务
-│  ├─app.js                   // 入口文件
-```
+```js
+const http = require('http')
+const Koa = require('koa');
 
-**第四种：推荐使用**
+const app = new Koa();
 
-```bash
-config - 配置文件，例如：database.config.js
-controller - 控制器
-decorator - 装饰器 如 decorator/routes.js：对路由拆分和继承的功能方法
-models - 数据库模型（ROM）
-middlewares - 中间件
-public - 静态资源
-service - 服务-跟数据库进行交互
-static - 静态资源目录
-router - 路由
-routes - 路由装饰器
-app.js - 启动文件
-```
+/* 创建挂载Koa应用程序的http服务 */
+const server = http.createServer(app.callback());
 
-## Koa依赖
+app.use(async ctx => {
+  ctx.body = 'Koa服务启动成功'
+})
 
-koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
-
-- babel-core/babel-preset-es2015 - 让 nodeJs 支持 es6 modules
-- koa - koa2
-- koa-body - request body 解析
-- koa-cache-control - 缓存控制
-- koa-compress - gzip
-- koa-cors - 跨域
-- koa-logger - 日志
-- koa-onerror - 错误处理
-- koa-router - 路由
-- koa-session - session
-- koa-static - 静态资源服务
-- koa-helmet - 安全
-- koa-view - 静态文件访问能力
-- md5 - md5 加密
-- mkdirp - 递归创建目录
-
-## Koa项目搭建快速开发脚手架
-
-1、第一步：全局安装 `koa-generator`
-
-```bash
-npm install koa-generator -g
-```
-
-2、第二步：使用 `koa-generator` 生成 `koa` 项目
-
-```bash
-# 项目名字为：myproject
-koa2 myproject
-```
-
-3、第三步：进入项目，安装依赖包
-
-```bash
-# 进入 myproject 项目
-cd myproject
-# 安装
-npm install
-```
-
-4、第四步：启动服务
-
-```bash
-npm start
-```
-
-5、第五步：打开浏览器
-
-```bash
-# 打开下面链接
-http://localhost:3000/
-# 页面显示
-Hello Koa 2!
-Welcome to Hello Koa 2!
+const port = 2333
+/* 开始监听/启动服务（指定3000端口与成功回调） */
+server.listen(port, () => {
+    console.log('Koa服务启动成功：http://localhost:'+ port);
+});
 ```
 
 ## Koa路由配置
@@ -269,7 +100,7 @@ app.listen(9000)
 | -------------------- | --------------------------------------------------------------------------------------------------- |
 | ctx.url              | 获取路由地址（url）                                                                                         |
 | ctx.method           | 获取请求方式（GET POST）                                                                                    |
-| ctx.params.xx 获取路由参数 | 获取GET请求参数 如：http://localhost:3000/user/1                                                            |
+| ctx.params.xx 获取路由参数 | 获取GET请求参数 如：<http://localhost:3000/user/1>                                                          |
 | ctx.query 获取查询字符串    | 获取GET请求？后的参数，如：[http://localhost:3000/users?name='aaa'](http://localhost:3000/users?name=%27aaa%27) |
 | ctx.body             | 获取POST 提交的参数 (需要中间件：koa-bodyparser）                                                                 |
 | ctx.header           | 获取请求头信息                                                                                             |
