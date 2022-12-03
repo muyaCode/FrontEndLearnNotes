@@ -6,7 +6,7 @@
 
 ### 1.下载
 
-1.打开官网：https://www.mongodb.com/
+1.打开官网：<https://www.mongodb.com/>
 
 2.点击社区版：选择 `Products > Community Edition` 就能进入社区版
 
@@ -32,7 +32,7 @@
 
 3.在安装路径下->创建`data\db`(存储 MongoDB 产生的数据)，和 `data\log` 日志文件夹
 
-**4.运行MongoDB服务**
+4.运行MongoDB服务
 
 进入 `bin` 目录下，`cmd` 进入 `命令行窗口`，使用命令的指定存储数据文件的形式启动：`mongod --dbpath=..\data\db`
 
@@ -46,7 +46,7 @@
 移除服务：目录路径\MongoDB\bin\mongod.exe –remove
 ```
 
-5.本地测试启动地址：<http://localhost:27017/>
+5.本地测试启动地址：localhost:27017
 
 成功启动：看到 `It looks like you are trying to access MongoDB over HTTP on the native driver port.` 就能证明 MongoDB 启动成功
 
@@ -163,15 +163,15 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 ---
 
-##### 2.2. Navicat：
+##### 2.2. Navicat
 
 ---
 
-##### 2.3. robo3t：
+##### 2.3. robo3t
 
 ---
 
-##### 2.4. Robomongo：
+##### 2.4. Robomongo
 
 ---
 

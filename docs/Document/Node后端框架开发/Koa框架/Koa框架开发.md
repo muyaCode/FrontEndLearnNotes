@@ -209,8 +209,8 @@ app.listen(9000)
 | -------------------- | --------------------------------------------------------------------------------------------------- |
 | ctx.url              | 获取路由地址（url）                                                                                         |
 | ctx.method           | 获取请求方式（GET POST）                                                                                    |
-| ctx.params.xx 获取路由参数 | 获取GET请求参数 如：<http://localhost:3000/user/1>                                                          |
-| ctx.query 获取查询字符串    | 获取GET请求？后的参数，如：[http://localhost:3000/users?name='aaa'](http://localhost:3000/users?name=%27aaa%27) |
+| ctx.params.xx 获取路由参数 | 获取GET请求参数 如：localhost:9000/user/1                                                         |
+| ctx.query 获取查询字符串    | 获取GET请求？后的参数，如：localhost:9000/users?name='aaa'                                       |
 | ctx.body             | 获取POST 提交的参数 (需要中间件：koa-bodyparser）                                                                 |
 | ctx.header           | 获取请求头信息                                                                                             |
 
