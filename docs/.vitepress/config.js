@@ -193,6 +193,47 @@ export default {
               },
             ]
           },
+          {
+            text: "ECMAScript语法",
+            items: [
+              {
+                text: "ECMAScript语法简介-文档-资源",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript语法简介-文档-资源",
+              },
+              {
+                text: "ECMAScript-6(ES2015)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-6(ES2015)",
+              },
+              {
+                text: "ECMAScript-7(ES2016)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-7(ES2016)",
+              },
+              {
+                text: "ECMAScript-8((ES2017))",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-8((ES2017))",
+              },
+              {
+                text: "ECMAScript-9(ES2018)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-9(ES2018)",
+              },
+              {
+                text: "ECMAScript-10(ES2019)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-10(ES2019)",
+              },
+              {
+                text: "ECMAScript-11(ES2020)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-11(ES2020)",
+              },
+              {
+                text: "ECMAScript-12(ES2021)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-12(ES2021)",
+              },
+              {
+                text: "ECMAScript-13(ES2022)",
+                link: "/Document/JavaScript笔记/ECMAScript语法/ECMAScript-13(ES2022)",
+              },
+            ]
+          },
         ]
       },
       {
@@ -965,8 +1006,16 @@ export default {
         collapsed: true, // 初始不折叠
         items: [
           {
-            text: "Node学习",
-            link: "/Document/Node/Node学习",
+            text: "Node相关网站资源",
+            link: "/Document/Node/Node相关网站资源",
+          },
+          {
+            text: "NodeJS介绍",
+            link: "/Document/Node/NodeJS介绍",
+          },
+          {
+            text: "NodeJS安装和配置",
+            link: "/Document/Node/NodeJS安装和配置",
           },
           {
             text: "Node版本管理工具",
@@ -975,6 +1024,18 @@ export default {
           {
             text: "nvm的简介、安装、使用",
             link: "/Document/Node/nvm的简介、安装、使用",
+          },
+          {
+            text: "npm学习",
+            link: "/Document/Node/npm学习",
+          },
+          {
+            text: "NodeJS学习",
+            link: "/Document/Node/NodeJS学习",
+          },
+          {
+            text: "自定义Node模块发布",
+            link: "/Document/Node/自定义Node模块发布",
           },
           {
             text: "npm scripts 使用指南",

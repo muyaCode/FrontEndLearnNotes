@@ -86,18 +86,34 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 - babel-core/babel-preset-es2015 - 让 nodeJs 支持 es6 modules
 - koa - koa2
 - koa-body - request body 解析
+  - [koa-body - npm (npmjs.com)](https://www.npmjs.com/package/koa-body)
+- @koa/multer - formData解析-处理使用[multer](https://github.com/expressjs/multer) 的 Koa 路由中间件
+  - [@koa/multer - npm (npmjs.com)](https://www.npmjs.com/package/@koa/multer)
+  - [koajs/multer: Middleware for handling `multipart/form-data` for koa, based on Express's multer. (github.com)](https://github.com/koajs/multer)
 - koa-cache-control - 缓存控制
 - koa-compress - gzip
 - koa-cors - 跨域
 - koa-logger - 日志
 - koa-onerror - 错误处理
 - koa-router - 路由
+  - [koa-router - npm (npmjs.com)](https://www.npmjs.com/package/koa-router)
 - koa-session - session
 - koa-static - 静态资源服务
+  - [koa-static - npm (npmjs.com)](https://www.npmjs.com/package/koa-static)
+- koa-static-cache - 静态缓存
+  - [koa-static-cache - npm (npmjs.com)](https://www.npmjs.com/package/koa-static-cache)
+- koa-swig - 模板引擎（通常使用pug库）
+  - [koa-swig - npm (npmjs.com)](https://www.npmjs.com/package/koa-swig)
 - koa-helmet - 安全
 - koa-view - 静态文件访问能力
 - md5 - md5 加密
 - mkdirp - 递归创建目录
+- nodemon - 项目热重载运行库：每次修改代码后，自动重启项目 - nodemon app.js
+  - 项目安装：npm install nodemon --save-dev
+  - 全局安装：npm install nodemon -g
+- supervisor - 项目热重载运行库：每次修改代码后，自动重启项目 - supervisor app.js
+  - npm install supervisor --save-dev
+  - 全局安装：npm install supervisor -g
 
 ## Koa项目搭建快速开发脚手架
 

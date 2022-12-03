@@ -36,6 +36,115 @@ server.listen(port, () => {
 });
 ```
 
+###### bin/www可执行文件配置
+
+```js
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.启动文件
+ */
+
+var app = require('../app');
+var debug = require('debug')('demo:server');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+// app.set('port', port);
+
+/**
+ * Create HTTP server.
+ * http://nodejs.cn/api/http.html#http_class_http_server
+ * 返回的是一个http.Server实例，继承自: <net.Server>
+ * http://nodejs.cn/api/net.html#net_class_net_server
+ * 而<net.Server>继承自: <EventEmitter>
+ * http://nodejs.cn/api/events.html#events_class_eventemitter
+ */
+var server = http.createServer(app.callback());
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+// 启动 HTTP 服务器用于监听连接
+server.listen(port);
+// on方法来自于<EventEmitter>
+// error、listening事件来自于<net.Server>
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  // 关于失败的系统调用描述：http://nodejs.cn/api/errors.html#errors_error_syscall
+  // https://man7.org/linux/man-pages/man2/syscalls.2.html
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      // 拒绝访问)
+      console.error(bind + ' requires elevated privileges');
+      // http://nodejs.cn/api/process.html#process_process_exit_code
+      // 调用 process.exit() 将强制进程尽快退出，即使还有尚未完全完成的异步操作，包括对 process.stdout 和 process.stderr 的 I/O 操作。
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      // 地址已经被使用
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  // http://nodejs.cn/api/net.html#net_server_address
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+```
+
 ## Koa路由配置
 
 ###### 1安装koa2路由
