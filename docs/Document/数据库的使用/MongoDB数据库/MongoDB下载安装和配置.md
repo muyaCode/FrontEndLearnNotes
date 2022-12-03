@@ -185,6 +185,6 @@ VS Code搜索安装插件：MongoDB for VS Code
 
 VS Code 连接：
 
-![VSCode-plugins-lianjie.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\数据库的使用\img\VSCode-plugins-lianjie.jpg)
+![VSCode-plugins-lianjie.jpg](../img/VSCode-plugins-lianjie.jpg)
 
 使用该插件添加数据库：没学会，文档待定
