@@ -52,7 +52,7 @@
 
 ![qdcg.jpg](../img/qdcg.jpg)
 
-给该文件添加些配置信息：
+6.存放数据和日志目录：安装目录下新建`conf\mongodb.conf`文件，给该文件添加些配置信息：
 
 ```bash
 systemLog:
@@ -74,7 +74,7 @@ setParameter:
 
 详细配置可参考：[官方文档](https://www.mongodb.com/docs/manual/reference/configuration-options/)
 
-进入 `bin` 目录下，`cmd` 进入 `命令行窗口`，使用命令的形式让 `mongodb` 指定配置文件启动：
+6.1 进入 `bin` 目录下，`cmd` 进入 `命令行窗口`，使用命令的形式让 `mongodb` 指定配置文件启动：
 
 ```bash
 mongod -f ..\conf\mongodb.conf
@@ -187,4 +187,4 @@ VS Code 连接：
 
 ![VSCode-plugins-lianjie.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\数据库的使用\img\VSCode-plugins-lianjie.jpg)
 
-添加数据库：没学会，文档待定
+使用该插件添加数据库：没学会，文档待定

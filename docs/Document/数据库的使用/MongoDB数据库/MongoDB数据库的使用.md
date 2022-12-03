@@ -1,5 +1,15 @@
 # mongoDB数据库
 
+有关 CRUD（创建、读取、更新、删除）操作的信息， 看：
+
+- [插入文档](https://www.mongodb.com/docs/manual/tutorial/insert-documents/)
+
+- [查询文档](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+
+- [更新文档](https://www.mongodb.com/docs/manual/tutorial/update-documents/)
+
+- [删除文档](https://www.mongodb.com/docs/manual/tutorial/remove-documents/)
+
 ## Node连接MongoDB数据库
 
 ### 1.mongodb库连接MongoDB
