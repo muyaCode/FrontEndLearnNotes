@@ -107,6 +107,8 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 - koa-cors - 跨域
 - koa-logger - 日志
 - koa-onerror - 错误处理
+- koa-route - 路由，但6年没更新
+  - [koa-route - npm (npmjs.com)](https://www.npmjs.com/package/koa-route)
 - koa-router - 路由
   - [koa-router - npm (npmjs.com)](https://www.npmjs.com/package/koa-router)
 - koa-session - session
@@ -175,4 +177,59 @@ http://localhost:3000/
 # 页面显示
 Hello Koa 2!
 Welcome to Hello Koa 2!
+```
+
+## koa中间件与洋葱模型
+
+事件运行机制
+
+```js
+const Koa = require('koa')
+
+const app = new Koa()
+
+app.use(async (ctx, next) => {
+    console.log(1)
+    ctx.body = 'hello koa'
+    await next()
+    console.log(2)
+})
+
+app.use(async (ctx, next) => {
+    console.log(3)
+    await next()
+    console.log(4)
+})
+
+app.use(async (ctx, next) => {
+    console.log(5)
+})
+
+app.listen(3031, () => {
+    console.log('http://localhost:3031/');
+})
+```
+
+输入结果：13542
+
+洋葱模型：一层一层进入，一层一层出
+
+```js
+app.use(async (ctx,next)=>{
+  console.log(1);
+  await next();
+  console.log(2);
+});
+
+app.use(async (ctx,next)=>{
+  console.log(3);
+  await next();
+  console.log(4);
+});
+
+<<<
+1
+3
+4
+2
 ```
