@@ -1,5 +1,17 @@
 # Koa项目结构和相关依赖
 
+Koa 依赖 **node v7.6.0** 或 ES2015及更高版本和 async 方法支持.
+
+你可以使用自己喜欢的版本管理器(nvm/)快速安装支持的 node 版本：
+
+```bash
+nvm install 7
+npm i koa
+node my-koa-app.js
+```
+
+## koa项目结构
+
 第一种
 
 ```bash
@@ -104,6 +116,16 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
   - [koa-static-cache - npm (npmjs.com)](https://www.npmjs.com/package/koa-static-cache)
 - koa-swig - 模板引擎（通常使用pug库）
   - [koa-swig - npm (npmjs.com)](https://www.npmjs.com/package/koa-swig)
+- pug - 模板引擎，(jade) 侵入式，配合koa-view使用
+  - 官网：[Getting Started – Pug (pugjs.org)](https://pugjs.org/api/getting-started.html)
+  - 中文网：[入门指南 – Pug 模板引擎中文文档 | Pug 中文网 (pugjs.cn)](https://www.pugjs.cn/api/getting-started.html)
+- ejs - 模板引擎，非侵入式，
+  - 官网：[EJS -- Embedded JavaScript templates](https://ejs.co/index.html)
+  - 中文网：[EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档 (bootcss.com)](https://ejs.bootcss.com/)
+- Parcel - 零配置的构建工具，能够处理各种框架文件的包裹
+  - 官网：[Parcel (parceljs.org)](https://parceljs.org/)
+  - Parcel 1中文网：[🚀 快速开始 | Parcel中文网 (parceljs.cn)](https://www.parceljs.cn/getting_started.html)
+  - Parcel 2中文网：[Parcel 中文文档 | Parcel 中文网 (parceljs.cn)](https://v2.parceljs.cn/)
 - koa-helmet - 安全
 - koa-view - 静态文件访问能力
 - md5 - md5 加密

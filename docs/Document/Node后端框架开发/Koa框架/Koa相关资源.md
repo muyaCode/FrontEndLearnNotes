@@ -22,27 +22,32 @@ Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮
   
   - [https://koa.bootcss.com](https://koa.bootcss.com)  
   - [https://www.koajs.com.cn](https://www.koajs.com.cn)
+  - [基于 Node.js 平台的下一代 web 开发框架 | Koajs 中文文档 (koafun.com)](https://www.koafun.com/#)
 
 - 教程文档：
   
   - 基础到入门文档教程：[第一章 入门 · koa · 看云 (kancloud.cn)](https://www.kancloud.cn/chengbenchao/koa_tutorial/993443)
   - 文档2：[导读 · fckoa · 看云 (kancloud.cn)](https://www.kancloud.cn/fckoa/fckoa/885031)
 
+- 官方中间件库列表：[Home · koajs/koa Wiki (github.com)](https://github.com/koajs/koa/wiki#middleware)
+
 ## 服务端要素
 
-HTTP：Application
+- HTTP：Application
 
-接收： Context
+- 接收： Context对象
+  
+  - 解析：Request
+  
+  - 响应：Response
 
-解析：Request
+- 中间件：Middlewares
 
-响应：Response
-
-中间件：Middlewares
-
-执行上下文：Session、Cookie
+- 执行上下文：Session、Cookie
 
 ###### 常用技术栈：
+
+**官方中间件库列表：**[Home · koajs/koa Wiki (github.com)](https://github.com/koajs/koa/wiki#middleware)
 
 Pug：模板引擎
 
@@ -56,4 +61,16 @@ Parcel：开箱即用开发体验与可扩展的架构相结合，是 Web 应用
 
 - [Parcel - Web 应用打包工具 | Parcel 中文网 (parceljs.cn)](https://www.parceljs.cn/)
 
-- 
+## 官网文档提供的相关资源
+
+以下列出了更多第三方提供的 koa 中间件、完整实例、全面的帮助文档等。
+
+- [GitHub repository](https://github.com/koajs/koa)
+- [Examples](https://github.com/koajs/examples)
+- [Middleware](https://github.com/koajs/koa/wiki)
+- [Wiki](https://github.com/koajs/koa/wiki)
+- [G+ Community](https://plus.google.com/communities/101845768320796750641)
+- [Mailing list](https://groups.google.com/forum/#!forum/koajs)
+- [Guide](https://github.com/koajs/koa/blob/master/docs/guide.md)
+- [FAQ](https://github.com/koajs/koa/blob/master/docs/faq.md)
+- **#koajs** on freenode

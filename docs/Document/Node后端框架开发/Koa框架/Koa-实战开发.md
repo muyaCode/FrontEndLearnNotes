@@ -1,159 +1,24 @@
-# Koa框架开发
+# Koa-实战开发
 
-## koa项目配置
+## 项目前置
 
-1.新建项目目录，初始化项目的package.json
+使用以下二选一文档初始化koa项目：
 
-```bash
-npm init
-```
+- 使用：Koa-应用(Application)-koa项目初始
 
-2.安装koa
-
-```bash
-npm i koa
-```
-
-3.简单的服务器
-
-```js
-const http = require('http')
-const Koa = require('koa');
-
-const app = new Koa();
-
-/* 创建挂载Koa应用程序的http服务 */
-const server = http.createServer(app.callback());
-
-app.use(async ctx => {
-  ctx.body = 'Koa服务启动成功'
-})
-
-const port = 2333
-/* 开始监听/启动服务（指定3000端口与成功回调） */
-server.listen(port, () => {
-    console.log('Koa服务启动成功：http://localhost:'+ port);
-});
-```
-
-###### bin/www可执行文件配置
-
-```js
-#!/usr/bin/env node
-
-/**
- * Module dependencies.启动文件
- */
-
-var app = require('../app');
-var debug = require('debug')('demo:server');
-var http = require('http');
-
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3000');
-// app.set('port', port);
-
-/**
- * Create HTTP server.
- * http://nodejs.cn/api/http.html#http_class_http_server
- * 返回的是一个http.Server实例，继承自: <net.Server>
- * http://nodejs.cn/api/net.html#net_class_net_server
- * 而<net.Server>继承自: <EventEmitter>
- * http://nodejs.cn/api/events.html#events_class_eventemitter
- */
-var server = http.createServer(app.callback());
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-// 启动 HTTP 服务器用于监听连接
-server.listen(port);
-// on方法来自于<EventEmitter>
-// error、listening事件来自于<net.Server>
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
-function onError(error) {
-  // 关于失败的系统调用描述：http://nodejs.cn/api/errors.html#errors_error_syscall
-  // https://man7.org/linux/man-pages/man2/syscalls.2.html
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      // 拒绝访问)
-      console.error(bind + ' requires elevated privileges');
-      // http://nodejs.cn/api/process.html#process_process_exit_code
-      // 调用 process.exit() 将强制进程尽快退出，即使还有尚未完全完成的异步操作，包括对 process.stdout 和 process.stderr 的 I/O 操作。
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      // 地址已经被使用
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  // http://nodejs.cn/api/net.html#net_server_address
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
-```
+- 或者使用：Koa项目结构和相关依赖-Koa项目搭建快速开发脚手架
 
 ## Koa路由配置
 
-###### 1安装koa2路由
+##### 1.安装koa2路由
+
+安装命令
 
 ```bash
 npm install koa-router --save
 ```
 
-###### 2.自动加载
+##### 2.自动加载
 
 安装koa 路由自动加载 require-directory
 
@@ -203,22 +68,11 @@ InitManager.initCore(app)
 app.listen(9000)
 ```
 
-###### 获取参数
-
-| 名称                   | 含义                                                                                                  |
-| -------------------- | --------------------------------------------------------------------------------------------------- |
-| ctx.url              | 获取路由地址（url）                                                                                         |
-| ctx.method           | 获取请求方式（GET POST）                                                                                    |
-| ctx.params.xx 获取路由参数 | 获取GET请求参数 如：localhost:9000/user/1                                                         |
-| ctx.query 获取查询字符串    | 获取GET请求？后的参数，如：localhost:9000/users?name='aaa'                                       |
-| ctx.body             | 获取POST 提交的参数 (需要中间件：koa-bodyparser）                                                                 |
-| ctx.header           | 获取请求头信息                                                                                             |
-
 ###### Koa2 路由前缀
 
 ```js
 const router = new Router();
-const PostsRouter = new Router({prefix: '/posts'});
+const PostsRouter = new Router({ prefix: '/posts' });
 // xxx.com/posts
 PostsRouter.get('/', (ctx) => {
   ctx.body = {
@@ -235,13 +89,13 @@ PostsRouter.get('/:id', (ctx) => {
 app.use(PostsRouter.routes())
 ```
 
-> prefix: '/xxx' 路由前缀
+> new Router({ prefix: '/posts' })：'/xxx' 路由前缀
 
 ###### koa2使用路由中间件
 
 ```js
 //定义鉴权中间件
-const  auth = async (ctx, next ) => {
+const auth = async (ctx, next) => {
   if (ctx.url !== '/posts'){
     ctx.throw('没有权限访问!')
     await next()
@@ -253,33 +107,6 @@ PostsRouter.get('/', auth, (ctx, next) => {
     name: '首页'
   }
 })
-```
-
-## Koa
-
-Context(上下文)
-
-请求(Request)
-
-响应(Response)
-
-```js
-const Router = require('koa-router')
-const router = new Router()
-router.get('/api/v1/news/:id', (ctx, next) => {
-  ctx.body = {
-    // 获取 url中 pathinfo 参数
-    params: ctx.params,
-    // 获取 url 中 ?params=xxx 参数
-    query: ctx.request.query,
-    // 获取Http头信息
-    header: ctx.request.header,
-    // 获取post 提交信息
-    body: ctx.request.body
-  }
-})
-
-module.exports = router
 ```
 
 ## Koa使用数据库
@@ -296,19 +123,7 @@ MongoDB
    1. 阿里云 postgresql：[云数据库RDS PostgreSQL_pg数据库_混合数据类型复杂查询_数据库-阿里云](https://cn.aliyun.com/product/rds/postgresql)
 4. 管理工具 pgadmin：[https://www.pgadmin.org/](https://www.pgadmin.org/)
 
-## 相关资源
-
-以下列出了更多第三方提供的 koa 中间件、完整实例、全面的帮助文档等。
-
-- [GitHub repository](https://github.com/koajs/koa)
-- [Examples](https://github.com/koajs/examples)
-- [Middleware](https://github.com/koajs/koa/wiki)
-- [Wiki](https://github.com/koajs/koa/wiki)
-- [G+ Community](https://plus.google.com/communities/101845768320796750641)
-- [Mailing list](https://groups.google.com/forum/#!forum/koajs)
-- [Guide](https://github.com/koajs/koa/blob/master/docs/guide.md)
-- [FAQ](https://github.com/koajs/koa/blob/master/docs/faq.md)
-- **#koajs** on freenode
+# 
 
 ## Koa2开发例子
 
@@ -502,3 +317,5 @@ console.log('listening on port 3001');
 </script>
 </html>
 ```
+
+待定
