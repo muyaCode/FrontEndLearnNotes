@@ -74,7 +74,7 @@ const app = new Koa();
 
 下面是app的方法和属性
 
-### app.listen(...)
+### app.listen(...) 端口监听
 
 Koa 应用程序不是 HTTP 服务器的1对1展现。 可以将一个或多个 Koa 应用程序安装在一起以形成具有单个HTTP服务器的更大应用程序。
 
@@ -88,8 +88,6 @@ const app = new Koa();
 app.listen(3000);
 ```
 
-复制
-
 这里的 `app.listen(...)` 方法只是以下方法的语法糖:
 
 ```javascript
@@ -98,8 +96,6 @@ const Koa = require('koa');
 const app = new Koa();
 http.createServer(app.callback()).listen(3000);
 ```
-
-复制
 
 这意味着您可以将同一个应用程序同时作为 HTTP 和 HTTPS 或多个地址：
 
@@ -112,11 +108,11 @@ http.createServer(app.callback()).listen(3000);
 https.createServer(app.callback()).listen(3001);
 ```
 
-### app.callback()
+### app.callback() 方法的回调函数
 
 返回适用于 `http.createServer()` 方法的回调函数来处理请求。你也可以使用此回调函数将 koa 应用程序挂载到 Connect/Express 应用程序中。
 
-### app.use(function)
+### app.use(function) 请求到来时执行的函数（注册中间件）
 
 将给定的中间件方法添加到此应用程序。`app.use()` 返回 `this`, 因此可以链式表达调用.
 
@@ -136,9 +132,7 @@ app.use(someMiddleware)
 
 参阅 [Middleware](https://github.com/koajs/koa/wiki#middleware) 获取更多信息.
 
-### app.keys=
-
-设置签名的 Cookie 密钥。
+### app.keys=  设置签名的 Cookie 密钥
 
 这些被传递给 [KeyGrip](https://github.com/crypto-utils/keygrip)，但是你也可以传递你自己的 `KeyGrip` 实例。
 
@@ -155,9 +149,13 @@ app.keys = new KeyGrip(['im a newer secret', 'i like turtle'], 'sha256');
 ctx.cookies.set('name', 'tobi', { signed: true });
 ```
 
-### app.context
+### app.context 是app.use(async ctx => {})的参数
 
-`app.context` 是从其创建 `ctx` 的原型。您可以通过编辑 `app.context` 为 `ctx` 添加其他属性。这对于将 `ctx` 添加到整个应用程序中使用的属性或方法非常有用，这可能会更加有效（不需要中间件）和/或 更简单（更少的 `require()`），而更多地依赖于`ctx`，这可以被认为是一种反模式。
+`app.context` 是从其创建 `ctx` 的原型。
+
+所有的app.use下的ctx都是共享的，可以在某一个app.use中通过ctx来传递数据给下一个app.use中间件：使用ctx.state.xxx传递，文档请看： **Koa-上下文(Context)**
+
+您可以通过编辑 `app.context` 为 `ctx` 添加其他属性。这对于将 `ctx` 添加到整个应用程序中使用的属性或方法非常有用，这可能会更加有效（不需要中间件）和/或 更简单（更少的 `require()`），而更多地依赖于`ctx`，这可以被认为是一种反模式。
 
 例如，要从 `ctx` 添加对数据库的引用：
 
@@ -174,7 +172,7 @@ app.use(async ctx => {
 - `ctx` 上的许多属性都是使用 `getter` ，`setter` 和 `Object.defineProperty()` 定义的。你只能通过在 `app.context` 上使用 `Object.defineProperty()` 来编辑这些属性（不推荐）。查阅：https://github.com/koajs/koa/issues/652.
 - 安装的应用程序目前使用其父级的 `ctx` 和设置。 因此，安装的应用程序只是一组中间件。
 
-## 错误处理
+### app.on 错误处理
 
 默认情况下，将所有错误输出到 stderr，除非 `app.silent` 为 `true`。 当 `err.status` 是 `404` 或 `err.expose` 是 `true` 时默认错误处理程序也不会输出错误。 要执行自定义错误处理逻辑，如集中式日志记录，您可以添加一个 “error” 事件侦听器：
 

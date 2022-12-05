@@ -15,7 +15,7 @@
 - ctx.request.path ：获取用户请求的路径，由此实现简单路由
 
 ```js
-const main = ctx=>{
+const main = ctx => {
     if( ctx.request.path ){
         ctx.response.type='html'
         ctx.response.body='<h1>无此路径</h1>'
@@ -23,13 +23,28 @@ const main = ctx=>{
         ctx.response.body='<h1>这是首页</h1>'
     }
 }
+app.use(main)
 // 访问localhost:3000/hello 
 // 显示 '无此路径'
+```
+
+第二种写法
+
+```js
+app.use(async ctx => {
+    switch(ctx.URL) {
+        case '/user':
+          break;
+          ...
+    }
+})
 ```
 
 ### koa-router路由
 
 ##### 1.安装koa2路由
+
+koa-router文档：[router/API.md  koajs/router (github.com)](https://github.com/koajs/router/blob/HEAD/API.md)
 
 安装命令
 
@@ -39,7 +54,7 @@ npm install koa-router --save
 
 ##### 2.自动加载
 
-安装koa 路由自动加载 require-directory
+安装koa 路由自动加载：require-directory
 
 ```bash
 npm i require-directory --save
@@ -153,6 +168,12 @@ app.use(PostsRouter.routes())
 > new Router({ prefix: '/posts' })：'/xxx' 路由前缀
 
 ###### koa2使用路由中间件
+
+参数：
+
+ctx：
+
+next：
 
 ```js
 //定义鉴权中间件
@@ -651,13 +672,9 @@ app.listen(3000)
 
 ### MySQL
 
-
-
 ---
 
 ### MongoDB
-
-
 
 ## 数据库
 

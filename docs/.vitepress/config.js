@@ -1061,16 +1061,20 @@ export default {
             text: "Koa.js框架",
             items: [
               {
-                text: "Koa相关资源",
-                link: "/Document/Node后端框架开发/Koa框架/Koa相关资源",
-              },
-              {
                 text: "Koa框架前置JS知识",
                 link: "/Document/Node后端框架开发/Koa框架/Koa框架前置JS知识",
               },
               {
                 text: "Koa项目结构和相关依赖",
                 link: "/Document/Node后端框架开发/Koa框架/Koa项目结构和相关依赖",
+              },
+              {
+                text: "Koa快速开发脚手架",
+                link: "/Document/Node后端框架开发/Koa框架/Koa快速开发脚手架",
+              },
+              {
+                text: "Koa中间件与洋葱模型",
+                link: "/Document/Node后端框架开发/Koa框架/Koa中间件与洋葱模型",
               },
               {
                 text: "Koa-应用(Application)",
@@ -1089,18 +1093,26 @@ export default {
                 link: "/Document/Node后端框架开发/Koa框架/Koa-响应(Response)",
               },
               {
+                text: "Koa相关资源",
+                link: "/Document/Node后端框架开发/Koa框架/Koa相关资源",
+              },
+              {
                 text: "Koa-实战开发",
                 link: "/Document/Node后端框架开发/Koa框架/Koa-实战开发",
+              },
+              {
+                text: "Koa项目示例",
+                link: "/Document/Node后端框架开发/Koa框架/Koa项目示例",
               },
               {
                 text: "Koa项目部署",
                 link: "/Document/Node后端框架开发/Koa框架/Koa项目部署",
               },
+              {
+                text: "EggJS框架",
+                link: "/Document/Node后端框架开发/Koa框架/EggJS框架",
+              },
             ],
-          },
-          {
-            text: "EggJs框架",
-            link: "/Document/Node后端框架开发/EggJs框架",
           },
           {
             text: "Nest框架",
