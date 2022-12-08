@@ -1164,6 +1164,10 @@ export default {
                 link: "/Document/数据库的使用/MySQL数据库/MySQL数据库相关资源",
               },
               {
+                text: "MySQL版本介绍",
+                link: "/Document/数据库的使用/MySQL数据库/MySQL版本介绍",
+              },
+              {
                 text: "MySQL下载安装和配置",
                 link: "/Document/数据库的使用/MySQL数据库/MySQL下载安装和配置",
               },

@@ -96,47 +96,181 @@ app.js - 启动文件
 koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 
 - babel-core/babel-preset-es2015 - 让 nodeJs 支持 es6 modules
+
 - koa - koa2
+
 - koa-body - request body 解析
+  
   - [koa-body - npm (npmjs.com)](https://www.npmjs.com/package/koa-body)
-- @koa/multer - formData解析-处理使用[multer](https://github.com/expressjs/multer) 的 Koa 路由中间件
+  
+  - 使用示例：
+  
+  - ```js
+    
+    ```
+
+- **koa-bodyparser** - request body 解析
+  
+  - [koa-bodyparser - npm (npmjs.com)](https://www.npmjs.com/package/koa-bodyparser)
+  
+  - 使用示例：
+  
+  - ```js
+    var Koa = require('koa');
+    var bodyParser = require('koa-bodyparser');
+    
+    var app = new Koa();
+    
+    // 禁用正文解析器：可以通过设置动态禁用正文解析器。
+    // ctx.disableBodyParser = true
+    app.use(async (ctx, next) => {
+      if (ctx.path === '/disable') ctx.disableBodyParser = true;
+      await next();
+    });
+    
+    // 使用解析和相关配置
+    app.use(bodyParser(
+        // 自定义 JSON 请求检测函数。默认值为null
+        detectJSON: (ctx) => {
+          return /\.json$/i.test(ctx.path);
+        }
+        // 支持扩展类型，或者['json', 'form']：json/form/text/xml
+        extendTypes: {
+          json: ['application/x-javascript']
+        }
+        // 支持自定义错误句柄，如果抛出错误，可以自定义响应，如：koa-bodyparser
+        onerror: (err, ctx) => {
+          ctx.throw('body parse error', 422);
+        }
+        // 
+        // encoding: (ctx) => {
+    
+        // }
+    ));
+    
+    app.use(async ctx => {
+      // 解析后的body将存储在ctx. request中
+      // 如果没有解析任何内容，body将是一个空对象{}
+      ctx.body = ctx.request.body;
+    });
+    ```
+
+- @koa/multer - formData解析(文件上传)-处理使用[multer](https://github.com/expressjs/multer) 的 Koa 路由中间件
+  
   - [@koa/multer - npm (npmjs.com)](https://www.npmjs.com/package/@koa/multer)
   - [koajs/multer: Middleware for handling `multipart/form-data` for koa, based on Express's multer. (github.com)](https://github.com/koajs/multer)
+
 - koa-cache-control - 缓存控制
+
 - koa-compress - gzip
+
 - koa-cors - 跨域
+
 - koa-logger - 日志
+
 - koa-onerror - 错误处理
+
 - koa-route - 路由，但6年没更新
+  
   - [koa-route - npm (npmjs.com)](https://www.npmjs.com/package/koa-route)
+
 - koa-router - 路由
+  
   - [koa-router - npm (npmjs.com)](https://www.npmjs.com/package/koa-router)
   - koa-router文档：[router/API.md koajs/router (github.com)](https://github.com/koajs/router/blob/HEAD/API.md)
+
 - koa-session - session
+
 - koa-static - 静态资源服务
+  
   - [koa-static - npm (npmjs.com)](https://www.npmjs.com/package/koa-static)
+  
+  - 使用案例：
+    
+    - ```js
+      const Koa = require('koa'); // 引入koa
+      const app = new Koa(); // 创建koa应用
+      const static = require('koa-static');
+      
+      app.use(static(__dirname + '/public', {
+          // 默认为true  访问的文件为index.html，可以修改为别的文件名或者false
+          index: false,
+          // 是否同意传输隐藏文件
+          hidden: false,
+          // 如果为true，则在返回next()之后进行服务，从而允许后续中间件先进行响应
+          defer: true
+      }))
+      
+      app.listen(3000);
+      ```
+    
+    - 访问时不需要加上 pubilc，即 “http://127.0.0.1:3000/文件名” 这种形式访问
+
 - koa-static-cache - 静态缓存
+  
   - [koa-static-cache - npm (npmjs.com)](https://www.npmjs.com/package/koa-static-cache)
+
 - koa-swig - 模板引擎，非侵入式，6年未更新（推荐使用pug库）
+  
   - [koa-swig - npm (npmjs.com)](https://www.npmjs.com/package/koa-swig)
+
 - **pug - 模板引擎，(jade) 侵入式，配合koa-view使用**
+  
   - 官网：[Getting Started – Pug (pugjs.org)](https://pugjs.org/api/getting-started.html)
   - 中文网：[入门指南 – Pug 模板引擎中文文档 | Pug 中文网 (pugjs.cn)](https://www.pugjs.cn/api/getting-started.html)
+
 - ejs - 模板引擎，非侵入式
+  
   - 官网：[EJS -- Embedded JavaScript templates](https://ejs.co/index.html)
   - 中文网：[EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档 (bootcss.com)](https://ejs.bootcss.com/)
+
 - Parcel - 零配置的构建工具，能够处理包裹各种框架语言或者文件
+  
   - 官网：[Parcel (parceljs.org)](https://parceljs.org/)
   - Parcel 1中文网：[🚀 快速开始 | Parcel中文网 (parceljs.cn)](https://www.parceljs.cn/getting_started.html)
   - Parcel 2中文网：[Parcel 中文文档 | Parcel 中文网 (parceljs.cn)](https://v2.parceljs.cn/)
+
 - koa-helmet - 安全
+
 - koa-view - 静态文件访问能力
+  
   - [koa-view - npm (npmjs.com)](https://www.npmjs.com/package/koa-view)
+  
+  - 使用示例：
+  
+  - ```js
+    const view = require('koa-view');
+    
+    // 使用模板引擎pug，如果是ejs，也可以把pug替换成ejs
+    // views 第一个参数：静态页面的路径 第二个参数配置对象
+    // 参数配置对象opts文档configure：http://mozilla.github.io/nunjucks/cn/api.html#configure
+    app.use(views(__dirname + '/views', { extension: 'pug' }));));
+    
+    // 中间件中传递渲染的数据
+    app.use(async ctx => {
+      ctx.state = {
+        session: ctx.session,
+        title: 'app'
+      };
+      // ctx.render() 是使用app.use(views())模板渲染的koa-view库注入的
+      // 用于传递要渲染的数据方法
+      await ctx.render('user', {
+        // 传递对象属性user可以直接在：views/user.pug使用，[h1= user]
+        user: 'Coder'
+      });
+    });
+    ```
+
 - md5 - md5 加密
+
 - mkdirp - 递归创建目录
+
 - nodemon - 项目热重载运行库：每次修改代码后，自动重启项目 - nodemon app.js
+  
   - 项目安装：npm install nodemon --save-dev
   - 全局安装：npm install nodemon -g
+
 - supervisor - 项目热重载运行库：每次修改代码后，自动重启项目 - supervisor app.js
+  
   - npm install supervisor --save-dev
   - 全局安装：npm install supervisor -g
