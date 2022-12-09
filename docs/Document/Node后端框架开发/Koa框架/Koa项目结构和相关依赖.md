@@ -113,7 +113,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
   
   - [koa-bodyparser - npm (npmjs.com)](https://www.npmjs.com/package/koa-bodyparser)
   
-  - 使用示例：
+  - **koa-bodyparser使用示例：**
   
   - ```js
     var Koa = require('koa');
@@ -170,14 +170,10 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 
 - koa-onerror - 错误处理
 
-- koa-route - 路由，但6年没更新
+- **koa-router - 路由**
   
-  - [koa-route - npm (npmjs.com)](https://www.npmjs.com/package/koa-route)
-
-- koa-router - 路由
-  
-  - [koa-router - npm (npmjs.com)](https://www.npmjs.com/package/koa-router)
-  - koa-router文档：[router/API.md koajs/router (github.com)](https://github.com/koajs/router/blob/HEAD/API.md)
+  - npm：[koa-router - npm (npmjs.com)](https://www.npmjs.com/package/koa-router)
+  - koa-router的API文档：[router/API.md koajs/router (github.com)](https://github.com/koajs/router/blob/HEAD/API.md)
 
 - koa-session - session
 
@@ -192,6 +188,10 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
       const app = new Koa(); // 创建koa应用
       const static = require('koa-static');
       
+      // 可以配置多个文件夹，这个文件夹找不到就找下一个文件夹
+      // 相对路径
+      app.use(static('./static'))
+      // 绝对路径
       app.use(static(__dirname + '/public', {
           // 默认为true  访问的文件为index.html，可以修改为别的文件名或者false
           index: false,
@@ -222,21 +222,113 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 - ejs - 模板引擎，非侵入式
   
   - 官网：[EJS -- Embedded JavaScript templates](https://ejs.co/index.html)
-  - 中文网：[EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档 (bootcss.com)](https://ejs.bootcss.com/)
-
-- Parcel - 零配置的构建工具，能够处理包裹各种框架语言或者文件
   
-  - 官网：[Parcel (parceljs.org)](https://parceljs.org/)
-  - Parcel 1中文网：[🚀 快速开始 | Parcel中文网 (parceljs.cn)](https://www.parceljs.cn/getting_started.html)
-  - Parcel 2中文网：[Parcel 中文文档 | Parcel 中文网 (parceljs.cn)](https://v2.parceljs.cn/)
+  - 中文网：[EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档 (bootcss.com)](https://ejs.bootcss.com/)
+  
+  - **使用示例：**
+  
+  - 1.在app.js通过koa-views注册使用ejs模板引擎
+  
+  - ```js
+    const views = require('koa-views');
+    // 如果这样配置，模板的后缀为.html
+    app.use(views('views', { map: {html: 'ejs' }}));
+    // 如果这样配置，模板的后缀为.ejs
+    // app.use(views('views', { extension: 'ejs' }));
+    ```
+    
+    2.Koa 的路由或app.use中间件中向模板引擎传递数据：`await ctx.render('页面',{ 数据 })`
+  
+  - ```js
+    router.get('/add', async (ctx) => { 
+      let title = 'hello koa2'
+      // 传递数据title
+      await ctx.render('index',{ title })
+    })
+    ```
+  
+  - 3.模板中使用路由传递过来的数据
+  
+  - ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+    <--! 引入ejs模板 -->
+    <% include public/header.ejs%>
+    这是一个ejs的模板引擎
+    <--! Ejs 绑定数据title -->
+    <h2>标题---<%=title%></h2>
+    
+    </body>
+    </html>
+    ```
+    
+    引入的模板：public/header.ejs
+    
+    ```html
+    <h1 class="title">这是一个头部的模块</h1>
+    ```
+  
+  - 4.views/目录的html文件中使用模板语法
+  
+  - ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+    <--! 引入ejs模板 -->
+    <% include public/header.ejs%>
+    <--! Ejs 绑定数据title -->
+    <h2>标题---<%=title%></h2>
+    <--! js 模板中循环数据 -->
+    <ul>
+        <%for(var i=0;i<list.length;i++){%>
+            <li><%=list[i]%></li>
+        <%}%>
+    </ul>
+    
+    <br/>
+    <%=content%>
+    <br/>
+    <--! Ejs 模板判断语句 -->
+    <h2>条件判断</h2>
+    <br/>
+    <%if(num>24){%>
+    
+     大于24
+    <%}else{%>
+    
+    小于24
+    
+    <%}%>
+    <br/>
+    <% if(true){ %>
+        <div>true</div>
+    <%} else{ %>
+        <div>false</div>
+    <%} %>
+    </body>
+    </html>
+    ```
 
-- koa-helmet - 安全
+- art-template - 模板引擎，轻量，号称最快速编译的模板引擎
+  
+  - 文档：[art-template (aui.github.io)](http://aui.github.io/art-template/zh-cn/index.html)
+  
+  - **Koa使用：[Koa - art-template (aui.github.io)](http://aui.github.io/art-template/koa/)**
 
-- koa-view - 静态文件访问能力
+- dkoa-view - 静态文件访问能力
   
   - [koa-view - npm (npmjs.com)](https://www.npmjs.com/package/koa-view)
   
-  - 使用示例：
+  - 使用示例：可以配合上面的模板引擎使用
   
   - ```js
     const view = require('koa-view');
@@ -263,7 +355,17 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 
 - md5 - md5 加密
 
+- Parcel - 零配置的构建打包工具，能够处理打包包裹各种框架语言或者文件
+  
+  - 官网：[Parcel (parceljs.org)](https://parceljs.org/)
+  - Parcel 1中文网：[🚀 快速开始 | Parcel中文网 (parceljs.cn)](https://www.parceljs.cn/getting_started.html)
+  - Parcel 2中文网：[Parcel 中文文档 | Parcel 中文网 (parceljs.cn)](https://v2.parceljs.cn/)
+
 - mkdirp - 递归创建目录
+
+- koa-helmet - 安全
+
+- **项目热重载运行**
 
 - nodemon - 项目热重载运行库：每次修改代码后，自动重启项目 - nodemon app.js
   
@@ -272,5 +374,5 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 
 - supervisor - 项目热重载运行库：每次修改代码后，自动重启项目 - supervisor app.js
   
-  - npm install supervisor --save-dev
+  - 项目安装：npm install supervisor --save-dev
   - 全局安装：npm install supervisor -g

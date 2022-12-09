@@ -484,8 +484,6 @@ pool.getConnection((err,connection)=>{
 });
 ```
 
-
-
 **执行上面文件**
 
 ```bash
@@ -523,8 +521,6 @@ connection.query(userGetSql,function (err, result) {
 });
 connection.end();
 ```
-
-
 
 **2、插入**
 
@@ -609,8 +605,6 @@ connection.end();
 ### 使用MySQL2库
 
 npm文档：[MySQL2 - npm (npmjs.com)](https://www.npmjs.com/package/mysql2)
-
-
 
 ---
 
@@ -811,8 +805,6 @@ node app.js
 ```
 
 9.在数据库中查看是否新建了表t_new2
-
-
 
 10.在浏览器测试刚刚写的new2.js的get方法
 

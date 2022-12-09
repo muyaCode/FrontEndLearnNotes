@@ -1154,6 +1154,10 @@ export default {
                 text: "MongoDB数据库的使用",
                 link: "/Document/数据库的使用/MongoDB数据库/MongoDB数据库的使用",
               },
+              {
+                text: "MongoDB数据库迁移",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB数据库迁移",
+              },
             ]
           },
           {
@@ -1174,6 +1178,10 @@ export default {
               {
                 text: "MySQL数据库的使用",
                 link: "/Document/数据库的使用/MySQL数据库/MySQL数据库的使用",
+              },
+              {
+                text: "MySQL数据库迁移",
+                link: "/Document/数据库的使用/MySQL数据库/MySQL数据库迁移",
               },
             ]
           },

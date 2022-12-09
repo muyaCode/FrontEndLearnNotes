@@ -102,7 +102,7 @@ InitManager.initCore(app)
 app.listen(9000)
 ```
 
-1.koa-router基本使用
+**1.koa-router基本使用**
 
 ```js
 const Koa = require('koa')
@@ -116,82 +116,78 @@ router.get('/users/:id', ctx => {
 app.use(router.routes())
 ```
 
-2.路由前缀
+**1.1 动态路由**
 
 ```js
+//请求方式 http://域名/product/123 
+router.get('/product/:aid', async (ctx) => { 
+    console.log(ctx.params); // { aid: '123' }
+    // 获取动态路由的数据
+    ctx.body = '这是商品页面';
+});
+```
+
+> 其他路由用法，请看API文档：[github.com](https://github.com/koajs/router/blob/HEAD/API.md)
+
+**2.路由前缀**
+
+```js
+// new Router({ prefix: '/posts' })：'/xxx' 路由前缀
 const usersRouter = new Router({ prefix: '/users'})
+
+usersRouter.get('/', (ctx) => {
+  ctx.body = {
+    title: '用户首页'
+  }
+})
 usersRouter.get('/:id', ctx => {
     ctx.body = "这是用户列表" + ctx.params.id
 })
 app.use(usersRouter.routes())
 ```
 
-3.路由中间件
+**3.koa-router的路由中间件**
 
 ```js
+// 定义鉴权中间件
 const auth = async (ctx, next) => {
     if (ctx.url !== '/users') {
         ctx.throw(401)
+        ctx.throw('没有权限访问!')
+        await next() // 继续运行后面的方法
     }
-    await next()
 }
 
 usersRouter.get('/:id', auth, ctx => {
     ctx.body = "这是用户列表" + ctx.params.id
-}) 
+})  
 ```
 
-###### Koa2 路由前缀
+## 静态资源加载
+
+> 如果网站提供静态资源（图片、字体、样式表、脚本......），为它们一个个写路由就很麻烦，也没必要。**koa-static**模块封装了这部分的请求。
 
 ```js
-const Koa = require('koa');
-const Router = require('koa-router');
-const app = new Koa();
-const router = new Router();
-const PostsRouter = new Router({ prefix: '/posts' });
-// xxx.com/posts
-PostsRouter.get('/', (ctx) => {
-  ctx.body = {
-    title: '文章首页'
-  }
-})
-// xxx.com/posts/1
-PostsRouter.get('/:id', (ctx) => {
-  ctx.body = {
-    id: ctx.params.id,
-    title: '文章列表'
-  }
-})
-app.use(PostsRouter.routes())
+# 目录结构
+|_ static
+    |_ 01.jpg
+|_ 01.js
+
+# 01.js服务文件
+const serve = require('koa-static')
+const Koa = require('koa')
+const app = new Koa()
+
+// const main = serve('static')  // 相对路径
+const main = serve(__diraname + '/static')  // 绝对路径
+app.use(main)
+app.listen(3000)
+
+# 浏览器访问
+localhost:3000/01.jpg
 ```
 
-> new Router({ prefix: '/posts' })：'/xxx' 路由前缀
-
-###### koa2使用路由中间件
-
-参数：
-
-ctx：
-
-next：
-
-```js
-//定义鉴权中间件
-const auth = async (ctx, next) => {
-  if (ctx.url !== '/posts'){
-    ctx.throw('没有权限访问!')
-    await next()
-  }
-}
-// 路由中使用中间件
-PostsRouter.get('/', auth, (ctx, next) => {
-  ctx.body = {
-    name: '首页'
-  }
-})
-```
-
-###### Http Response的类型
+## Http Response的类型
 
 > koa默认返回的类型为text/plain，如果想返回其他类型的内容，可以先用**request.accepts**判断一下，客户端希望接受什么数据(根据 HTTP Request 的Accept字段），然后使用ctx.response.type指定返回类型。
 
@@ -221,30 +217,6 @@ app.listen(3000)
 # 启动后访问，可以看到响应了xml 
 ```
 
-###### 1.3 静态资源加载
-
-> 如果网站提供静态资源（图片、字体、样式表、脚本......），为它们一个个写路由就很麻烦，也没必要。**koa-static**模块封装了这部分的请求。
-
-```js
-# 目录结构
-|_ static
-    |_ 01.jpg
-|_ 01.js
-
-# 01.js服务文件
-const serve = require('koa-static')
-const Koa = require('koa')
-const app = new Koa()
-
-const main = serve('static')  //相对路径
-const main = serve(__diraname+'/static')  //绝对路径
-app.use(main)
-app.listen(3000)
-
-# 浏览器访问
-localhost:3000/01.jpg
-```
-
 ###### 1.4 重定向
 
 > 服务器需要重定向（redirect）访问请求。比如，用户登陆以后，将他重定向到登陆前的页面。**ctx.response.redirect()**方法可以发出一个302跳转，将用户导向另一个路由。
@@ -267,54 +239,20 @@ app.use(route.get('/about',about))
 app.listen(3000)
 ```
 
-## 中间件
-
-### 1.1 logger功能
-
-> Koa 的最大特色，也是最重要的一个设计，就是中间件（middleware）。  
-> Logger：打印日志
+## Koa中间件(应用级别中间件)
 
 ```js
-const Koa = require('koa')
+const Koa = require(''koa);
 const app = new Koa()
-
-const main = ctx => {
-    console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`)
-    ctx.response.body='请求了'
-}
-
-app.use(main)
-app.listen(3000)
-
-# 访问后
-1502144902843 GET /
+// Koa的中间件(应用级别中间件)，可以匹配任何路由：任何路由执行时都会执行这个方法
+app.use(async (ctx, next)= > {
+    // ctx.body = 'Koa的中间件'
+    console.log(new Date())
+    await next() // 继续匹配下一个路由
+})
 ```
 
-### 1.2 中间件概念
-
-> 上面例子里的Logger功能，可以拆分成一个独立函数
-
-```js
-const Koa = require('koa')
-const app = new Koa()
-
-const logger = (ctx,next) => {
-    console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`)
-    next()
-}
-const main = ctx => { 
-    ctx.response.body='呵呵'
-}
-app.use(logger)
-app.use(main)
-app.listen(3000)
-```
-
-- 以上的logger函数，main函数就是一个中间件middleware，因为它处在http request和response之间，用来实现某种中间功能
-- app.use(middleWare) 来使用中间件
-- 参数：默认接受2个参数 (ctx,next),ctx为context对象,当执行完中间件的功能后，调用next()将执行权交移给下一个中间件
-
-### 1.3 中间件栈
+### koa中间件和kou-router路由中间件执行顺序
 
 > 多个中间件会形成一个栈结构（middle stack），以"先进后出"（first-in-last-out）的顺序执行。
 
@@ -350,7 +288,55 @@ one->
 
 - 如果不调用next()，则不会移交执行权
 
-### 1.4 异步中间件
+---
+
+### koa中间件和kou-router路由中间件共同使用的执行顺序
+
+Koa 的中间件和 Express 不同，Koa 选择了洋葱圈模型
+
+> (请求到响应)：从外向内，再从内向外
+
+![ycmx1.jpg](./img/ycmx1.jpg)
+
+```js
+const Koa = require('koa');
+const router = require('koa-router')();  /*引入是实例化路由** 推荐*/
+const app = new Koa();
+
+//Koa中间件
+//匹配任何路由  ，如果不写next，这个路由被匹配到了就不会继续向下匹配
+//www.域名.com/news
+app.use(async (ctx,next)=>{
+    console.log('1、这是第一个中间件01');
+    await next();
+
+    console.log('5、匹配路由完成以后又会返回来执行中间件');
+})
+
+app.use(async (ctx,next)=>{
+    console.log('2、这是第二个中间件02');
+    await next();
+
+    console.log('4、匹配路由完成以后又会返回来执行中间件');
+})
+
+router.get('/',async (ctx)=>{
+    ctx.body="首页";
+})
+router.get('/news',async (ctx)=>{
+    console.log('3、匹配到了news这个路由');
+    ctx.body='这是一个新闻';
+})
+
+
+app.use(router.routes());   /*启动路由*/
+app.use(router.allowedMethods());
+app.listen(3002);
+```
+
+---
+
+### 异步中间件
 
 > 如果有异步操作（比如读取数据库），中间件就必须写成 async 函数。
 
@@ -379,7 +365,7 @@ const fs = require('fs.promised')
 fs.readFile('./test.json').then(v=>console.log(v),error=>console.log(error))
 ```
 
-### 1.5 中间件的合成
+### 中间件的合成
 
 > koa-compose模块可以将多个中间件合成为一个
 
@@ -400,9 +386,9 @@ app.use(middleWare)
 app.listen(3000)
 ```
 
-## 错误处理
+### 错误处理中间件
 
-### 4.1 500错误
+#### 1. 500错误
 
 > 如果代码运行过程中发生错误，我们需要把错误信息返回给用户。HTTP 协定约定这时要返回500状态码。Koa 提供了ctx.throw()方法，用来抛出错误，ctx.throw(500)就是抛出500错误
 
@@ -423,7 +409,7 @@ app.listen(3000)
 internal server error
 ```
 
-### 4.2 404错误
+#### 2. 404错误
 
 > 如果将ctx.response.status设置成404，就相当于ctx.throw(404)，返回404错误。
 
@@ -443,7 +429,7 @@ app.use(main)
 app.listen(3000)
 ```
 
-### 4.3 处理错误的中间件
+#### 3. 处理错误的中间件
 
 > 为了方便处理错误，最好使用try...catch将其捕获。但是，为每个中间件都写try...catch太麻烦，我们可以让最外层的中间件，负责所有中间件的错误处理。
 
@@ -472,7 +458,7 @@ app.use(main)
 app.listen(3000)
 ```
 
-### 4.4 error事件的监听
+#### 4. error事件的监听
 
 > 运行过程中一旦出错，Koa 会触发一个error事件。监听这个事件，也可以处理错误。
 
@@ -492,7 +478,7 @@ app.use(main)
 app.listen(3000)
 ```
 
-### 4.5 释放error事件
+#### 5. 释放error事件
 
 > 需要注意的是，如果错误被try...catch捕获，就不会触发error事件。这时，必须调用ctx.app.emit()，手动释放error事件，才能让监听函数生效。
 
@@ -526,13 +512,42 @@ app.use(main)
 app.listen(3000) 
 ```
 
-## WebApp功能
+### logger日志打印功能中间件
 
-## 5.1 Cookies
+> Koa 的最大特色，也是最重要的一个设计，就是中间件（middleware）。  
+> Logger：打印日志
 
-- **ctx.cookies** 用来读写 Cookie。
-- **ctx.cookies.set(key,value)** 设置cookie
-- **ctx.cookies.get(key)** 获取cookie
+```js
+const Koa = require('koa')
+const app = new Koa()
+
+const logger = (ctx,next) => {
+    // 打印日志
+    console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`)
+    next()
+}
+const main = ctx => { 
+    ctx.response.body='呵呵'
+}
+app.use(logger)
+app.use(main)
+app.listen(3000)
+```
+
+- 以上的logger函数，main函数就是一个中间件middleware，因为它处在http request和response之间，用来实现某种中间功能
+- app.use(middleWare) 来使用中间件
+- 参数：默认接受2个参数 (ctx,next),ctx为context对象,当执行完中间件的功能后，调用next()将执行权交移给下一个中间件
+
+## WebApp应用功能
+
+### Cookies
+
+- **ctx.cookies**：用来读写 Cookie。
+- **ctx.cookies.set(key,value,[options])**：设置cookie
+  - options参数：可以查看文档：`koa-上下文(Context)`
+- **ctx.cookies.get(key)**：获取cookie
+
+> 无法设置中文cookies，可以使用Buffer库转换成base64字符串，再存储
 
 ```js
 const Koa = require('koa')
@@ -551,7 +566,107 @@ app.listen(3000)
     每刷新一次，页面显示的views会 +1
 ```
 
-## 5.2 表单
+### Session
+
+session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而session保存在服务器上。
+
+当浏览器访问服务器并发送第一次请求时，服务器端会创建一个session对象，生成一个类似于key,value的键值对， 然后将key(cookie)返回到浏览器(客户)端，浏览器下次再访问时，携带key(cookie)，找到对应的session(value)。 客户的信息都保存在session中
+
+#### Koa中Cookie和Session区别
+
+1、cookie数据存放在客户的浏览器上，session数据放在服务器上。
+
+2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗  
+考虑到安全应当使用session。
+
+3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能  
+考虑到减轻服务器性能方面，应当使用COOKIE。
+
+4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
+
+#### koa-session的使用:
+
+1.安装 koa-session
+
+`npm install koa-session --save`
+
+2.引入express-session
+
+`const session = require('koa-session');`
+
+3.设置官方文档提供的中间件
+
+```csharp
+const Koa=require('koa'),
+    router = require('koa-router')(),
+    render = require('koa-art-template'),
+    path = require('path'),
+    session = require('koa-session');
+
+const app=new Koa();
+
+//配置 koa-art-template模板引擎
+render(app, {
+    root: path.join(__dirname, 'views'),   // 视图的位置
+    extname: '.html',  // 后缀名
+    debug: process.env.NODE_ENV !== 'production'  //是否开启调试模式
+});
+
+// 配置session的中间件
+const session_signed_key = ["some secret hurr"];  // 这个是配合signed属性的签名key-cookie的签名
+const session_config = {
+    key: 'koa:sess', /**  cookie的key。 (默认是 koa:sess) */
+    maxAge: 4000,   /**  session 过期时间，以毫秒ms为单位计算 。*/
+    autoCommit: true, /** 自动提交到响应头。(默认是 true) */
+    overwrite: true, /** 是否允许重写 。(默认是 true) */
+    httpOnly: true, /** 是否设置HttpOnly，如果在Cookie中设置了"HttpOnly"属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。  (默认 true) */
+    signed: true, /** 是否签名。(默认是 true) */
+    rolling: true, /** 是否每次响应时刷新Session的有效期。(默认是 false) */
+    renew: false, /** 是否在Session快过期时刷新Session的有效期。(默认是 false) */
+};
+// 应用中间件
+app.use(session(CONFIG, app));
+
+// 路由中使用
+router.get('/',async (ctx)=>{
+    //获取session
+    console.log(ctx.session.userinfo);
+    await ctx.render('index',{
+        list:{
+            name:'张三'
+        }
+    });
+})
+
+router.get('/news',async (ctx)=>{
+    //获取session
+    console.log(ctx.session.userinfo);
+    ctx.body="登录成功";
+})
+
+
+router.get('/login',async (ctx)=>{
+    //设置session
+    ctx.session.userinfo='张三';
+    ctx.body="登录成功";
+})
+
+app.use(router.routes());   /*启动路由*/
+app.use(router.allowedMethods());
+app.listen(3000);
+```
+
+我们需要关注这几个配置：
+
+- renew rolling：这两个都可以在用户访问的过程中刷新有效期，不至于让用户访问过程中Session过期成为未登录状态
+
+- signed：这个是对客户端Cookie的签名，也就是用一个特点的字符加密，保证客户端Cookie不会被伪造出来
+
+- httpOnly：打开这个使得通过程序(JS脚本、Applet等)无法读取Cookie，大大提高了安全性
+
+- maxAge：以ms为单位的过期时间
+
+### 表单数据处理-koa-body库
 
 > Web 应用离不开处理表单。本质上，表单就是 POST 方法发送到服务器的键值对。**koa-body**模块可以用来从 POST 请求的数据体里面提取键值对。
 
@@ -570,7 +685,9 @@ function submitHandler(){
     }
     xhr.send(JSON.stringify(data))
 }
+```
 
+```js
 // 后端服务
 const Koa = require('koa')
 const koaBody = require('koa-body')
@@ -597,7 +714,7 @@ app.use(route.post('/test', main));
 app.listen(3000)
 ```
 
-### 5.3 文件上传
+### 文件上传
 
 > koa-body模块还可以用来处理文件上传
 
@@ -676,6 +793,12 @@ app.listen(3000)
 
 ### MongoDB
 
+除了文档`数据库的使用/MongoDB数据库的使用`的连接方法外，可以自己封装操作MongoDB数据库功能：自己封装的优点：根据自己的项目需求：体积更小、更灵活、运行速度可能更快
+
+#### ES6语法封装操作MongoDB数据库功能
+
+
+
 ## 数据库
 
 1. knexjs：[https://knexjs.org/](https://knexjs.org/)
@@ -686,7 +809,7 @@ app.listen(3000)
 
 ## Koa2开发例子
 
-koa2实现上传图片，并且同步上传到七牛云存储
+### koa2实现上传图片，并且同步上传到七牛云存储
 
 ```js
 const Koa = require('koa');
@@ -877,4 +1000,4 @@ console.log('listening on port 3001');
 </html>
 ```
 
-待定
+### 注册和验证码、登录功能实现

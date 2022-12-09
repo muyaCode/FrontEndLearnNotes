@@ -4,7 +4,7 @@
 
 安装文档：[Install MongoDB Community Edition — MongoDB Manual](https://www.mongodb.com/docs/manual/administration/install-community/)
 
-### 1.下载
+## 1.下载
 
 1.打开官网：<https://www.mongodb.com/>
 
@@ -18,7 +18,7 @@
 
 ---
 
-### 2.安装、配置与启动
+## 2.安装、配置与启动
 
 1.安装：到这一步：complete（完整的安装：默认安装到系统盘）| Custom（习惯安装：可以自定义安装路径）。然后一路next
 
@@ -86,7 +86,7 @@ mongod --config ..\conf\mongodb.conf
 
 ---
 
-### 3.MongoDB连接
+## 3.MongoDB连接
 
 #### 1.Shell 命令连接
 
@@ -143,7 +143,7 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 一些连接数据库的图形化工具也能够连接 MongoDB
 
-##### 2.1. Compass-图形化界面客户端
+##### 2.1. MongoDBCompass-图形化界面客户端
 
 `Compass` 图形化界面客户端：[MongoDB-compass下载](https://www.mongodb.com/try/download/compass)
 
