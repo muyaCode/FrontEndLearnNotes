@@ -122,7 +122,7 @@ ctx.request.charset;
 
 ### request.query
 
-获取解析的查询字符串, 当没有查询字符串时，返回一个空对象。请注意，此 getter _不_ 支持嵌套解析。
+获取解析的查询字符串, 当没有查询字符串时，返回一个空对象。请注意，此 getter 不支持嵌套解析。
 
 例如 "color=blue&size=small":
 
@@ -135,7 +135,7 @@ ctx.request.charset;
 
 ### request.query=
 
-将查询字符串设置为给定对象。 请注意，此 setter _不_ 支持嵌套对象。
+将查询字符串设置为给定对象。 请注意，此 setter 不支持嵌套对象。
 
 ```js
 ctx.query = { next: '/login' };

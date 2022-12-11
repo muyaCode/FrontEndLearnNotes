@@ -169,7 +169,7 @@ app.use(async ctx => {
 
 注意:
 
-- `ctx` 上的许多属性都是使用 `getter` ，`setter` 和 `Object.defineProperty()` 定义的。你只能通过在 `app.context` 上使用 `Object.defineProperty()` 来编辑这些属性（不推荐）。查阅：https://github.com/koajs/koa/issues/652.
+- `ctx` 上的许多属性都是使用 `getter` ，`setter` 和 `Object.defineProperty()` 定义的。你只能通过在 `app.context` 上使用 `Object.defineProperty()` 来编辑这些属性（不推荐）。查阅：<https://github.com/koajs/koa/issues/652>.
 - 安装的应用程序目前使用其父级的 `ctx` 和设置。 因此，安装的应用程序只是一组中间件。
 
 ### app.on 错误处理
@@ -191,5 +191,3 @@ app.on('error', (err, ctx) => {
 ```
 
 当发生错误 _并且_ 仍然可以响应客户端时，也没有数据被写入 socket 中，Koa 将用一个 500 “内部服务器错误” 进行适当的响应。在任一情况下，为了记录目的，都会发出应用级 “错误”。
-
-# 

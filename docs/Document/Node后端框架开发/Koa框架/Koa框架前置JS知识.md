@@ -4,7 +4,7 @@
 
 要在 node < 7.6 版本的 Koa 中使用 `async` 方法, 我们推荐使用 [babel's require hook](https://www.babeljs.cn/docs/usage/babel-register/).
 
-```
+```js
 require('babel-register');
 // 应用的其余 require 需要被放到 hook 后面
 const app = require('./app');
@@ -14,7 +14,7 @@ const app = require('./app');
 
 例如, 在你的 `.babelrc` 文件中, 你应该有:
 
-```
+```json
 {
   "plugins": ["transform-async-to-generator"]
 }

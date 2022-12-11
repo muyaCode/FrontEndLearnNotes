@@ -75,7 +75,7 @@ app.js    // 入口运行目录
 │  ├─app.js                   // 入口文件
 ```
 
-**第四种(推荐使用)**
+**第四种(推荐使用)**：
 
 ```bash
 config - 配置文件，例如：database.config.js
@@ -182,7 +182,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
   - [koa-static - npm (npmjs.com)](https://www.npmjs.com/package/koa-static)
   
   - 使用案例：
-    
+
     - ```js
       const Koa = require('koa'); // 引入koa
       const app = new Koa(); // 创建koa应用
@@ -203,7 +203,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
       
       app.listen(3000);
       ```
-    
+  
     - 访问时不需要加上 pubilc，即 “http://127.0.0.1:3000/文件名” 这种形式访问
 
 - koa-static-cache - 静态缓存
@@ -236,7 +236,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
     // 如果这样配置，模板的后缀为.ejs
     // app.use(views('views', { extension: 'ejs' }));
     ```
-    
+
     2.Koa 的路由或app.use中间件中向模板引擎传递数据：`await ctx.render('页面',{ 数据 })`
   
   - ```js
@@ -266,9 +266,9 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
     </body>
     </html>
     ```
-    
+
     引入的模板：public/header.ejs
-    
+
     ```html
     <h1 class="title">这是一个头部的模块</h1>
     ```

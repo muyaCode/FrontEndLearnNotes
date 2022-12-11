@@ -105,7 +105,7 @@ mongod --config ..\conf\mongodb.conf
 
 返回的窗口全部依次点击 `确定` 即可。
 
-###### MongoDB相关shell命令文档（后面有空需要学习）：[Install mongosh — MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+#### MongoDB相关shell命令文档（后面有空需要学习）：[Install mongosh — MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
 
 开启 MongoDB 之后，`cmd` 进入 `命令行窗口`，输入命令 ：
 
@@ -177,10 +177,19 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 下载地址：<https://robomongo.org/download>
 
-安装：
+安装：傻瓜式安装，全部点击下一步next
 
-连接和使用
+连接和使用：
 
+>![1585482451810](./img/1585482451810.png)
+>
+> ![1585482549628](./img/1585482549628.png)
+>
+> ![1585482465701](./img/1585482465701.png)
+>
+> ![1585482566526](./img/1585482566526.png)
+>
+> ![1585482668249](./img/1585482668249.png)
 ---
 
 ##### 2.4. Robomongo
