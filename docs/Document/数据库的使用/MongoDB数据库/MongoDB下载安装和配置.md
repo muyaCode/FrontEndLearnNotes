@@ -86,9 +86,9 @@ mongod --config ..\conf\mongodb.conf
 
 ---
 
-## 3.MongoDB连接
+## 3.MongoDB连接操作和相关命令
 
-#### 1.Shell 命令连接
+### 1.Shell 命令连接
 
 如果使用 Shell 命令的形式打开 MongoDB，最好先配置以下环境变量，打开
 
@@ -99,11 +99,13 @@ mongod --config ..\conf\mongodb.conf
 选择 `Path`，点击 `编辑`  
 
 ![xtbl-bj.jpg](../img/xtbl-bj.jpg)
-点击 `新建` ，然后把 MongoDB 的 `bin` 目录路径粘贴上去：比如我的 `C:\Program Fi
+点击 `新建` ，然后把 MongoDB 的 `bin` 目录路径粘贴上去：比如我的 `C:\Program Files\MongoDB\Server\6.0\bin`
 
 ![tj-hjbl.jpg](../img/tj-hjbl.jpg)
 
 返回的窗口全部依次点击 `确定` 即可。
+
+###### MongoDB相关shell命令文档（后面有空需要学习）：[Install mongosh — MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/install/)
 
 开启 MongoDB 之后，`cmd` 进入 `命令行窗口`，输入命令 ：
 
@@ -149,6 +151,10 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 视频地址：[Webinar: MongoDB Compass - Data navigation made easy | MongoDB](https://www.mongodb.com/presentations/webinar-mongodb-compass-data-navigation-made-easy?utm_campaign=Int_ET_Download%20Center%20-%20Compass%20Download_WW%20-%20Autoresponder%20%28Sept%202017%29&utm_medium=email&utm_source=Eloqua)
 
+官方总文档地址：[MongoDB Documentation](https://www.mongodb.com/docs/)
+
+**使用教程文档地址**：[What is MongoDB Compass? — MongoDB Compass](https://www.mongodb.com/docs/compass/current/)
+
 ---
 
 下载解压或者安装后：在打开的界面中，输入主机地址、端口等相关信息
@@ -163,11 +169,17 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 ---
 
-##### 2.2. Navicat
+##### 2.2. Navicat 数据库管理软件
 
 ---
 
-##### 2.3. robo3t
+##### 2.3. Robo 3T 客户端管理软件
+
+下载地址：https://robomongo.org/download
+
+安装：
+
+连接和使用
 
 ---
 
@@ -175,7 +187,17 @@ MongoShell是**MongoDB发行版的一个组件**， 安装并启动MongoDB后，
 
 ---
 
-##### 2.5. VS Code连接MongoDB数据库
+##### 2.5 adminMongo
+
+adminMongo管理系统 - WEB/PC端口网页管理：[https://adminmongo.markmoffat.com/](https://adminmongo.markmoffat.com/)
+
+---
+
+##### 2.6 MongoVUE 客户端软件
+
+---
+
+##### 2.7 VS Code连接MongoDB数据库
 
 官网文档：[MongoDB for VS Code — MongoDB for VS Code](https://www.mongodb.com/docs/mongodb-vscode/)
 

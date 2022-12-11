@@ -16,13 +16,9 @@
 
 官网mongodb示例连接文档：[快速入门 — Node.js (mongodb.com)](https://www.mongodb.com/docs/drivers/node/current/quick-start/)
 
-官方文档以mongodb这个库为例：https://github.com/mongodb/node-mongodb-native
+官方文档以mongodb这个库为例：<https://github.com/mongodb/node-mongodb-native>
 
 npm包地址：[mongodb - npm (npmjs.com)](https://www.npmjs.com/package/mongodb)
-
-mongodb官网文档：[https://mongoosejs.com/](https://mongoosejs.com/)  
-
-中文网文档：[http://www.mongoosejs.net/](http://www.mongoosejs.net/)
 
 菜鸟教程：[Node.js 连接 MongoDB | 菜鸟教程 (runoob.com)](https://www.runoob.com/nodejs/nodejs-mongodb.html)
 
@@ -45,7 +41,7 @@ const mdb = 'stu_db';
 const client = new MongoClient(url);
 
 // 实例对象connect连接数据库
-client.connect(function(err) {
+client.connect(function(err, client) {
   if (err) {
     console.log('数据库连接失败....')
   } else {
@@ -109,7 +105,7 @@ client.connect(function(err) {
 })
 ```
 
-![](../img/mongoDB-lj.jpg)
+![mongoDB-lj.jpg](../img/mongoDB-lj.jpg)
 
 - **stu_db库(集合)中删除数据**
 
@@ -254,11 +250,271 @@ client.connect(function(err) {
 
 ---
 
+### mongodb库封装使用
+
+数据库连接配置模块：module/config.js
+
+```js
+// 数据库连接配置文件
+const app = {
+  dbUri: 'mongodb://127.0.0.1:27017/',
+  dbName: 'koa'
+}
+
+module.exports = app;
+```
+
+数据库连接模块 + 增删改查方法封装：module/db.js
+
+```js
+const { MongoClient, ObjectID } = require("mongodb");
+const Config = require("./config.js");
+
+const client = new MongoClient(Config.dbUri);
+
+class Db {
+    // 单例：多次实例化不共享的问题(只实例化一次，其他实例化便共享那个实例)
+    static getInstance() {
+        if (!Db.instance) {
+            Db.instance = new Db();
+        }
+        return Db.instance;
+    }
+
+    constructor() {
+        /*属性 放db对象*/
+        this.dbClient = '';
+        /*实例化的时候就连接数据库*/
+        this.connect();
+    }
+
+    // 连接数据库
+    connect() {
+        let _that = this;
+        return new Promise((resolve, reject) => {
+            if (!_that.dbClient) {
+                client.connect((err, client) => {
+                    if (err) {
+                        // console.log('连接错误');
+                        reject(err);
+                    } else {
+                        _that.dbClient = client.db(Config.dbName);
+                        console.log('DB连接成功');
+                        // console.log('DB连接成功', _that.dbClient);
+                        resolve(_that.dbClient);
+                    }
+                });
+            } else {
+                resolve(_that.dbClient);
+            }
+        });
+    }
+
+    /**
+     * 封装增删改查方法
+     */
+    find(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                var result = db.collection(collectionName).find(json);
+
+                result.toArray(function (err, docs) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+                    resolve(docs);
+                });
+            });
+        });
+    }
+    update(collectionName, json1, json2) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                //db.user.update({},{$set:{}})
+                db.collection(collectionName).updateOne(
+                    json1,
+                    {
+                        $set: json2,
+                    },
+                    (err, result) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    }
+                );
+            });
+        });
+    }
+    insert(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                db.collection(collectionName).insertOne(json, function (err, result) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
+        });
+    }
+
+    remove(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                db.collection(collectionName).removeOne(json, function (err, result) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
+        });
+    }
+    // mongodb里面查询 _id 把字符串转换成对象
+    getObjectId(id) {
+        return new ObjectID(id);
+    }
+}
+
+module.exports = Db.getInstance();
+```
+
+路由使用：routes/user/users.js
+
+```js
+const router = require('koa-router')();
+const DB = require('../../module/db.js');
+
+// 路由文档：https://github.com/koajs/router/blob/HEAD/API.md
+
+// 定义路由的前缀：/users
+router.prefix('/users')
+
+
+// 显示用户信息
+router.get('/',async (ctx)=>{
+
+  let result = await DB.find('user',{});
+
+  console.log(result);
+  await ctx.render('index',{
+      list: JSON.stringify(result)
+  });
+})
+
+// 增加用户
+router.get('/add',async (ctx)=>{
+  await ctx.render('add');
+})
+
+
+// 执行增加用户的操作
+router.post('/doAdd',async (ctx)=>{
+
+  // 获取表单提交的数据
+
+  // console.log(ctx.request.body);  //{ username: '王麻子', age: '12', sex: '1' }
+
+  let data = await DB.insert('user',ctx.request.body);
+  //console.log(data);
+  try{
+      if(data.result.ok){
+          ctx.redirect('/')
+      }
+  }catch(err){
+      console.log(err);
+      return;
+      ctx.redirect('/add');
+  }
+})
+
+// 编辑用户
+router.get('/edit',async (ctx)=>{
+  // 通过get传过来的id来获取用户信息
+  let id = ctx.query.id;
+
+  let data = await DB.find('user',{"_id":DB.getObjectId(id)});
+
+  // 获取用户信息
+  await ctx.render('edit',{
+      list:data[0]
+  });
+
+})
+
+
+router.post('/doEdit',async (ctx)=>{
+  // 通过get传过来的id来获取用户信息
+  // console.log(ctx.request.body);
+
+  var id = ctx.request.body.id;
+  var username = ctx.request.body.username;
+  var age = ctx.request.body.age;
+  var sex = ctx.request.body.sex;
+
+  let data = await DB.update('user',{"_id":DB.getObjectId(id)},{
+      username,age,sex
+  })
+
+  try{
+      if(data.result.ok){
+          ctx.redirect('/')
+      }
+  }catch(err){
+      console.log(err);
+      return;
+      ctx.redirect('/');
+  }
+
+})
+
+
+// 删除用户
+router.get('/delete',async (ctx)=>{
+
+  let id = ctx.query.id;
+
+  var data = await DB.remove('user',{"_id":DB.getObjectId(id)});
+  console.log(data);
+  if(data){
+      ctx.redirect('/')
+  }
+})
+
+module.exports = router
+```
+
+应用路由方法：app.js
+
+```js
+// routes路由
+const index = require('./routes/index');
+const users = require('./routes/user/users');
+
+/** 
+ * 将routes路由对象，挂载到app对象中
+ * allowedMethods()方法：router.allowedMethods()用在了路由匹配 router.routes()之后，当所有 路由中间件最后调用.的时候，根据 ctx.status 设置 response 响应头，当请求出错时的处理逻辑
+*/
+app.use(index.routes(), index.allowedMethods());
+app.use(users.routes(), users.allowedMethods());
+```
+
+---
+
 ### 2.mongoose对象模型工具库连接MongoDB
 
 使用mongoose连接MongoDB数据库-npm包：[mongoose - npm (npmjs.com)](https://www.npmjs.com/package/mongoose)
 
-**抽象模型对应：一层层包含：schema包含model，model包含entitv**
+mongodb官网文档：[https://mongoosejs.com/](https://mongoosejs.com/)  
+
+中文网文档：[http://www.mongoosejs.net/](http://www.mongoosejs.net/)
+
+#### 抽象模型对应：一层层包含 --> schema包含model，model包含entitv
 
 | MongoDB     | MySQL       | Mongoose |
 |:-----------:|:-----------:|:--------:|

@@ -2,6 +2,20 @@
 
 ## 项目前置
 
+##### 接口概念
+
+
+
+##### 接口开发规范（Restful API）
+
+
+
+##### 接口测试工具（Postman&Insomnia）
+
+
+
+
+
 使用以下二选一文档初始化koa项目：
 
 - 使用：Koa-应用(Application)-koa项目初始
@@ -797,7 +811,267 @@ app.listen(3000)
 
 #### ES6语法封装操作MongoDB数据库功能
 
+官方Node操作库mongodb文档：[快速入门 — Node.js (mongodb.com)](https://www.mongodb.com/docs/drivers/node/current/quick-start/)
 
+##### 1.安装官方文档的库`mongodb`
+
+```bash
+npm install mongodb --save
+```
+
+##### 2.新建MongoDB数据库koa
+
+基于koa数据库新建collection：user --> user包括字段：_id、username、password
+
+##### 3.mongodb连接到koa项目应用程序
+
+```js
+const { MongoClient } = require('mongodb');
+
+const uri = 'mongodb://localhost:27017/';
+
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    // 连接的数据库名字
+    const database = client.db('koa');
+    // 连接表
+    const user = database.collection('user');
+    // 往表里添加数据
+    user.insertOne({'username':'ooo', 'password':'11111'});
+  } finally {
+    // 确保客户端当完成/错误时候，关闭连接
+    await client.close();
+  }
+}
+// 
+run().catch(console.dir);
+```
+
+##### 4.具体封装方法module/db.js
+
+```js
+const { MongoClient, ObjectID } = require("mongodb");
+const Config = require("./config.js");
+
+const client = new MongoClient(Config.dbUri);
+
+class Db {
+    // 单例：多次实例化不共享的问题(只实例化一次，其他实例化便共享那个实例)
+    static getInstance() {
+        if (!Db.instance) {
+            Db.instance = new Db();
+        }
+        return Db.instance;
+    }
+
+    constructor() {
+        /*属性 放db对象*/
+        this.dbClient = '';
+        /*实例化的时候就连接数据库*/
+        this.client();
+    }
+
+    // 连接数据库
+    connect() {
+        let _that = this;
+        return new Promise((resolve, reject) => {
+            if (!_that.dbClient) {
+                client.connect(Config.dbUri, (err, client) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        _that.dbClient = client.db(Config.dbName);
+                        resolve(_that.dbClient);
+                    }
+                });
+            } else {
+                resolve(_that.dbClient);
+            }
+        });
+    }
+
+    /**
+     * 封装增删改查方法
+     */
+    find(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                var result = db.collection(collectionName).find(json);
+
+                result.toArray(function (err, docs) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+                    resolve(docs);
+                });
+            });
+        });
+    }
+    update(collectionName, json1, json2) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                //db.user.update({},{$set:{}})
+                db.collection(collectionName).updateOne(
+                    json1,
+                    {
+                        $set: json2,
+                    },
+                    (err, result) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    }
+                );
+            });
+        });
+    }
+    insert(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                db.collection(collectionName).insertOne(json, function (err, result) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
+        });
+    }
+
+    remove(collectionName, json) {
+        return new Promise((resolve, reject) => {
+            this.connect().then((db) => {
+                db.collection(collectionName).removeOne(json, function (err, result) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
+        });
+    }
+    // mongodb里面查询 _id 把字符串转换成对象
+    getObjectId(id) {
+        return new ObjectID(id);
+    }
+}
+
+module.exports = Db.getInstance();
+```
+
+##### 5.在路由使用封装好的方法：routes\user\users.js
+
+```js
+const router = require('koa-router')()
+
+// 路由文档：https://github.com/koajs/router/blob/HEAD/API.md
+
+// 定义路由的前缀：/users
+router.prefix('/users')
+
+
+// 显示用户信息
+router.get('/',async (ctx)=>{
+
+  var result = await DB.find('user',{});
+
+  console.log(result);
+  await ctx.render('index',{
+      list:result
+  });
+})
+
+// 增加用户
+router.get('/add',async (ctx)=>{
+
+  await ctx.render('add');
+})
+
+
+// 执行增加用户的操作
+router.post('/doAdd',async (ctx)=>{
+
+  // 获取表单提交的数据
+
+  // console.log(ctx.request.body);  //{ username: '王麻子', age: '12', sex: '1' }
+
+  let data = await DB.insert('user',ctx.request.body);
+  //console.log(data);
+  try{
+      if(data.result.ok){
+          ctx.redirect('/')
+      }
+  }catch(err){
+      console.log(err);
+      return;
+      ctx.redirect('/add');
+  }
+})
+
+// 编辑用户
+router.get('/edit',async (ctx)=>{
+  // 通过get传过来的id来获取用户信息
+  let id = ctx.query.id;
+
+  let data = await DB.find('user',{"_id":DB.getObjectId(id)});
+
+  // 获取用户信息
+  await ctx.render('edit',{
+      list:data[0]
+  });
+
+})
+
+
+router.post('/doEdit',async (ctx)=>{
+  // 通过get传过来的id来获取用户信息
+  // console.log(ctx.request.body);
+
+  var id = ctx.request.body.id;
+  var username = ctx.request.body.username;
+  var age = ctx.request.body.age;
+  var sex = ctx.request.body.sex;
+
+  let data = await DB.update('user',{"_id":DB.getObjectId(id)},{
+      username,age,sex
+  })
+
+  try{
+      if(data.result.ok){
+          ctx.redirect('/')
+      }
+  }catch(err){
+      console.log(err);
+      return;
+      ctx.redirect('/');
+  }
+
+})
+
+
+// 删除用户
+router.get('/delete',async (ctx)=>{
+
+  let id = ctx.query.id;
+
+  var data = await DB.remove('user',{"_id":DB.getObjectId(id)});
+  console.log(data);
+  if(data){
+      ctx.redirect('/')
+  }
+})
+
+module.exports = router
+```
+
+##### 6.
 
 ## 数据库
 

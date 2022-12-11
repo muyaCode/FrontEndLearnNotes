@@ -1132,6 +1132,10 @@ export default {
               }
             ],
           },
+          {
+            text: "接口测试工具",
+            link: "/Document/Node后端框架开发/接口测试工具",
+          },
         ]
       },
       {
@@ -1139,6 +1143,10 @@ export default {
         collapsible: true, // 可折叠
         collapsed: true, // 初始不折叠
         items: [
+          {
+            text: "数据库简介",
+            link: "/Document/数据库的使用/数据库简介"
+          },
           {
             text: "MongoDB数据库",
             items: [
@@ -1149,6 +1157,14 @@ export default {
               {
                 text: "MongoDB下载安装和配置",
                 link: "/Document/数据库的使用/MongoDB数据库/MongoDB下载安装和配置",
+              },
+              {
+                text: "MongoDB基础",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB基础",
+              },
+              {
+                text: "MongoDB高级",
+                link: "/Document/数据库的使用/MongoDB数据库/MongoDB高级",
               },
               {
                 text: "MongoDB数据库的使用",
