@@ -1022,6 +1022,27 @@ export default {
             link: "/Document/Node/Node版本管理工具",
           },
           {
+            text: "Node基础",
+            link: "/Document/Node/Node基础",
+          },
+          {
+            text: "Node高级",
+            link: "/Document/Node/Node高级",
+          },
+          {
+            text: "Node实战",
+            items: [
+              {
+                text: 'Node搭建Web服务器',
+                link: "/Document/Node/Node实战/Node搭建Web服务器",
+              },
+              {
+                text: 'Node原生API服务开发',
+                link: "/Document/Node/Node实战/Node原生API服务开发",
+              },
+            ],
+          },
+          {
             text: "nvm的简介、安装、使用",
             link: "/Document/Node/nvm的简介、安装、使用",
           },
@@ -1202,8 +1223,29 @@ export default {
             ]
           },
           {
-            text: "",
-            link: "/Document/数据库的使用/",
+            text: "Redis数据库",
+            items: [
+              {
+                text: "",
+                link: "/Document/数据库的使用/Redis数据库/Redis数据库相关资源",
+              },
+              {
+                text: "",
+                link: "/Document/数据库的使用/Redis数据库/Redis版本介绍",
+              },
+              {
+                text: "",
+                link: "/Document/数据库的使用/Redis数据库/Redis下载安装和配置",
+              },
+              {
+                text: "",
+                link: "/Document/数据库的使用/Redis数据库/Redis数据库的使用",
+              },
+              {
+                text: "",
+                link: "/Document/数据库的使用/Redis数据库/Redis数据库迁移",
+              },
+            ]
           },
         ]
       },

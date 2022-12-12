@@ -182,7 +182,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
   - [koa-static - npm (npmjs.com)](https://www.npmjs.com/package/koa-static)
   
   - 使用案例：
-
+  
     - ```js
       const Koa = require('koa'); // 引入koa
       const app = new Koa(); // 创建koa应用
@@ -236,7 +236,7 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
     // 如果这样配置，模板的后缀为.ejs
     // app.use(views('views', { extension: 'ejs' }));
     ```
-
+  
     2.Koa 的路由或app.use中间件中向模板引擎传递数据：`await ctx.render('页面',{ 数据 })`
   
   - ```js
@@ -266,9 +266,9 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
     </body>
     </html>
     ```
-
+  
     引入的模板：public/header.ejs
-
+  
     ```html
     <h1 class="title">这是一个头部的模块</h1>
     ```
@@ -367,12 +367,22 @@ koa-generator库： 使用 `koa-generator` 生成 `koa` 项目
 
 - **项目热重载运行**
 
-- nodemon - 项目热重载运行库：每次修改代码后，自动重启项目 - nodemon app.js
+- nodemon - 项目热重载运行库：每次修改代码后，自动重启项目
   
   - 项目安装：npm install nodemon --save-dev
+  
+    - **项目安装启动**：`npx nodemon app.js`
+  
   - 全局安装：npm install nodemon -g
+  
+    - **全局安装启动项目**：`nodemon app.js`
 
 - supervisor - 项目热重载运行库：每次修改代码后，自动重启项目 - supervisor app.js
   
-  - 项目安装：npm install supervisor --save-dev
-  - 全局安装：npm install supervisor -g
+  - **项目安装**：npm install supervisor --save-dev
+  
+    - 项目安装启动：`npx supervisor app.js`
+  
+  - **全局安装**：npm install supervisor -g
+  
+    - 全局安装启动项目：`supervisor app.js`
