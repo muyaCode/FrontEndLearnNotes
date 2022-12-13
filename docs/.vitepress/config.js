@@ -87,7 +87,10 @@ export default {
     sidebar: [
       {
         text: "学习指南",
-        items: [{ text: "学习指南", link: "/order/study_guide" }],
+        items: [
+          { text: "学习指南", link: "/order/study_guide" },
+          { text: "markdown图标", link: "/order/markdown图标" },
+        ],
       },
       {
         text: "前端环境配置",
@@ -1092,10 +1095,6 @@ export default {
                 text: "Express实战开发",
                 link: "/Document/Node后端框架开发/Express框架/Express实战开发",
               },
-              {
-                text: "Express项目部署",
-                link: "/Document/Node后端框架开发/Express框架/Express项目部署",
-              },
             ],
           },
           {
@@ -1146,10 +1145,6 @@ export default {
                 link: "/Document/Node后端框架开发/Koa框架/Koa项目示例",
               },
               {
-                text: "Koa项目部署",
-                link: "/Document/Node后端框架开发/Koa框架/Koa项目部署",
-              },
-              {
                 text: "EggJS框架",
                 link: "/Document/Node后端框架开发/Koa框架/EggJS框架",
               },
@@ -1169,13 +1164,21 @@ export default {
             items: [
               {
                 text: "Fastify框架",
-                link: "/Document/Node后端框架开发/Fastify框架",
+                link: "/Document/Node后端框架开发/Fastify框架/Fastify框架",
               }
             ],
           },
           {
             text: "接口测试工具",
             link: "/Document/Node后端框架开发/接口测试工具",
+          },
+          {
+            text: "Node项目项目开发跨域问题",
+            link: "/Document/Node后端框架开发/Node项目项目开发跨域问题",
+          },
+          {
+            text: "Node项目上线部署",
+            link: "/Document/Node后端框架开发/Node项目上线部署",
           },
         ]
       },
