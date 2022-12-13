@@ -1073,9 +1073,29 @@ export default {
             text: "Express框架",
             items: [
               {
-                text: "Express框架相关资源",
-                link: "/Document/Node后端框架开发/Express框架/Express框架相关资源",
-              }
+                text: "Express介绍和相关网址",
+                link: "/Document/Node后端框架开发/Express框架/Express介绍和相关网址",
+              },
+              {
+                text: "Express快速开发脚手架",
+                link: "/Document/Node后端框架开发/Express框架/Express快速开发脚手架",
+              },
+              {
+                text: "Express相关资源",
+                link: "/Document/Node后端框架开发/Express框架/Express相关资源",
+              },
+              {
+                text: "Express实战开发参考",
+                link: "/Document/Node后端框架开发/Express框架/Express实战开发参考",
+              },
+              {
+                text: "Express实战开发",
+                link: "/Document/Node后端框架开发/Express框架/Express实战开发",
+              },
+              {
+                text: "Express项目部署",
+                link: "/Document/Node后端框架开发/Express框架/Express项目部署",
+              },
             ],
           },
           {
@@ -1226,23 +1246,23 @@ export default {
             text: "Redis数据库",
             items: [
               {
-                text: "",
+                text: "Redis数据库相关资源",
                 link: "/Document/数据库的使用/Redis数据库/Redis数据库相关资源",
               },
               {
-                text: "",
+                text: "Redis版本介绍",
                 link: "/Document/数据库的使用/Redis数据库/Redis版本介绍",
               },
               {
-                text: "",
+                text: "Redis下载安装和配置",
                 link: "/Document/数据库的使用/Redis数据库/Redis下载安装和配置",
               },
               {
-                text: "",
+                text: "Redis数据库的使用",
                 link: "/Document/数据库的使用/Redis数据库/Redis数据库的使用",
               },
               {
-                text: "",
+                text: "Redis数据库迁移",
                 link: "/Document/数据库的使用/Redis数据库/Redis数据库迁移",
               },
             ]

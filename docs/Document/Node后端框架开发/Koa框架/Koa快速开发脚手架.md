@@ -11,6 +11,9 @@ npm install koa-generator -g
 ```bash
 # 项目名字为：myproject
 koa2 myproject
+
+# 如果需要ejs模板, 在koa2 后 加 -e参数：默认是pug模板
+koa2 -e/--ejs  项目包名 
 ```
 
 3、第三步：进入项目，安装依赖包
