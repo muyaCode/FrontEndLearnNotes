@@ -108,60 +108,63 @@ export default {
         ],
       },
       {
-        text: "HTML标签记录",
+        text: "HTML和CSS学习",
         collapsible: true, // 可折叠
         collapsed: true, // 初始不折叠
         items: [
           {
-            text: "HTML学习指导",
-            link: "/Document/HTML/Guide",
+            text: "HTML学习",
+            items:[
+              {
+                text: "HTML学习指导",
+                link: "/Document/HTML和CSS/HTML/HTML学习指引",
+              },
+              {
+                text: "HTML标签",
+                link: "/Document/HTML和CSS/HTML/HTML标签",
+              },
+            ]
           },
           {
-            text: "HTML标签",
-            link: "/Document/HTML/HTML标签",
-          },
-        ],
-      },
-      {
-        text: "CSS基础和进阶总结",
-        collapsible: true, // 可折叠
-        collapsed: true, // 初始不折叠
-        items: [
-          {
-            text: "CSS基础总结",
-            link: "/Document/CSS/CSS基础总结",
-          },
-          {
-            text: "CSS高级",
-            link: "/Document/CSS/CSS高级",
-          },
-          {
-            text: "CSS动画",
-            link: "/Document/CSS/CSS动画",
-          },
-          {
-            text: "CSS变量",
-            link: "/Document/CSS/CSS变量",
-          },
-          {
-            text: "CSS开发技巧",
-            link: "/Document/CSS/CSS开发技巧",
-          },
-          {
-            text: "CSS模块化方案",
-            link: "/Document/CSS/CSS模块化方案",
-          },
-          {
-            text: "CSS预处理器",
-            link: "/Document/CSS/CSS预处理器",
-          },
-          {
-            text: "CSS工具",
-            link: "/Document/CSS/CSS工具",
-          },
-          {
-            text: "CSS性能优化",
-            link: "/Document/CSS/CSS性能优化",
+            text: "CSS基础和进阶总结",
+            items: [
+              {
+                text: "CSS基础总结",
+                link: "/Document/HTML和CSS/CSS/CSS基础总结",
+              },
+              {
+                text: "CSS高级",
+                link: "/Document/HTML和CSS/CSS/CSS高级",
+              },
+              {
+                text: "CSS动画",
+                link: "/Document/HTML和CSS/CSS/CSS动画",
+              },
+              {
+                text: "CSS变量",
+                link: "/Document/HTML和CSS/CSS/CSS变量",
+              },
+              {
+                text: "CSS开发技巧",
+                link: "/Document/HTML和CSS/CSS/CSS开发技巧",
+              },
+              {
+                text: "CSS模块化方案",
+                link: "/Document/HTML和CSS/CSS/CSS模块化方案",
+              },
+              {
+                text: "CSS预处理器",
+                link: "/Document/HTML和CSS/CSS/CSS预处理器",
+              },
+              {
+                text: "CSS工具",
+                link: "/Document/HTML和CSS/CSS/CSS工具",
+              },
+              {
+                text: "CSS性能优化",
+                link: "/Document/HTML和CSS/CSS/CSS性能优化",
+              },
+            ]
           },
         ],
       },
