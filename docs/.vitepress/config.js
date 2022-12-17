@@ -174,6 +174,10 @@ export default {
         collapsed: true, // 初始不折叠
         items: [
           {
+            text: "JavaScript基础",
+            link: "/Document/JavaScript笔记/JavaScript基础",
+          },
+          {
             text: "Canvas学习",
             items: [
               {

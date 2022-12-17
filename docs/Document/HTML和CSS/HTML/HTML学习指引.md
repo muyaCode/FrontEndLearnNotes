@@ -2,6 +2,8 @@
 
 HTML参考手册|菜鸟教程：<https://www.runoob.com/tags/html-reference.html>
 
+w3c的HTML+CSS手册：[HTML 系列教程 (w3school.com.cn)](https://www.w3school.com.cn/h.asp)
+
 ## HTML5是什么？
 
 1. [万维网](http://baike.baidu.com/view/7833.htm)的核心语言、[标准通用标记语言](http://baike.baidu.com/view/5286041.htm)下的一个应用[超文本标记语言](http://baike.baidu.com/view/383720.htm)（[HTML](http://baike.baidu.com/view/692.htm)）的第五次重大修改
@@ -40,13 +42,105 @@ a) 移动优先
 
 ### 简单概括
 
-1. H5即是HTML的一个最新的版本，也是web的一个标准。
+1. H5即是HTML的一个最新的版本，是html语言的第五次重大修改--版本，也是web的一个标准。
 
-2. 在之前的基础之上新增了一些内容：新语义标签、智能表单、多媒体标签
+2. 支持：所有的主流浏览器都支持h5.（chrome,firefox,safari。。。）。IE9及以上支持h5(有选择的支持，并不会全部支持),但是ie8及以下不支持h5.
+
+3. 在之前的基础之上新增了一些内容：新语义标签、智能表单、多媒体标签
    结合CSS3中的内容如：圆角、动画、过渡等效果，提高用户的体验。
 
-3. 新增了javascript的api，使得操作dom更加的方便
+4. 新增了javascript的api，使得操作dom更加的方便
 
-4. 还增加了与硬件结合的功能：定位、重力感应、硬件访问等功能
+5. 还增加了与硬件结合的功能：定位、重力感应、硬件访问等功能
 
-5. 通常所说的H5：HTML5 + CSS3 + JavaScript;组合而成的一个应用开发平台
+6. 改变了用户与文档的交互方式：多媒体：video  audio canvas
+
+7. 通常所说的H5：HTML5 + CSS3 + JavaScript;组合而成的一个应用开发平台
+
+8. 相对于h4:
+   
+   1. 进步：抛弃了一些不合理不常用的标记和属性
+   
+   2. 新增了一些标记和属性--表单
+   
+   3. 从代码角度而言，h5的网页结构代码更简洁。
+
+9. w3c文档：[HTML5 简介 (w3school.com.cn)](https://www.w3school.com.cn/html/html5_intro.asp)
+
+## HTML4和HTML5编写模板
+
+html:5 +tab
+
+```html
+<!--html:5 +tab-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+html:xt +tab:XHTML过渡型文档类型
+
+```html
+<!--html:xt +tab:XHTML过渡型文档类型-->
+<!--：网址规范的解析的规则  transitional：过渡-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+html:4s +tab
+
+```html
+<!--html:4s +tab-->
+<!--strict:严格：完全按照h4的请求进行解析-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+## HTML4和HTML5相比
+
+语法规范
+
+html:4s&4t 
+html:xt
+html:5&!
+更加简洁
+更加宽松
+
+兼容和语义化
+
+语义化
+    标签的语义化
+        header
+        footer
+        nav
+        aside
+        progress
+兼容
+    引入一个js文件，当支持H5的时候不引入此文件，不支持的时候引入
+    快捷键：ccie6
