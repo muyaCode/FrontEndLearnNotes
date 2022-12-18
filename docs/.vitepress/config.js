@@ -133,14 +133,6 @@ export default {
                 link: "/Document/HTML和CSS/CSS/CSS基础总结",
               },
               {
-                text: "CSS高级",
-                link: "/Document/HTML和CSS/CSS/CSS高级",
-              },
-              {
-                text: "CSS动画",
-                link: "/Document/HTML和CSS/CSS/CSS动画",
-              },
-              {
                 text: "CSS变量",
                 link: "/Document/HTML和CSS/CSS/CSS变量",
               },

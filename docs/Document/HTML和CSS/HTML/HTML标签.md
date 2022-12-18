@@ -619,9 +619,9 @@ offline事件：网络断开时触发
 接口：
 
 1. requestFullScreen():开启全屏显示
-   
+
    1. 不同浏览器需要添加不同的前缀
-   
+
    2. chrome：webkit   firefox：moz   ie：ms   opera：o
 
 2. cancelFullScreen()：退出全屏显示:也添加前缀，在不同的浏览器下.退出全屏只能使用document来实现
@@ -998,5 +998,3 @@ if(typeof(Storage)!=="undefined")
     // 抱歉! 不支持 web 存储。
 }
 ```
-
-### 

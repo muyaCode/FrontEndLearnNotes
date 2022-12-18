@@ -58,11 +58,11 @@ a) 移动优先
 7. 通常所说的H5：HTML5 + CSS3 + JavaScript;组合而成的一个应用开发平台
 
 8. 相对于h4:
-   
+
    1. 进步：抛弃了一些不合理不常用的标记和属性
-   
+
    2. 新增了一些标记和属性--表单
-   
+
    3. 从代码角度而言，h5的网页结构代码更简洁。
 
 9. w3c文档：[HTML5 简介 (w3school.com.cn)](https://www.w3school.com.cn/html/html5_intro.asp)
@@ -126,7 +126,7 @@ html:4s +tab
 
 语法规范
 
-html:4s&4t 
+html:4s&4t
 html:xt
 html:5&!
 更加简洁
