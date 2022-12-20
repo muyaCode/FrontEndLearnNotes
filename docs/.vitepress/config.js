@@ -133,8 +133,8 @@ export default {
                 link: "/Document/HTML和CSS/CSS/CSS基础总结",
               },
               {
-                text: "CSS变量",
-                link: "/Document/HTML和CSS/CSS/CSS变量",
+                text: "CSS新特性",
+                link: "/Document/HTML和CSS/CSS/CSS新特性",
               },
               {
                 text: "CSS开发技巧",
