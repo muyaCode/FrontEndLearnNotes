@@ -141,8 +141,8 @@ export default {
                 link: "/Document/HTML和CSS/CSS/CSS开发技巧",
               },
               {
-                text: "CSS模块化方案",
-                link: "/Document/HTML和CSS/CSS/CSS模块化方案",
+                text: "CSS工程化(模块化)方案",
+                link: "/Document/HTML和CSS/CSS/CSS工程化(模块化)方案",
               },
               {
                 text: "CSS预处理器",
@@ -631,6 +631,31 @@ export default {
               {
                 text: "React实战",
                 link: "/Document/Front-end-devFramework/React/React实战/React实战",
+              },
+            ],
+          },
+        ]
+      },
+      {
+        text: "Angular学习",
+        collapsible: true, // 可折叠
+        collapsed: true, // 初始不折叠
+        items: [
+          {
+            text: "Angular快速上手",
+            items: [
+              {
+                text: "Angular快速上手",
+                link: "/Document/Front-end-devFramework/Angular/Angular快速上手",
+              },
+            ],
+          },
+          {
+            text: "Angular实战",
+            items: [
+              {
+                text: "Angular实战",
+                link: "/Document/Front-end-devFramework/Angular实战",
               },
             ],
           },
