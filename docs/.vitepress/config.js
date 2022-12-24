@@ -149,6 +149,10 @@ export default {
                 link: "/Document/HTML和CSS/CSS/CSS预处理器",
               },
               {
+                text: "CSS架构",
+                link: "/Document/HTML和CSS/CSS/CSS架构",
+              },
+              {
                 text: "CSS工具",
                 link: "/Document/HTML和CSS/CSS/CSS工具",
               },
@@ -875,6 +879,10 @@ export default {
           {
             text: "移动端开发调试",
             link: "/Document/DevDebug/移动端开发调试",
+          },
+          {
+            text: "前后端对接联调",
+            link: "/Document/DevDebug/前后端对接联调",
           },
         ]
       },
