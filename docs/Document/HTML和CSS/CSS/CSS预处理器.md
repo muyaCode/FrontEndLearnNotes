@@ -1,7 +1,5 @@
 # CSS 预处理器
 
-
-
 ## Less 预处理器
 
 ### Less介绍：
@@ -44,7 +42,11 @@
   
   - [Sass: Sass 文档 | Sass 中文网](https://sass.bootcss.com/documentation)
 
----
+- SassMagic（Sass的BEM语法）：
+  
+  - [Sassmagic - v1.0.0 (w3cplus.github.io)](http://w3cplus.github.io/SassMagic/)
+  
+  - [W3cplus/SassMagic: Collection best of Sass mixins and function (github.com)](https://github.com/W3cplus/SassMagic)
 
 开始
 

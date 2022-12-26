@@ -469,11 +469,40 @@ GitHub：[rstacruz/rscss: Reasonable System for CSS Stylesheet Structure (github
 
 ## 架构使用示例
 
-CSS架构的GitHub例子：[vue3-css-framework](https://github.com/muyaCode/vue3-css-framework)
+CSS架构的GitHub例子（项目还不能运行）：[vue3-css-framework](https://github.com/muyaCode/vue3-css-framework)
 
-src\style\目录的样式
+- `src\style\`目录的样式
 
-也可以看elementPlus源码
+也可以看elementPlus的源码：
+
+- elementUI：源码：[ElemeFE/element: A Vue.js 2.0 UI Toolkit for Web (github.com)](https://github.com/ElemeFE/element)
+  
+  - css架构目录：：element/packages/theme-chalk/src/
+
+- elementPlus：[一个 Vue 3 UI 框架 | Element Plus (gitee.io)](https://element-plus.gitee.io/zh-CN/)
+  
+  - 源码：[element-plus/element-plus: 🎉 A Vue.js 3 UI Library made by Element team (github.com)](https://github.com/element-plus/element-plus)
+  - css架构目录：：element-plus/packages/theme-chalk/src/
+
+Ant Design的源码架构：
+
+- [Ant Design - 一个 UI 设计语言](https://3x.ant.design/index-cn)
+
+- 源码：[ant-design/ant-design: An enterprise-class UI design language and React UI library (github.com)](https://github.com/ant-design/ant-design)
+
+- css架构目录：components\style
+
+Bootstrap的源码架构：
+
+- [Bootstrap中文网 (bootcss.com)](https://www.bootcss.com/)
+
+- 源码：[twbs/bootstrap: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. (github.com)](https://github.com/twbs/bootstrap)
+
+- css架构目录：scss目录
+
+### github快速查看项目源码架构在github后面添加1s，如：
+
+https://github1s.com/ant-design/ant-design
 
 ## 总结
 
