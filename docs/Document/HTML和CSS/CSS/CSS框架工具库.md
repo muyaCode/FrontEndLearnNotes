@@ -1,6 +1,6 @@
 # CSS框架工具库
 
-## tailwindCSS框架工具库
+## tailwindCSS框架工具库-原子化的CSS框架
 
 官网：[Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.](https://tailwindcss.com/)
 

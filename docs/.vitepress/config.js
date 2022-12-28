@@ -179,7 +179,16 @@ export default {
         items: [
           {
             text: "JavaScript基础",
-            link: "/Document/JavaScript笔记/JavaScript基础",
+            items: [
+              {
+                text: "JavaScript基础",
+                link: "/Document/JavaScript笔记/JavaScript基础/JavaScript基础",
+              },
+              {
+                text: "Ajax概念入门到手写",
+                link: "/Document/JavaScript笔记/JavaScript基础/Ajax概念入门到手写",
+              },
+            ]
           },
           {
             text: "Canvas学习",
