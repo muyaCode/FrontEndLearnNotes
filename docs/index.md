@@ -7,7 +7,7 @@ titleTemplate: 记录一些前端学习的知识
 hero:
   name: 前端路线基础到进阶
   text: 后浪卷前浪
-  tagline: 仅供学习
+  tagline: "不进则退"
   # 首页右边Logo设置
   # image:
   #   src: /logo.png

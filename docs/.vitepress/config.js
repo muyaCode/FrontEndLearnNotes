@@ -3,8 +3,9 @@ import nav from "./nav";
 import algolia from "./algolia";
 import sidebar from "./sidebar";
 
+// 配置文档：https://vitepress.vuejs.org/config/introduction
 export default {
-  lang: "zh", // 中文，英文设置en
+  lang: "zh", // 中文，英文设置en-US
   title: "牡涯前端学习笔记", // 浏览器标签标题
   description: "记录前端学习过的笔记",
   base: '/FrontEndLearnNotes/', // url默认前缀
@@ -38,7 +39,8 @@ export default {
   themeConfig: {
     logo: "/img/buding.svg",
     siteTitle: "牧涯前端学习笔记", // 网站左上角标题
-    outlineTitle: '⚡️内容大纲',
+    outlineTitle: '⚡️文档内容大纲', // 大纲标题
+    outline: 'deep', // 大纲显示层级：number：只显示 | [number, number]：指定层级范围显示 | 'deep'：全部显示 | false：不显示
 
 
     // 右上角导航
