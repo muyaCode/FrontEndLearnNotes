@@ -235,9 +235,26 @@ jobs:
           APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
           API_KEY: ${{ secrets.API_KEY }}
           CONFIG: ${{ steps.algolia_config.outputs.config }}
-
 ```
 
 > 这里 yml 就是使用 Github Actions 在 Docker 中执行的 AlgoliaDocSearch scraper action，当我们推送到 main 分支时就会立即执行这个任务，当然如果你是 master 分支只需要修改 branches 那里的值即可
+
+## 项目提交algolia搜索配置后的应用结构爬虫数据
+
+1.回到项目提交代码到GitHub，然后打开GitHub项目链接，点击 `Actions` ，选择刚刚提交的记录带有algolia的
+
+![3-1.jpg](.\img\3-1.jpg)
+
+2.点击algolia，发现正在执行爬虫工作
+
+![3-2.jpg](.\img\3-2.jpg)
+
+3.回到algolia的Applications应用列表
+
+![3-3.jpg](.\img\3-3.jpg)
+
+4.点击后发现，应用已经在爬取数据
+
+![3-4.png](.\img\3-4.png)
 
 ## 总结
