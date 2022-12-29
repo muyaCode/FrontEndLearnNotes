@@ -4,8 +4,6 @@ emoji-cheat-sheet：[🎁 Emoji cheat sheet for GitHub, Basecamp, Slack & more (
 
 emojipedia：[📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍](https://emojipedia.org/)
 
-
-
 ## 👉 常用图标
 
 🌟 `:star2:` ⭐️ `:star:` 💫 `:dizzy:` 💥 `:boom:`  
@@ -24,7 +22,7 @@ emojipedia：[📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍](
 🍗 `:poultry_leg:` 🍰 `:cake:`  
 🔆 `:high_brightness:` 🚀 `:rocket:`
 
-## 👉表情：
+## 👉表情
 
 😉 `:wink:` 😄 `:smile:`  
 😆 `:laughing:` 😊 `:blush:`  
@@ -56,7 +54,7 @@ emojipedia：[📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍](
 
 ## 纯图标
 
-😄 😆 😊 😃 😏 😍 😘 😚 😳 😌 😆 😁 😉 😜 😝 😀 😗 😙 😛 😴 😟 😦 😧 😮 😬 😕 😯 😑 😒 😅 😓 😥 😩 😔 😞 😖 😨 😰 😣 😢 😭 😂 😲 😱 😫 😠 😡 😤 😪 😋 😷 😎 😵 👿 😈 😐 😶 😇 👽 💛
+😄 😆 😊 😃 😏 😍 😘 😚 😳 😌 😁 😉 😜 😝 😀 😗 😙 😛 😴 😟 😦 😧 😮 😬 😕 😯 😑 😒 😅 😓 😥 😩 😔 😞 😖 😨 😰 😣 😢 😭 😂 😲 😱 😫 😠 😡 😤 😪 😋 😷 😎 😵 👿 😈 😐 😶 😇 👽 💛
 
 💙 💜 ❤️ 💚 💔 💓 💗 💕 💞 💘 💖 ✨ ⭐️ 🌟 💫 💥 💥 💢 ❗️ ❓ ❕ ❔ 💤 💨 💦 🎶 🎵 🔥 💩 💩 💩 👍 👍 👎 👎 👌 👊 👊 ✊ ✌️ 👋 ✋ ✋ 👐 ☝️ 👇 👈 👉 🙌 🙏 👆 👏 💪 🤘 🖕 🏃 🏃 👫 👪 👬 👭 💃 👯 🙆 🙅 💁
 

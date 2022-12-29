@@ -17,3 +17,7 @@ MDN工具网址：专门查询 HTML标签、CSS属性和使用、JavaScript的AP
 ::: danger
 红色的Tip
 :::
+
+::: info
+灰色的Tip
+:::
