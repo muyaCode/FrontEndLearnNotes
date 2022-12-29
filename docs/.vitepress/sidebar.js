@@ -102,33 +102,44 @@ export default {
             },
             {
               text: "Ajax概念入门到手写",
-              link: "/Document/JavaScript笔记/JavaScript基础/Ajax概念入门到手写",
+              link: "/Document/JavaScript笔记/JavaScript基础/Ajax入门概念到手写",
             },
           ]
         },
         {
-          text: "Canvas学习",
-          items: [
-            {
-              text: "Canvas学习指南",
-              link: "/Document/JavaScript笔记/Canvas/Guide",
-            },
-            {
-              text: "Canvas入门",
-              link: "/Document/JavaScript笔记/Canvas/Canvas入门",
-            },
-          ]
-        },
-        {
-          text: "JavaScript高级学习指南",
+          text: "JavaScript高级",
           items: [
             {
               text: "JavaScript高级学习指南",
-              link: "/Document/JavaScript笔记/JavaScript高级/Guide",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript高级学习指南",
             },
             {
-              text: "JavaScript高级",
-              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript高级",
+              text: "0.JavaScript 中的数据类型",
+              link: "/Document/JavaScript笔记/JavaScript高级/0.JavaScript 中的数据类型",
+            },
+            {
+              text: "1.JavaScript 面向对象编程",
+              link: "/Document/JavaScript笔记/JavaScript高级/1.JavaScript 面向对象编程",
+            },
+            {
+              text: "1.1 面向对象案例",
+              link: "/Document/JavaScript笔记/JavaScript高级/1.1 面向对象案例",
+            },
+            {
+              text: "2.JavaScript 函数进阶",
+              link: "/Document/JavaScript笔记/JavaScript高级/2.JavaScript 函数进阶",
+            },
+            {
+              text: "3.JavaScript 正则表达式",
+              link: "/Document/JavaScript笔记/JavaScript高级/3.JavaScript 正则表达式",
+            },
+            {
+              text: "",
+              link: "/Document/JavaScript笔记/JavaScript高级/",
+            },
+            {
+              text: "Canvas学习",
+              link: "/Document/JavaScript笔记/JavaScript高级/Canvas学习",
             },
           ]
         },

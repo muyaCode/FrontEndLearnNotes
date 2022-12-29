@@ -1,4 +1,4 @@
-# 重学JavaScript
+# JavaScript高级
 
 ## Promise
 

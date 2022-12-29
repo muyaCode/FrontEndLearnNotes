@@ -5,20 +5,20 @@
 ## 1、http介绍
 
 1. 什么是协议
-   
+  
    1. 协议是一个汉语词汇，读音为xié yì，意思是共同计议，协商；经过谈判、协商而制定的共同承认、共同遵守的文件  —  来自百度百科
    2. 所谓协议，就是双方协商好要遵循的沟通准则，比如：用户协议、服务协议等
 
 2. 常见协议类型以及特点
-   
+  
    网络协议，其实也就是前后端商量好的沟通准则。服务器要能读得懂客户端的请求，客户端也要懂服务器的响应，那么他们之间就需要一个协议
-   
+  
    ![协议.png](.\img\协议.png)
-   
+  
    就像发电报一样，发送者按照协议规定的编码方式发送，接收者再按照相同的协议准则解码
-   
+  
    **四种协议**：
-   
+  
    1. TCP
    2. HTTP
    3. HTTPS
@@ -27,7 +27,7 @@
 3. http协议基于TCP协议，面向连接
 
 4. 三次握手和四次挥手
-   
+  
    1. 三次握手和四次挥手：HTTP基于TCP，是面向连接的协议，建立连接要通过三次握手，断开连接要经过四次挥手![HTTP握手和挥手.png](.\img\HTTP握手和挥手.png)
    2. http协议的构成：![请求和响应.jpg](.\img\请求和响应.jpg)
 
@@ -66,8 +66,9 @@ console.log(2)
 
 - 传统项目前后端不分离，用户触发一个http请求服务器,然后服务器收到之后,在做出响应到用户,并且返回一个新的页面，也就是说交互都是通过页面刷新或页面跳转来实现。
   
-        这样的方式对于用户体验来讲其实并不友好，少量的数据更新也会引发整个页面重新请求，浪费了很大一部分资源。
-        因此，我们希望有一种更好的方式，可以不用重新请求整个页面而达到更新部分数据的效果。2005年，ajax（Asynchronous Javascript And XML）横空出世，给前端行业带来了巨大的变化与革新。
+  这样的方式对于用户体验来讲其实并不友好，少量的数据更新也会引发整个页面重新请求，浪费了很大一部分资源。
+
+  因此，我们希望有一种更好的方式，可以不用重新请求整个页面而达到更新部分数据的效果。2005年，ajax（Asynchronous Javascript And XML）横空出世，给前端行业带来了巨大的变化与革新。
 
 - ajax特点
   
@@ -211,9 +212,9 @@ xhr.onreadystatechange = function () {
 HTTP 请求，同样符合 HTTP 约定的格式：
 
 > 参考链接：
-> 
+>
 > <https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest>
-> 
+>
 > <https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest>
 
 ## 4、AJAX具体用法
@@ -275,7 +276,7 @@ get和post的区别
 | GET                        | POST   |
 | -------------------------- | ------ |
 | 大小限制，4K左右                  | 无限制    |
-| http://www.taobao.com?id=3 | 放在请求体里 |
+| <http://www.taobao.com?id=3> | 放在请求体里 |
 | 明文传输                       | 相对更安全  |
 
 > 发送一个POST请求：POST 请求过程中，都是采用请求体承载需要提交的数据。
@@ -600,7 +601,7 @@ var util = {
 }
 ```
 
-## 响应数据格式
+## 6、响应数据格式
 
 JSON
 
@@ -610,7 +611,7 @@ data
 
 FormData
 
-## ## 6、ajax实战
+## 7、ajax实战
 
 - 段子列表和查看作者
   
@@ -620,7 +621,7 @@ FormData
 - 接口的使用
   
   - util.js：封装好的ajax
-    
+  
     ```js
     var util = {
       get: function (url, query, callback, isJson) {
@@ -709,7 +710,7 @@ FormData
     ```
   
   - index.html：请求发起
-    
+  
     ```html
      <!DOCTYPE html>
      <html lang="en">
@@ -767,7 +768,7 @@ FormData
      </html>
     ```
 
-## 7、Promise
+## 8、Promise
 
 ### promise作用
 
@@ -1111,7 +1112,7 @@ html：
 
 改造成promise对比两者区别
 
-## 8、使用fetch
+## 9、使用fetch
 
 - 介绍fetch
   - ES6，无需插件支持
@@ -1196,14 +1197,14 @@ html：
 </html>
 ```
 
-## jQuery 中的 AJAX
+## 10、jQuery 中的 AJAX
 
 jQuery 中有一套专门针对 AJAX 的封装，功能十分完善，经常使用，需要着重注意。
 
 > 参考：
-> 
+>
 > <http://www.jquery123.com/category/ajax/>
-> 
+>
 > <http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp>
 
 ### $.ajax
@@ -1263,7 +1264,7 @@ $.ajax({
 
 <http://www.jquery123.com/category/ajax/global-ajax-event-handlers/>
 
-## 浏览器同源策略，跨域访问
+## 11、浏览器同源策略，跨域访问
 
 同源策略是浏览器的一种安全策略，所谓同源是指域名，协议，端口完全相同，只有同源的地址才可以相互通过
 
@@ -1321,7 +1322,7 @@ Cross Origin Resource Share，跨域资源共享
 - 后端设置响应头，cors允许跨域访问
   
   - Cross origin resource sharing  跨域资源共享
-    
+  
     php后端设置响应头:
   
   - ```php
@@ -1337,17 +1338,17 @@ Cross Origin Resource Share，跨域资源共享
 - jsonp跨域原理
   
   - JSON with Padding，是一种借助于 script 标签发送跨域请求的技巧。
-    
+  
     其原理就是在客户端借助 script 标签请求服务端的一个动态网页（php 文件），服务端的这个动态网页返回一
-    
+  
     段带有函数调用的 JavaScript 全局函数调用的脚本，将原本需要返回给客户端的数据传递进去。
-    
+  
     以后绝大多数情况都是采用 JSONP 的手段完成不同源地址之间的跨域请求
 
 - 实现jsonp跨域
   
   - 利用**src属性**的开放性原则
-    
+  
     - ```html
       <script src=""></script>
       <img src=""></img>
@@ -1356,7 +1357,7 @@ Cross Origin Resource Share，跨域资源共享
   - 利用script标签在引入外部JS时不受同源策略限制的特性，来实现跨域。(src的开放性原则)
   
   - JSONP只能处理GET请求方式的跨域
-    
+  
     - 服务器端构建一个字符串：字符串中的内容是能够在 JS 中执行的函数调用的结构
 
 ```html
