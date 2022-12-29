@@ -4,8 +4,8 @@ node_modules
 dist
 scripts/docsearch-scraper
 
-# 
-.vitepress
+# 缓存
+docs/.vitepress/cache
 
 # local env files
 .env.local
