@@ -14,7 +14,7 @@
 
 3.登录之后，会进入控制面板页面，点击右上角头像，会有一个 `Settings` 选项
 
-![3.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\Front-end-devFramework\Vue3\搭建在线文档网站\img\3.jpg)
+![3.jpg](.\img\3.jpg)
 
 4.点击 `Applications` 应用实例选项
 
@@ -141,7 +141,7 @@ export default {
 
 1.重新进入Settings应用设置页面，点击对应的应用，进入到应用配置页面，点击 `API Keys` 获取key
 
-![2-1.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\Front-end-devFramework\Vue3\搭建在线文档网站\img\2-1.jpg)
+![2-1.jpg](.\img\2-1.jpg)
 
 会看到如下界面，`Search-Only API Key` 可公开的key，是在 VitePress 项目中会使用的Key；而 `Admin API Key` 是用于后端爬虫需要用到的的 key，因为是私有的，所以一会放在 Github Secrets 中
 
@@ -215,7 +215,7 @@ export default {
 
 在项目根目录`.github/workflows` 文件夹下，创建 `algolia.yml` 文件（名称可更改，自定义），粘贴如下内容：
 
-```yml
+```json
 name: algolia
 on:
   push:
