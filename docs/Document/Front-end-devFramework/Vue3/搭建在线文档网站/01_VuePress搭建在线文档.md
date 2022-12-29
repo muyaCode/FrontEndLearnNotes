@@ -27,7 +27,7 @@ npx vuepress build docs
 
 1. 整体结构
 
-```
+```bash
 |-- dist
 |-- dics
   |-- .vuepress
@@ -56,7 +56,7 @@ npx vuepress build docs
 
 1. 增加 `docs/.vuepress/config.js`
 
-``` javascript
+```javascript
 // 注意: base的值为github仓库的名称
 module.exports = {
   base: '/ts-study/' /* 基础虚拟路径: */,
@@ -87,9 +87,9 @@ module.exports = {
 }
 ```
 
-2.  增加 `docs/README.md`
+2.增加 `docs/README.md`
 
-``` bash
+```bash
 ---
 #首页
 home: true
@@ -102,9 +102,9 @@ actionLink: /chapter1/01_初识TS
 ---
 ```
 
-3. 修改 `package.json`
+3.修改 `package.json`
 
-``` json
+```json
 "scripts": {
   "doc:dev": "vuepress dev docs",
   "doc:build": "vuepress build docs",
@@ -118,7 +118,7 @@ actionLink: /chapter1/01_初识TS
 
 2. 将打包的项目推送到 gitpage
 
-``` bash
+```bash
 # 下载工具包
 yarn add -D gh-pages
 # 执行打包命令
