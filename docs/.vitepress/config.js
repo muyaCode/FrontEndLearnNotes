@@ -36,6 +36,7 @@ export default {
   ],
 
   // ***** 主题设置 *****
+  // 文档：https://vitepress.vuejs.org/config/theme-configs
   themeConfig: {
     logo: "/img/buding.svg",
     siteTitle: "牧涯前端学习笔记", // 网站左上角标题
