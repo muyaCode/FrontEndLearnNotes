@@ -1,4 +1,4 @@
-# 4. 使用 webpack 打包 TS
+# 4-使用 webpack 打包 TS
 
 ## 下载依赖
 

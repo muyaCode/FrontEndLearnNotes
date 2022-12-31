@@ -1,4 +1,4 @@
-# 2. 安装 TypeScript
+# 2-安装TypeScript
 
 命令行运行如下命令，全局安装 TypeScript：
 

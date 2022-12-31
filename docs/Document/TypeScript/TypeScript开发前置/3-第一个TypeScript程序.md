@@ -1,4 +1,4 @@
-# 3. 第一个 TypeScript 程序
+# 3-第一个 TypeScript 程序
 
 ## 编写 TS 程序
 
@@ -34,21 +34,25 @@ node helloworld.js
 
 控制台输出：
 
-```
+```bash
 Hello, Yee
 ```
 
 ## vscode 自动编译
 
   1). 生成配置文件tsconfig.json
+
   ```bash
   tsc --init
   ```
+
   2). 修改tsconfig.json配置
+
   ```json
   "outDir": "./js",
   "strict": false,
   ```
+
   3). 启动监视任务:
 
   终端 -> 运行任务 -> 监视tsconfig.json

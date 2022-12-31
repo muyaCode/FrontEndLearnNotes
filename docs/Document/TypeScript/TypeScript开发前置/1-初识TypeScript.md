@@ -1,4 +1,4 @@
-# 1. 初识 TypeScript
+# 1-初识TypeScript
 
 ![TS与JS.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28ca61cc160c417c8497a00defdca5f0~tplv-k3u1fbpfcp-watermark.image)
 

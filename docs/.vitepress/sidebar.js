@@ -204,20 +204,20 @@ export default {
           text: "初识 TypeScript",
           items: [
             {
-              text: "1.初识TypeScript",
-              link: "/Document/TypeScript/TypeScript开发前置/1.初识TypeScript",
+              text: "1-初识TypeScript",
+              link: "/Document/TypeScript/TypeScript开发前置/1-初识TypeScript",
             },
             {
-              text: "2.安装TypeScript",
-              link: "/Document/TypeScript/TypeScript开发前置/2.安装TypeScript",
+              text: "2-安装TypeScript",
+              link: "/Document/TypeScript/TypeScript开发前置/2-安装TypeScript",
             },
             {
-              text: "3.第一个TypeScript程序",
-              link: "/Document/TypeScript/TypeScript开发前置/3.第一个TypeScript程序",
+              text: "3-第一个TypeScript程序",
+              link: "/Document/TypeScript/TypeScript开发前置/3-第一个TypeScript程序",
             },
             {
-              text: "4.使用Webpack打包TypeScript",
-              link: "/Document/TypeScript/TypeScript开发前置/4.使用Webpack打包TypeScript",
+              text: "4-使用Webpack打包TypeScript",
+              link: "/Document/TypeScript/TypeScript开发前置/4-使用Webpack打包TypeScript",
             },
           ],
         },
@@ -225,28 +225,28 @@ export default {
           text: "TypeScript语法",
           items: [
             {
-              text: "1.基础类型",
-              link: "/Document/TypeScript/TypeScript语法/1.基础类型",
+              text: "1-基础类型",
+              link: "/Document/TypeScript/TypeScript语法/1-基础类型",
             },
             {
-              text: "2.interface接口",
-              link: "/Document/TypeScript/TypeScript语法/2.interface接口",
+              text: "2-interface接口",
+              link: "/Document/TypeScript/TypeScript语法/2-interface接口",
             },
             {
-              text: "3.class类",
-              link: "/Document/TypeScript/TypeScript语法/3.class类",
+              text: "3-class类",
+              link: "/Document/TypeScript/TypeScript语法/3-class类",
             },
             {
-              text: "4.function函数",
-              link: "/Document/TypeScript/TypeScript语法/4.function函数",
+              text: "4-function函数",
+              link: "/Document/TypeScript/TypeScript语法/4-function函数",
             },
             {
-              text: "5.泛型",
-              link: "/Document/TypeScript/TypeScript语法/5.泛型",
+              text: "5-泛型",
+              link: "/Document/TypeScript/TypeScript语法/5-泛型",
             },
             {
-              text: "6.其他",
-              link: "/Document/TypeScript/TypeScript语法/6.其他",
+              text: "6-其他",
+              link: "/Document/TypeScript/TypeScript语法/6-其他",
             },
           ],
         },
@@ -636,7 +636,7 @@ export default {
           items: [
             {
               text: "微信小程序简介和相关资源",
-              link: "/Document/微信开发/微信小程序开发/微信小程序简介和相关资源.md",
+              link: "/Document/微信开发/微信小程序开发/微信小程序简介和相关资源",
             },
           ],
         },
@@ -974,8 +974,8 @@ export default {
           link: "/Document/前端性能优化专题/04_项目上线阶段性能优化",
         },
         {
-          text: "05_vue.js性能优化",
-          link: "/Document/前端性能优化专题/05_vue.js性能优化",
+          text: "05_Vue性能优化",
+          link: "/Document/前端性能优化专题/05_Vue性能优化",
         },
         {
           text: "",
@@ -1078,7 +1078,7 @@ export default {
           ],
         },
         {
-          text: "Koa.js框架",
+          text: "KoaJs框架",
           items: [
             {
               text: "Koa框架前置JS知识",
