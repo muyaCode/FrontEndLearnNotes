@@ -1,4 +1,4 @@
-# 3.JavaScript 正则表达式
+# JavaScript正则表达式
 
 - 了解正则表达式基本语法
 - 能够使用JavaScript的正则对象
@@ -7,7 +7,9 @@
 
 ### 什么是正则表达式
 
-正则表达式：用于匹配规律规则的表达式，正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。
+正则表达式：用于匹配规律规则的表达式，正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。
+
+正则表通常被用来检索、替换那些符合某个模式(规则)的文本。
 正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。
 
 ### 正则表达式的作用
@@ -70,7 +72,7 @@
 
 ### 其它
 
-```
+```bash
 [] 字符串用中括号括起来，表示匹配其中的任一字符，相当于或的意思
 [^]  匹配除中括号以内的内容
 \ 转义符
@@ -147,7 +149,8 @@ var reg = /^\d{4}-\d{1,2}-\d{1,2}$/
 console.log(reg.test(dateStr));
 ```
 
-###匹配正则表达式
+### 匹配正则表达式
+
 // console.log(/./.test("除了回车换行以为的任意字符"));//true
 // console.log(/.*/.test("0个到多个"));//true
 // console.log(/.+/.test("1个到多个"));//true
@@ -160,23 +163,24 @@ console.log(reg.test(dateStr));
 // console.log(/b|(ara)/.test("abra"));//true
 // console.log(/[a-z]{2,3}/.test("arfsf"));//true
 
-```
-    console.log(/\d/.test("998"));//true
-    console.log(/\d*/.test("998"));//true
-    console.log(/\d+/.test("998"));//true
-    console.log(/\d{0,}/.test("998"));//true
-    console.log(/\d{2,3}/.test("998"));//true
-    console.log(/\D/.test("eat"));//true
-    console.log(/\s/.test("  "));//true
-    console.log(/\S/.test("嘎嘎"));//true
-    console.log(/\w/.test("_"));//true
-    console.log(/\W/.test("_"));//true
+```js
+console.log(/\d/.test("998"));//true
+console.log(/\d*/.test("998"));//true
+console.log(/\d+/.test("998"));//true
+console.log(/\d{0,}/.test("998"));//true
+console.log(/\d{2,3}/.test("998"));//true
+console.log(/\D/.test("eat"));//true
+console.log(/\s/.test("  "));//true
+console.log(/\S/.test("嘎嘎"));//true
+console.log(/\w/.test("_"));//true
+console.log(/\W/.test("_"));//true
 ```
 
-###正则表达式案例
+### 正则表达式案例
+
 1.验证密码强弱
-2.验证邮箱：[0-9a-zA-Z_.-]+[@][0-9a-zA-Z._-]+([.][a-zA-Z]+){1,2}
-3.验证中文名字[\u4e00-\u9fa5]
+2.验证邮箱：`[0-9a-zA-Z_.-]+[@][0-9a-zA-Z._-]+([.][a-zA-Z]+){1,2}`
+3.验证中文名字：`[\u4e00-\u9fa5]`
 
 ### 正则提取
 
@@ -390,5 +394,3 @@ function getRuleByRuleName(rules, ruleName) {
   return rule;
 }
 ```
-
-# 

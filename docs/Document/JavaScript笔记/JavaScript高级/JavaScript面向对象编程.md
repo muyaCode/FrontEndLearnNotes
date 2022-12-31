@@ -1,4 +1,4 @@
-# 1.JavaScript 面向对象编程
+# JavaScript面向对象编程
 
 ## 一、面向对象介绍
 
@@ -172,7 +172,7 @@ var person2 = {
 
 ### 3.简单方式的改进：工厂函数（自定义构造函数），三种写法
 
-#### 1.我们可以写一个函数，解决代码重复问题：
+#### 1.我们可以写一个函数，解决代码重复问题
 
 ```javascript
 function createPerson (name, age) {
@@ -197,11 +197,11 @@ var p2 = createPerson('Mike', 18)
 
 工厂模式:
 
-* 函数名是小写
-* 有new,
-* 有返回值
-* new之后的对象是当前的对象
-* 直接调用函数就可以创建对象
+- 函数名是小写
+- 有new,
+- 有返回值
+- new之后的对象是当前的对象
+- 直接调用函数就可以创建对象
 
 ```js
 function createObject(name,age) {
@@ -221,15 +221,15 @@ function createObject(name,age) {
 var per = createObject("小明",20);
 ```
 
-#### 3.封装字面量的自定义构造函数：
+#### 3.封装字面量的自定义构造函数
 
 自定义构造函数:
 
-* 函数名是大写(首字母)
-* 没有new
-* 没有返回值
-* this是当前的对象
-* 通过new的方式来创建对象
+- 函数名是大写(首字母)
+- 没有new
+- 没有返回值
+- this是当前的对象
+- 通过new的方式来创建对象
 
 ```js
 function Person(name,age) {
@@ -348,7 +348,7 @@ console.log(p1 instanceof Person) // => true
 console.log(p2 instanceof Person) // => true
 ```
 
-#### 完整演示 :
+#### 完整演示
 
 ```js
 // 自定义构造函数----->实例化对象
@@ -396,7 +396,7 @@ console.log(dog.constructor == Animal);
 console.log(dog instanceof Person);
 ```
 
-#### 实例对象跟构造函数的关系总结：
+#### 实例对象跟构造函数的关系总结
 
 - 1.构造函数是根据具体的事物抽象出来的抽象模板
 - 2.实例对象是根据抽象的构造函数模板得到的具体实例对象
@@ -527,7 +527,7 @@ console.dir(p2);
 
 Person 实例对象`per` 有 `__proto__`属性：`per.__proto__`
 
-![](./img/构造函数-实例-原型之间的关系.png)
+![构造函数-实例-原型之间的关系](./img/构造函数-实例-原型之间的关系.png)
 
 任何函数都具有一个 `prototype` 属性，叫原型，该属性是一个对象。
 
@@ -563,7 +563,7 @@ console.log(instance.__proto__ === F.prototype) // => true
 instance.sayHi() // => hi!
 ```
 
-#### 小结：
+#### 小结
 
 - 对象实例化输出后，在浏览器会生成属性，`__proto__`，也是对象，原型
 
@@ -587,7 +587,7 @@ instance.sayHi() // => hi!
 
 > 程序员写代码要使用：构造函数的实例的`prototype`原型对象属性 --> 原型对象`prototype`指向原型对象构造器`constructor` --> `constructor` 原型对象构造器再指向实例的构造函数（指向的都是相等==为true）
 
-### 原型关系总结：
+### 原型关系总结
 
 - 任何函数都具有一个 `prototype` 属性，该属性是一个对象
 - 构造函数的 `prototype` 对象默认都有一个 `constructor` 属性，指向 `prototype` 对象所在函数
@@ -672,7 +672,7 @@ Person.prototype = {
 在该示例中，我们将 `Person.prototype` 重置到了一个新的对象。
 这样做的好处就是为 `Person.prototype` 添加成员简单了，但是也会带来一个问题，那就是原型对象丢失了 `constructor` 成员。
 
-#### 所以，我们为了保持 `constructor` 的指向正确，建议的写法是：
+#### 所以，我们为了保持 `constructor` 的指向正确，建议的写法是
 
 ```javascript{8}
 function Person (name, age, sex) {
@@ -1020,7 +1020,7 @@ person.sayHello()
 
 - 实例对象的原型__proto__指向的是该对象所在的构造函数的原型对象
 
-- 构造函数的原型对象(prototype)指向如果改变了,实例对象的原型(__proto__)指向也会发生改变
+- 构造函数的原型对象(prototype)指向如果改变了,实例对象的原型(**proto**)指向也会发生改变
 
 - 实例对象和原型对象之间的关系是通过__proto__原型来联系起来的，这个关系就是**原型链**
 
@@ -1106,9 +1106,9 @@ person.sayHello()
 6. 所以，prototype这个对象中`__proto__`指向的应该是某个构造函数的原型prototype
 
 7. Person的prototype中的`__proto__`的指向：
-   
-   1. console.log(Person.prototype.__proto__);
-   
+
+   1. console.log(Person.prototype.**proto**);
+
    2. per实例对象的 `__proto__` -------> Person.prototype的`__proto__` ----> Object.prototype的`__proto__`是null
 
 示例代码：
@@ -1265,7 +1265,6 @@ person.sayHello()
 ### 实例对象的属性和原型对象中的属性重名问题
 
 > 通过实例对象`__proto__`不能改变原型对象中的属性值
-
 > 想改变原型对象中属性的值：构造函数.原型对象prototype.属性 = 值;
 
 示例代码：
@@ -1311,7 +1310,7 @@ person.sayHello()
 
 ### div元素的原型链
 
-#### div的原型链：
+#### div的原型链
 
 `divObj.__proto__`---->`HTMLDivElement.prototype的__proto__`--->`HTMLElement.prototype的__proto__`---->`Element.prototype的__proto__---->Node.prototype的__proto__`---->`EventTarget.prototype的__proto__`---->`Object.prototype`没有`__proto__`，所以，`Object.prototype`中的`__proto__`是`null`
 
@@ -1354,7 +1353,7 @@ person.sayHello()
   - 一些功能类似的函数(方法)放在一个对象中--封装
   - 好多相类似的对象放在一个js文件中---封装
 - 继承是一种关系：父类级别与类级别的关系
-- 多态： 
+- 多态：
   - 一个对象有不同的行为，或者是同一个行为针对不同的对象，产生不同的结果，要想有多态,就要先有继承，ES5构造函数中可以模拟多态，但是不会去使用，也不会模拟
 
 ### ES5语法的构造函数实现面向对象编程
@@ -1379,7 +1378,7 @@ person.sayHello()
   - 继承: 首先继承是一种关系，类(class)与类之间的关系，JS的ES5语法中没有类，ES6才有，但是ES5的语法可以通过构造函数模拟类，然后通过原型来实现继承
   - 继承也是为了数据共享，js中的继承也是为了实现数据共享
 
-#### 原型的作用：
+#### 原型的作用
 
 - 原型作用之一：数据共享,节省内存空间
 
@@ -1742,10 +1741,6 @@ call方法文档：[Function.prototype.call() - JavaScript | MDN (mozilla.org)](
 ## ES6的class类的面向对象编程
 
 待定
-
-
-
-
 
 ### 面向对象编程总结
 

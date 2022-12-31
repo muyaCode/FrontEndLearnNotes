@@ -1,4 +1,4 @@
-# 2.JavaScript 函数进阶
+# JavaScript函数进阶
 
 参考文档：[Function - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -128,58 +128,58 @@ ff()
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-		<title>函数内this指向的不同场景</title>
-	</head>
-	<body></body>
-</html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			// 严格模式的普通函数:
-			// "use strict";
-			// function f1() {
-			// 	console.log('严格模式的普通函数的this',this); // undefined
-			// }
-			// f1();
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title>函数内this指向的不同场景</title>
+ </head>
+ <body></body>
+ </html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   // 严格模式的普通函数:
+   // "use strict";
+   // function f1() {
+   //  console.log('严格模式的普通函数的this',this); // undefined
+   // }
+   // f1();
 
-			// 普通函数
-			function f1() {
-				console.log('普通函数的this',this);
-			}
-			f1();
+   // 普通函数
+   function f1() {
+    console.log('普通函数的this',this);
+   }
+   f1();
 
-			// 定时器中的this
-			setInterval(function () {
-				console.log('定时器中的this',this);
-			}, 1000);
+   // 定时器中的this
+   setInterval(function () {
+    console.log('定时器中的this',this);
+   }, 1000);
 
-			// 构造函数
-			function Person() {
-				console.log('构造函数的this',this);
+   // 构造函数
+   function Person() {
+    console.log('构造函数的this',this);
 
-				// 对象的方法
-				this.sayHi = function () {
-					console.log(this);
-				};
-			}
+    // 对象的方法
+    this.sayHi = function () {
+     console.log(this);
+    };
+   }
 
-			// 原型中的方法
-			Person.prototype.eat = function () {
-				console.log('原型中的方法的this',this);
-			};
-			var per = new Person();
-			console.log(per);
-			per.sayHi();
-			per.eat();
+   // 原型中的方法
+   Person.prototype.eat = function () {
+    console.log('原型中的方法的this',this);
+   };
+   var per = new Person();
+   console.log(per);
+   per.sayHi();
+   per.eat();
 
-			// BOM:中顶级对象是window,浏览器中所有的东西都是window的
-		</script>
-	</head>
-	<body></body>
+   // BOM:中顶级对象是window,浏览器中所有的东西都是window的
+  </script>
+ </head>
+ <body></body>
 </html>
 
 
@@ -187,7 +187,7 @@ ff()
 
 这就是对函数内部 this 指向的基本整理，写代码写多了自然而然就熟悉了。
 
-## 函数的调用方式
+## 函数的3种调用方式
 
 3种调用方式：
 
@@ -247,38 +247,38 @@ ff()
 ```html{23}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>函数也是对象</title>
-		<script>
-			function F1() {}
+ <head>
+  <meta charset="UTF-8" />
+  <title>函数也是对象</title>
+  <script>
+   function F1() {}
 
-			console.dir(F1);
+   console.dir(F1);
 
-			console.dir(Math); // 中有__proto__,但是没有prorotype
+   console.dir(Math); // 中有__proto__,但是没有prorotype
 
-			// 对象中有__proto__,函数中应该有prototype
+   // 对象中有__proto__,函数中应该有prototype
 
-			// 如果一个东西里面有prototype，又有__proto__,说明是函数,也是对象
-			function F2(name) {
-				this.name = name;
-			}
+   // 如果一个东西里面有prototype，又有__proto__,说明是函数,也是对象
+   function F2(name) {
+    this.name = name;
+   }
 
-			console.dir(F2);
+   console.dir(F2);
 
-			// 所有的函数实际上都是Function的构造函数创建出来的实例对象
-			var f1 = new Function("num1", "num2", "return num1+num2");
-			console.log(f1(10, 20));
-			console.log(f1.__proto__ == Function.prototype); // true
+   // 所有的函数实际上都是Function的构造函数创建出来的实例对象
+   var f1 = new Function("num1", "num2", "return num1+num2");
+   console.log(f1(10, 20));
+   console.log(f1.__proto__ == Function.prototype); // true
 
-			// 所以,函数实际上也是对象
+   // 所以,函数实际上也是对象
 
-			console.dir(f1);
+   console.dir(f1);
 
-			console.dir(Function);
-		</script>
-	</head>
-	<body>
+   console.dir(Function);
+  </script>
+ </head>
+ <body>
     
   </body>
 </html>
@@ -388,137 +388,137 @@ function.apply(this, ['eat', 'bananas'])
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			// apply和call都可以改变this的指向
-			// 函数的调用,改变this的指向
-			//    function f1(x,y) {
-			//      console.log((x+y)+":===>"+this);
-			//      return "这是函数的返回值";
-			//    }
-			//    // apply和call调用
-			//    var r1=f1.apply(null,[1,2]);//此时f1中的this是window
-			//    console.log(r1);
-			//    var r2=f1.call(null,1,2);//此时f1中的this是window
-			//    console.log(r2);
-			//    console.log("=============>");
-			//    // 改变this的指向
-			//    var obj={
-			//      sex:"男"
-			//    };
-			//    // 本来f1函数是window对象的,但是传入obj之后,f1函数此时就是obj对象的
-			//    var r3=f1.apply(obj,[1,2]);//此时f1中的this是obj
-			//    console.log(r3);
-			//    var r4=f1.call(obj,1,2);//此时f1中的this是obj
-			//    console.log(r4);
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   // apply和call都可以改变this的指向
+   // 函数的调用,改变this的指向
+   //    function f1(x,y) {
+   //      console.log((x+y)+":===>"+this);
+   //      return "这是函数的返回值";
+   //    }
+   //    // apply和call调用
+   //    var r1=f1.apply(null,[1,2]);//此时f1中的this是window
+   //    console.log(r1);
+   //    var r2=f1.call(null,1,2);//此时f1中的this是window
+   //    console.log(r2);
+   //    console.log("=============>");
+   //    // 改变this的指向
+   //    var obj={
+   //      sex:"男"
+   //    };
+   //    // 本来f1函数是window对象的,但是传入obj之后,f1函数此时就是obj对象的
+   //    var r3=f1.apply(obj,[1,2]);//此时f1中的this是obj
+   //    console.log(r3);
+   //    var r4=f1.call(obj,1,2);//此时f1中的this是obj
+   //    console.log(r4);
 
-			// 方法改变this的指向
+   // 方法改变this的指向
 
-			//    function Person(age) {
-			//      this.age = age;
-			//    }
-			//    Person.prototype.sayHi = function (x, y) {
-			//      console.log((x + y) + ":====>" + this.age);// 是实例对象
-			//    };
-			//
-			//    function Student(age) {
-			//      this.age = age;
-			//    }
-			//    var per = new Person(10);// 实例对象
-			//    var stu = new Student(100);// 实例对象
-			//    // sayHi方法是per实例对象的
-			//    per.sayHi.apply(stu, [10, 20]);
-			//    per.sayHi.call(stu, 10, 20);
+   //    function Person(age) {
+   //      this.age = age;
+   //    }
+   //    Person.prototype.sayHi = function (x, y) {
+   //      console.log((x + y) + ":====>" + this.age);// 是实例对象
+   //    };
+   //
+   //    function Student(age) {
+   //      this.age = age;
+   //    }
+   //    var per = new Person(10);// 实例对象
+   //    var stu = new Student(100);// 实例对象
+   //    // sayHi方法是per实例对象的
+   //    per.sayHi.apply(stu, [10, 20]);
+   //    per.sayHi.call(stu, 10, 20);
 
-			// apply和call的使用方法
-			/*
-			 * apply的使用语法
-			 * 函数名字.apply(对象,[参数1,参数2,...]);
-			 * 方法名字.apply(对象,[参数1,参数2,...]);
-			 * call的使用语法
-			 * 函数名字.call(对象,参数1,参数2,...);
-			 * 方法名字.call(对象,参数1,参数2,...);
-			 *
-			 * 作用:改变this的指向
-			 * 不同的地方:参数传递的方式是不一样的
-			 *
-			 * 只要是想使用别的对象的方法,并且希望这个方法是当前对象的,那么就可以使用apply或者是call的方法改变this的指向
-			 *
-			 * */
+   // apply和call的使用方法
+   /*
+    * apply的使用语法
+    * 函数名字.apply(对象,[参数1,参数2,...]);
+    * 方法名字.apply(对象,[参数1,参数2,...]);
+    * call的使用语法
+    * 函数名字.call(对象,参数1,参数2,...);
+    * 方法名字.call(对象,参数1,参数2,...);
+    *
+    * 作用:改变this的指向
+    * 不同的地方:参数传递的方式是不一样的
+    *
+    * 只要是想使用别的对象的方法,并且希望这个方法是当前对象的,那么就可以使用apply或者是call的方法改变this的指向
+    *
+    * */
             
             // apply和call这两个方法是哪里来的：Function.prototype
             // apply和call方法实际上并不在函数这个实例对象中,而是在Function的prototype中
-			function f1() {
-				console.log(this + ":====>调用了");
-			}
-			// f1是函数,f1也是对象
-			console.dir(f1);
-			// 对象调用方法,说明,该对象中有这个方法
-			f1.apply();
-			f1.call();
-			console.log(f1.__proto__ == Function.prototype);
-			// 所有的函数都是Function的实例对象
-			console.log(Function.prototype); //ƒ () { [native code] }
-			console.dir(Function);
+   function f1() {
+    console.log(this + ":====>调用了");
+   }
+   // f1是函数,f1也是对象
+   console.dir(f1);
+   // 对象调用方法,说明,该对象中有这个方法
+   f1.apply();
+   f1.call();
+   console.log(f1.__proto__ == Function.prototype);
+   // 所有的函数都是Function的实例对象
+   console.log(Function.prototype); //ƒ () { [native code] }
+   console.dir(Function);
 
 
-			//实例对象调用方法,方法要么在实例对象中存在,要么在原型对象中存在
+   //实例对象调用方法,方法要么在实例对象中存在,要么在原型对象中存在
 
-			//apply和call方法中如果没有传入参数,或者是传入的是null,那么调用该方法的函数对象中的this就是默认的window
+   //apply和call方法中如果没有传入参数,或者是传入的是null,那么调用该方法的函数对象中的this就是默认的window
 
-			//f1.apply(null,[100,200]);
-			//f1.call(null,100,200);
+   //f1.apply(null,[100,200]);
+   //f1.call(null,100,200);
 
-			// apply和call都可以让函数或者方法来调用,传入参数和函数自己调用的写法不一样,但是效果是一样的
+   // apply和call都可以让函数或者方法来调用,传入参数和函数自己调用的写法不一样,但是效果是一样的
 
-			//    var result1=f1.apply(null,[10,20]);
-			//    var result2=f1.call(null,10,20);
-			//    console.log(result1);
-			//    console.log(result2);
+   //    var result1=f1.apply(null,[10,20]);
+   //    var result2=f1.call(null,10,20);
+   //    console.log(result1);
+   //    console.log(result2);
 
-			//    function f1(x,y) {
-			//      console.log("这个函数是window对象的一个方法:"+(x+y)+this.sex);
-			//    }
-			//    window.f1(10,20);
-			//    //obj是一个对象
-			//    var obj={
-			//      age:10,
-			//      sex:"男"
-			//    };
-			//
-			//    window.f1.apply(obj,[10,20]);
-			//    window.f1.call(obj,10,20);
-			//    console.dir(obj);
+   //    function f1(x,y) {
+   //      console.log("这个函数是window对象的一个方法:"+(x+y)+this.sex);
+   //    }
+   //    window.f1(10,20);
+   //    //obj是一个对象
+   //    var obj={
+   //      age:10,
+   //      sex:"男"
+   //    };
+   //
+   //    window.f1.apply(obj,[10,20]);
+   //    window.f1.call(obj,10,20);
+   //    console.dir(obj);
 
-			//apply和call改变this的指向
-			function Person(age, sex) {
-				this.age = age;
-				this.sex = sex;
-			}
-			//通过原型添加方法
-			Person.prototype.sayHi = function (x, y) {
-				console.log("您好啊:" + this.sex);
-				return 1000;
-			};
-			var per = new Person(10, "男");
-			per.sayHi();
+   //apply和call改变this的指向
+   function Person(age, sex) {
+    this.age = age;
+    this.sex = sex;
+   }
+   //通过原型添加方法
+   Person.prototype.sayHi = function (x, y) {
+    console.log("您好啊:" + this.sex);
+    return 1000;
+   };
+   var per = new Person(10, "男");
+   per.sayHi();
 
-			console.log("==============");
-			function Student(name, sex) {
-				this.name = name;
-				this.sex = sex;
-			}
-			var stu = new Student("小明", "人妖");
-			var r1 = per.sayHi.apply(stu, [10, 20]);
-			var r2 = per.sayHi.call(stu, 10, 20);
+   console.log("==============");
+   function Student(name, sex) {
+    this.name = name;
+    this.sex = sex;
+   }
+   var stu = new Student("小明", "人妖");
+   var r1 = per.sayHi.apply(stu, [10, 20]);
+   var r2 = per.sayHi.call(stu, 10, 20);
 
-			console.log(r1);
-			console.log(r2);
-		</script>
-	</head>
-	<body></body>
+   console.log(r1);
+   console.log(r2);
+  </script>
+ </head>
+ <body></body>
 </html>
 
 
@@ -530,21 +530,21 @@ call和apply方法总结：
   
   - ```js
     function Person(age, sex) {
-    	this.age = age;
-    	this.sex = sex;
+     this.age = age;
+     this.sex = sex;
     }
     //通过原型添加方法
     Person.prototype.sayHi = function (x, y) {
-    	console.log("您好啊:" + this.sex);
-    	return 1000;
+     console.log("您好啊:" + this.sex);
+     return 1000;
     };
     var per = new Person(10, "男");
     per.sayHi();
     
     console.log("==============");
     function Student(name, sex) {
-    	this.name = name;
-    	this.sex = sex;
+     this.name = name;
+     this.sex = sex;
     }
     var stu = new Student("小明", "人妖");
     var r1 = per.sayHi.apply(stu, [10, 20]);
@@ -557,9 +557,9 @@ call和apply方法总结：
 - apply和call方法也是函数的调用的方式
   
   - 直接调用，什么参数都不传：
-    
+
     - f1.apply();
-    
+
     - f1.call();
 
 - apply和call方法中如果没有传入参数，或者是传入的是null，那么调用该方法的函数对象中的this就是默认的window
@@ -650,39 +650,39 @@ flower.bloom();  // 一秒钟后, 调用'declare'方法
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			function f1(x, y) {
-				console.log(x + y + ":=====>" + this.age);
-			}
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   function f1(x, y) {
+    console.log(x + y + ":=====>" + this.age);
+   }
 
-			//复制了一份的时候,把参数传入到了f1函数中,x===>10,y===>20,null就是this,默认就是window
-			//bind方法是复制的意思,参数可以在复制的时候传进去,也可以在复制之后调用的时候传入进去
+   //复制了一份的时候,把参数传入到了f1函数中,x===>10,y===>20,null就是this,默认就是window
+   //bind方法是复制的意思,参数可以在复制的时候传进去,也可以在复制之后调用的时候传入进去
 
-			function Person(age) {
-				this.age = age;
-			}
-			Person.prototype.play = function () {
-				console.log(this + "====>" + this.age);
-			};
+   function Person(age) {
+    this.age = age;
+   }
+   Person.prototype.play = function () {
+    console.log(this + "====>" + this.age);
+   };
 
-			function Student(age) {
-				this.age = age;
-			}
-			var per = new Person(10);
-			var stu = new Student(20);
-			//复制了一份
-			var ff = per.play.bind(stu);
-			ff();
-			//bind是用来复制一份
-			//使用的语法:
-			// 函数名字.bind(对象,参数1,参数2,...); ----> 返回值是复制之后的这个函数
-			// 方法名字.bind(对象,参数1,参数2,...); ----> 返回值是复制之后的这个方法
-		</script>
-	</head>
-	<body></body>
+   function Student(age) {
+    this.age = age;
+   }
+   var per = new Person(10);
+   var stu = new Student(20);
+   //复制了一份
+   var ff = per.play.bind(stu);
+   ff();
+   //bind是用来复制一份
+   //使用的语法:
+   // 函数名字.bind(对象,参数1,参数2,...); ----> 返回值是复制之后的这个函数
+   // 方法名字.bind(对象,参数1,参数2,...); ----> 返回值是复制之后的这个方法
+  </script>
+ </head>
+ <body></body>
 </html>
 
 ```
@@ -692,34 +692,34 @@ bind方法的使用例子：通过对象,调用方法,产生随机数
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			//通过对象,调用方法,产生随机数
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   //通过对象,调用方法,产生随机数
 
-			function ShowRandom() {
-				//1-10的随机数
-				this.number = parseInt(Math.random() * 10 + 1);
-			}
-			//添加原型方法
-			ShowRandom.prototype.show1 = function () {
-				//改变了定时器中的this的指向了,本来应该是window,现在是实例对象了
-				window.setInterval(this.show2.bind(this), 1000);
-			};
-			//添加原型方法
-			ShowRandom.prototype.show2 = function () {
-				//显示随机数--
-				console.log(this.number);
-			};
-			//实例对象
-			var sr = new ShowRandom();
-			//调用方法,输出随机数字
-			//调用这个方法一次,可以不停的产生随机数字,但是都是产生的同一个随机数
-			sr.show1();
-		</script>
-	</head>
-	<body></body>
+   function ShowRandom() {
+    //1-10的随机数
+    this.number = parseInt(Math.random() * 10 + 1);
+   }
+   //添加原型方法
+   ShowRandom.prototype.show1 = function () {
+    //改变了定时器中的this的指向了,本来应该是window,现在是实例对象了
+    window.setInterval(this.show2.bind(this), 1000);
+   };
+   //添加原型方法
+   ShowRandom.prototype.show2 = function () {
+    //显示随机数--
+    console.log(this.number);
+   };
+   //实例对象
+   var sr = new ShowRandom();
+   //调用方法,输出随机数字
+   //调用这个方法一次,可以不停的产生随机数字,但是都是产生的同一个随机数
+   sr.show1();
+  </script>
+ </head>
+ <body></body>
 </html>
 ```
 
@@ -800,47 +800,45 @@ eat(function () {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			//    var arr = [1, 100, 20, 200, 40, 50, 120, 10];
-			//    //排序
-			//    arr.sort();
-			//    console.log(arr);
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   //    var arr = [1, 100, 20, 200, 40, 50, 120, 10];
+   //    //排序
+   //    arr.sort();
+   //    console.log(arr);
 
-			var arr = [1, 100, 20, 200, 40, 50, 120, 10];
-			//排序---函数作为参数使用,匿名函数作为sort方法的参数使用,那么此时的匿名函数中有两个参数,
-			arr.sort(function (obj1, obj2) {
-				if (obj1 > obj2) {
-					return -1;
-				} else if (obj1 == obj2) {
-					return 0;
-				} else {
-					return 1;
-				}
-			});
-			console.log(arr);
+   var arr = [1, 100, 20, 200, 40, 50, 120, 10];
+   //排序---函数作为参数使用,匿名函数作为sort方法的参数使用,那么此时的匿名函数中有两个参数,
+   arr.sort(function (obj1, obj2) {
+    if (obj1 > obj2) {
+     return -1;
+    } else if (obj1 == obj2) {
+     return 0;
+    } else {
+     return 1;
+    }
+   });
+   console.log(arr);
 
-			var arr1 = ["acdef", "abcd", "bcedf", "bced"];
-			arr1.sort(function (a, b) {
-				if (a > b) {
-					return 1;
-				} else if (a == b) {
-					return 0;
-				} else {
-					return -1;
-				}
-			});
-			console.log(arr1);
-		</script>
-	</head>
-	<body></body>
+   var arr1 = ["acdef", "abcd", "bcedf", "bced"];
+   arr1.sort(function (a, b) {
+    if (a > b) {
+     return 1;
+    } else if (a == b) {
+     return 0;
+    } else {
+     return -1;
+    }
+   });
+   console.log(arr1);
+  </script>
+ </head>
+ <body></body>
 </html>
 
 ```
-
- 
 
 ### 函数作为返回值
 
@@ -1123,7 +1121,7 @@ function fn () {
 ### 1.什么是闭包
 
 1. 闭包就是能够读取其他函数内部变量的函数，
-   
+
    1. 函数A中,有一个函数B,函数B中可以访问函数A中定义的变量或者是数据,此时形成了闭包(这句话暂时不严谨)
 
 2. 由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，
@@ -1168,7 +1166,7 @@ function fn () {
     f3();
     ```
 
-### 4.简单的闭包示例：
+### 4.简单的闭包示例
 
 示例0：两种函数闭包示范
 
@@ -1225,35 +1223,35 @@ fns.getCount() // => 1
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			// 普通的函数：不会累加
-			function f1() {
-				var num = 10;
-				num++;
-				return num;
-			}
-			console.log(f1()); // 11
-			console.log(f1()); // 11
-			console.log(f1()); // 11
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   // 普通的函数：不会累加
+   function f1() {
+    var num = 10;
+    num++;
+    return num;
+   }
+   console.log(f1()); // 11
+   console.log(f1()); // 11
+   console.log(f1()); // 11
 
-			// 函数模式的闭包：累加
-			function f2() {
-				var num = 10;
-				return function () {
-					num++;
-					return num;
-				};
-			}
-			var ff = f2();
-			console.log(ff()); // 11
-			console.log(ff()); // 12
-			console.log(ff()); // 13
-		</script>
-	</head>
-	<body></body>
+   // 函数模式的闭包：累加
+   function f2() {
+    var num = 10;
+    return function () {
+     num++;
+     return num;
+    };
+   }
+   var ff = f2();
+   console.log(ff()); // 11
+   console.log(ff()); // 12
+   console.log(ff()); // 13
+  </script>
+ </head>
+ <body></body>
 </html>
 
 
@@ -1371,62 +1369,62 @@ console.log(222)
 ```js
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			//沙箱:环境,黑盒,在一个虚拟的环境中模拟真实世界,做实验,实验结果和真实世界的结果是一样,但是不会影响真实世界
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   //沙箱:环境,黑盒,在一个虚拟的环境中模拟真实世界,做实验,实验结果和真实世界的结果是一样,但是不会影响真实世界
 
-			// var num = 10;
-			// console.log(num + 10);
+   // var num = 10;
+   // console.log(num + 10);
 
-			// // 立即执行函数沙箱---小环境
-			// (function () {
-			// 	var num = 10;
-			// 	console.log(num);
-			// })();
+   // // 立即执行函数沙箱---小环境
+   // (function () {
+   //  var num = 10;
+   //  console.log(num);
+   // })();
 
-			// // 立即执行函数沙箱---小环境
-			// (function () {
-			// 	var num = 20;
-			// 	console.log(num + 10);
-			// })();
+   // // 立即执行函数沙箱---小环境
+   // (function () {
+   //  var num = 20;
+   //  console.log(num + 10);
+   // })();
             
             // // 变量和沙箱里面不冲突
-			// var num = 100;
-			// (function () {
-			// 	var num = 10;
-			// 	console.log(num); //10
-			// })();
+   // var num = 100;
+   // (function () {
+   //  var num = 10;
+   //  console.log(num); //10
+   // })();
 
-			// console.log(num); //100
+   // console.log(num); //100
 
-			// 沙箱小案例
-			(function () {
-				var str = "小白喜欢小黑";
-				str = str.substr(2);
-				console.log(str);
-			})();
+   // 沙箱小案例
+   (function () {
+    var str = "小白喜欢小黑";
+    str = str.substr(2);
+    console.log(str);
+   })();
 
-			// 沙箱
-			(function () {
-				var str = "小明喜欢小红";
-				str = str.substr(2);
-				console.log(str);
-			})();
-		</script>
-	</head>
-	<body>
-		<input type="button" value="按钮" id="btn" />
-		<script>
-			//点击按钮,弹出对话框
-			(function () {
-				document.getElementById("btn").onclick = function () {
-					console.log("按钮被点击了");
-				};
-			})();
-		</script>
-	</body>
+   // 沙箱
+   (function () {
+    var str = "小明喜欢小红";
+    str = str.substr(2);
+    console.log(str);
+   })();
+  </script>
+ </head>
+ <body>
+  <input type="button" value="按钮" id="btn" />
+  <script>
+   //点击按钮,弹出对话框
+   (function () {
+    document.getElementById("btn").onclick = function () {
+     console.log("按钮被点击了");
+    };
+   })();
+  </script>
+ </body>
 </html>
 ```
 
@@ -1484,44 +1482,44 @@ console.log(222)
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
             // 普通的函数生成不同的随机数
-			function showRandom() {
-				var num = parseInt(Math.random() * 10 + 1);
-				console.log(num);
-			}
+   function showRandom() {
+    var num = parseInt(Math.random() * 10 + 1);
+    console.log(num);
+   }
 
-			showRandom();
-			showRandom();
-			showRandom();
+   showRandom();
+   showRandom();
+   showRandom();
 
-			//闭包的方式,产生三个随机数,但是都是相同的（因为数据被闭包缓存了）
-			function f1() {
+   //闭包的方式,产生三个随机数,但是都是相同的（因为数据被闭包缓存了）
+   function f1() {
                 // 想要缓存的变量放置在这里的作用域
-				var num = parseInt(Math.random() * 10 + 1);
-				return function () {
-					console.log(num);
-				};
-			}
+    var num = parseInt(Math.random() * 10 + 1);
+    return function () {
+     console.log(num);
+    };
+   }
 
-			var ff = f1();
+   var ff = f1();
 
-			ff();
-			ff();
-			ff();
+   ff();
+   ff();
+   ff();
 
-			//总结：如果想要缓存数据,就把这个数据放在外层的函数和里层的函数的中间位置
+   //总结：如果想要缓存数据,就把这个数据放在外层的函数和里层的函数的中间位置
 
-			//闭包的作用：缓存数据.优点也是缺陷,没有及时的释放
+   //闭包的作用：缓存数据.优点也是缺陷,没有及时的释放
 
-			//局部变量是在函数中,函数使用结束后,局部变量就会被自动的释放
-			//闭包后,里面的局部变量的使用作用域链就会被延长
-		</script>
-	</head>
-	<body></body>
+   //局部变量是在函数中,函数使用结束后,局部变量就会被自动的释放
+   //闭包后,里面的局部变量的使用作用域链就会被延长
+  </script>
+ </head>
+ <body></body>
 </html>
 ```
 
@@ -1601,23 +1599,23 @@ fn1()
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>title</title>
-		<script>
-			var i = 0;
-			function f1() {
-				i++;
-				if (i < 5) {
-					f1();
-				}
-				console.log("从前有个山,山里有个庙,庙里有个和尚给小和尚讲故事:");
-			}
+ <head>
+  <meta charset="UTF-8" />
+  <title>title</title>
+  <script>
+   var i = 0;
+   function f1() {
+    i++;
+    if (i < 5) {
+     f1();
+    }
+    console.log("从前有个山,山里有个庙,庙里有个和尚给小和尚讲故事:");
+   }
 
-			f1();
-		</script>
-	</head>
-	<body></body>
+   f1();
+  </script>
+ </head>
+ <body></body>
 </html>
 ```
 
@@ -1648,71 +1646,71 @@ function factorial (num) {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>递归案例综合</title>
-		<script>
-			// for循环实现：求n个数字的和,5 计算1+2+3+4+5
-			//    var sum=0;
-			//    for(var i=1;i<=5;i++){
-			//      sum+=i;
-			//    }
-			//    console.log(sum);
+ <head>
+  <meta charset="UTF-8" />
+  <title>递归案例综合</title>
+  <script>
+   // for循环实现：求n个数字的和,5 计算1+2+3+4+5
+   //    var sum=0;
+   //    for(var i=1;i<=5;i++){
+   //      sum+=i;
+   //    }
+   //    console.log(sum);
 
 
-			// 递归实现：求n个数字的和：n=5 --->  5+4+3+2+1
-			// 函数的声明
-			//    function getSum(x) {
-			//      if(x==1){
-			//        return 1;
-			//      }
-			//      return x+getSum(x-1);
-			//    }
-			//    // 函数的调用
-			//    console.log(getSum(5));
+   // 递归实现：求n个数字的和：n=5 --->  5+4+3+2+1
+   // 函数的声明
+   //    function getSum(x) {
+   //      if(x==1){
+   //        return 1;
+   //      }
+   //      return x+getSum(x-1);
+   //    }
+   //    // 函数的调用
+   //    console.log(getSum(5));
 
-			/*
-			 *
-			 * getSum函数执行过程:
-			 * 代码执行getSum(5)--->进入函数,此时的x是5,执行的是5+getSum(4),此时代码等待
-			 * 此时5+getSum(4),代码先不进行计算,先执行getSum(4),进入函数,执行的是4+getSum(3),等待, 先执行的是getSum(3),进入函数,执行3+getSum(2),等待,先执行getSum(2),进入函数,执行 2+getSum(1);等待, 先执行getSum(1),执行的是x==1的判断,return 1,所以,
-			 * 此时getSum(1)的结果是1,开始向外走出去
-			 * 2+getSum(1) 此时的结果是:2+1
-			 * 执行:
-			 * getSum(2)---->2+1
-			 * 3+getSum(2) 此时的结果是3+2+1
-			 * 4+getSum(3) 此时的结果是4+3+2+1
-			 * 5+getSum(4) 此时的结果是5+4+3+2+1
-			 *
-			 * 结果:15
-			 *
-			 *
-			 *
-			 * */
-
-
-			// 递归案例：求一个数字各个位数上的数字的和：123 ---> 6 ---> 1+2+3
-			function getEverySum(x) {
-				if (x < 10) {
-					return x;
-				}
-				// 获取的是这个数字的个位数
-				return (x % 10) + getEverySum(parseInt(x / 10));
-			}
-			console.log(getEverySum(1364)); //5
+   /*
+    *
+    * getSum函数执行过程:
+    * 代码执行getSum(5)--->进入函数,此时的x是5,执行的是5+getSum(4),此时代码等待
+    * 此时5+getSum(4),代码先不进行计算,先执行getSum(4),进入函数,执行的是4+getSum(3),等待, 先执行的是getSum(3),进入函数,执行3+getSum(2),等待,先执行getSum(2),进入函数,执行 2+getSum(1);等待, 先执行getSum(1),执行的是x==1的判断,return 1,所以,
+    * 此时getSum(1)的结果是1,开始向外走出去
+    * 2+getSum(1) 此时的结果是:2+1
+    * 执行:
+    * getSum(2)---->2+1
+    * 3+getSum(2) 此时的结果是3+2+1
+    * 4+getSum(3) 此时的结果是4+3+2+1
+    * 5+getSum(4) 此时的结果是5+4+3+2+1
+    *
+    * 结果:15
+    *
+    *
+    *
+    * */
 
 
-			// 递归案例：求斐波那契数列
-			function getFib(x) {
-				if (x == 1 || x == 2) {
-					return 1;
-				}
-				return getFib(x - 1) + getFib(x - 2);
-			}
-			console.log(getFib(12));
-		</script>
-	</head>
-	<body></body>
+   // 递归案例：求一个数字各个位数上的数字的和：123 ---> 6 ---> 1+2+3
+   function getEverySum(x) {
+    if (x < 10) {
+     return x;
+    }
+    // 获取的是这个数字的个位数
+    return (x % 10) + getEverySum(parseInt(x / 10));
+   }
+   console.log(getEverySum(1364)); //5
+
+
+   // 递归案例：求斐波那契数列
+   function getFib(x) {
+    if (x == 1 || x == 2) {
+     return 1;
+    }
+    return getFib(x - 1) + getFib(x - 2);
+   }
+   console.log(getFib(12));
+  </script>
+ </head>
+ <body></body>
 </html>
 ```
 
@@ -1723,184 +1721,186 @@ function factorial (num) {
   ```html
   <!DOCTYPE html>
   <html lang="en">
-  	<head>
-  		<meta charset="UTF-8" />
-  		<title>递归函数实现深拷贝</title>
-  		<script>
-  			//深拷贝:拷贝还是复制,深:把一个对象中所有的属性或者方法,一个一个的找到.并且在另一个对象中开辟相应的空间,一个一个的存储到另一个对象中
-  			var obj1 = {
-  				age: 10,
-  				sex: "男",
-  				car: ["奔驰", "宝马", "特斯拉", "奥拓"],
-  				dog: {
-  					name: "大黄",
-  					age: 5,
-  					color: "黑白色",
-  				},
-  			};
+   <head>
+    <meta charset="UTF-8" />
+    <title>递归函数实现深拷贝</title>
+    <script>
+     //深拷贝:拷贝还是复制,深:把一个对象中所有的属性或者方法,一个一个的找到.并且在另一个对象中开辟相应的空间,一个一个的存储到另一个对象中
+     var obj1 = {
+      age: 10,
+      sex: "男",
+      car: ["奔驰", "宝马", "特斯拉", "奥拓"],
+      dog: {
+       name: "大黄",
+       age: 5,
+       color: "黑白色",
+      },
+     };
   
-  			var obj2 = {}; //空对象
-  			//通过函数实现,把对象a中的所有的数据深拷贝到对象b中
-  			function extend(a, b) {
-  				for (var key in a) {
-  					//先获取a对象中每个属性的值
-  					var item = a[key];
-  					//判断这个属性的值是不是数组
-  					if (item instanceof Array) {
-  						//如果是数组,那么在b对象中添加一个新的属性,并且这个属性值也是数组
-  						b[key] = [];
-  						//调用这个方法，把a对象中这个数组的属性值一个一个的复制到b对象的这个数组属性中
-  						extend(item, b[key]);
-  					} else if (item instanceof Object) {
-  						//判断这个值是不是对象类型的
-  						//如果是对象类型的,那么在b对象中添加一个属性,是一个空对象
-  						b[key] = {};
-  						//再次调用这个函数,把a对象中的属性对象的值一个一个的复制到b对象的这个属性对象中
-  						extend(item, b[key]);
-  					} else {
-  						//如果值是普通的数据,直接复制到b对象的这个属性中
-  						b[key] = item;
-  					}
-  				}
-  			}
+     var obj2 = {}; //空对象
+     //通过函数实现,把对象a中的所有的数据深拷贝到对象b中
+     function extend(a, b) {
+      for (var key in a) {
+       //先获取a对象中每个属性的值
+       var item = a[key];
+       //判断这个属性的值是不是数组
+       if (item instanceof Array) {
+        //如果是数组,那么在b对象中添加一个新的属性,并且这个属性值也是数组
+        b[key] = [];
+        //调用这个方法，把a对象中这个数组的属性值一个一个的复制到b对象的这个数组属性中
+        extend(item, b[key]);
+       } else if (item instanceof Object) {
+        //判断这个值是不是对象类型的
+        //如果是对象类型的,那么在b对象中添加一个属性,是一个空对象
+        b[key] = {};
+        //再次调用这个函数,把a对象中的属性对象的值一个一个的复制到b对象的这个属性对象中
+        extend(item, b[key]);
+       } else {
+        //如果值是普通的数据,直接复制到b对象的这个属性中
+        b[key] = item;
+       }
+      }
+     }
   
-  			extend(obj1, obj2);
-  			console.dir(obj1);
-  			console.dir(obj2);
-  		</script>
-  	</head>
-  	<body></body>
+     extend(obj1, obj2);
+     console.dir(obj1);
+     console.dir(obj2);
+    </script>
+   </head>
+   <body></body>
   </html>
   
   
   ```
+
   - 浅拷贝的写法：拷贝就是复制，就相当于把一个对象中的所有的内容，复制一份给另一个对象，直接复制，或者说,就是把一个对象的地址给了另一个对象，他们指向相同，两个对象之间有共同的属性或者方法，都可以使用
+
   - ```html
     <!DOCTYPE html>
     <html lang="en">
-    	<head>
-    		<meta charset="UTF-8" />
-    		<title>浅拷贝</title>
-    		<script>
-    			// 浅拷贝：拷贝就是复制,就相当于把一个对象中的所有的内容,复制一份给另一个对象,直接复制,或者说,就是把一个对象的地址给了另一个对象,他们指向相同,两个对象之间有共同的属性或者方法,都可以使用
-    			var obj1 = {
-    				age: 10,
-    				sex: "男",
-    				car: ["奔驰", "宝马", "特斯拉", "奥拓"],
-    			};
-    			// 另一个对象
-    			var obj2 = {};
+     <head>
+      <meta charset="UTF-8" />
+      <title>浅拷贝</title>
+      <script>
+       // 浅拷贝：拷贝就是复制,就相当于把一个对象中的所有的内容,复制一份给另一个对象,直接复制,或者说,就是把一个对象的地址给了另一个对象,他们指向相同,两个对象之间有共同的属性或者方法,都可以使用
+       var obj1 = {
+        age: 10,
+        sex: "男",
+        car: ["奔驰", "宝马", "特斯拉", "奥拓"],
+       };
+       // 另一个对象
+       var obj2 = {};
     
-    			// 写一个函数,作用：把一个对象的属性复制到另一个对象中,浅拷贝
-    			// 把a对象中的所有的属性复制到对象b中
-    			function extend(a, b) {
-    				for (var key in a) {
-    					b[key] = a[key];
-    				}
-    			}
-    			extend(obj1, obj2);
-    			console.dir(obj2); // 开始的时候这个对象是空对象
-    			console.dir(obj1); // 有属性
-    		</script>
-    	</head>
-    	<body></body>
+       // 写一个函数,作用：把一个对象的属性复制到另一个对象中,浅拷贝
+       // 把a对象中的所有的属性复制到对象b中
+       function extend(a, b) {
+        for (var key in a) {
+         b[key] = a[key];
+        }
+       }
+       extend(obj1, obj2);
+       console.dir(obj2); // 开始的时候这个对象是空对象
+       console.dir(obj1); // 有属性
+      </script>
+     </head>
+     <body></body>
     </html>
     
     
     ```
+
 - 菜单树
   
   ```html
   
   ```
   
-  
 - 遍历 DOM 树
   
   ```html
   <!DOCTYPE html>
   <html lang="en">
-  	<head>
-  		<meta charset="UTF-8" />
-  		<title>遍历DOM树</title>
-  	</head>
+   <head>
+    <meta charset="UTF-8" />
+    <title>遍历DOM树</title>
+   </head>
   
-  	<body>
-  		<h1>遍历 DOM 树</h1>
-  		<p style="color: green">Tip: 可以在遍历的回调函数中任意定制需求</p>
-  		<div>
-  			<ul>
-  				<li>123</li>
-  				<li>456</li>
-  				<li>789</li>
-  			</ul>
-  			<div>
-  				<div>
-  					<span>haha</span>
-  				</div>
-  			</div>
-  		</div>
-  		<div id="demo_node">
-  			<ul>
-  				<li>123</li>
-  			</ul>
-  			<p>hello</p>
-  			<h2>world</h2>
-  			<div>
-  				<p>dsa</p>
-  				<h3>
-  					<span>dsads</span>
-  				</h3>
-  			</div>
-  		</div>
-  		<script>
-  			//获取页面中的根节点--根标签
-  			var root = document.documentElement; //html
-  			//函数遍历DOM树
-  			//根据根节点,调用fn的函数,显示的是根节点的名字
-  			function forDOM(root1) {
-  				//调用f1,显示的是节点的名字
-  				// f1(root1);
-  				//获取根节点中所有的子节点
-  				var children = root1.children;
-  				//调用遍历所有子节点的函数
-  				forChildren(children);
-  			}
-  			//给我所有的子节点,我把这个子节点中的所有的子节点显示出来
-  			function forChildren(children) {
-  				//遍历所有的子节点
-  				for (var i = 0; i < children.length; i++) {
-  					//每个子节点
-  					var child = children[i];
-  					//显示每个子节点的名字
-  					f1(child);
-  					//判断child下面有没有子节点,如果还有子节点,那么就继续的遍历
-  					child.children && forDOM(child);
-  				}
-  			}
-  			//函数调用,传入根节点
-  			forDOM(root);
-  			function f1(node) {
-  				console.log("节点的名字:" + node.nodeName);
-  			}
+   <body>
+    <h1>遍历 DOM 树</h1>
+    <p style="color: green">Tip: 可以在遍历的回调函数中任意定制需求</p>
+    <div>
+     <ul>
+      <li>123</li>
+      <li>456</li>
+      <li>789</li>
+     </ul>
+     <div>
+      <div>
+       <span>haha</span>
+      </div>
+     </div>
+    </div>
+    <div id="demo_node">
+     <ul>
+      <li>123</li>
+     </ul>
+     <p>hello</p>
+     <h2>world</h2>
+     <div>
+      <p>dsa</p>
+      <h3>
+       <span>dsads</span>
+      </h3>
+     </div>
+    </div>
+    <script>
+     //获取页面中的根节点--根标签
+     var root = document.documentElement; //html
+     //函数遍历DOM树
+     //根据根节点,调用fn的函数,显示的是根节点的名字
+     function forDOM(root1) {
+      //调用f1,显示的是节点的名字
+      // f1(root1);
+      //获取根节点中所有的子节点
+      var children = root1.children;
+      //调用遍历所有子节点的函数
+      forChildren(children);
+     }
+     //给我所有的子节点,我把这个子节点中的所有的子节点显示出来
+     function forChildren(children) {
+      //遍历所有的子节点
+      for (var i = 0; i < children.length; i++) {
+       //每个子节点
+       var child = children[i];
+       //显示每个子节点的名字
+       f1(child);
+       //判断child下面有没有子节点,如果还有子节点,那么就继续的遍历
+       child.children && forDOM(child);
+      }
+     }
+     //函数调用,传入根节点
+     forDOM(root);
+     function f1(node) {
+      console.log("节点的名字:" + node.nodeName);
+     }
   
-  			// 节点：nodeName,nodeType,nodeValue
+     // 节点：nodeName,nodeType,nodeValue
   
-  			//  第一个函数：给我根节点,我会找到所有的子节点:forDOM(根节点)
-  			//  获取这个根节点的子节点
-  			//  var children=根节点的.children
-  			//  调用第二个函数
-  			//
-  			//  第二个函数：给我所有的子节点,我把每个子节点的名字显示出来(children)
-  			//  for(var i=0;i<children.length;i++){
-  			//    每个子节点
-  			//    var child=children[i];
-  			//    f1(child);给我节点,我显示该节点的名字
-  			//    child是子节点,但是如果child里面还有子节点,此时child就是爹了
-  			//    child.children&&第一个函数(child)
-  			//  }
-  		</script>
-  	</body>
+     //  第一个函数：给我根节点,我会找到所有的子节点:forDOM(根节点)
+     //  获取这个根节点的子节点
+     //  var children=根节点的.children
+     //  调用第二个函数
+     //
+     //  第二个函数：给我所有的子节点,我把每个子节点的名字显示出来(children)
+     //  for(var i=0;i<children.length;i++){
+     //    每个子节点
+     //    var child=children[i];
+     //    f1(child);给我节点,我显示该节点的名字
+     //    child是子节点,但是如果child里面还有子节点,此时child就是爹了
+     //    child.children&&第一个函数(child)
+     //  }
+    </script>
+   </body>
   </html>
   ```
 

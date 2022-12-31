@@ -114,24 +114,24 @@ export default {
               link: "/Document/JavaScript笔记/JavaScript高级/JavaScript高级学习指南",
             },
             {
-              text: "0.JavaScript 中的数据类型",
-              link: "/Document/JavaScript笔记/JavaScript高级/0.JavaScript 中的数据类型",
+              text: "JavaScript中的数据类型",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript中的数据类型",
             },
             {
-              text: "1.JavaScript 面向对象编程",
-              link: "/Document/JavaScript笔记/JavaScript高级/1.JavaScript 面向对象编程",
+              text: "JavaScript面向对象编程",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript面向对象编程",
             },
             {
-              text: "1.1 面向对象案例",
-              link: "/Document/JavaScript笔记/JavaScript高级/1.1 面向对象案例",
+              text: "JavaScript面向对象案例",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript面向对象案例",
             },
             {
-              text: "2.JavaScript 函数进阶",
-              link: "/Document/JavaScript笔记/JavaScript高级/2.JavaScript 函数进阶",
+              text: "JavaScript函数进阶",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript函数进阶",
             },
             {
-              text: "3.JavaScript 正则表达式",
-              link: "/Document/JavaScript笔记/JavaScript高级/3.JavaScript 正则表达式",
+              text: "JavaScript正则表达式",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript正则表达式",
             },
             {
               text: "",

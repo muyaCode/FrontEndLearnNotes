@@ -1,17 +1,17 @@
-## JavaScript 垃圾回收机制
+# JavaScript的垃圾回收机制
 
-### JavaScript 运行机制：Event Loop
+## JavaScript 运行机制：Event Loop
 
-### Object
+## Object
 
-#### 静态成员
+### 静态成员
 
 - Object.assign()
 - Object.create()
 - Object.keys()
 - Object.defineProperty()
 
-#### 实例成员
+### 实例成员
 
 - constructor
 - hasOwnProperty()
