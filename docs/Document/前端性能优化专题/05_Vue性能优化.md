@@ -42,11 +42,11 @@ export default {  props: ['value'],}
 
 优化前：
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/efdc43d574544231ad9012482a064ba8~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark1](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/efdc43d574544231ad9012482a064ba8~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2234e433d468465a8f86cb6d4420c318~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark2](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2234e433d468465a8f86cb6d4420c318~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化前执行 `script` 的时间要多于优化后的，而我们知道 JS 引擎是单线程的运行机制，JS 线程会阻塞 UI 线程，所以当脚本执行时间过长，就会阻塞渲染，导致页面卡顿。而优化后的 `script` 执行时间短，所以它的性能更好。
 
@@ -96,11 +96,11 @@ export default {  components: {    ChildComp: {      methods: {        heavy () 
 
 优化前：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b0a76b6f8d246f88a54f09113ad5b60~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark3](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b0a76b6f8d246f88a54f09113ad5b60~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eeabe26329304167abd019e282a25a9f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark4](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eeabe26329304167abd019e282a25a9f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化后执行 `script` 的时间要明显少于优化前的，因此性能体验更好。
 
@@ -149,11 +149,11 @@ export default {  props: ['start'],  computed: {    base () {      return 42
 
 优化前：
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08d6ca9cf22a4e40ae0e5edc93ac1279~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark5](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08d6ca9cf22a4e40ae0e5edc93ac1279~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b08a4cdd60894db6a4e536a6c7160e0e~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark6](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b08a4cdd60894db6a4e536a6c7160e0e~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化后执行 `script` 的时间要明显少于优化前的，因此性能体验更好。
 
@@ -205,11 +205,11 @@ export default {  props: ['start'],  computed: {    base () {      return 42
 
 优化前：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f6572d2ab8f647a8a24e8f8c95320288~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark7](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f6572d2ab8f647a8a24e8f8c95320288~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/350cd2452aae4455a24c441bcc25f886~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark8](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/350cd2452aae4455a24c441bcc25f886~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化后执行 `script` 的时间要明显少于优化前的，因此性能体验更好。
 
@@ -321,15 +321,15 @@ function render() {
 
 优化前：
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3f7a60981d44d268f801b8d752815d1~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark9](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3f7a60981d44d268f801b8d752815d1~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c1d249d0d0149d587b8a94ecd1d37eb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark10](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c1d249d0d0149d587b8a94ecd1d37eb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8da716157c8045c3a189526f37d2c1ac~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark11](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8da716157c8045c3a189526f37d2c1ac~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7470877578c84caf82996a45ebc965f6~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark12](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7470877578c84caf82996a45ebc965f6~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化后执行 `script` 的时间要明显少于优化前的，因此性能体验更好。
 
@@ -387,11 +387,11 @@ export default {  mixins: [    Defer(),  ],}
 
 优化前：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d3ee73d2f8c64f8bbd90579ce81b67d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark13](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d3ee73d2f8c64f8bbd90579ce81b67d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c341c560d4a4c7897565b2fb9ae9d73~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark14](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c341c560d4a4c7897565b2fb9ae9d73~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以发现，优化前当我们从 Simple Page 切到 Heavy Page 的时候，在一次 Render 接近结尾的时候，页面渲染的仍然是 Simple Page，会给人一种页面卡顿的感觉。而优化后当我们从 Simple Page 切到 Heavy Page 的时候，在一次 Render 靠前的位置页面就已经渲染了 Heavy Page 了，并且 Heavy Page 是渐进式渲染出来的。
 
@@ -471,11 +471,11 @@ fetchItems ({ commit }, { items, splitCount }) {
 
 优化前：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e8d91db10e04e4a8992343227e52eaa~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark15](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e8d91db10e04e4a8992343227e52eaa~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5703007e2ab47ccba80107166fce5b3~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark16](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5703007e2ab47ccba80107166fce5b3~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以发现，优化前总的 `script` 执行时间要比优化后的还要少一些，但是从实际的观感上看，优化前点击提交按钮，页面会卡死 1.2 秒左右，在优化后，页面不会完全卡死，但仍然会有渲染卡顿的感觉。
 
@@ -528,11 +528,11 @@ function optimizeItem (item) {
 
 优化前：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eacf438389084a5f89869a5247b0b966~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark17](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eacf438389084a5f89869a5247b0b966~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0d4f407d94b8470184721473028890b1~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark18](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0d4f407d94b8470184721473028890b1~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们可以看到优化后执行 `script` 的时间要明显少于优化前的，因此性能体验更好。
 
@@ -593,11 +593,11 @@ export default {
 
 优化前：
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f3a130b890e444081394979a11c5752~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark19](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f3a130b890e444081394979a11c5752~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 优化后：
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28c2abc800ee4caf9f5529e83370ba3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark20](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28c2abc800ee4caf9f5529e83370ba3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比这两张图我们发现，在非优化的情况下，10000 条数据在滚动情况下 fps 只有个位数，在非滚动情况下也就十几，原因是非优化场景下渲染的 DOM 太多，渲染本身的压力很大。优化后，即使 10000 条数据，在滚动情况下的 fps 也能有 30 多，在非滚动情况下可以达到 60 满帧。
 
@@ -629,11 +629,11 @@ Vue 应用的性能问题可以分为两个部分，第一部分是运行时性�
 
 和其他 web 应用一样，定位 Vue 应用性能问题最好的工具是 Chrome Devtool，通过 Performance 工具可以用来录制一段时间的 CPU 占用、内存占用、FPS 等运行时性能问题，通过 Network 工具可以用来分析加载性能问题。
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d789fc7786~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark21](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d789fc7786~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 例如，通过 Performance 工具的 Bottom Up 标签我们可以看出一段时间内耗时最多的操作，这对于优化 CPU 占用和 FPS 过低非常有用，可以看出最为耗时的操作发生在哪里，可以知道具体函数的执行时间，定位到瓶颈之后，我们就可以做一些针对性的优化。
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7dc70634d~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark22](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7dc70634d~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 更多 Chrome Devtool 使用方式请参考[使用 Chrome Devtool 定位性能问题 的指南](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
 
@@ -675,25 +675,25 @@ Vue 应用的性能问题可以分为两个部分，第一部分是运行时性�
 
 但 Vue 在遇到像 `Object.freeze()` 这样被设置为不可配置之后的对象属性时，不会为对象加上 setter getter 等数据劫持的方法。[参考 Vue 源码](https://github.com/vuejs/vue/blob/v2.5.17/src/core/observer/index.js?1535281657346#L134)
 
-**Vue observer 源码**
+**Vue observer 源码**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7dc90f5c1~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark23](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7dc90f5c1~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 ##### 2.4.1 性能提升效果对比
 
 在基于 Vue 的一个 [big table benchmark](https://github.com/vuejs/vue/blob/v2.5.17/benchmarks/big-table/index.html?1535282017690) 里，可以看到在渲染一个一个 1000 x 10 的表格的时候，开启`Object.freeze()` 前后重新渲染的对比。
 
-**big table benchmark**
+**big table benchmark**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d78d944dde~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark24](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d78d944dde~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-**开启优化之前**
+**开启优化之前**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feaccc752d5~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark25](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feaccc752d5~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-**开启优化之后**
+**开启优化之后**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feadd555c81~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark26](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feadd555c81~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 在这个例子里，**使用了 `Object.freeze()`比不使用快了 4 倍**
 
@@ -701,11 +701,11 @@ Vue 应用的性能问题可以分为两个部分，第一部分是运行时性�
 
 **不使用`Object.freeze()` 的CPU开销**
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7c41b64bf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark27](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7c41b64bf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 **使用 `Object.freeze()`的CPU开销**
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7fdffa474~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark28](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d7fdffa474~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 对比可以看出，使用了 `Object.freeze()` 之后，减少了 observer 的开销。
 
@@ -804,15 +804,15 @@ Vue 社区中比较流行的 vuex-persistedstate，利用了 store 的 subscribe
 
 下面是开发环境下通过 Performance 工具抓取的一个截图，可以看到出现了一次长达 6s 的卡顿：
 
-**6秒钟的卡顿**
+**6秒钟的卡顿**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d84795d172~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark29](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d84795d172~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 通过 Bottom-Up 可以看到 setState 占用了 3241.4ms 的 CPU 执行时间，而 setState 正是在向 Storage 写入数据。
 
-**vuex-persistedstate setState 源码**
+**vuex-persistedstate setState 源码**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d847a933ca~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark30](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d847a933ca~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 我们应该尽量减少直接写入 Storage 的频率：
 
@@ -833,15 +833,15 @@ Vue 社区中比较流行的 vuex-persistedstate，利用了 store 的 subscribe
 
 [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list) 和 [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller) 都是解决这类问题的开源项目。你也可以参考 Google 工程师的文章[Complexities of an Infinite Scroller](https://developers.google.com/web/updates/2016/07/infinite-scroller) 来尝试自己实现一个虚拟的滚动列表来优化性能，主要使用到的技术是 DOM 回收、墓碑元素和滚动锚定。
 
-**Google 工程师绘制的无限列表设计**
+**Google 工程师绘制的无限列表设计**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d8478b24bf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark：3024](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d8478b24bf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 #### 2.8 通过组件懒加载优化超长应用内容初始渲染性能
 
 上面提到的无限列表的场景，比较适合列表内元素非常相似的情况，不过有时候，你的 Vue 应用的超长列表内的内容往往不尽相同，例如在一个复杂的应用的主界面中，整个主界面由非常多不同的模块组成，而用户看到的往往只有首屏一两个模块。在初始渲染的时候不可见区域的模块也会执行和渲染，带来一些额外的性能开销。
 
-**使用组件懒加载在不可见时只需要渲染一个骨架屏，不需要真正渲染组件**
+**使用组件懒加载在不可见时只需要渲染一个骨架屏，不需要真正渲染组件**：
 
 ![image](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feaf23067e1~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
@@ -855,9 +855,9 @@ Vue 社区中比较流行的 vuex-persistedstate，利用了 store 的 subscribe
 
 单页面应用显示一个页面会发送多次请求，第一次拿到 html 资源，然后通过请求再去拿数据，再将数据渲染到页面上。而且由于现在微服务架构的存在，还有可能发出多次数据请求才能将网页渲染出来，每次数据请求都会产生 RTT（往返时延），会导致加载页面的时间拖的很长。
 
-**服务端渲染、预渲染和客户端渲染的对比**
+**服务端渲染、预渲染和客户端渲染的对比**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d84c84cebf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark31](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/10/165c22d84c84cebf~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 这种情况下可以采用服务端渲染（SSR）和预渲染（Prerender）来提升加载性能，这两种方案，用户读取到的直接就是网页内容，由于少了节省了很多 RTT（往返时延），同时，还可以对一些资源内联在页面，可以进一步提升加载的性能。
 
@@ -871,13 +871,13 @@ Vue 社区中比较流行的 vuex-persistedstate，利用了 store 的 subscribe
 
 组件粒度的懒加载结合异步组件和 webpack 代码分片，可以保证按需加载组件，以及组件依赖的资源、接口请求等，比起通常单纯的对图片进行懒加载，更进一步的做到了按需加载资源。
 
-**使用组件懒加载之前的请求瀑布图**
+**使用组件懒加载之前的请求瀑布图**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feb03e51a44~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark32](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feb03e51a44~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
-**使用组件懒加载之后的请求瀑布图**
+**使用组件懒加载之后的请求瀑布图**：
 
-![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feb14c9cd5c~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
+![bpfcp-zoom-in-crop-mark33](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/9/11/165c5feb14c9cd5c~tplv-t2oaga2asx-zoom-in-crop-mark:3024:0:0:0.awebp)
 
 使用组件懒加载方案对于超长内容的应用初始化渲染很有帮助，可以减少大量必要的资源请求，缩短渲染关键路径，具体做法请参考我们之前的专栏文章 [性能优化之组件懒加载: Vue Lazy Component 介绍](https://juejin.cn/post/6844903496102199304)。
 
