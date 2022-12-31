@@ -134,8 +134,8 @@ export default {
               link: "/Document/JavaScript笔记/JavaScript高级/JavaScript正则表达式",
             },
             {
-              text: "JavaScript的Promise",
-              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript的Promise",
+              text: "Promise异步编程",
+              link: "/Document/JavaScript笔记/JavaScript高级/Promise异步编程",
             },
             {
               text: "JavaScript的Canvas学习",

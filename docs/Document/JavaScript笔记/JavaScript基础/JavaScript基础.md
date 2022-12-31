@@ -1,5 +1,7 @@
 # JavaScript基础
 
+MDN的JavaScript文档：<https://developer.mozilla.org/zh-CN/docs/Web/JavaScript>
+
 JavaScript菜鸟教程基础文档：<https://www.runoob.com/js/js-tutorial.html>
 
 JavaScript菜鸟教程文档：<https://www.runoob.com/js/js-libraries.html>
@@ -7,6 +9,8 @@ JavaScript菜鸟教程文档：<https://www.runoob.com/js/js-libraries.html>
 JavaScript 实例：<https://m.runoob.com/js/js-examples.html>
 
 JavaScript各种对象文档参考：<https://www.runoob.com/jsref/prop-element-classList.html>
+
+腾讯复制MDN的JavaScript文档：<https://www.apiref.com/javascript-zh/index.htm>
 
 ---
 
