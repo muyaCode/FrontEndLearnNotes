@@ -3,6 +3,7 @@
 **vitepress框架的markdown写作相关文档**：<https://vitepress.vuejs.org/guide/markdown>
 
 ---
+阮一峰开源书籍《ES6标准入门》：<https://es6.ruanyifeng.com/>
 
 MDN工具网址：专门查询 HTML标签、CSS属性和使用、JavaScript的API方法和兼容性或者使用 等等Web API
 

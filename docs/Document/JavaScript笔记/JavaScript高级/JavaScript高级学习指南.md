@@ -8,9 +8,9 @@ MDN工具书网站查询：[MDN Web Docs (mozilla.org)](https://developer.mozill
 
 ## 3.JavaScript 正则表达式
 
-## 4.
+## 4.JavaScript的Promise
 
-## 5.
+## 5.JavaScript的Canvas学习
 
 ## 6.
 

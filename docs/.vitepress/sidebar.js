@@ -134,12 +134,12 @@ export default {
               link: "/Document/JavaScript笔记/JavaScript高级/JavaScript正则表达式",
             },
             {
-              text: "",
-              link: "/Document/JavaScript笔记/JavaScript高级/",
+              text: "JavaScript的Promise",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript的Promise",
             },
             {
-              text: "Canvas学习",
-              link: "/Document/JavaScript笔记/JavaScript高级/Canvas学习",
+              text: "JavaScript的Canvas学习",
+              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript的Canvas学习",
             },
           ]
         },
