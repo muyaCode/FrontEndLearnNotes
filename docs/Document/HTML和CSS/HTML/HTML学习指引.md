@@ -1,5 +1,7 @@
 # HTML5学习指引
 
+🌟从HTML+CSS+JavaScript到Web浏览器-用户的体验-各种工具框架与测试-服务端网页编程--->**😊前端开发的学习路径😊**：<https://developer.mozilla.org/zh-CN/docs/Learn/HTML>
+
 HTML参考手册|菜鸟教程：<https://www.runoob.com/tags/html-reference.html>
 
 w3c的HTML+CSS手册：[HTML 系列教程 (w3school.com.cn)](https://www.w3school.com.cn/h.asp)

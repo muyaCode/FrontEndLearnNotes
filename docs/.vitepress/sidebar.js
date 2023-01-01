@@ -39,6 +39,10 @@ export default {
               text: "HTML标签",
               link: "/Document/HTML和CSS/HTML/HTML标签",
             },
+            {
+              text: "HTML5学习",
+              link: "/Document/HTML和CSS/HTML/HTML5学习",
+            },
           ]
         },
         {

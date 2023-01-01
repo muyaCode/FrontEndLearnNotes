@@ -2,6 +2,8 @@
 
 **vitepress框架的markdown写作相关文档**：<https://vitepress.vuejs.org/guide/markdown>
 
+🌟从HTML+CSS+JavaScript到Web浏览器-用户的体验-各种工具框架与测试-服务端网页编程--->**😊前端开发的学习路径😊**：<https://developer.mozilla.org/zh-CN/docs/Learn/HTML>
+
 ---
 阮一峰开源书籍《ES6标准入门》：<https://es6.ruanyifeng.com/>
 
