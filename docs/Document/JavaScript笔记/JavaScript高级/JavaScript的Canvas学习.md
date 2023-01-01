@@ -170,9 +170,9 @@ context.stroke();
 
 - 填充规则(非零环绕)  
   
-  - ![zero.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\JavaScript笔记\JavaScript高级\img\zero.jpg)
+  - ![zero.jpg](.\img\zero.jpg)
   
-  - ![非零环绕规则.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\JavaScript笔记\JavaScript高级\img\非零环绕规则.jpg)
+  - ![非零环绕规则.jpg](.\img\非零环绕规则.jpg)
 
 - 开启新的路径 beginPath()
 
