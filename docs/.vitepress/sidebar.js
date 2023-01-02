@@ -142,8 +142,8 @@ export default {
               link: "/Document/JavaScript笔记/JavaScript高级/Promise异步编程",
             },
             {
-              text: "JavaScript的Canvas学习",
-              link: "/Document/JavaScript笔记/JavaScript高级/JavaScript的Canvas学习",
+              text: "HTML5_Canvas笔记",
+              link: "/Document/JavaScript笔记/JavaScript高级/HTML5_Canvas笔记",
             },
           ]
         },
