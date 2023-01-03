@@ -108,6 +108,10 @@ context.stroke();
 
 ### 4.完整代码
 
+- `display: block`可以把`<canvas></canvas>`变成块级元素，从而可以通过`margin: 0 auto;`设置为水平居中
+
+- canvas有显示的大小，还有内里分辨率的大小，所以不能在css中设置canvas元素的大小
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +124,7 @@ context.stroke();
             /*不建议在 样式设置尺寸*/
             /*width: 600px;
             height: 400px;*/
-            display: block;
+            display: block;
             margin: 0 auto;
         }
     </style>
@@ -136,6 +140,9 @@ context.stroke();
     /*1.获取元素*/
     // var myCanvas = document.querySelector('canvas');
     var myCanvas = document.querySelector('#myCanvas');
+    // js方法设置宽高属性
+    // myCanvas.width = "600";
+    // myCanvas.height = "400";
     /*2.获取上下文 绘制工具箱 */
     var ctx = myCanvas.getContext('2d'); /*web gl 绘制3d效果的网页技术*/
     /*3.移动画笔*/
@@ -2133,11 +2140,6 @@ arcTo() 方法文档：[HTML canvas arcTo() 方法 | 菜鸟教程 (runoob.com)](
 ### Creat Canvas - 创建画布
 
 - canvas是行内元素，有默认的高宽（300px*150px）
-
-- `display: block`可以把`<canvas></canvas>`变成块级元素,从而可以通过`margin: 0 auto;`设置为水平居中    *o(*￣▽￣*)ブ（水平居中的其中一种方法）*
-
-- canvas有显示的大小，还有内里分辨率的大小，所以不能在css中设置  
-  canvas的宽高。可以使用以下两种方法设置
   
   ```html
   <!--直接在标签头设置-->
@@ -2145,77 +2147,34 @@ arcTo() 方法文档：[HTML canvas arcTo() 方法 | 菜鸟教程 (runoob.com)](
   ```
   
   ```js
-  //在js中设置
-  var canvas=document.getElementById('canvas');
-  canvas.width="1024";
-  canvas.height="500";
-  ```
-
-- `<canvas>`是HTML5的新标签，所以存在兼容问题。  
-  注意：若把判断条件改成`canvas.getContext("2d")`会出错
-  
-  ```js
-  if(canvas.getContext){
-      var context=canvas.getContext('2d'); 
-  }
-  else{
-      alert('当前浏览器不支持canvas，请更换浏览器后再试');
-  }
+  // 获取元素，创建绘图的2D上下文环境
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d'); 
   ```
 
 ---
 
-### Draw Line - 绘制直线
-
-> 以下的`context`，默认由`var context=canvas.getContext("2d")`取得。  
-> *备注：除了2d绘图，还有3d绘图哦    (ˉ▽￣～)*
-
-- `context.closePath()`的存在会让未闭合的线条自动闭合，所以用不用看情况。总之，一个Canvas画布如果没有使用`context.beginPath()`，那么画布上的其它图形会受到影响  
-
-- `context.moveTo(x1,y1)`用来定义画笔的起始位置  
-  `context.lineTo(x2,y2)`用来定义画笔的终止位置
-  
-  ```js
-  //画一个闭合图形
-  context.beginPath();
-  context.moveTo(x1,y1);
-  context.lineTo(x2,y2);
-  context.lineTo(x1,y2);
-  context.moveTo(x1,y1);
-  context.closePath();
-  ```
-
-- `context.lineWidth=num`定义画笔大小  
-  `context.strokeStyle="color"`定义画笔颜色  
-  `context.stroke()` 执行绘图的方法  
-  `context.fillStyle="color"`定义填充的颜色  
-  `context.fill()` 执行着色的方法
-
-使用以上方法，即可绘制一个七巧板：  
-![Canvas-Tangram.png](https://img-blog.csdn.net/20170310140440601)
-
----
-
-### Draw Arc - 绘制弧线
+### Draw Arc - 绘制弧线（画圆）
 
 - `context.arc(300,300,0,1.5*Math.PI,false)` 的含义是沿顺时针的方向来绘制一个圆心为（300，300），角度为1.5π
   
   ```js
   context.arc(centerx,centery,radius,startingAngle,endingAngle,anticlockwise=false);
-  //默认clockwise=false，即在逆时针的方向上以角度为 0,0.5*PI,1*PI,1.5*PI,2*PI这种形式绘图
+  // 默认clockwise=false，即在逆时针的方向上以角度为 0,0.5*PI,1*PI,1.5*PI,2*PI这种形式绘图
   ```
 
 ---
 
 ### Draw Digit - 绘制静止的时钟
 
-- 先编写一个三维数组，来显示数字和冒号。这里以0和：来举例
+- 先编写一个三维数组，来显示数字和冒号（数字点阵）。这里以0和：来举例
 - 不完全，完全请看代码，digit变量部分：[Gorgeous Countdown (codepen.io)](https://codepen.io/ickedesign/pen/peRvwO)
 
 ```js
 // 数字有7列10行组成，冒号由4列10行组成，数组中有1的地方就是代表有小球
 digit =
     [
+        // 10 * 7 的二维数组
         [
             [0,0,1,1,1,0,0],
             [0,1,1,0,1,1,0],
@@ -2227,7 +2186,8 @@ digit =
             [1,1,0,0,0,1,1],
             [0,1,1,0,1,1,0],
             [0,0,1,1,1,0,0]
-        ],//0
+        ],// 0
+        // 10 * 4 的二维数组
         [
             [0,0,0,0],
             [0,0,0,0],
@@ -2239,11 +2199,47 @@ digit =
             [0,1,1,0],
             [0,0,0,0],
             [0,0,0,0]
-        ]//:
+        ]// :
     ];
 ```
 
 通过循环数组，定义好小球之间的距离，即可画出小球
+
+### renderDigit方法-绘制圆心计算
+
+![renderDigit方法-绘制圆心计算.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\JavaScript笔记\JavaScript高级\img\renderDigit方法-绘制圆心计算.jpg)
+
+#### 由圆组成的数字绘制，圆形生成的计算
+
+```js
+// 绘制时钟的数字和冒号
+function renderDigit(x, y, num, cxt) {
+	cxt.fillStyle = "rgb(0, 102, 153)";
+	// 先绘制出1
+	for (var i = 0; i < digit[num].length; i++) {
+		for (var j = 0; j < digit[num][i].length; j++) {
+			if (digit[num][i][j] == 1) {
+				cxt.beginPath();
+				// 弧形的绘制方法：需要计算
+				cxt.arc(
+					// 圆心的绘制计算
+					x + j * 2 * (radius + 1) + (radius + 1),
+					y + i * 2 * (radius + 1) + (radius + 1),
+					radius,
+					0,
+					2 * Math.PI
+				);
+				cxt.closePath();
+				// cxt.stroke();
+
+				cxt.fill();
+			}
+		}
+	}
+}
+```
+
+---
 
 ### Countdown Effect - 设置倒计时效果
 
@@ -2251,76 +2247,159 @@ digit =
 - 也可以使用以下的方法来设置固定的时间，比如倒计时时间固定从1小时开始
 
 ```js
-var endTime=new Date();
+var endTime = new Date();
+// 获取当前时间，并设置倒计时1个小时（因为是毫秒所以计算：3600 * 1000 = 60分钟）
 endTime.setTime(endTime.getTime()+3600*1000);
 ```
 
-- 注意分清var、const和let三个定义变量的区别：  
-  - var定义的变量可以修改，如果不初始化会输出undefined，不会报错
-  - const定义的变量不可以修改，而且必须初始化
-  - let是块级作用域，函数内部使用let定义后，对函数外部无影响
+使用倒计时时间的方法
+
+```js
+// 倒计时的时间计算
+function getCurrentShowTimeSeconds() {
+	var currentTime = new Date();
+	// getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
+	var ret = endTime.getTime() - currentTime.getTime();
+	// 将毫秒化成秒,ret要加上
+	ret = Math.round(ret / 1000);
+	return ret >= 0 ? ret : 0;
+}
+```
 
 ---
 
 ### Moving Clock - 让倒计时动起来
 
-- 使用setInterval()方法更新，从而数字可以变化而更新生成新的小球的位置
+- 在页面加载的时候，使用`setInterval()`方法更新，从而数字可以变化而更新生成新的小球的位置
+- 为什么定时器是50毫秒，这就设计到帧数的概念
 
 ```js
-//添加时钟的动画效果
+// 添加时钟的动画效果
 setInterval(
     function(){
-        render(context);//初始化时间
-        update();//对时间进行更新
+        render(context);// 初始化时间
+        update();// 对时间进行更新
     },
-    50 //一秒有1000毫秒，即20分之1，
-    //所以帧率为20，即动画1秒钟更新20次。但事实上，因为里面的函数执行效率不同，所以帧数不一定为20
+    50 // 一秒有1000毫秒，即20分之1，
+    // 所以帧率为20，即动画1秒钟更新20次。但事实上，因为里面的函数执行效率不同，所以帧数不一定为20
 )
 ```
 
-- `context.clearRect(x,y,canvasWidth,canvasHeight);`其中x,y指的是清除矩形画布的左上角位置，canvasWidth,canvasHeight指的是清除矩形画布的宽度和长度。使用该函数可以让canvas中后来生成的图形不会和原来的图形叠加在一起了，相反效果的是`context.fillRect()`，其作用是填充矩形，参数类似。
+- `context.clearRect(x,y,canvasWidth,canvasHeight);`其中x,y指的是清除矩形画布的左上角位置
+- canvasWidth,canvasHeight指的是清除矩形画布的宽度和长度。使用该函数可以让canvas中后来生成的图形不会和原来的图形叠加在一起
+- `context.fillRect()`，其作用是填充矩形。
 
 ```js
 context.clearRect(0,0,context.canvas.width,context.canvas.height);
-//从右上角开始，范围是整个画布
-//使用context.canvas.width来获取canvas的宽度是context的属性之一
+// 从右上角开始，范围是整个画布
+// 使用context.canvas.width来获取canvas的宽度是context的属性之一
 ```
 
 ---
 
-### Ball Motion - 小球的运动
+### 小球的物理抛物线运动
 
-- 小球的运动很有趣，和高中物理课上的抛物线一样，有初始速度，重力加速度，摩擦系数。
-- 小球的运动也需要借助setInterval()方法来更新，类似时钟的动画效果
+根据物理公式：幂运算
+
+最后组成的balls数组数据，后面的操作和生成彩色小球的方法都需要用到
+
+```js
+// 倒计时变化生成的彩色小球集合，并push到balls[]中
+function addBalls(x, y, num) {
+	for (var i = 0; i < digit[num].length; i++) {
+		for (var j = 0; j < digit[num][i].length; j++) {
+			if (digit[num][i][j] == 1) {
+				// 定义aBall
+				var aBall = {
+					// 这个圆心的计算和数字时间生成的圆心一样
+					x: x + j * 2 * (radius + 1) + (radius + 1),
+					y: y + i * 2 * (radius + 1) + (radius + 1),
+					// 幂运算
+					vx: Math.pow(-1, Math.floor(Math.random() * 1000)) * 5,
+					vy: -5, // 下落的速度
+					g: 1.5 + Math.random(),
+					color: colors[Math.floor(Math.random() * colors.length)],
+				};
+				// 将小球push进集合中，后面的操作和生成彩色小球的方法都需要用到
+				balls.push(aBall);
+			}
+		}
+	}
+}
+```
+
+---
+
+### Ball Motion - 彩色小球的运动物理现象
+
+#### 下一次倒计时变化，对生成的彩色小球进行运动更新
+
+- 小球的物理抛物线运动和物理碰撞原理
+
+```js
+// 对生成的彩色小球进行运动更新
+function updateBalls() {
+	for (var i = 0; i < balls.length; i++) {
+		balls[i].x += balls[i].vx;
+		balls[i].y += balls[i].vy;
+		balls[i].vy += balls[i].g;
+
+		// 当小球碰地后会反弹
+		if (canvasHeight - balls[i].y <= radius) {
+			balls[i].y = canvasHeight - radius;
+			// 添加阻力系数：物理碰撞现象（每次碰撞的反弹是上一次的倍数系数）
+			balls[i].vy = -balls[i].vy * 0.75;
+		}
+	}
+
+	// 及时清空跳出画布的小球，优化页面的内存
+	var cnt = 0;
+	for (var i = 0; i < balls.length; i++) {
+		if (balls[i].x + radius > 0 && balls[i].x - radius < canvasWidth) {
+			// 小球数组中的第0个到cnt-1个是在canvas画布中
+			balls[cnt++] = balls[i];
+		}
+	}
+	// Math.min();两个数取最小值
+	while (balls.length > Math.min(250, cnt)) {
+		balls.pop(); // 删除第cnt个到balls.length-1个数组
+		// 删除前面的数组使用balls.shift();
+	}
+	// while(balls.length>cnt){
+	//   balls.pop(); // 删除第cnt个到balls.length-1个数组
+	// }
+}
+```
+
+- 小球的运动的物理碰撞原理：初中物理课上的抛物线一样，有初始速度，重力加速度，摩擦系数。
+- 小球的运动也需要借助`setInterval()`方法来更新，类似时钟的动画效果
 - 小球触底后反弹使用`if`语句来判断
 
 ```js
-//当小球触底后会反弹
-if(canvasHeight-ball.y<=ball.r){
-    ball.y=canvasHeight-ball.r;
-    ball.vy=-ball.vy*0.5;//添加阻力系数
+// 当小球触底后会反弹
+if(canvasHeight - ball.y <= ball.r){
+    ball.y = canvasHeight-ball.r;
+    ball.vy = -ball.vy*0.5; // 添加阻力系数
 }
 ```
 
----
+#### Performance Optimization - 及时清空Canvas画布外面的小球
 
-### Performance Optimization - 及时清空Canvas画布外面的小球
-
-- 核心是`balls[cnt++]=balls[i]`这个表达式，我一开始也是有点懵逼。后来做了下试验就明白了。这个表达式的探讨我放在接下的这篇博文中    (・-・*)
+- 核心是`balls[cnt++]=balls[i]`这个表达式
 
 ```js
-//及时清空跳出画布的小球，优化页面的内存
-var cnt=0
-for(var i=0;i<balls.length;i++){
-    if(balls[i].x+radius>0&&balls[i].x-radius<canvasWidth){
-        //小球数组中的第0个到cnt-1个是在canvas画布中
-        balls[cnt++]=balls[i];
+// 及时清空跳出画布的小球，优化页面的内存
+var cnt = 0
+for(var i = 0; i < balls.length; i++){
+    if(balls[i].x + radius > 0 && balls[i].x - radius < canvasWidth){
+        // 小球数组中的第0个到cnt-1个是在canvas画布中
+        balls[cnt++] = balls[i];
     }
 }
-//Math.min();两个数取最小值
-while(balls.length>Math.min(250,cnt)){
-    balls.pop();//删除第cnt个到balls.length-1个数组
-    //删除前面的数组使用balls.shift();
+// Math.min();两个数取最小值
+while(balls.length > Math.min(250, cnt)){
+    balls.pop(); // 删除第cnt个到balls.length-1个数组
+    // 删除前面的数组使用balls.shift();
 }
 ```
 
@@ -2329,12 +2408,18 @@ while(balls.length>Math.min(250,cnt)){
 ### Clock Effect - 将倒计时的效果换成正常时钟效果
 
 ```js
-var ret = currentTime.getHours() * 3600
-        + currentTime.getMinutes() * 60
-        + currentTime.getSeconds();
+// 当前的时间计算
+function getCurrentShowTimeSeconds() {
+	var currentTime = new Date();
+	// getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
+	var ret = endTime.getTime() - currentTime.getTime();
+	// 将毫秒化成秒,ret要加上
+	ret = Math.round(ret / 1000);
+	return ret >= 0 ? ret : 0;
+}
 ```
 
-## ​canvas在web游戏开发的应用
+## canvas在web游戏开发的应用
 
 MDN的HTML5游戏开发教程：<https://developer.mozilla.org/zh-CN/docs/Games/Introduction_to_HTML5_Game_Development>
 
