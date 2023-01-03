@@ -1195,7 +1195,7 @@ arcTo() 方法文档：[HTML canvas arcTo() 方法 | 菜鸟教程 (runoob.com)](
   - 语法：`context.arc(x,y,r,sAngle,eAngle,counterclockwise*);`
   
   - 参数值：
-    
+  
     | 参数               | 描述                                             |
     | ---------------- | ---------------------------------------------- |
     | x                | 圆的中心的 x 坐标（横坐标）。                               |
@@ -1872,7 +1872,7 @@ arcTo() 方法文档：[HTML canvas arcTo() 方法 | 菜鸟教程 (runoob.com)](
 
 精灵图：
 
-![04.png](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\JavaScript笔记\JavaScript高级\img\04.png)
+![04.png](.\img\04.png)
 
 ```html
 <!DOCTYPE html>
@@ -2232,7 +2232,7 @@ digit =
 
 ### renderDigit方法-绘制圆心计算
 
-![renderDigit方法-绘制圆心计算.jpg](D:\Code\[MyProject]\FrontEndLearnNotes\docs\Document\JavaScript笔记\JavaScript高级\img\renderDigit方法-绘制圆心计算.jpg)
+![renderDigit方法-绘制圆心计算.jpg](.\img\renderDigit方法-绘制圆心计算.jpg)
 
 #### 由圆组成的数字绘制，圆形生成的计算
 
@@ -2471,7 +2471,7 @@ Canvas游戏开发教程：
   - 官网：[Konva - JavaScript 2d canvas library (konvajs.org)](https://konvajs.org/)
   
   - 特点：
-    
+
     - 小巧、使用方便、支持移动端和pc端
     - 支持丰富的事件处理操作
     - 支持类似JQuery的操作方式
