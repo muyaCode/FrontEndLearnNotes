@@ -62,12 +62,37 @@ HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。
 
 canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
 
----
+::: danger HTML5的canvas元素的兼容性
+Internet Explorer 9、Firefox、Opera、Chrome 和 Safari 支持 `<canvas>` 标签的属性及方法。
+**注意**：Internet Explorer 8 及更早的IE版本不支持 `<canvas>` 元素。
+:::
 
-canvas元素的兼容性：
+::: warning canvas的标准
 
-> Internet Explorer 9、Firefox、Opera、Chrome 和 Safari 支持 `<canvas>` 标签的属性及方法。
-> **注意**：Internet Explorer 8 及更早的IE版本不支持 `<canvas>` 元素。
+- 最新标准：[HTML Standard (whatwg.org)](https://html.spec.whatwg.org/multipage/)
+- 稳定版本的标准：[HTML Canvas 2D Context](https://www.w3.org/TR/2013/CR-2dcontext-20130806/)
+
+:::
+
+## Canvas的应用领域
+
+- **游戏开发**：canvas在基于Web的图像显示方面比Flash更加立体、更加精巧，canvas游戏在流畅度和跨平台方面更牛。
+  
+  - [25 超棒的 HTML5 Canvas 游戏](http://www.oschina.net/news/20143/top-25-best-html5-canvas-games-you-love-to-play)
+
+- **可视化数据**：数据图表，比如百度的ECharts：[Apache ECharts](https://echarts.apache.org/zh/index.html)
+
+- **banner广告**：Flash曾经辉煌的时代，智能手机还未曾出现。现在以及未来的智能机时代，HTML5技术能够在banner广告上发挥巨大作用，用Canvas实现动态的广告效果再合适不过。
+
+- **未来 => 模拟器**：无论从视觉效果还是核心功能方面来说，模拟器产品可以完全由JavaScript来实现。
+
+- **未来 => 远程计算机控制**：Canvas可以让开发者更好地实现基于Web的数据传输，构建一个完美的可视化控制界面。
+
+- **未来 => 图形编辑器**：Photoshop图形编辑器将能够100%基于Web实现。
+
+- **其他可嵌入网站的内容(多用于活动页面、特效)**：类似图表、音频、视频，还有许多元素能够更好地与Web融合，并且不需要任何插件。
+
+- **完整的canvas移动化应用**
 
 ## Canvas入门
 
@@ -2214,28 +2239,28 @@ digit =
 ```js
 // 绘制时钟的数字和冒号
 function renderDigit(x, y, num, cxt) {
-	cxt.fillStyle = "rgb(0, 102, 153)";
-	// 先绘制出1
-	for (var i = 0; i < digit[num].length; i++) {
-		for (var j = 0; j < digit[num][i].length; j++) {
-			if (digit[num][i][j] == 1) {
-				cxt.beginPath();
-				// 弧形的绘制方法：需要计算
-				cxt.arc(
-					// 圆心的绘制计算
-					x + j * 2 * (radius + 1) + (radius + 1),
-					y + i * 2 * (radius + 1) + (radius + 1),
-					radius,
-					0,
-					2 * Math.PI
-				);
-				cxt.closePath();
-				// cxt.stroke();
+    cxt.fillStyle = "rgb(0, 102, 153)";
+    // 先绘制出1
+    for (var i = 0; i < digit[num].length; i++) {
+        for (var j = 0; j < digit[num][i].length; j++) {
+            if (digit[num][i][j] == 1) {
+                cxt.beginPath();
+                // 弧形的绘制方法：需要计算
+                cxt.arc(
+                    // 圆心的绘制计算
+                    x + j * 2 * (radius + 1) + (radius + 1),
+                    y + i * 2 * (radius + 1) + (radius + 1),
+                    radius,
+                    0,
+                    2 * Math.PI
+                );
+                cxt.closePath();
+                // cxt.stroke();
 
-				cxt.fill();
-			}
-		}
-	}
+                cxt.fill();
+            }
+        }
+    }
 }
 ```
 
@@ -2257,12 +2282,12 @@ endTime.setTime(endTime.getTime()+3600*1000);
 ```js
 // 倒计时的时间计算
 function getCurrentShowTimeSeconds() {
-	var currentTime = new Date();
-	// getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
-	var ret = endTime.getTime() - currentTime.getTime();
-	// 将毫秒化成秒,ret要加上
-	ret = Math.round(ret / 1000);
-	return ret >= 0 ? ret : 0;
+    var currentTime = new Date();
+    // getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
+    var ret = endTime.getTime() - currentTime.getTime();
+    // 将毫秒化成秒,ret要加上
+    ret = Math.round(ret / 1000);
+    return ret >= 0 ? ret : 0;
 }
 ```
 
@@ -2306,25 +2331,25 @@ context.clearRect(0,0,context.canvas.width,context.canvas.height);
 ```js
 // 倒计时变化生成的彩色小球集合，并push到balls[]中
 function addBalls(x, y, num) {
-	for (var i = 0; i < digit[num].length; i++) {
-		for (var j = 0; j < digit[num][i].length; j++) {
-			if (digit[num][i][j] == 1) {
-				// 定义aBall
-				var aBall = {
-					// 这个圆心的计算和数字时间生成的圆心一样
-					x: x + j * 2 * (radius + 1) + (radius + 1),
-					y: y + i * 2 * (radius + 1) + (radius + 1),
-					// 幂运算
-					vx: Math.pow(-1, Math.floor(Math.random() * 1000)) * 5,
-					vy: -5, // 下落的速度
-					g: 1.5 + Math.random(),
-					color: colors[Math.floor(Math.random() * colors.length)],
-				};
-				// 将小球push进集合中，后面的操作和生成彩色小球的方法都需要用到
-				balls.push(aBall);
-			}
-		}
-	}
+    for (var i = 0; i < digit[num].length; i++) {
+        for (var j = 0; j < digit[num][i].length; j++) {
+            if (digit[num][i][j] == 1) {
+                // 定义aBall
+                var aBall = {
+                    // 这个圆心的计算和数字时间生成的圆心一样
+                    x: x + j * 2 * (radius + 1) + (radius + 1),
+                    y: y + i * 2 * (radius + 1) + (radius + 1),
+                    // 幂运算
+                    vx: Math.pow(-1, Math.floor(Math.random() * 1000)) * 5,
+                    vy: -5, // 下落的速度
+                    g: 1.5 + Math.random(),
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                };
+                // 将小球push进集合中，后面的操作和生成彩色小球的方法都需要用到
+                balls.push(aBall);
+            }
+        }
+    }
 }
 ```
 
@@ -2339,35 +2364,35 @@ function addBalls(x, y, num) {
 ```js
 // 对生成的彩色小球进行运动更新
 function updateBalls() {
-	for (var i = 0; i < balls.length; i++) {
-		balls[i].x += balls[i].vx;
-		balls[i].y += balls[i].vy;
-		balls[i].vy += balls[i].g;
+    for (var i = 0; i < balls.length; i++) {
+        balls[i].x += balls[i].vx;
+        balls[i].y += balls[i].vy;
+        balls[i].vy += balls[i].g;
 
-		// 当小球碰地后会反弹
-		if (canvasHeight - balls[i].y <= radius) {
-			balls[i].y = canvasHeight - radius;
-			// 添加阻力系数：物理碰撞现象（每次碰撞的反弹是上一次的倍数系数）
-			balls[i].vy = -balls[i].vy * 0.75;
-		}
-	}
+        // 当小球碰地后会反弹
+        if (canvasHeight - balls[i].y <= radius) {
+            balls[i].y = canvasHeight - radius;
+            // 添加阻力系数：物理碰撞现象（每次碰撞的反弹是上一次的倍数系数）
+            balls[i].vy = -balls[i].vy * 0.75;
+        }
+    }
 
-	// 及时清空跳出画布的小球，优化页面的内存
-	var cnt = 0;
-	for (var i = 0; i < balls.length; i++) {
-		if (balls[i].x + radius > 0 && balls[i].x - radius < canvasWidth) {
-			// 小球数组中的第0个到cnt-1个是在canvas画布中
-			balls[cnt++] = balls[i];
-		}
-	}
-	// Math.min();两个数取最小值
-	while (balls.length > Math.min(250, cnt)) {
-		balls.pop(); // 删除第cnt个到balls.length-1个数组
-		// 删除前面的数组使用balls.shift();
-	}
-	// while(balls.length>cnt){
-	//   balls.pop(); // 删除第cnt个到balls.length-1个数组
-	// }
+    // 及时清空跳出画布的小球，优化页面的内存
+    var cnt = 0;
+    for (var i = 0; i < balls.length; i++) {
+        if (balls[i].x + radius > 0 && balls[i].x - radius < canvasWidth) {
+            // 小球数组中的第0个到cnt-1个是在canvas画布中
+            balls[cnt++] = balls[i];
+        }
+    }
+    // Math.min();两个数取最小值
+    while (balls.length > Math.min(250, cnt)) {
+        balls.pop(); // 删除第cnt个到balls.length-1个数组
+        // 删除前面的数组使用balls.shift();
+    }
+    // while(balls.length>cnt){
+    //   balls.pop(); // 删除第cnt个到balls.length-1个数组
+    // }
 }
 ```
 
@@ -2410,12 +2435,12 @@ while(balls.length > Math.min(250, cnt)){
 ```js
 // 当前的时间计算
 function getCurrentShowTimeSeconds() {
-	var currentTime = new Date();
-	// getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
-	var ret = endTime.getTime() - currentTime.getTime();
-	// 将毫秒化成秒,ret要加上
-	ret = Math.round(ret / 1000);
-	return ret >= 0 ? ret : 0;
+    var currentTime = new Date();
+    // getTime() 方法可返回距 1970 年 1 月 1 日之间的毫秒数。
+    var ret = endTime.getTime() - currentTime.getTime();
+    // 将毫秒化成秒,ret要加上
+    ret = Math.round(ret / 1000);
+    return ret >= 0 ? ret : 0;
 }
 ```
 
@@ -2425,4 +2450,31 @@ MDN的HTML5游戏开发教程：<https://developer.mozilla.org/zh-CN/docs/Games/
 
 Canvas游戏开发教程：
 
-- 1.
+- 1.白鹭游戏引擎：egret引擎
+  
+  Egret引擎是一个开源免费的游戏框架，用于构建二维游戏、演示程序和其他图形界面交互应用等。Egret使用**TypeScript**脚本语言开发。当游戏完成最终的打包后，可以将程序转换为HTML5游戏。实现跨平台特性。
+  
+  Egret不仅仅是一个基于HTML5技术的游戏引擎，我们的产品线中除了Egret引擎还提供了很多辅助游戏开发的工具。**准确的来说，Egret是一套游戏开发的解决方案**。你可以使用Egret引擎来帮助你开发HTML5游戏，并运行在手机和PC端的浏览器中，同时也你可以使用Egret提供的相关工具搭建你自己的游戏开发工作流。
+  
+  - Egret官网：[白鹭科技-Egret](https://www.egret.com/products)
+  - 开源地址：[egret-labs/egret-core](https://github.com/egret-labs/egret-core)
+  - cocos官网：[Cocos - 全球领先的2D&3D引擎，游戏/智能座舱/AR/VR/角色/教育](https://www.cocos.com/)
+
+## Canvas库
+
+- **konva**：Konva.js是一个HTML5 Canvas JavaScript框架，它通过为桌面和移动应用程序启用画布交互性来扩展2D上下文
+  
+  - GitHub：[konvajs/konva](https://github.com/konvajs/konva)
+  
+  - npm：[konva - npm (npmjs.com)](https://www.npmjs.com/package/konva)
+  
+  - 官网：[Konva - JavaScript 2d canvas library (konvajs.org)](https://konvajs.org/)
+  
+  - 特点：
+    
+    - 小巧、使用方便、支持移动端和pc端
+    - 支持丰富的事件处理操作
+    - 支持类似JQuery的操作方式
+    - 开源，可以随意更改
+    - 社区更新比较活跃，github托管源码
+    - 性能也不错
