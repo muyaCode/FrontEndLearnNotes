@@ -111,6 +111,59 @@ export default {
           ]
         },
         {
+          text: "JavaScript的对象的属性和方法",
+          items: [
+            {
+              text: "JavaScript中的对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript中的对象",
+            },
+            {
+              text: "JavaScript_Object的属性和方法",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Object的属性和方法",
+            },
+            {
+              text: "JavaScript_Array对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Array对象",
+            },
+            {
+              text: "JavaScript_String对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_String对象",
+            },
+            {
+              text: "JavaScript_Boolean对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Boolean对象",
+            },
+            {
+              text: "JavaScript_Number对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Number对象",
+            },
+            {
+              text: "JavaScript_Math对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Math对象",
+            },
+            {
+              text: "JavaScript_Date对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Date对象",
+            },
+            {
+              text: "JavaScript_RegExp对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_RegExp对象",
+            },
+            {
+              text: "JavaScript_Error对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_Error对象",
+            },
+            {
+              text: "JavaScript_全局对象(属性和函数)",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_全局对象(属性和函数)",
+            },
+            {
+              text: "JavaScript_运算符对象",
+              link: "/Document/JavaScript笔记/JavaScript的对象的属性和方法/JavaScript_运算符对象",
+            },
+          ]
+        },
+        {
           text: "JavaScript高级",
           items: [
             {

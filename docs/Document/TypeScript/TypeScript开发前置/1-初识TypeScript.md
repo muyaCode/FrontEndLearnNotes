@@ -1,5 +1,9 @@
 # 1-初识TypeScript
 
+菜鸟教程-TypeScript教程文档：<https://www.runoob.com/typescript/ts-tutorial.html>
+
+---
+
 ![TS与JS.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28ca61cc160c417c8497a00defdca5f0~tplv-k3u1fbpfcp-watermark.image)
 
 ## TypeScript 的介绍
