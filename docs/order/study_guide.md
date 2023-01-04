@@ -5,6 +5,23 @@
 🌟从HTML+CSS+JavaScript到Web浏览器-用户的体验-各种工具框架与测试-服务端网页编程--->**😊前端开发的学习路径😊**：<https://developer.mozilla.org/zh-CN/docs/Learn/HTML>
 
 ---
+各种编程语言和工具的速查表，带有[源码仓库](https://github.com/jaywcjlove/reference)：<https://wangchujiang.com/reference/>
+
+---
+phind：<https://phind.com/>
+
+一个专门为程序员开发的搜索引擎，可以用自然语言输入你的问题，比如"PHP 的 hello world 示例"，它会直接给出答案。
+
+---
+在线编辑器：<https://www.yuque.com/ruanyf/weekly/free-online-code-editor>
+
+- codepen：<https://codepen.io/>
+
+- codesandbox：<https://codesandbox.io/>
+
+- 码上掘金代码编辑器：<https://code.juejin.cn/>
+
+---
 阮一峰开源书籍《ES6标准入门》：<https://es6.ruanyifeng.com/>
 
 MDN工具网址：专门查询 HTML标签、CSS属性和使用、JavaScript的API方法和兼容性或者使用 等等Web API

@@ -183,6 +183,8 @@ html5的这些标签，语义化更明确
 
 文档：[HTML input 标签 | 菜鸟教程 (runoob.com)](https://www.runoob.com/tags/tag-input.html)
 
+手机浏览器的网页输入框（input 元素）可以用`capture`属性，直接获取摄像头的数据，不需要 JS 代码
+
 使用示例：
 
 ```html

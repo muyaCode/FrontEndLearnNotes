@@ -944,6 +944,10 @@ export default {
               text: "esbuild",
               link: "/Document/Project-Engineering/PackToBuild/esbuild",
             },
+            {
+              text: "Turbopack",
+              link: "/Document/Project-Engineering/PackToBuild/Turbopack",
+            },
           ],
         },
       ]
@@ -1167,6 +1171,28 @@ export default {
       ]
     },
     {
+      text: "😗Deno笔记",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: "Deno",
+          link: "/Document/Deno/Deno",
+        },
+      ]
+    },
+    {
+      text: "😗Bun笔记",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: "Bun",
+          link: "/Document/Bun/Bun",
+        },
+      ]
+    },
+    {
       text: "😀数据库的使用",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
@@ -1254,6 +1280,15 @@ export default {
             },
           ]
         },
+        {
+          text: "Postgres数据库",
+          items: [
+            {
+              text: "Postgres数据库",
+              link: "/Document/数据库的使用/Postgres数据库/Postgres数据库入门",
+            },
+          ]
+        },
       ]
     },
     {
@@ -1296,6 +1331,29 @@ export default {
         {
           text: "Electron项目打包优化配置",
           link: "/Document/Electron/Electron项目打包优化配置",
+        },
+      ]
+    },
+    {
+      text: "😯Tauri框架",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: "Tauri框架入门",
+          link: "/Document/Tauri框架/Tauri框架入门",
+        },
+        {
+          text: "Tauri相关技巧",
+          link: "/Document/Tauri框架/Tauri相关技巧",
+        },
+        {
+          text: "Tauri打包遇见问题及解决",
+          link: "/Document/Tauri框架/Tauri打包遇见问题及解决",
+        },
+        {
+          text: "Rust语言学习",
+          link: "/Document/Tauri框架/Rust语言学习",
         },
       ]
     },
@@ -1352,25 +1410,36 @@ export default {
       ]
     },
     {
-      text: "😦待定5",
+      text: "😦JavaScript数据结构和算法",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
       items: [
         {
-          text: "哈哈哈",
+          text: "JavaScript面试题",
+          link: "/Document/JavaScript数据结构和算法/JavaScript算法",
+        },
+      ]
+    },
+    {
+      text: "😦前端面试题",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: "JavaScript面试题",
           items: [
             {
-              text: "",
-              link: "/",
+              text: "JavaScript面试题",
+              link: "/Document/前端面试题/JavaScript面试题/JavaScript面试题",
             },
           ],
         },
         {
-          text: "哈哈哈",
+          text: "Vue面试题",
           items: [
             {
-              text: "",
-              link: "/",
+              text: "Vue面试题",
+              link: "/Document/前端面试题/Vue面试题/Vue面试题",
             },
           ],
         },

@@ -744,6 +744,93 @@ bind方法的使用例子：通过对象,调用方法,产生随机数
     - 那到底以谁 bind 的时候传递的参数为准呢还是以调用的时候传递的参数为准
     - 两者合并：bind 的时候传递的参数和调用的时候传递的参数会合并到一起，传递到函数内部
 
+## 不带括号执行 JavaScript 函数的七种方法
+
+不带括号执行 JavaScript 函数的七种方法：
+
+```js
+alert`1337`
+throw onerror = alert,1337
+Function`x${'alert\x281337\x29'}x`
+'alert\x281337\x29'instanceof{[Symbol['hasInstance']]:eval}
+valueOf = alert;window + ''
+x = new DOMMatrix;matrix = alert;x.a = 1337;location = 'javascript'+':'+x
+```
+
+下代码所示：alert`123`alert
+
+```js
+function x(){
+   alert(arguments[0]);
+   alert(arguments[1]);
+}
+x`x${'ale'+'rt(1)'}x`
+```
+
+这里发生的事情是所有字符串都作为数组添加到第一个参数中，第二个参数获取字符串，但等等，为什么字符串作为第二个参数传递给函数？好吧，字符串的处理方式与占位符不同，没有占位符的普通字符串将作为数组添加到第一个参数中，而占位符将作为其类型的新参数添加。最后一点很重要，我当时没有意识到的是占位符被添加为参数，其类型而不是字符串！以下代码对此进行了演示：alert(1)alert(1)
+
+```js
+function x(){
+   alert(arguments[0]);
+   arguments[1]('hello')
+}
+function y(str){
+   alert(str);
+}
+x`x${y}x`
+```
+
+太好了，这是很酷的行为，这意味着我们可以调用函数并使用任何类型的多个参数。
+但是我们有一个问题，在标记模板中使用字符串时，它们将始终作为第一个参数添加，从而破坏使用第一个参数的函数。我们在这里的目标是使用我们选择的参数调用函数。
+例如，我们可能想要调用，因为第一个参数接受一个函数或字符串，第三个参数使用该值调用该函数：setTimeout
+
+```js
+setTimeout(alert, 0, 'I get passed to alert')
+```
+
+让我们尝试调用：setTimeout
+
+```js
+setTimeout`${alert}${0}${1}` // Uncaught SyntaxError: Unexpected token ','
+```
+
+我们可以再次使用自定义函数看到发生了什么：
+
+```js
+function x(){
+   console.log(arguments);
+}
+x`${alert}${0}${1}`
+```
+
+控制台的屏幕截图，显示发送到函数的参数
+
+因此，我们可以看到第一个参数包含一个空白字符串数组，最后的另一个数组再次充满空白字符串。当将这些数组转换为字符串时，我们会得到一堆逗号，这会导致语法错误。不知何故，我们需要函数忽略第一个参数，你怎么做？好吧，您可以使用，因为第一个参数将是分配给函数的“this”的数组，现在警报将作为第一个参数传递给函数，但是......setTimeoutsetTimeoutsetTimeout.callsetTimeout
+
+```js
+setTimeout.call`${alert}${0}${1}`//Illegal invocation
+```
+
+因为你不再直接调用函数，JavaScript 会抛出一个异常来阻止你调用函数，因为“this”不再是窗口对象。我想游戏结束了，然后我意识到过去我做过一些JS黑客和其他。它们允许您调用函数而不会出现非法调用错误：[].sort
+
+```js
+[].sort.call`${alert}1337`
+```
+
+当然，您可以使用其他函数，例如 和其他数组方法，例如：evalmap
+
+```js
+[].map.call`${eval}\\u{61}lert\x281337\x29`
+```
+
+也可以使用：Reflect
+
+显示一些使用 Reflect.apply 调用导航函数的代码
+
+上面使用 Chrome 中的新方法导致有效负载来自。
+
+为了调用，您需要为函数提供正确的“thisObject”，这是在第二个参数中完成的。在第三个参数中使用，该参数必须是发送到函数的参数数组。使用设置和应用的方法，您可以分配给几乎任何对象或调用任何函数！请注意，我使用“window.name”来隐藏有效负载，通常有效负载将来自另一个页面或域，方法是将其传递到跨域传递的窗口的“name”属性中。navigation.navigatewindow.namenavigateReflect.applywindow.nameReflect
+
 ## 函数的其它成员
 
 - arguments
