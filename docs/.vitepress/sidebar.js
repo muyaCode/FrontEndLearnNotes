@@ -1358,6 +1358,33 @@ export default {
       ]
     },
     {
+      text: "😪Flutter框架学习",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: "Flutter框架入门",
+          link: "/Document/Flutter框架/Flutter框架入门",
+        },
+        {
+          text: "Dart语言学习",
+          link: "/Document/Flutter框架/Dart语言学习",
+        },
+        {
+          text: "Flutter开发",
+          link: "/Document/Flutter框架/Flutter开发",
+        },
+        {
+          text: "Flutter实战",
+          link: "/Document/Flutter框架/Flutter实战",
+        },
+        {
+          text: "Flutter遇见问题及解决",
+          link: "/Document/Flutter框架/Flutter遇见问题及解决",
+        },
+      ]
+    },
+    {
       text: "😙Elasticsearch",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
