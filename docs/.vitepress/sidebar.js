@@ -148,6 +148,15 @@ export default {
           ]
         },
         {
+          text: "JavaScript功能源码实现",
+          items: [
+            {
+              text: "手写Promise",
+              link: "/Document/JavaScript笔记/JavaScript功能源码实现/手写Promise",
+            }
+          ]
+        },
+        {
           text: "ECMAScript语法",
           items: [
             {
@@ -1182,7 +1191,7 @@ export default {
       ]
     },
     {
-      text: "😗Bun笔记",
+      text: "😰Bun笔记",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
       items: [
@@ -1437,7 +1446,7 @@ export default {
       ]
     },
     {
-      text: "😦JavaScript数据结构和算法",
+      text: "😭JavaScript数据结构和算法",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
       items: [
@@ -1448,7 +1457,7 @@ export default {
       ]
     },
     {
-      text: "😦前端面试题",
+      text: "😇前端面试题",
       collapsible: true, // 可折叠
       collapsed: true, // 初始不折叠
       items: [
