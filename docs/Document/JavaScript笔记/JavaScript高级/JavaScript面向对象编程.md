@@ -1740,7 +1740,7 @@ call方法文档：[Function.prototype.call() - JavaScript | MDN (mozilla.org)](
 
 ## ES6的class类的面向对象编程
 
-待定
+视频：<https://www.bilibili.com/video/BV1i54y1v7bE/?spm_id_from=333.999.0.0&vd_source=5f0c99b3deddffe219938763769b15ac>
 
 ### 面向对象编程总结
 
