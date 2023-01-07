@@ -1195,7 +1195,7 @@ arcTo() 方法文档：[HTML canvas arcTo() 方法 | 菜鸟教程 (runoob.com)](
   - 语法：`context.arc(x,y,r,sAngle,eAngle,counterclockwise*);`
   
   - 参数值：
-  
+
     | 参数               | 描述                                             |
     | ---------------- | ---------------------------------------------- |
     | x                | 圆的中心的 x 坐标（横坐标）。                               |
@@ -2478,3 +2478,94 @@ Canvas游戏开发教程：
     - 开源，可以随意更改
     - 社区更新比较活跃，github托管源码
     - 性能也不错
+
+## WebGL
+
+- WebGL是一种Javascript的3D图形接口，把JavaScript和OpenGL ES 2.0结合在一起。
+
+- Canvas是HTML5的画布元素，在使用Canvas时，需要用到Canvas的上下文，可以用2D上下文绘制二维的图像，也可以使用3D上下文绘制三维的图像，其中3D上下文就是指WebGL。
+  
+  - getContext()方法的四个参数("webgl"就是其中之一)：[HTMLCanvasElement.getContext() - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext#%E5%8F%82%E6%95%B0)
+
+- OpenGL是开放式图形标准，跨编程语言、跨平台，Javascript、Java 、C、C++ 、 python 等都能支持OpenGL ，OpenGL的Javascript实现就是WebGL。OpenGL ES 2.0是OpenGL的子集，针对手机、游戏主机等嵌入式设备而设计。
+
+---
+
+OpenGL、WebGL、Canvas、Three.js四者关系
+
+OpenGL：3D绘图标准
+
+WebGL：OpenGL + JavaScript
+
+Canvas：WebGL + Canvas 2D
+
+Three.js：一个基于WebGL封装的库
+
+类似于：
+
+ECMAscript：脚本语言规范
+
+JavaScript：脚本语言
+
+jQuery: 一个基于JavaScript封装的库
+
+简单一句话概括：WebGL和Three.js的关系，相当于JavaScript和jQuery的关系。
+
+---
+
+MDN的WebGL文档：[WebGL - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API)
+
+WebGL库：
+
+- three.js：Three.js是基于webGL的封装的一个易于使用且轻量级的3D库，Three.js对WebGL提供的接口进行了非常好的封装，简化了很多细节，大大降低了学习成本，极大地提高了性能，功能也非常强大。
+  
+  Three.js应用场景有哪些？
+  
+  Web 3D游戏、3D物体模型展示、数据可视化、Web VR、其它特殊效果展示。
+  
+  - 官网：[Three.js – JavaScript 3D Library (threejs.org)](https://threejs.org/)
+  
+  - GitHub：[mrdoob/three.js: JavaScript 3D Library. (github.com)](https://github.com/mrdoob/three.js)
+  
+  - 中文网：
+
+    - [Three.js中文网 (webgl3d.cn)](http://www.webgl3d.cn/)
+
+    - [Three.js 中文教程 | 参考手册 | 使用指南 | 动画特效实例 | 踏得网 (techbrood.com)](https://techbrood.com/threejs/docs/)
+
+    - [three.js 中文 - Javascript 3D 库 (threejs.online)](https://www.threejs.online/)
+
+    - [入门 · Three.js 入门 (sogrey.top)](https://sogrey.top/Three.js-start/start/#top)
+
+    - [Three.js教程 (webgl3d.cn)](http://www.webgl3d.cn/Three.js/)
+
+- d3.js：图表库
+  
+  - 官网：[D3.js - Data-Driven Documents (d3js.org)](https://d3js.org/)
+  
+  - GitHub：[d3/d3: Bring data to life with SVG, Canvas and HTML. (github.com)](https://github.com/d3/d3)
+  
+  - 中文网：
+
+    - [D3js: Data-Driven Documents](https://www.d3js.org.cn/)
+
+    - [xswei/d3js_doc: D3js中文文档 D3中文 (github.com)](https://github.com/xswei/d3js_doc)
+
+- PlayCanvas：
+  
+  - 官网：[PlayCanvas 开发者资源 | Learn PlayCanvas](https://developer.playcanvas.com/zh/)
+  
+  - GitHub：[playcanvas/engine: Fast and lightweight JavaScript game engine built on WebGL and glTF (github.com)](https://github.com/playcanvas/engine)
+
+- Babylon.js：
+  
+  - GitHub：[BabylonJS/Babylon.js：Babylon.js是一个强大、美观、简单、开放的游戏和渲染引擎，它被打包在一个友好的JavaScript框架中。 (github.com)](https://github.com/BabylonJS/Babylon.js)
+
+- filament：
+  
+  - GitHub：[google/filament：Filament是一个基于物理的实时渲染引擎，适用于Android，iOS，Windows，Linux，macOS和WebGL2。 (github.com)](https://github.com/google/filament)
+
+- ClayGL：
+  
+  - GitHub：[pissang/claygl: A WebGL graphic library for building scalable Web3D applications (github.com)](https://github.com/pissang/claygl)
+  
