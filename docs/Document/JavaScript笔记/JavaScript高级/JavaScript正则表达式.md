@@ -297,7 +297,7 @@ console.log(regex.test(strText)); // true
 文档：[RegExp.prototype.exec() - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec#%E8%AF%AD%E6%B3%95)
 
 > exec() 方法用于检索字符串中的正则表达式的匹配。
-> 
+>
 > 该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
 
 ###### 语法
@@ -1183,7 +1183,7 @@ var r = new RegExp("\\u0061");
 
 RegExp() 构造函数的参数只接受字符串，而不是字符模式。在字符串中，任何字符加反斜杠还表示字符本身，如字符串“\u”就被解释为 u 本身，所以对于“\u0061”字符串来说，在转换为字符模式时，就被解释为“u0061”，而不是“\u0061”，此时反斜杠就失去转义功能。解决方法：在字符 u 前面加双反斜杠。
 
-**案例:过滤敏感词汇**
+**案例:过滤敏感词汇**：
 
 ```js
 <textarea name="" id="message"></textarea> <button>提交</button>
@@ -1366,3 +1366,9 @@ function getRuleByRuleName(rules, ruleName) {
   return rule;
 }
 ```
+
+## 相关资源和库
+
+any-rule，地址：<https://any86.github.io/any-rule/>
+
+- any-rule是一个强大且开源的正则表达式库，目前已经收集了82条常用的正则表达式，如常用的手机号验证，邮箱验证，链接验证，车牌验证等，并且支持web，vscode，idea等多个平台，在web端可以在线验证和一键复制正则表达式，而在编辑器上，我们只需要安装对应的插件，即可方便的生成我们所需要的正则表达式，非常的方便
