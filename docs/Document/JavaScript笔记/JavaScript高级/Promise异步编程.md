@@ -246,7 +246,7 @@ p3.catch(function(e) {
 
 文档：[Promise.all() - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 
-`Promise.all()`方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+`Promise.all()`方法用于将多个 Promise 实例或异步任务的并发运行，结果包装成一个新的 Promise 实例。
 
 ```javascript
 const p = Promise.all([p1, p2, p3]);

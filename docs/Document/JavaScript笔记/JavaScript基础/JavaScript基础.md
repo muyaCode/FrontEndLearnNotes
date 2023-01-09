@@ -1,6 +1,11 @@
 # JavaScript基础
 
-MDN的JavaScript文档：<https://developer.mozilla.org/zh-CN/docs/Web/JavaScript>
+JavaScript介绍：
+
+- <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Overview#functions>
+- <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript>
+
+MDN的JavaScript从入门到高级文档：<https://developer.mozilla.org/zh-CN/docs/Web/JavaScript>
 
 JavaScript菜鸟教程基础文档：<https://www.runoob.com/js/js-tutorial.html>
 

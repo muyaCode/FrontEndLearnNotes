@@ -1504,7 +1504,7 @@ export default {
       collapsed: true, // 初始不折叠
       items: [
         {
-          text: "JavaScript面试题",
+          text: "JavaScript算法",
           link: "/Document/JavaScript数据结构和算法/JavaScript算法",
         },
       ]
@@ -1527,8 +1527,20 @@ export default {
           text: "JavaScript面试题",
           items: [
             {
-              text: "JavaScript面试题",
-              link: "/Document/前端面试题/JavaScript面试题/JavaScript面试题",
+              text: "JavaScript函数面试题",
+              link: "/Document/前端面试题/JavaScript面试题/JavaScript函数面试题",
+            },
+            {
+              text: "手写实现JS方法",
+              link: "/Document/前端面试题/JavaScript面试题/手写实现JS方法",
+            },
+            {
+              text: "this指向题",
+              link: "/Document/前端面试题/JavaScript面试题/this指向题",
+            },
+            {
+              text: "其他面试题",
+              link: "/Document/前端面试题/JavaScript面试题/其他面试题",
             },
           ],
         },

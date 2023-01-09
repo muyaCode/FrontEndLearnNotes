@@ -525,7 +525,11 @@ console.dir(p2);
 
 构造函数 Person 实例化 new Person() 得到 Person 实例对象
 
-Person 实例对象`per` 有 `__proto__`属性：`per.__proto__`
+Person 实例对象`per` (Object)有 `__proto__`属性：`per.__proto__`
+
+`__proto__`是Object上的一个属性
+
+ 对象的 `__proto__` 保存着该对象的构造函数的 `prototype` 属性
 
 ![构造函数-实例-原型之间的关系](./img/构造函数-实例-原型之间的关系.png)
 
@@ -1414,7 +1418,7 @@ person.sayHello()
 
     // 原型对象拷贝继承原型对象成员
     for(var key in Person.prototype){
-      obj2[key]=Person.prototype[key];
+      obj2[key] = Person.prototype[key];
     }
     console.dir(obj2);
     obj2.play();
