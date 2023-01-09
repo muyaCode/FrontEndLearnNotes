@@ -1539,6 +1539,10 @@ export default {
               link: "/Document/前端面试题/JavaScript面试题/this指向题",
             },
             {
+              text: "类型转换题",
+              link: "/Document/前端面试题/JavaScript面试题/类型转换题",
+            },
+            {
               text: "其他面试题",
               link: "/Document/前端面试题/JavaScript面试题/其他面试题",
             },
