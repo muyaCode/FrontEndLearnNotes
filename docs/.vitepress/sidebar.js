@@ -62,6 +62,14 @@ export default {
               link: "/Document/HTML和CSS/CSS/CSS开发技巧",
             },
             {
+              text: "CSS布局总结",
+              link: "/Document/HTML和CSS/CSS/CSS布局总结",
+            },
+            {
+              text: "CSS响应式和自适应",
+              link: "/Document/HTML和CSS/CSS/CSS响应式和自适应",
+            },
+            {
               text: "CSS工程化(模块化)方案",
               link: "/Document/HTML和CSS/CSS/CSS工程化(模块化)方案",
             },
