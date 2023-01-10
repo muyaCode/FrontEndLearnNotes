@@ -6,6 +6,7 @@ export default {
       items: [
         { text: "学习指南", link: "/order/study_guide" },
         { text: "markdown图标", link: "/order/markdown图标" },
+        { text: "软件镜像地址合集", link: "/order/软件镜像地址合集" },
       ],
     },
     {
@@ -490,19 +491,6 @@ export default {
             {
               text: "",
               link: "/Document/Front-end-devFramework/Vue3/Vue服务端渲染/",
-            },
-          ],
-        },
-        {
-          text: "搭建在线文档网站",
-          items: [
-            {
-              text: "01_VuePress搭建在线文档",
-              link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/01_VuePress搭建在线文档",
-            },
-            {
-              text: "02_给VitePress添加algolia搜索",
-              link: "/Document/Front-end-devFramework/Vue3/搭建在线文档网站/02_给VitePress添加algolia搜索",
             },
           ],
         },
@@ -1465,6 +1453,52 @@ export default {
         {
           text: "CoffeeScript",
           link: "/Document/CoffeeScript/CoffeeScript",
+        },
+      ],
+    },
+    {
+      text: "😎搭建在线博客或文档网站",
+      collapsible: true, // 可折叠
+      collapsed: true, // 初始不折叠
+      items: [
+        {
+          text: 'VitePress和VuePress搭建在线博客或文档',
+          items: [
+            {
+              text: "01_VuePress搭建在线文档",
+              link: "/Document/搭建在线博客或文档网站/VitePress和VuePress搭建在线博客或文档/01_VuePress搭建在线文档",
+            },
+            {
+              text: "02_给VitePress添加algolia搜索",
+              link: "/Document/搭建在线博客或文档网站/VitePress和VuePress搭建在线博客或文档/02_给VitePress添加algolia搜索",
+            },
+          ]
+        },
+        {
+          text: '基于hexo框架搭建博客',
+          items: [
+            {
+              text: "hexo框架的介绍和使用",
+              link: "/Document/搭建在线博客或文档网站/基于hexo框架搭建博客/hexo框架的介绍和使用",
+            },
+            {
+              text: "",
+              link: "/Document/搭建在线博客或文档网站/基于hexo框架搭建博客/",
+            },
+          ]
+        },
+        {
+          text: 'Obsidian知识管理软件',
+          items: [
+            {
+              text: "玩转Obsidian",
+              link: "/Document/搭建在线博客或文档网站/Obsidian知识管理软件/玩转Obsidian",
+            },
+            {
+              text: "Obsidian插件开发相关",
+              link: "/Document/搭建在线博客或文档网站/Obsidian知识管理软件/Obsidian插件开发相关",
+            },
+          ]
         },
       ],
     },
