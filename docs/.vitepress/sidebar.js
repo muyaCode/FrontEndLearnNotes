@@ -259,6 +259,27 @@ export default {
             },
           ]
         },
+        {
+          text: "JavaScript解决方案",
+          items: [
+            {
+              text: "JavaScript代码混淆和逆向",
+              link: "/Document/JavaScript笔记/JavaScript解决方案/JavaScript代码混淆和逆向",
+            },
+            {
+              text: "",
+              link: "/Document/JavaScript笔记/JavaScript解决方案/",
+            },
+            {
+              text: "",
+              link: "/Document/JavaScript笔记/JavaScript解决方案/",
+            },
+            {
+              text: "",
+              link: "/Document/JavaScript笔记/JavaScript解决方案/",
+            },
+          ]
+        }
       ]
     },
     {
