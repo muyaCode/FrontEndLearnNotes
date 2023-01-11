@@ -1084,6 +1084,14 @@ console.log( new \u0077\u0069\u006e\u0064\u006f\u0077['\u0044\u0061\u0074\u0065'
 
 ##### eval加密
 
+源码原理解析：[JavaScript高手进阶：详解Eval加密 - 在线工具-wetools.com微工具](http://www.wetools.com/blog/624c142eec897.html)
+
+工具：[js在线加密解密(eval方法)工具|evalPackage解密解密_懒人工具|www.ab173.com](http://www.ab173.com/gongju/enc/eval_package.php)
+
+菜鸟工具：[菜鸟工具 - 不止于工具 (runoob.com)](https://c.runoob.com/)
+
+
+
 ---
 
 ##### 内存爆破
