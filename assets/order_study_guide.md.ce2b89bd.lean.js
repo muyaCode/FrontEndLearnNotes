@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t,d as a}from"./app.661b9247.js";const f=JSON.parse('{"title":"学习指南","description":"","frontmatter":{},"headers":[],"relativePath":"order/study_guide.md","lastUpdated":1672849967000}'),o={name:"order/study_guide.md"},s=a("",24),p=[s];function n(l,c,d,i,h,u){return t(),r("div",null,p)}const g=e(o,[["render",n]]);export{f as __pageData,g as default};
