@@ -20,6 +20,8 @@ Defensive CSS：<https://defensivecss.dev/>
 
 [纯 CSS 实现多标签自动显示超出数量 - 掘金 (juejin.cn)](https://juejin.cn/post/7352785768094203913)
 
+[分享css的一些小技巧 - 掘金 (juejin.cn)](https://juejin.cn/post/7383205958828671013)
+
 ## CSS 阴影技巧与细节
 
 最近一个新的项目，CSS-Inspiration，挖掘了其他很多有关 CSS 阴影的点子，是之前的文章没有覆盖到的新内容，而且有一些很有意思，遂打算再起一篇。

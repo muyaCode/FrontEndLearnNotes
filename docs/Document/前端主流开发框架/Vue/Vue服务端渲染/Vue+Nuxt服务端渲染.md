@@ -1,3 +1,18 @@
+# 待定文章
+
+- [Nuxt3 实战 (一)：初始化项目-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515151)
+- [Nuxt3 实战 (二)：配置 Eslint、Prettierrc、Husky等项目提交规范-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515226)
+- [Nuxt3 实战 (三)：使用 release-it 自动管理版本号和生成 CHANGELOG-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515282)
+- [Nuxt3 实战 (四)：安装 Nuxt UI 和配置 Typescript 类型检查-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515295)
+- [Nuxt3 实战 (五)：Header 头部布局-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515297)
+- [Nuxt3 实战 (六)：Footer 底部布局-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1515305)
+- [Nuxt3 实战 (七)：配置 Supabase 数据库-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1518175)
+- [Nuxt3 实战 (八)：优雅的实现暗黑主题模式-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1534431)
+- [Nuxt3 实战 (九)：使用 Supabase 实现 Github 认证鉴权-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1535988)
+- [Nuxt3 实战 (十)：使用 Supabase 实现 RESTful 风格 API 接口-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1541606)
+- [Nuxt3 实战 (十一)：添加路由 Transition 过渡效果和 Loading 动画-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1542865)
+- [Nuxt3 实战 (十二)：SEO 搜索引擎优化指南-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/1549118)
+
 # Vue+Nuxt 服务端渲染
 
 ## Nuxt 介绍

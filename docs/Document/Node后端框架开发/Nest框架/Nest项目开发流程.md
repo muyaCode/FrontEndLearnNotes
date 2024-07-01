@@ -1,5 +1,7 @@
 # Nest项目开发流程
 
+[NestJS学习之优秀项目分析与最佳实践 - 掘金 (juejin.cn)](https://juejin.cn/post/7281570246111576120)
+
 ## 使用工具
 
 - 浏览器

@@ -1,6 +1,6 @@
-# GitHub 仓库辅助工具
+# GitHub仓库辅助工具和实用技巧
 
-[GitHub Trends](https://github-trends.com/)
+### [GitHub Trends](https://github-trends.com/)
 
 ![img](https://cdn.beekka.com/blogimg/asset/202302/bg2023020902.webp)
 
@@ -30,7 +30,7 @@ https://github.dev/[用户名]/[仓库名]
 
 **操作步骤**
 
-1. 打开[github.com/lodash/loda…](https://github.com/lodash/lodash)
+1. 打开：https://github.com/lodash/lodash
 
 2. 按下“T”键
 
@@ -50,39 +50,33 @@ https://github.dev/[用户名]/[仓库名]
 
 #### 安装 octree 或者 sourcegraph 插件实现 code 在线浏览
 
-## 2.1 使用"."按键
+### 2.1 使用"."按键
 
-1. 打开[github.com/vuejs/vue](https://github.com/vuejs/vue)
+1. 打开：https://github.com/vuejs/vue
 
 2. 按下"."键
 
-3. 接着你会被重定向到 [github.dev/vuejs/vue](https://github.dev/vuejs/vue)
+3. 接着你会被重定向到：https://github.dev/vuejs/vue
 
-4. 是不是很爽，和本地 vscode 一模一样
+4. 和本地 vscode 一模一样
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e8528d08596345c69e8e60fc4b58093d~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-## 2.2 使用"github1s.com"
+### 2.2 使用"github1s.com"
 
 仅仅需要将“github”更改为“github1s”，咱们就可以达到与方法 1 相同的效果！
 
-1. 打开 [github.com/vuejs/vue](https://github.com/vuejs/vue)
-
-2. 将 url 修改为[github1s.com/vuejs/vue](https://github1s.com/vuejs/vue)
-
-3. 神奇不...
+1. 打开：https://github.com/vuejs/vue
+2. 将 url 修改为：https://github1s.com/vuejs/vue
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e96ef7decc344503bd3cfaf50c10388a~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
-## 2.3 使用 “gitpod.com/#xxx”
+### 2.3 使用 “gitpod.com/#xxx”
 
 第三种更牛逼了，你甚至可以在线运行 js，只需要在`gitpod.com/#`后添加项目地址就可以达到效果。
 
-1. 打开[github.com/qianlongo/f…](https://github.com/qianlongo/fe-handwriting)
-
+1. 打开：https://github.com/qianlongo/fe-handwriting
 2. 在地址栏最前面添加 gitpod.com/#
-
-3. 完美...
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9994ef41e6b44029ad347dba82cdcdaa~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
@@ -106,11 +100,11 @@ https://github.dev/[用户名]/[仓库名]
 
 既然我们可以链接到一行代码，那可以链接到多行吗？当然可以了！！！
 
-1. 打开[github.com/qianlongo/f…](https://github.com/qianlongo/fe-handwriting/blob/master/17.quick-sort.js)
+1. 打开：https://github.com/qianlongo/fe-handwriting/blob/master/17.quick-sort.js
 
 2. 按住“shift”键并单击左侧的行号
 
-3. 复制链接（[github.com/qianlongo/f…](https://github.com/qianlongo/fe-handwriting/blob/master/17.quick-sort.js%23L8-L24%EF%BC%89)
+3. 复制链接：https://github.com/qianlongo/fe-handwriting/blob/master/17.quick-sort.js%23L8-L24%EF%BC%89
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4a217cffe814e8887eca41b8279a0b3~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 
@@ -127,3 +121,28 @@ https://github.dev/[用户名]/[仓库名]
 github 提供了许多快捷键来帮助我们阅读代码，但记住它们真不是一件简单的事，咱们可以使用“Shift”+“？”显示快捷方式列表。
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4ac4346e500441b5abaca03431e6a5f4~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp)
+
+## 项目的代码搜索
+
+[Search (github.com)](https://github.com/search?type=code)
+
+## 如何发现优秀开源项目
+
+[GitHub 上能挖矿的神仙技巧 - 如何发现优秀开源项目 · Issue #45 · biaochenxuying/blog](https://github.com/biaochenxuying/blog/issues/45)
+
+## GitHub 统计：Gitstar Ranking
+
+介绍
+
+- GitHub 全球排名：这个排名很权威。
+
+- 每个在 GitHub 开源的开发者，都想知道自己在 GitHub 上的排名吧，很简单只要在上面输入框输入自己的 GitHub 用户名即可，就可以看到自己的统计数据了。
+
+网址
+
+- 官网
+  - [gitstar-ranking.com/](https://link.juejin.cn/?target=https%3A%2F%2Fgitstar-ranking.com%2F)
+
+- github
+  - https://github.com/k0kubun/gitstar-ranking
+

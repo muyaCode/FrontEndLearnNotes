@@ -7,6 +7,7 @@
 - [nestjs开发小技巧——任务调度 - 掘金 (juejin.cn)](https://juejin.cn/post/7309329004497584180)
 - [我总结了1w字的Nest.js入门最佳实践 - 掘金 (juejin.cn)](https://juejin.cn/post/7270464435297189900)
 - [保姆级教你用nest集成minio - 掘金 (juejin.cn)](https://juejin.cn/post/7264921613552189474)
+- [nestjs-实现双token无感刷新 - 掘金 (juejin.cn)](https://juejin.cn/post/7275211391102451772)
 
 ## nestjs 上传图片-静态目录
 

@@ -1977,12 +1977,8 @@ export default {
           link: "/Document/GitHub的使用/GitHub加速",
         },
         {
-          text: "GitHub仓库实用技巧",
-          link: "/Document/GitHub的使用/GitHub仓库实用技巧",
-        },
-        {
-          text: "GitHub仓库辅助工具",
-          link: "/Document/GitHub的使用/GitHub仓库辅助工具",
+          text: "GitHub仓库辅助工具和实用技巧",
+          link: "/Document/GitHub的使用/GitHub仓库辅助工具和实用技巧",
         },
         {
           text: "",
