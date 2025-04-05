@@ -14,6 +14,14 @@
 
 Console 作为 JS 中的一个原生对象，为我们提供了在浏览器控制台进行调试的能力。百分百的前端人都知道 console.log()语句，但通过本文的介绍会发现，console.log()真的是一个最熟悉的陌生'人'。
 
+常用的占位符：
+
+- %s - 字符串
+- %d or %i - 整数
+- %f - 浮点数
+- %o - 对象
+- %c - CSS 样式
+
 #### 常规用法
 
 console.log()是最为常用的打印输出方法，其可以接收任意类型的内容并输出：
@@ -274,6 +282,8 @@ console.debug("Debug information");
 
 ![image-20240306195112657](./JavaScript开发调试.assets/image-20240306195112657.png)
 
+
+
 ### info()
 
 `info()` 方法用于在控制台中显示信息性消息。它类似于 `log()` ，但它提供了额外的视觉提示来区分输出作为信息性消息。
@@ -283,6 +293,54 @@ console.info("This is an informational message.");
 ```
 
 ![image-20240306195124237](./JavaScript开发调试.assets/image-20240306195124237.png)
+
+```javascript
+// 创建打印对象
+const log = prettyLog();
+
+// 不带标题
+log.info('这是基础信息!');
+//带标题
+log.info('注意看', '这是个男人叫小帅!');
+```
+
+![image-20250323232438910](./JavaScript开发调试.assets/image-20250323232438910.png)
+
+#### 实现美化的信息打印
+
+我们创建一个prettyLog方法，用于逻辑编写
+
+```javascript
+// 美化打印实现方法
+const prettyLog = () => {
+  const isEmpty = (value: any) => {
+    return value == null || value === undefined || value === '';
+  };
+  const prettyPrint = (title: string, text: string, color: string) => {
+    console.log(
+      `%c ${title} %c ${text} %c`,
+      `background:${color};border:1px solid ${color}; padding: 1px; border-radius: 2px 0 0 2px; color: #fff;`,
+      `border:1px solid ${color}; padding: 1px; border-radius: 0 2px 2px 0; color: ${color};`,
+      'background:transparent'
+    );
+  };
+  // 基础信息打印
+  const info = (textOrTitle: string, content = '') => {
+    const title = isEmpty(content) ? 'Info' : textOrTitle;
+    const text = isEmpty(content) ? textOrTitle : content;
+    prettyPrint(title, text, '#909399');
+  };
+  return {
+    info
+  };
+};
+```
+
+代码定义了一个 prettyLog 函数，用于美化打印信息到控制台。通过自定义样式，输出信息以更易读和美观的格式呈现。
+
+### success()
+
+`success()` 方法用于在控制台中显示成功消息。它使用成功图标突出显示输出。
 
 ### warn()
 
@@ -294,6 +352,60 @@ console.warn("Warning: This operation is deprecated.");
 
 ![image-20240306195149517](./JavaScript开发调试.assets/image-20240306195149517.png)
 
+### 成功信息与警告信息打印
+
+```javascript
+// 美化打印实现方法
+const prettyLog = () => {
+    const isEmpty = (value: any) => {
+        return value == null || value === undefined || value === '';
+    };
+    const prettyPrint = (title: string, text: string, color: string) => {
+        console.log(
+            `%c ${title} %c ${text} %c`,
+            `background:${color};border:1px solid ${color}; padding: 1px; border-radius: 2px 0 0 2px; color: #fff;`,
+            `border:1px solid ${color}; padding: 1px; border-radius: 0 2px 2px 0; color: ${color};`,
+            'background:transparent'
+        );
+    };
+    const info = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Info' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#909399');
+    };
+    const error = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Error' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#F56C6C');
+    };
+    const warning = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Warning' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#E6A23C');
+    };
+    const success = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Success ' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#67C23A');
+    };
+    // retu;
+    return {
+        info,
+        error,
+        warning,
+        success
+    };
+};
+// 创建打印对象
+const log = prettyLog();
+
+log.warning('奥德彪', '我并非无路可走 我还有死路一条! ');
+
+log.success('奥德彪', '钱没了可以再赚，良心没了便可以赚的更多。 ');
+```
+
+![image-20250323233152198](./JavaScript开发调试.assets/image-20250323233152198.png)
+
 ### error()
 
 `error()` 方法用于在控制台中显示错误消息。它使用错误图标标记输出，并且通常包括堆栈跟踪，允许您跟踪和修复代码中的错误。
@@ -303,6 +415,100 @@ console.error("An error occurred while processing the data.");
 ```
 
 ![image-20240306195220702](./JavaScript开发调试.assets/image-20240306195220702.png)
+
+#### 美化错误信息打印：
+
+```javascript
+const prettyLog = () => {
+    const isEmpty = (value: any) => {
+        return value == null || value === undefined || value === '';
+    };
+    const prettyPrint = (title: string, text: string, color: string) => {
+         // ...
+    };
+    const info = (textOrTitle: string, content = '') => {
+        // ...
+    };
+    const error = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Error' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#F56C6C');
+    };
+    // retu;
+    return {
+        info,
+        error,
+    };
+};
+// 创建打印对象
+const log = prettyLog();
+
+log.error('奥德彪', '出来的时候穷 生活总是让我穷 所以现在还是穷。');
+
+log.error('前方的路看似很危险,实际一点也不安全。');
+```
+
+![image-20250323232636830](./JavaScript开发调试.assets/image-20250323232636830.png)
+
+
+
+### picture()
+
+#### 实现图片打印
+
+```javascript
+// 美化打印实现方法
+const prettyLog = () => {
+  // ....
+  const picture = (url: string, scale = 1) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+        const c = document.createElement('canvas');
+        const ctx = c.getContext('2d');
+        if (ctx) {
+            c.width = img.width;
+            c.height = img.height;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0);
+            const dataUri = c.toDataURL('image/png');
+
+            console.log(
+                `%c sup?`,
+                `font-size: 1px;
+                padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor((img.width * scale) / 2)}px;
+                background-image: url(${dataUri});
+                background-repeat: no-repeat;
+                background-size: ${img.width * scale}px ${img.height * scale}px;
+                color: transparent;
+                `
+            );
+        }
+    };
+    img.src = url;
+};
+
+  return {
+    info,
+    error,
+    warning,
+    success,
+    picture
+  };
+}
+
+// 创建打印对象
+const log = prettyLog();
+
+log.picture('https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2024%2F0514%2Fd0ea93ebj00sdgx56001xd200u000gtg00hz00a2.jpg&thumbnail=660x2147483647&quality=80&type=jpg');
+```
+
+![image-20250323233607150](./JavaScript开发调试.assets/image-20250323233607150.png)
+
+
+
+---
 
 ### assert()
 
@@ -377,11 +583,205 @@ console.table(users);
 
 掌握这些 console 方法可以帮助您更好地理解和优化代码。不仅可以进行常规的日志记录，还可以创建分组、测量执行时间、分析性能，并查看内存使用情况。这些工具将成为您的好朋友，提高开发速度，减少错误，让编码变得更加愉快。开始尝试并探索这些方法，它们将成为您的强大助手！
 
+#### 实现美化的数组打印
+
+打印对象或者数组，其实用原生的console.table比较好
+
+```javascript
+const data = [
+  { id: 1, name: 'Alice', age: 25 },
+  { id: 2, name: 'Bob', age: 30 },
+  { id: 3, name: 'Charlie', age: 35 }
+];
+
+console.table(data);
+```
+
+![64fdgsdf0](./JavaScript开发调试.assets/64fdgsdf0.webp)
+
+当然，我们也可以伪实现
+
+```javascript
+const table = () => {
+    const data = [
+        { id: 1, name: 'Alice', age: 25 },
+        { id: 2, name: 'Bob', age: 30 },
+        { id: 3, name: 'Charlie', age: 35 }
+    ];
+    console.log(
+        '%c id%c name%c age',
+        'color: white; background-color: black; padding: 2px 10px;',
+        'color: white; background-color: black; padding: 2px 10px;',
+        'color: white; background-color: black; padding: 2px 10px;'
+    );
+
+    data.forEach((row: any) => {
+        console.log(
+            `%c ${row.id} %c ${row.name} %c ${row.age} `,
+            'color: black; background-color: lightgray; padding: 2px 10px;',
+            'color: black; background-color: lightgray; padding: 2px 10px;',
+            'color: black; background-color: lightgray; padding: 2px 10px;'
+        );
+    });
+};
+
+```
+
+![image-20250323233827050](./JavaScript开发调试.assets/image-20250323233827050.png)
+
+但是，我们无法控制表格的宽度，因此，这个方法不太好用，不如原生。
+
+
+
+
+
 ### 打印 Html 元素
 
 ```js
 console.log(document.body);
 ```
+
+## 仅在开发环境使用
+
+```javascript
+// 美化打印实现方法
+const prettyLog = () => {
+  //判断是否生产环境
+  const isProduction = import.meta.env.MODE === 'production';
+
+  const isEmpty = (value: any) => {
+    return value == null || value === undefined || value === '';
+  };
+  const prettyPrint = (title: string, text: string, color: string) => {
+    if (isProduction) return;
+    // ...
+  };
+  // ...
+  const picture = (url: string, scale = 1) => {
+    if (isProduction) return;
+    // ...
+    };
+
+    // retu;
+    return {
+        info,
+        error,
+        warning,
+        success,
+        picture,
+        table
+    };
+};
+```
+
+我们可以通过import.meta.env.MODE 判断当前环境是否为生产环境，在生产环境，我们可以禁用信息打印！
+
+## 完整代码
+
+```javascript
+// 美化打印实现方法
+const prettyLog = () => {
+    const isProduction = import.meta.env.MODE === 'production';
+
+    const isEmpty = (value: any) => {
+        return value == null || value === undefined || value === '';
+    };
+    const prettyPrint = (title: string, text: string, color: string) => {
+        if (isProduction) return;
+        console.log(
+            `%c ${title} %c ${text} %c`,
+            `background:${color};border:1px solid ${color}; padding: 1px; border-radius: 2px 0 0 2px; color: #fff;`,
+            `border:1px solid ${color}; padding: 1px; border-radius: 0 2px 2px 0; color: ${color};`,
+            'background:transparent'
+        );
+    };
+    const info = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Info' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#909399');
+    };
+    const error = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Error' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#F56C6C');
+    };
+    const warning = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Warning' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#E6A23C');
+    };
+    const success = (textOrTitle: string, content = '') => {
+        const title = isEmpty(content) ? 'Success ' : textOrTitle;
+        const text = isEmpty(content) ? textOrTitle : content;
+        prettyPrint(title, text, '#67C23A');
+    };
+    const table = () => {
+        const data = [
+            { id: 1, name: 'Alice', age: 25 },
+            { id: 2, name: 'Bob', age: 30 },
+            { id: 3, name: 'Charlie', age: 35 }
+        ];
+        console.log(
+            '%c id%c name%c age',
+            'color: white; background-color: black; padding: 2px 10px;',
+            'color: white; background-color: black; padding: 2px 10px;',
+            'color: white; background-color: black; padding: 2px 10px;'
+        );
+
+        data.forEach((row: any) => {
+            console.log(
+                `%c ${row.id} %c ${row.name} %c ${row.age} `,
+                'color: black; background-color: lightgray; padding: 2px 10px;',
+                'color: black; background-color: lightgray; padding: 2px 10px;',
+                'color: black; background-color: lightgray; padding: 2px 10px;'
+            );
+        });
+    };
+    const picture = (url: string, scale = 1) => {
+        if (isProduction) return;
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+            const c = document.createElement('canvas');
+            const ctx = c.getContext('2d');
+            if (ctx) {
+                c.width = img.width;
+                c.height = img.height;
+                ctx.fillStyle = 'red';
+                ctx.fillRect(0, 0, c.width, c.height);
+                ctx.drawImage(img, 0, 0);
+                const dataUri = c.toDataURL('image/png');
+
+                console.log(
+                    `%c sup?`,
+                    `font-size: 1px;
+                    padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor((img.width * scale) / 2)}px;
+                    background-image: url(${dataUri});
+                    background-repeat: no-repeat;
+                    background-size: ${img.width * scale}px ${img.height * scale}px;
+                    color: transparent;
+                    `
+                );
+            }
+        };
+        img.src = url;
+    };
+
+    // retu;
+    return {
+        info,
+        error,
+        warning,
+        success,
+        picture,
+        table
+    };
+};
+// 创建打印对象
+const log = prettyLog();
+```
+
+
 
 ## 其他：
 

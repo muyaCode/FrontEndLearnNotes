@@ -96,3 +96,17 @@ ECMA-262，ECMAScript 的语法标准（语法草案和版本相关）：<https:
 ## MDN 语法查询
 
 <https://developer.mozilla.org/zh-CN/>
+
+
+
+# WICG：Web 孵化器
+
+开源社区：[Web 孵化器 CG](https://github.com/WICG)
+
+## observable提案相关链接
+
+[原生 Observable API 来了！能否取代每周下载 5200 万次的 RxJS？](https://mp.weixin.qq.com/s/gtTFPz4zARloKG5MqxRIGQ)
+
+- **规范**：https://wicg.github.io/observable/
+- **提案**：https://github.com/WICG/observable
+- **Chrome 实施状态**：https://chromestatus.com/feature/5154593776599040
