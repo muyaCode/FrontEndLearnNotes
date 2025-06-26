@@ -1,0 +1,24 @@
+{
+	"name": "front-end-learn-notes",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"docs:dev": "vitepress dev docs --port 8090",
+		"docs:build": "NODE_OPTIONS=--max-old-space-size=49152 vitepress build docs",
+		"docs:preview": "vitepress preview docs --port 8090",
+		"deploy": "bash deploy.sh"
+	},
+	"devDependencies": {
+		"vitepress": "1.6.3"
+	},
+	"dependencies": {
+		"@algolia/client-search": "^5.29.0",
+		"genji-theme-vitepress": "^0.2.8"
+	}
+}
